@@ -16,8 +16,4 @@ parts:
             - file: operators
             - file: flow-control-structures
             - file: debugging
-  - caption: Notes on Practical 2
-    chapters:
-     - file: further-programming
-       sections:
-            - file: creating-functions
+
