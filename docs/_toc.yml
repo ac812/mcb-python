@@ -1,0 +1,23 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: practical1
+parts:
+  - caption: Practical 1
+    chapters:
+     - file: intro-to-python
+       sections:
+            - file: variables
+            - file: data-types
+            - file: calling-functions
+            - file: data-structures
+            - file: more-strings
+            - file: operators
+            - file: flow-control-structures
+            - file: debugging
+  - caption: Practical 2
+    chapters:
+     - file: further-programming
+       sections:
+            - file: creating-functions
