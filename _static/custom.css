@@ -1,0 +1,10 @@
+/* docs/_static/custom.css */
+
+
+:root {
+  --sd-color-card-background: #5c636a;
+}
+
+.sd-color-card-background-light {
+    background-color: #fcf8e3;
+}
