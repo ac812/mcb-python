@@ -346,7 +346,7 @@ for i in range(10):                #1
 # ```
 # 
 # 
-# 
+# ## Exercise 12
 # ```{solution-start} num-prog
 # :label: num-prog-solution
 # ```
@@ -362,7 +362,7 @@ for i in range(10):                #1
 # ```{solution-end}
 # ```
 # 
-# 
+# ## Exercise 13
 # ```{solution-start} fibonacci
 # :label: fibonacci-solution
 # ```

@@ -315,7 +315,7 @@ Since `continue` was removed, no code inside the loop is skipped and both line 3
 ```
 
 
-
+## Exercise 12
 ```{solution-start} num-prog
 :label: num-prog-solution
 ```
@@ -331,7 +331,7 @@ while x != -1:
 ```{solution-end}
 ```
 
-
+## Exercise 13
 ```{solution-start} fibonacci
 :label: fibonacci-solution
 ```
