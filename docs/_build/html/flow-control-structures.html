@@ -1,0 +1,1049 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Control flow statements &#8212; Python Programming</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Debugging code in PyCharm" href="debugging.html" />
+    <link rel="prev" title="Comparison and logical operators" href="operators.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/mcb-logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Programming</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="practical1.html">
+                    Practical 1
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 1
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro-to-python.html">
+   Introduction to Python Programming
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="variables.html">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data-types.html">
+     Data Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="calling-functions.html">
+     Calling functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data-structures.html">
+     Data Structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="more-strings.html">
+     More on strings and functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="operators.html">
+     Comparison and logical operators
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Control flow statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="debugging.html">
+     Debugging code in PyCharm
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="further-programming.html">
+   Further programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="creating-functions.html">
+     Creating functions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/flow-control-structures.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fflow-control-structures.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/flow-control-structures.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="_sources/flow-control-structures.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-statements">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+   statements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#match-statements">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     match
+    </span>
+   </code>
+   Statements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loops">
+   Loops
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-loop">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     loop
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#range-function">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         range()
+        </span>
+       </code>
+       function
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#break">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         break
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#continue">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         continue
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#while-loop">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       while
+      </span>
+     </code>
+     loop
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Control flow statements</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-statements">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+   statements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#match-statements">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     match
+    </span>
+   </code>
+   Statements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loops">
+   Loops
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-loop">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     loop
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#range-function">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         range()
+        </span>
+       </code>
+       function
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#break">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         break
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#continue">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         continue
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#while-loop">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       while
+      </span>
+     </code>
+     loop
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="control-flow-statements">
+<h1>Control flow statements<a class="headerlink" href="#control-flow-statements" title="Permalink to this headline">#</a></h1>
+<p>As the name suggests, control flow statements are statements that control the order of which code is executed in a program.
+In this section we will be looking at different forms of control flow statements.</p>
+<section id="if-statements">
+<h2><code class="docutils literal notranslate"><span class="pre">if</span></code> statements<a class="headerlink" href="#if-statements" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is used to execute a piece of code based on a condition.  <a class="reference internal" href="#if"><span class="std std-numref">Fig. 11</span></a> shows the syntax of the <code class="docutils literal notranslate"><span class="pre">if</span></code>
+statement together with its representation in a flow chart.</p>
+<figure class="align-default" id="if">
+<img alt="_images/if.png" src="_images/if.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Syntax of <code class="docutils literal notranslate"><span class="pre">if</span></code> statement (<em>A</em>) together with a flowchart representation (<em>B</em>).</span><a class="headerlink" href="#if" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>where <em>expression1</em> and <em>expression2</em> are boolean expressions and <em>suite1,suite2,suite3</em> refer to one or more statements. The <code class="docutils literal notranslate"><span class="pre">elif</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code>
+parts of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement are optional. <code class="docutils literal notranslate"><span class="pre">elif</span></code> is short for “else if”.  Essentially, if <em>expression1</em> evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>,
+the code in the <code class="docutils literal notranslate"><span class="pre">if</span></code> branch is executed (<em>suite1</em>), otherwise if <em>expression2</em> evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>, the code in the <code class="docutils literal notranslate"><span class="pre">elif</span></code> branch
+is executed (<em>suite2</em>), otherwise the code in the <code class="docutils literal notranslate"><span class="pre">else</span></code> branch is executed (<em>suite3</em>).</p>
+<div class="cell docutils container" id="code-reference-marking">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_mark</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="c1">#check which class total_mark falls in and print it</span>
+<span class="k">if</span> <span class="n">total_mark</span> <span class="o">&gt;</span> <span class="mi">69</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">total_mark</span> <span class="o">&gt;</span> <span class="mi">49</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Second&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">total_mark</span> <span class="o">&gt;</span> <span class="mi">39</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Third&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fail&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Second
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-note-code-indentation admonition">
+<p class="admonition-title">Note: Code Indentation</p>
+<p>Python uses indentation to specify blocks of code.  To indent code use <strong>4 spaces</strong> per indentation level (not a tab). PyCharm
+will indent your code automatically when you press a new line after an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. Writing the code above without
+indentation will throw an error.</p>
+</div>
+<div class="exercise admonition" id="month-if">
+
+<p class="admonition-title"><span class="caption-number">Exercise 7 </span> (Month in number)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
+<p>Write a program where given a month in number format as an input, it will print that month’s name back.  For example, month = 10
+will print October.</p>
+</section>
+</div>
+</section>
+<section id="match-statements">
+<h2><code class="docutils literal notranslate"><span class="pre">match</span></code> Statements<a class="headerlink" href="#match-statements" title="Permalink to this headline">#</a></h2>
+<p>When you need to compare the value of a variable to several patterns, using <code class="docutils literal notranslate"><span class="pre">match</span></code> statements is more useful. It is
+more used with string comparisons rather ones since it has to match the values.  The code below is a good example of when
+it is better to use <code class="docutils literal notranslate"><span class="pre">match</span></code> rather than <code class="docutils literal notranslate"><span class="pre">if</span></code> statements.  The code below prints “Hello” in the language you specify.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">language</span> <span class="o">=</span> <span class="s2">&quot;English&quot;</span>
+
+<span class="c1">#print hello depending on what language is specified</span>
+<span class="k">match</span> <span class="n">language</span><span class="p">:</span>
+    <span class="k">case</span> <span class="s2">&quot;English&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+    <span class="k">case</span> <span class="s2">&quot;French&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bonjour&quot;</span><span class="p">)</span>
+    <span class="k">case</span> <span class="s2">&quot;Italian&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Salve&quot;</span><span class="p">)</span>
+    <span class="k">case</span> <span class="s2">&quot;Portuguese&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ola&quot;</span><span class="p">)</span>
+    <span class="k">case</span> <span class="s2">&quot;Maltese&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bonġu&quot;</span><span class="p">)</span>
+    <span class="k">case</span> <span class="s2">&quot;Chinese&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nǐn hǎo&quot;</span><span class="p">)</span>
+    <span class="k">case</span> <span class="s2">&quot;Maasai&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sopa&quot;</span><span class="p">)</span>
+    <span class="k">case</span> <span class="k">_</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Language not supported yet&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello
+</pre></div>
+</div>
+</div>
+</div>
+<p>The case where there is a match is executed.  The last <code class="docutils literal notranslate"><span class="pre">case</span></code>, <code class="docutils literal notranslate"><span class="pre">_</span></code> is a wildcard, which means that if none of the cases match,
+that case will be executed.</p>
+<div class="exercise admonition" id="month-match">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8 </span> (Month in number v2.)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
+<p>Write the same program as <a class="reference internal" href="#month-if"><span class="std std-numref">Exercise 7</span></a> but use the <code class="docutils literal notranslate"><span class="pre">match</span></code> statement this time to specify conditions.</p>
+</section>
+</div>
+<p>So far we have compared single values, what if we want to compare a value to a list?  For example, checking if the <code class="docutils literal notranslate"><span class="pre">int</span></code> values in
+a list are more than 20.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">55</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">62</span><span class="p">]</span>
+
+<span class="n">l</span> <span class="o">&gt;</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">55</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">62</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">l</span> <span class="o">&gt;</span> <span class="mi">20</span>
+
+<span class="ne">TypeError</span>: &#39;&gt;&#39; not supported between instances of &#39;list&#39; and &#39;int&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see this will throw an error as this code is trying to compare a <code class="docutils literal notranslate"><span class="pre">list</span></code> object to an <code class="docutils literal notranslate"><span class="pre">int</span></code> object.  What we
+really want to do is check if the value of each <code class="docutils literal notranslate"><span class="pre">int</span></code> object in list <code class="docutils literal notranslate"><span class="pre">l</span></code> is greater than 20.  In this way, both the left and right-hand
+side of the comparison operator will be of the same value (<code class="docutils literal notranslate"><span class="pre">int</span></code> in this example).  To do this we have to use loops.</p>
+</section>
+<section id="loops">
+<h2>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">#</a></h2>
+<p>Loops form also part of control flow statements.  They are the tool needed to <strong>repeat</strong> operations until a defined condition
+is reached.  In the next sections we will look at the <code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span></code> loops.</p>
+<section id="for-loop">
+<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> loop<a class="headerlink" href="#for-loop" title="Permalink to this headline">#</a></h3>
+<p>Python’s <code class="docutils literal notranslate"><span class="pre">for</span></code> statement (or <strong><code class="docutils literal notranslate"><span class="pre">for</span></code> loop</strong>) iterates over the items of a sequence (<em>e.g.,</em> string, tuple, list).
+<a class="reference internal" href="#for"><span class="std std-numref">Fig. 12</span></a> below shows the syntax of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop together with a flowchart.</p>
+<figure class="align-default" id="for">
+<img alt="_images/for.png" src="_images/for.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Syntax of <code class="docutils literal notranslate"><span class="pre">for</span></code> loop (<em>A</em>) together with a flowchart representation (<em>B</em>)</span><a class="headerlink" href="#for" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The way <code class="docutils literal notranslate"><span class="pre">for</span></code> loops work is better explained by the animation below which shows how the code in the left-hand side of
+the animation is executed.</p>
+<figure class="align-default" id="id1">
+<img alt="_images/for-loop.gif" src="_images/for-loop.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Animation demo of <code class="docutils literal notranslate"><span class="pre">for</span></code> loop example</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As shown in the animation in <a class="reference internal" href="#id1"><span class="std std-numref">Fig. 13</span></a>, the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop continues to iterate over each item in list <code class="docutils literal notranslate"><span class="pre">x</span></code> until the end of the list is reached.
+The value of item <code class="docutils literal notranslate"><span class="pre">i</span></code> in the example code is initialised after each iteration.  This means that the code below will not
+advance the item to be retrieved from list <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+20
+30
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition" id="for-exercise">
+
+<p class="admonition-title"><span class="caption-number">Exercise 9 </span> (for loop)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
+<p>Print the following list one word on a new line using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;keep&quot;</span><span class="p">,</span> <span class="s2">&quot;calm&quot;</span><span class="p">,</span> <span class="s2">&quot;and&quot;</span><span class="p">,</span> <span class="s2">&quot;carry&quot;</span><span class="p">,</span> <span class="s2">&quot;on&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</div>
+<section id="range-function">
+<h4><code class="docutils literal notranslate"><span class="pre">range()</span></code> function<a class="headerlink" href="#range-function" title="Permalink to this headline">#</a></h4>
+<p>To repeat an operation for <span class="math notranslate nohighlight">\(n\)</span> times, <code class="docutils literal notranslate"><span class="pre">range()</span></code> is very useful, especially if <span class="math notranslate nohighlight">\(n\)</span> is a large number.  Range generates numbers
+in a range.</p>
+<table class="table" id="range">
+<caption><span class="caption-number">Table 9 </span><span class="caption-text">range() function arguments</span><a class="headerlink" href="#range" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Input</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">range(</span></code>stop<code class="docutils literal notranslate"><span class="pre">)</span></code></p></td>
+<td><p>Generates a sequence of numbers from <em>0</em> to <em>stop</em>, excluding the number <em>stop</em>.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">range(5)</span></code> will generate numbers <code class="docutils literal notranslate"><span class="pre">0,1,2,3,4</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">range(</span></code>start<code class="docutils literal notranslate"><span class="pre">,</span> </code>stop<code class="docutils literal notranslate"><span class="pre">)</span></code></p></td>
+<td><p>Generates a sequence of numbers from <em>start</em> to <em>stop</em>, excluding the number <em>stop</em>.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">range(3,7)</span></code> will generate numbers <code class="docutils literal notranslate"><span class="pre">3,4,5,6</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">range(</span></code>start<code class="docutils literal notranslate"><span class="pre">,</span> </code>stop<code class="docutils literal notranslate"><span class="pre">,</span> </code>step<code class="docutils literal notranslate"><span class="pre">)</span></code></p></td>
+<td><p>Generates a sequence of numbers that contains the <em>step<sup>th</sup></em> item from the sequence starting from the <em>start</em> number to the <em>stop</em> number, excluding the <em>stop</em> number.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">range(0,10,3)</span></code> will generate numbers <code class="docutils literal notranslate"><span class="pre">0,3,6,9</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The output from <code class="docutils literal notranslate"><span class="pre">range()</span></code> is not a list, it is actually a <code class="docutils literal notranslate"><span class="pre">range</span></code> object which is an <strong>iterable</strong>, which means, it is able
+to return its data items one at a time.  <code class="docutils literal notranslate"><span class="pre">range</span></code> is a very efficient way of storing sequential numbers in Python as it
+always takes the same amount of memory, no matter the size of the numeric sequence.  For example, <code class="docutils literal notranslate"><span class="pre">range(5)</span></code> and <code class="docutils literal notranslate"><span class="pre">range(100000)</span></code> will
+still take the same amount of memory as ‘range()’ only stores the <em>start</em>, <em>stop</em> and <em>step</em> of the sequence.</p>
+<p>To look at the numbers generated by <code class="docutils literal notranslate"><span class="pre">range()</span></code>, convert <code class="docutils literal notranslate"><span class="pre">range</span></code> to a list as shown below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># printing range directly will not show you the full sequence of numbers generated</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>   <span class="c1">#prints range(0, 5)</span>
+
+<span class="c1"># you need to convert it to a list first</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c1">#prints [0, 1, 2, 3, 4]</span>
+
+<span class="c1">#since range is an iterable you can use it in functions that take iterable as an input, example:</span>
+<span class="nb">sum</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># returns the sum of 0 + 1 + 2 + 3 + 4</span>
+</pre></div>
+</div>
+</div>
+<div class="exercise admonition" id="range-exercise">
+
+<p class="admonition-title"><span class="caption-number">Exercise 10 </span> (Range)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
+<p>In this exercise we are going to explore the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function.</p>
+<ol class="simple">
+<li><p>Try the code in <a class="reference internal" href="#range"><span class="std std-numref">Table 9</span></a>.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop and <code class="docutils literal notranslate"><span class="pre">range()</span></code> function to print <em>“Hello World!”</em> three times.</p></li>
+</ol>
+</section>
+</div>
+</section>
+<section id="break">
+<h4><code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#break" title="Permalink to this headline">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">break</span></code> statement exits (or breaks) from the execution of the respective loop code, that is, it does not continue executing the code in the
+current loop. The code below is an example of how to <code class="docutils literal notranslate"><span class="pre">break</span></code> a for loop.  The code prints each character of the string
+“supercalifragilisticexpialidocious” until the first character “c” is met.</p>
+<div class="cell docutils container" id="code-break">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="s2">&quot;supercalifragilisticexpialidocious&quot;</span><span class="p">:</span>  <span class="c1">#1</span>
+   <span class="k">if</span> <span class="n">letter</span> <span class="o">==</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span>                                 <span class="c1">#2</span>
+      <span class="k">break</span>                                          <span class="c1">#3</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Current Letter :&#39;</span><span class="p">,</span> <span class="n">letter</span><span class="p">)</span>                 <span class="c1">#4 </span>
+                                                     <span class="c1">#5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am now outside of the for loop&quot;</span><span class="p">)</span>            <span class="c1">#6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current Letter : s
+Current Letter : u
+Current Letter : p
+Current Letter : e
+Current Letter : r
+I am now outside of the for loop
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">print</span></code> statement in line 4 is at the same indentation as the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement in line 2, meaning that both should run in the
+same iteration of the loop.  However, in the iteration when <code class="docutils literal notranslate"><span class="pre">letter</span></code> is “c”, the code inside the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is executed first, which breaks the loop and thus
+the remaining code in the loop is not executed (skipped).  Note also, that the <code class="docutils literal notranslate"><span class="pre">print</span></code> statement in line 6 is not indented under the <code class="docutils literal notranslate"><span class="pre">for</span></code>
+loop, and thus it does not form part of the code in the loop (it is outside the loop).</p>
+</section>
+<section id="continue">
+<h4><code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#continue" title="Permalink to this headline">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement will skip the remaining code in the current iteration, but it will continue the execution of the
+remaining iterations of the loop.  The code below is an example of how to <code class="docutils literal notranslate"><span class="pre">continue</span></code> a loop.  The code goes over a list of
+consecutive numbers from 0 to 9 and identifies even and odd numbers.</p>
+<div class="cell docutils container" id="code-continue">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>                <span class="c1">#1</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>                 <span class="c1">#2</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Even number:&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>   <span class="c1">#3</span>
+        <span class="k">continue</span>                   <span class="c1">#4</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Odd number: &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>       <span class="c1">#5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Even number: 0
+Odd number:  1
+Even number: 2
+Odd number:  3
+Even number: 4
+Odd number:  5
+Even number: 6
+Odd number:  7
+Even number: 8
+Odd number:  9
+</pre></div>
+</div>
+</div>
+</div>
+<p>In line 2, if the remainder of <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">%</span> <span class="pre">2</span></code> is 0, the even number is first printed (line 3), then <code class="docutils literal notranslate"><span class="pre">continue</span></code> will skip the remaining
+lines in the loop (line 5) and continue looping over the next iterations until <code class="docutils literal notranslate"><span class="pre">i</span></code> is 10.</p>
+<div class="exercise admonition" id="break-continue">
+
+<p class="admonition-title"><span class="caption-number">Exercise 11 </span> (break and continue)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
+<p>In this exercise we will explore the <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> statements in loops.</p>
+<ol class="simple">
+<li><p>Using the code in the <a class="reference internal" href="#code-break"><span class="std std-ref">break example</span></a>, what happens if you print the current letter in the loop before the
+<code class="docutils literal notranslate"><span class="pre">if</span></code> statement? Why do you think that happened?</p></li>
+<li><p>Remove <code class="docutils literal notranslate"><span class="pre">continue</span></code> (line 4) in the <a class="reference internal" href="#code-continue"><span class="std std-ref">continue example above</span></a>.  What happens?  Why do you think this has happened?</p></li>
+</ol>
+</section>
+</div>
+</section>
+</section>
+<section id="while-loop">
+<h3><code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#while-loop" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">while</span></code> statement executes code that is indented under it until a condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>.
+In <a class="reference internal" href="#id2"><span class="std std-numref">Fig. 14</span></a> below, <em>suite</em> (one or more statements) will continue to execute until <em>expression</em> is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<figure class="align-default" id="id2">
+<img alt="_images/while.png" src="_images/while.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Syntax of <code class="docutils literal notranslate"><span class="pre">while</span></code> loop (<em>A</em>) together with a flowchart representation (<em>B</em>)</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The animation below runs the code on the left hand side of the animation.  It iterates over the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to explain
+how a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop works.</p>
+<figure class="align-default" id="anim-while-loop">
+<img alt="_images/while-loop.gif" src="_images/while-loop.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Animation demo of <code class="docutils literal notranslate"><span class="pre">while</span></code> loop example</span><a class="headerlink" href="#anim-while-loop" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As shown in the animation above, the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop does not iterate over a sequence (as was the case of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop).  In this example,
+<code class="docutils literal notranslate"><span class="pre">i</span></code> is incremented via the suite of the loop <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">+=</span> <span class="pre">1</span></code> which increments <code class="docutils literal notranslate"><span class="pre">i</span></code> in each iteration.  The <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> statements
+can also be used inside the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
+<div class="exercise admonition" id="num-prog">
+
+<p class="admonition-title"><span class="caption-number">Exercise 12 </span> (Numbers program)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg>  <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
+<p>Write a program that allows a user to enter numbers.  If the user inputs -1, the program will quit.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">input()</span></code> function takes the user’s input as a string.  This will allow for interaction from the user.</p>
+</div>
+</section>
+</div>
+<div class="exercise admonition" id="fibonacci">
+
+<p class="admonition-title"><span class="caption-number">Exercise 13 </span> (Fibonacci sequence)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg></p>
+<p>Write code that creates a Fibonacci sequence, where the last number of the series is not more than 100.
+The Fibonacci sequence is a sequence of numbers where each number is the sum of the two numbers preceding it.   You can
+read more about it <a class="reference external" href="https://en.wikipedia.org/wiki/Fibonacci_number">here</a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><span class="math notranslate nohighlight">\(F_{0} = 0\)</span> , <span class="math notranslate nohighlight">\(F_{1} = 1,\)</span><br />
+and<br />
+<span class="math notranslate nohighlight">\(F{n} = F_{n-1} + F_{n-2}\)</span></p>
+</div>
+</section>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="operators.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Comparison and logical operators</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="debugging.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Debugging code in PyCharm</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Alexia Cardona<br/>
+  
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

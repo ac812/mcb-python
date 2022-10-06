@@ -1,0 +1,784 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction to Python Programming &#8212; Python Programming</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Variables" href="variables.html" />
+    <link rel="prev" title="Practical 1" href="practical1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/mcb-logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Programming</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="practical1.html">
+                    Practical 1
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 1
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   Introduction to Python Programming
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="variables.html">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data-types.html">
+     Data Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="calling-functions.html">
+     Calling functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data-structures.html">
+     Data Structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="more-strings.html">
+     More on strings and functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="operators.html">
+     Comparison and logical operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="flow-control-structures.html">
+     Control flow statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="debugging.html">
+     Debugging code in PyCharm
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="further-programming.html">
+   Further programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="creating-functions.html">
+     Creating functions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/intro-to-python.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro-to-python.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/intro-to-python.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="_sources/intro-to-python.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-python">
+   What is Python?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-learn-python">
+   Why learn Python?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-pycharm">
+   Introduction to PyCharm
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-project-in-pycharm">
+     Creating a Project in PyCharm
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-and-running-python-files">
+     Creating and running Python files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-console">
+     Python Console
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to Python Programming</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-python">
+   What is Python?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-learn-python">
+   Why learn Python?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-pycharm">
+   Introduction to PyCharm
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-project-in-pycharm">
+     Creating a Project in PyCharm
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-and-running-python-files">
+     Creating and running Python files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-console">
+     Python Console
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python-programming">
+<h1>Introduction to Python Programming<a class="headerlink" href="#introduction-to-python-programming" title="Permalink to this headline">#</a></h1>
+<section id="what-is-python">
+<h2>What is Python?<a class="headerlink" href="#what-is-python" title="Permalink to this headline">#</a></h2>
+<p>Python is a popular programming language <a class="footnote-reference brackets" href="#survey-python" id="id1">1</a>, especially in the field of data science. Python was named after the “Monty
+Python’s Flying Circus” BBC show (not after the reptile!)<a class="footnote-reference brackets" href="#python-doc-tutorial" id="id2">2</a>.
+The Python language has three very desirable features:</p>
+<ol class="simple">
+<li><p>Python is an interpreted language; this means that it has an interpreter that runs the code line by line
+(rather than having to build the whole program before running it as in compiled languages for example).</p></li>
+<li><p>Python is an Object-Oriented Programming (OOP) language, offering more structure and reusability for larger programs.</p></li>
+<li><p>Python is a Very High-Level Language (VHLL); allows one to express complex operations in one statement.</p></li>
+</ol>
+</section>
+<section id="why-learn-python">
+<h2>Why learn Python?<a class="headerlink" href="#why-learn-python" title="Permalink to this headline">#</a></h2>
+<p>There are many good reasons why it is a good idea to choose to learn Python:</p>
+<ul class="simple">
+<li><p><strong>Easy to learn</strong>: Python is one of the easiest programming languages to learn as it is readable as its syntax is very
+similar to
+English.</p></li>
+<li><p><strong>Automate tasks</strong>: Instead of using a series of clicking and mouse operations, write your code in a file once and
+then
+just run it whenever you need it.</p></li>
+<li><p><strong>Promotes reproducibility</strong>: Once you have your code you can share it with your colleagues or publish it, so that
+others will be able to generate the same results as you have. Reproducibility is when others or yourself are able to
+generate the same results using the same data and analysis.</p></li>
+<li><p><strong>Support</strong>: As a widely used programming langauge, Python has a large community. There are lots of resources and help
+available online.</p></li>
+<li><p><strong>Free</strong>:  Python is free to use.</p></li>
+<li><p><strong>Open source software</strong></p></li>
+<li><p><strong>Cross-platform</strong>:  Python runs on different operating systems.<br />
+Hopefully all this has convinced you that Python is a great programming language to learn. Before starting coding in
+Python, in the next section, we are going to introduce PyCharm, the tool that we will be using throughout the course
+to code Python in.</p></li>
+</ul>
+</section>
+<section id="introduction-to-pycharm">
+<h2>Introduction to PyCharm<a class="headerlink" href="#introduction-to-pycharm" title="Permalink to this headline">#</a></h2>
+<p>You can decide to write your code using a simple text editor and then use the Python interpreter directly through your
+command line to run your code.  If you have used an IDE to develop code however, you will certainly not do that.  An
+IDE(Integrated Development Environment) is a tool that enables programmers to write code productively by combining different
+tools and resources that are commonly used when writing code, into one application.  In this course, we are going to use
+PyCharm as a tool to help us code in Python.  There are several other popular tools used to code Python.  We will be using
+PyCharm as it is one of the most popular tools used to develop Python code (the top one according to the
+<a class="reference external" href="https://www.jetbrains.com/research/python-developers-survey-2018/">Python Software Foundation survey</a>). It is a tool used not just in
+academia but also in industry by small to big companies.</p>
+<section id="creating-a-project-in-pycharm">
+<h3>Creating a Project in PyCharm<a class="headerlink" href="#creating-a-project-in-pycharm" title="Permalink to this headline">#</a></h3>
+<p>Before writing code in Python, we need to create a project in PyCharm.  A project allows you to keep track of
+the files and environment associated to your code.</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Steps to create the PyCharm Project:</div>
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">PyCharm</span></p>
+<ol class="simple">
+<li><p class="sd-card-text">In PyCharm’s Welcome screen, click <strong>New Project</strong>.</p></li>
+<li><p class="sd-card-text">Choose <strong>Pure Python</strong> to create a Python project.  Choose the location of the project in the <strong>Location</strong> field.<br />
+Name your project <code class="docutils literal notranslate"><span class="pre">learnPythonProject</span></code>.</p></li>
+<li><p class="sd-card-text">Choose <strong>Conda</strong> in the <strong>New environment using</strong> field as shown below.
+<img alt="pycharm_project" src="_images/project1.png" /></p></li>
+<li><p class="sd-card-text">Now click the <strong>Create</strong> button to create the project.</p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="creating-and-running-python-files">
+<h3>Creating and running Python files<a class="headerlink" href="#creating-and-running-python-files" title="Permalink to this headline">#</a></h3>
+<p>We will start learning Python by writing the classic “Hello World!” program which is normally the first thing you learn
+in any classic programming textbook.</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Steps to create a Python file in PyCharm</div>
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">PyCharm</span></p>
+<ol class="simple">
+<li><p class="sd-card-text">Select <strong>File</strong>|<strong>New</strong>|<strong>Python file</strong> from the menu.</p></li>
+<li><p class="sd-card-text">Write the name of the Python file in the field provided (in this example we will be using the name <code class="docutils literal notranslate"><span class="pre">first_program</span></code>).<br />
+<img alt="python_file" src="_images/project3.png" /></p></li>
+<li><p class="sd-card-text">PyCharm creates a source code pane to edit the file <code class="docutils literal notranslate"><span class="pre">first_program.py</span></code>.  <em>Note: A python file has an extension of <code class="docutils literal notranslate"><span class="pre">.py</span></code>.</em>
+Write the code below in the <code class="docutils literal notranslate"><span class="pre">first_program.py</span></code> file:
+<img alt="hello_world" src="_images/project4.png" /></p></li>
+<li><p class="sd-card-text">Run the Python file <code class="docutils literal notranslate"><span class="pre">first_program</span></code> in PyCharm by right-clicking on the file in the Project pane, and select <strong>Run
+‘first_program’</strong> from the menu.  If you want to use the keyboard to run the code, use the shortcut shown next to the
+<strong>Run ‘first_program’</strong> menu.  For mac this is <strong>^ Shift R</strong> buttons.
+<img alt="run_menu" src="_images/project5.png" /></p></li>
+<li><p class="sd-card-text">The output of <code class="docutils literal notranslate"><span class="pre">first_program.py</span></code> is displayed in the <strong>Run</strong> tool window at the bottom of PyCharm’s screen.
+<img alt="output_helloworld" src="_images/project6.png" /></p></li>
+<li><p class="sd-card-text">Select <strong>View</strong>|<strong>Toolbar</strong> to display the run/debug tool buttons on the top menu for easy access.
+<img alt="runtool" src="_images/project9.png" /></p></li>
+</ol>
+</div>
+</div>
+<p>Python programs are executed by the Python interpreter.  Python starts executing each line of code in a file, starting
+from the first one and progressing line by line to the very end of the file.  Now let’s look at the code in
+<code class="docutils literal notranslate"><span class="pre">first_program.py</span></code>. The first line is a <strong>comment</strong>.</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Comment</div>
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">Programming concept</span></p>
+<p class="sd-card-text">Comments are non-executable line of code that are used to explain Python code. A comment starts a line of code with a <code class="docutils literal notranslate"><span class="pre">#</span></code> and continues till the end of that line.</p>
+</div>
+</div>
+<p>The second line uses the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function to output the text <em>Hello World!</em>.</p>
+<p>To run a Python file outside PyCharm, in a command line, use the following code:<br />
+<span class="math notranslate nohighlight">\(python\)</span> <span class="math notranslate nohighlight">\(&lt;name\)</span> <span class="math notranslate nohighlight">\(of\)</span> <span class="math notranslate nohighlight">\(Python\)</span> <span class="math notranslate nohighlight">\(file&gt;\)</span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># to run first_program.py use the code</span>
+<span class="n">python</span> <span class="n">first_program</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</section>
+<section id="python-console">
+<h3>Python Console<a class="headerlink" href="#python-console" title="Permalink to this headline">#</a></h3>
+<p>You can interact with the Python interpreter via the Python Console pane at the bottom of PyCharm’s screen (as shown below).
+<img alt="console" src="_images/console.png" /></p>
+<p>The console displays <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> to indicate that it is expecting a command as an input. After writing the command, pressing
+the <code class="docutils literal notranslate"><span class="pre">&lt;Enter&gt;</span></code> key will execute the command.  The output of the command is then displayed in the console.</p>
+<p>A good way to use the Python Console is to use it as a calculator. Below are some of the most used mathematical operations.</p>
+<table class="table" id="numeric-operators-table">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Numeric Operators and Functions</span><a class="headerlink" href="#numeric-operators-table" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator/Function</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>+</p></td>
+<td><p>Addition</p></td>
+<td><p>1 + 2 returns 3</p></td>
+</tr>
+<tr class="row-odd"><td><p>-</p></td>
+<td><p>Subtraction</p></td>
+<td><p>3 - 1 returns 2</p></td>
+</tr>
+<tr class="row-even"><td><p>*</p></td>
+<td><p>Multiplication</p></td>
+<td><p>3 * 4 returns 12</p></td>
+</tr>
+<tr class="row-odd"><td><p>/</p></td>
+<td><p>Division</p></td>
+<td><p>4/2 returns 2.0</p></td>
+</tr>
+<tr class="row-even"><td><p>//</p></td>
+<td><p>Floor division: returns the integer part of a division result (without the fraction part)</p></td>
+<td><p>5//3 returns 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>%</p></td>
+<td><p>Remainder</p></td>
+<td><p>5 % 2 returns 2</p></td>
+</tr>
+<tr class="row-even"><td><p>**</p></td>
+<td><p>to the power of</p></td>
+<td><p>3 ** 2 returns 9</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pow(x,</span> <span class="pre">y)</span></code></p></td>
+<td><p>x to the power of y (same as **)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pow(3,</span> <span class="pre">2)</span></code> returns 9</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">abs(x)</span></code></p></td>
+<td><p>absolute value of x</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">abs(-5)</span></code> returns 5</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">round(x,</span> <span class="pre">n)</span></code></p></td>
+<td><p>rounds x to n decimal places</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">round(3.142,</span> <span class="pre">2)</span></code> returns 3.14</p></td>
+</tr>
+</tbody>
+</table>
+<p>Python follows the traditional mathematical rules of precedence (BODMAS).  You can find more about these rules
+<a class="reference external" href="https://www.mathsisfun.com/operation-order-bodmas.html">here</a>.</p>
+<div class="exercise admonition" id="arithmetic-operators">
+
+<p class="admonition-title"><span class="caption-number">Exercise 1 </span> (Arithmetic Operators)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
+<p>a. Try the examples in <a class="reference internal" href="#numeric-operators-table"><span class="std std-numref">Table 1</span></a> in the Python Console.<br />
+b. Calculate: <span class="math notranslate nohighlight">\(8 + (10 + 4^3 + 2)\)</span></p>
+</section>
+</div>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="survey-python"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="https://survey.stackoverflow.co/2022/#most-popular-technologies-language">Stackoverflow Developer Survey 2022</a></p>
+</dd>
+<dt class="label" id="python-doc-tutorial"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p><a class="reference external" href="https://docs.python.org/3/tutorial/index.html">Python Documentation Tutorial</a></p>
+</dd>
+</dl>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="practical1.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Practical 1</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="variables.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Variables</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Alexia Cardona<br/>
+  
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
