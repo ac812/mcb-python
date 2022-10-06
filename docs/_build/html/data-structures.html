@@ -1,0 +1,925 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Data Structures &#8212; Python Programming</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="More on strings and functions" href="more-strings.html" />
+    <link rel="prev" title="Calling functions" href="calling-functions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/mcb-logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Programming</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="practical1.html">
+                    Practical 1
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 1
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro-to-python.html">
+   Introduction to Python Programming
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="variables.html">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data-types.html">
+     Data Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="calling-functions.html">
+     Calling functions
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Data Structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="more-strings.html">
+     More on strings and functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="operators.html">
+     Comparison and logical operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="flow-control-structures.html">
+     Control flow statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="debugging.html">
+     Debugging code in PyCharm
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/data-structures.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdata-structures.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/data-structures.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="_sources/data-structures.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tuples">
+   Tuples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tuple-index-positions-and-slicing">
+     Tuple index positions and slicing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tuples-are-immutable">
+     Tuples are immutable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#membership-operators">
+     Membership operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-useful-functions">
+     Other useful functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lists">
+   Lists
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lists-are-mutable">
+     Lists are mutable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#list-utility-methods">
+     List utility methods
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Data Structures</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tuples">
+   Tuples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tuple-index-positions-and-slicing">
+     Tuple index positions and slicing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tuples-are-immutable">
+     Tuples are immutable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#membership-operators">
+     Membership operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-useful-functions">
+     Other useful functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lists">
+   Lists
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lists-are-mutable">
+     Lists are mutable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#list-utility-methods">
+     List utility methods
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="data-structures">
+<h1>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this headline">#</a></h1>
+<p>So far we have dealt with single data items.  But what if we have a large number of data items? Storing each item in a
+separate variable is not efficient and time-consuming.  This is when we use data structures.</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Data Structures</div>
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">Programming concept</span></p>
+<p class="sd-card-text">Data structures are structures in memory that store and organise data. Essentially it is a collection of data items.</p>
+</div>
+</div>
+<p>The benefits of having multiple data items in a collection makes it easier to perform operations that need to be applied
+on each item in the collection.  Data Structures are also very useful when reading data from files.  This section introduces
+different data structures commonly used in Python.</p>
+<section id="tuples">
+<h2>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">#</a></h2>
+<p>Tuples are one of the built-in data structures in Python.  Tuples can contain data items of different data types, but as
+a good practice we normally create lists of the same data tyoe.  Tuples are created as a comma-separated list of data items enclosed
+in parentheses.  Let us create our first tuple:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">62</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code above creates a variable <code class="docutils literal notranslate"><span class="pre">t</span></code> which references a tuple in memory that is 10 items long.  Assigning data items to
+a tuple is also known as <strong>tuple packing</strong>.</p>
+<section id="tuple-index-positions-and-slicing">
+<h3>Tuple index positions and slicing<a class="headerlink" href="#tuple-index-positions-and-slicing" title="Permalink to this headline">#</a></h3>
+<p>Each data item has a specified position known as <strong>index position</strong>.  Index positions in Python start from <strong>0</strong>. <a class="reference internal" href="#tuple"><span class="std std-numref">Fig. 6</span></a> below shows an
+example of the sequence of data items in tuple <code class="docutils literal notranslate"><span class="pre">t</span></code> together with their index positions.</p>
+<figure class="align-default" id="tuple">
+<img alt="_images/tuple.png" src="_images/tuple.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Representation of tuple <code class="docutils literal notranslate"><span class="pre">t</span></code> in memory and the index positions of its items.</span><a class="headerlink" href="#tuple" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>A tuple is a <strong>Sequence type</strong> in Python, and therefore, it can be sliced using the item access operator <code class="docutils literal notranslate"><span class="pre">[]</span></code>.  <strong>Slicing</strong>
+means extracting items from a sequence.  Assuming <code class="docutils literal notranslate"><span class="pre">seq</span></code> is a sequence, in this case of data items, to extract one item from a tuple, specify the index position of that item in  <code class="docutils literal notranslate"><span class="pre">[]</span></code>
+as <span class="math notranslate nohighlight">\(seq[index position]\)</span> as in the example below.</p>
+<div class="cell docutils container" id="code-tuple-indexing">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Extract item at index position 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Item at t[2] is&quot;</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+
+<span class="c1">#Extract item at index position -2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Item at t[-2] is&quot;</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Item at t[2] is 110
+Item at t[-2] is 55
+</pre></div>
+</div>
+</div>
+</div>
+<p>To extract more than one item from a sequence you can either:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(seq[start:end]\)</span> to extract items from a sequence from a <em>start</em> position up to an <em>end</em> position (excluding it).</p></li>
+<li><p><span class="math notranslate nohighlight">\(seq[start:end:step]\)</span> to extract every <em>step<sup>th</sup></em> item from the sequence starting from the <em>start</em>
+position to the <em>end</em> position (excluding it).
+Below are two examples, A and B, that show these two ways of slicing a tuple.</p></li>
+</ul>
+<figure class="align-default" id="tuple-slicing">
+<img alt="_images/tuple-slicing.png" src="_images/tuple-slicing.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Tuple slicing.</span><a class="headerlink" href="#tuple-slicing" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p id="code-reference-tuple-slicing">Below are code examples of other operations you can do with tuples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Extract items from the beginning of the tuple to index position 2 (excluded).</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;t[:2] is&quot;</span><span class="p">,</span> <span class="n">t</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="c1">#Extract items from index position 5 to the end of the tuple.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;t[5:] is&quot;</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="mi">5</span><span class="p">:])</span>
+
+<span class="c1">#print all items in a tuple</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Print all items in tuple t&quot;</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="c1"># Tuple concatenation: add tuples together</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="p">(</span><span class="mi">70</span><span class="p">,)</span>   <span class="c1">#you have to specify the one item as a tuple as well</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Concatenate t to (70,) results in&quot;</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span> 
+
+<span class="c1"># Tuple replication:  replicate contents of a tuple by a specified number of times</span>
+<span class="n">t3</span> <span class="o">=</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Replicating tuple t by 2:&quot;</span><span class="p">,</span> <span class="n">t3</span><span class="p">)</span>
+
+<span class="c1"># Tuple unpacking - place data items of tuple in separate variables</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Tuple unpacking:&quot;</span><span class="p">)</span>
+<span class="n">t4</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Alexia&quot;</span><span class="p">,</span> <span class="s2">&quot;MCB&quot;</span><span class="p">,</span> <span class="s2">&quot;1B&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">year</span><span class="p">)</span> <span class="o">=</span> <span class="n">t4</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Name is&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Subject is&quot;</span><span class="p">,</span> <span class="n">subject</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Year is&quot;</span><span class="p">,</span> <span class="n">year</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t[:2] is (55, 92)
+t[5:] is (45, 40, 57, 55, 62)
+
+Print all items in tuple t (55, 92, 110, 66, 75, 45, 40, 57, 55, 62)
+
+Concatenate t to (70,) results in (55, 92, 110, 66, 75, 45, 40, 57, 55, 62, 70)
+
+Replicating tuple t by 2: (55, 92, 110, 66, 75, 45, 40, 57, 55, 62, 55, 92, 110, 66, 75, 45, 40, 57, 55, 62)
+
+Tuple unpacking:
+Name is Alexia
+Subject is MCB
+Year is 1B
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tuples-are-immutable">
+<h3>Tuples are immutable<a class="headerlink" href="#tuples-are-immutable" title="Permalink to this headline">#</a></h3>
+<p>As mentioned previously, tuples are immutable, meaning that they cannot be changed. Below is an example showing what will happen
+if we try to change the contents of a tuple.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># change the data item at index position 2 of tuple t</span>
+<span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">80</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># change the data item at index position 2 of tuple t</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">80</span>
+
+<span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see an error is thrown back saying explicitly that the <code class="docutils literal notranslate"><span class="pre">'tuple'</span> <span class="pre">object</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">support</span> <span class="pre">item</span> <span class="pre">assignment</span></code>. Since they
+cannot be modified, tuples are useful when you have a fixed sequence of data items that you know are not going to be changed,
+<em>e.g.,</em> days of the week, months of the year. Another benefit of tuples is that they are
+faster than <a class="reference external" href="#lists">lists</a>.  However, this depends on the size of your data and the difference is normally not significant.</p>
+<p>If you want to be able to modify the sequence of data items, then <a class="reference external" href="#lists">use a <code class="docutils literal notranslate"><span class="pre">list</span></code> instead</a>.  You can convert
+a tuple to a list by the <code class="docutils literal notranslate"><span class="pre">list()</span></code> function <em>e.g.,</em> <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">=</span> <span class="pre">list(t)</span></code> will create a variable <code class="docutils literal notranslate"><span class="pre">l</span></code> of type <code class="docutils literal notranslate"><span class="pre">list</span></code> that contains the
+same data items as <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p>
+</section>
+<section id="membership-operators">
+<h3>Membership operators<a class="headerlink" href="#membership-operators" title="Permalink to this headline">#</a></h3>
+<p>Membership operator are used to test for membership in Sequence types.  For tuples, the <code class="docutils literal notranslate"><span class="pre">in</span></code> <strong>membership operator</strong>
+returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if a data item in tuple <code class="docutils literal notranslate"><span class="pre">t</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">x</span></code>, otherwise it returns <code class="docutils literal notranslate"><span class="pre">False</span></code>. The <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> <strong>non-membership operator</strong>
+does the opposite, it returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if a data item in tuple <code class="docutils literal notranslate"><span class="pre">t</span></code> is not equal to <code class="docutils literal notranslate"><span class="pre">x</span></code>, otherwise it returns <code class="docutils literal notranslate"><span class="pre">False</span></code>.  The code
+below shows an example of using membership operators in tuples.</p>
+<div class="cell tag_remove-output docutils container" id="code-reference-tuple-membership">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Check if number 2 is one of the items of tuple t</span>
+<span class="mi">2</span> <span class="ow">in</span> <span class="n">t</span>      <span class="c1">#returns False</span>
+
+<span class="c1">#Check if number 55 is one of the items of tuple t</span>
+<span class="mi">55</span> <span class="ow">in</span> <span class="n">t</span>     <span class="c1">#returns True</span>
+
+<span class="c1">#Check that 2 is not one of the items of tuple t</span>
+<span class="mi">2</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">t</span>  <span class="c1">#returns True</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="other-useful-functions">
+<h3>Other useful functions<a class="headerlink" href="#other-useful-functions" title="Permalink to this headline">#</a></h3>
+<p>Below is a list of other useful functions that can be used with tuples.  Note that these functions do not make any changes
+on the tuples, but rather they perform a calculation or operation on the data items of the tuple and return the result.</p>
+<table class="table" id="tuple-utility-functions">
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">Useful functions for operations with tuples</span><a class="headerlink" href="#tuple-utility-functions" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">len(t)</span></code></p></td>
+<td><p>returns the number of data items in a tuple <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">len(t)</span></code> returns 10</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">min(t)</span></code></p></td>
+<td><p>returns the smallest data item in <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">min(t)</span></code> returns 40</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">max(t)</span></code></p></td>
+<td><p>returns the largest data item in <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">max(t)</span></code> returns 110</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">t.index(x)</span></code></p></td>
+<td><p>returns the index of the leftmost index position of data item <code class="docutils literal notranslate"><span class="pre">x</span></code> in tuple <code class="docutils literal notranslate"><span class="pre">t</span></code> or throws an error if <code class="docutils literal notranslate"><span class="pre">x</span></code> is not present.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">t.index(55)</span></code> returns 0</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">t.count(x)</span></code></p></td>
+<td><p>returns the number of times <code class="docutils literal notranslate"><span class="pre">x</span></code> is present in <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">t.count(55)</span></code> returns 2</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="lists">
+<h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h2>
+<p>Lists hold a one dimensional list of data items.  This is similar to tuples, however they differ from tuples over two main things:</p>
+<ol class="simple">
+<li><p>how they are declared</p></li>
+<li><p>they are mutable objects</p></li>
+</ol>
+<p>Lists are declared as a comma-separated list of data items enclosed in square brackets, rather than parentheses.  Let us
+create a list <code class="docutils literal notranslate"><span class="pre">l</span></code> with the same data items as tuple <code class="docutils literal notranslate"><span class="pre">t</span></code> above:</p>
+<div class="cell docutils container" id="code-reference-list">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">55</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">62</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lists are also a Sequence type in Python and therefore support slicing, membership operators, concatenation, replication
+and the other utility functions we mentioned in the <a class="reference external" href="#tuples">Tuples</a> section.</p>
+<div class="exercise admonition" id="exploring-lists">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3 </span> (Exploring lists)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
+<p>Explore lists by trying the code we used in the <a class="reference external" href="#tuples">Tuples</a> section as follows:</p>
+<ol class="simple">
+<li><p>Create a list using the <a class="reference internal" href="#code-reference-list"><span class="std std-ref">code above</span></a>.</p></li>
+<li><p>Explore list index positions by adapting <a class="reference internal" href="#code-tuple-indexing"><span class="std std-ref">this code</span></a>.</p></li>
+<li><p>Explore list slicing by adapting the code in <a class="reference internal" href="#tuple-slicing"><span class="std std-numref">Fig. 7</span></a> and <a class="reference internal" href="#code-reference-tuple-slicing"><span class="std std-ref">this code</span></a>.</p></li>
+<li><p>Test for membership of data items in lists using the membership operators as in <a class="reference internal" href="#code-reference-tuple-membership"><span class="std std-ref">this example</span></a>.</p></li>
+<li><p>Try other useful functions on lists as specified in <a class="reference internal" href="#tuple-utility-functions"><span class="std std-numref">Table 5</span></a>.</p></li>
+</ol>
+</section>
+</div>
+<section id="lists-are-mutable">
+<h3>Lists are mutable<a class="headerlink" href="#lists-are-mutable" title="Permalink to this headline">#</a></h3>
+<p>Unlike tuples, lists are mutable, this means that we can modify lists.  Example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#print contents of l and get id of l</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l is referencing object&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">l</span><span class="p">),</span> <span class="s2">&quot;in memory&quot;</span><span class="p">)</span>
+
+<span class="c1"># change the data item at index position 2 of list l</span>
+<span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">80</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">After l[2] = 80, l is:&quot;</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l is referencing object&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">l</span><span class="p">),</span> <span class="s2">&quot;in memory&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[55, 92, 110, 66, 75, 45, 40, 57, 55, 62]
+l is referencing object 140246119883392 in memory
+
+After l[2] = 80, l is: [55, 92, 80, 66, 75, 45, 40, 57, 55, 62]
+l is referencing object 140246119883392 in memory
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we tried to apply a <a class="reference external" href="#tuples-are-immutable">similar operation in tuples</a>, Python threw an exception, because tuples are immutable.  Since
+lists are mutable, the code above changes the data item in index position 2 successfully in <code class="docutils literal notranslate"><span class="pre">l</span></code>.</p>
+</section>
+<section id="list-utility-methods">
+<h3>List utility methods<a class="headerlink" href="#list-utility-methods" title="Permalink to this headline">#</a></h3>
+<p>In addition to the sequence methods in <a class="reference internal" href="#tuple-utility-functions"><span class="std std-numref">Table 5</span></a>, we can use other methods with lists.<br />
+This is mainly because lists can be modified.</p>
+<table class="table" id="id1">
+<caption><span class="caption-number">Table 6 </span><span class="caption-text">List utility methods</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">l.append(x)</span></code></p></td>
+<td><p>appends data item <code class="docutils literal notranslate"><span class="pre">x</span></code> at the end of list <code class="docutils literal notranslate"><span class="pre">l</span></code>.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">l.append(100)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">l.insert(i,</span> <span class="pre">x)</span></code></p></td>
+<td><p>insert data item <code class="docutils literal notranslate"><span class="pre">x</span></code> in list <code class="docutils literal notranslate"><span class="pre">l</span></code> at index position <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">l.insert(1,44)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">l.remove(x)</span></code></p></td>
+<td><p>removes the leftmost occurance of the data item that is equal to <code class="docutils literal notranslate"><span class="pre">x</span></code> or throws an error if <code class="docutils literal notranslate"><span class="pre">x</span></code> is not present in list <code class="docutils literal notranslate"><span class="pre">l</span></code>.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">l.remove(55)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">l.reverse()</span></code></p></td>
+<td><p>reverses the data items in <code class="docutils literal notranslate"><span class="pre">l</span></code></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">l.sort()</span></code></p></td>
+<td><p>sorts the data items of list <code class="docutils literal notranslate"><span class="pre">l</span></code> in ascending order.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">l[start:end]</span></code></p></td>
+<td><p>The <code class="docutils literal notranslate"><span class="pre">del</span></code> statement removes the data items from start position to end position (excluded) in list <code class="docutils literal notranslate"><span class="pre">l</span></code>.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">l[7:9]</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="tip admonition">
+<p class="admonition-title">Methods vs Functions</p>
+<p>We have already seen how to call functions.  Functions are called only by their names, eg. <code class="docutils literal notranslate"><span class="pre">print()</span></code>. Methods are similar
+to functions but they are  defined inside classes or objects, and so they are dependent on them. We will not be going
+into the details of object-oriented programming in this course, but we have already encountered some methods in tuples and
+lists that use methods <em>e.g.,</em> <code class="docutils literal notranslate"><span class="pre">l.append(</span></code>x<code class="docutils literal notranslate"><span class="pre">)</span></code>.  Here <code class="docutils literal notranslate"><span class="pre">l</span></code> is an object reference of the <code class="docutils literal notranslate"><span class="pre">list</span></code> class and <code class="docutils literal notranslate"><span class="pre">append()</span></code> is a method
+inside the <code class="docutils literal notranslate"><span class="pre">list</span></code> class.  The dot <code class="docutils literal notranslate"><span class="pre">.</span></code> after <code class="docutils literal notranslate"><span class="pre">l</span></code> is used to access the method associated with the <code class="docutils literal notranslate"><span class="pre">list</span></code> object. In this example,
+a pop-up menu will be shown in PyCharm with the list of all methods associated with <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
+</div>
+<div class="exercise admonition" id="lists-utility">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4 </span></p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
+<p>Try the examples in <a class="reference internal" href="#id1"><span class="std std-numref">Table 6</span></a>. Check the output of list <code class="docutils literal notranslate"><span class="pre">l</span></code> after running every example.</p>
+</section>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="calling-functions.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Calling functions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="more-strings.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">More on strings and functions</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Alexia Cardona<br/>
+  
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
