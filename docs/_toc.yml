@@ -4,7 +4,7 @@
 format: jb-book
 root: practical1
 parts:
-  - caption: Practical 1
+  - caption: Notes on Practical 1
     chapters:
      - file: intro-to-python
        sections:
@@ -16,7 +16,7 @@ parts:
             - file: operators
             - file: flow-control-structures
             - file: debugging
-  - caption: Practical 2
+  - caption: Notes on Practical 2
     chapters:
      - file: further-programming
        sections:
