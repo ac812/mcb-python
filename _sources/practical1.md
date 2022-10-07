@@ -97,7 +97,7 @@ This practical is composed of the following exercises.
 
 :::{card} Managed to solve all the exercises?  Well done!
 :class-card: sd-bg-light
-In the programming world, many organisations award badges to learners on the acquisition of a new skill or completion of a milestone.  If you attempted and solved all the exercises of this practical, you are entitled to the first badge of this course.
+In the programming world, many organisations award badges to learners on the acquisition of a new skill or completion of a milestone.  If you attempted and solved all the exercises of this practical, you definitely deserve your first badge of this course.
 ```{image} images/level1-badge.png
 :name: level1-badge
 :width: 20%

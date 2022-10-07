@@ -46,7 +46,7 @@ information about the Python syntax and about its functions and libraries.  It a
 guides. The Python documentation is especially helpful when you are not familiar with a function, and so you would like to 
 understand how to use it. 
 
-```{figure} images/python-doc.tif
+```{figure} images/python-doc.png
 :width: 70%
 :name: python-doc
 
