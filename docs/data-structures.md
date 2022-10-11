@@ -189,7 +189,7 @@ l = [55, 92, 110, 66, 75, 45, 40, 57, 55, 62]
 ```
 
 Lists are also a Sequence type in Python and therefore support slicing, membership operators, concatenation, replication 
-and the other utility functions we mentioned in the [Tuples](#tuples) section.
+and the other utility functions we mentioned in the [Tuples](tuples) section.
 
 ```{exercise} Exploring lists
 :label: exploring-lists
@@ -265,7 +265,7 @@ a pop-up menu will be shown in PyCharm with the list of all methods associated w
 
 ```
 
-```{exercise} 
+```{exercise} List utility methods
 :label: lists-utility
 
 **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`

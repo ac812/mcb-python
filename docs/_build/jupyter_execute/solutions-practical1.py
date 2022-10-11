@@ -3,17 +3,17 @@
 
 # # Practical 1 Solutions
 # 
-# ## Exercise 1
 # ```{solution} arithmetic-operators
 # :label: arithmetic-operators-solution
+# :class: dropdown
 # 
 # a. Solutions are in {numref}`numeric-operators-table`.  
 # b. `8 + (10 + 4**3 + 2)`
 # ```
 # 
-# ## Exercise 2
 # ```{solution-start} variables-types
 # :label: variables-types-solution
+# :class: dropdown
 # ```
 
 # In[1]:
@@ -49,9 +49,10 @@ print("d is", d, "of type", type(d))
 # ```{solution-end}
 # ```
 # 
-# ## Exercise 3
+# 
 # ```{solution-start} exploring-lists
 # :label: exploring-lists-solution
+# :class: dropdown
 # ```
 
 # In[2]:
@@ -119,9 +120,10 @@ print(l.count(55))
 # ```{solution-end}
 # ```
 # 
-# ## Exercise 4
+# 
 # ```{solution-start} lists-utility
 # :label: lists-utility-solution
+# :class: dropdown
 # ```
 
 # In[3]:
@@ -151,9 +153,10 @@ print("List after del l[7:9]:", l)
 # ```{solution-end}
 # ```
 # 
-# ## Exercise 5
+# 
 # ```{solution-start} join-strings
 # :label: join-strings-solution
+# :class: dropdown
 # ```
 # The `join()` method takes as an argument a list of strings to join together. The separator to use between the different data items in 
 # `words` is the string we are calling the `join()` method on.
@@ -169,8 +172,9 @@ print(quote)
 # ```{solution-end}
 # ```
 # 
-# ## Exercise 6
+# 
 # ```{solution-start} split-strings
+# :class: dropdown
 # ```
 # To divide strings by a separator, the `split()` string method provides an eay way to do this.  Have a look at the 
 # [documentation](https://docs.python.org/3.3/library/stdtypes.html?highlight=split#str.split).  If no arguments are passed 
@@ -189,9 +193,9 @@ print(words)
 # ```{solution-end}
 # ```
 # 
-# ## Exercise 7
 # ```{solution-start} month-if
 # :label: month-if-solution
+# :class: dropdown
 # ```
 
 # In[6]:
@@ -231,9 +235,10 @@ else:
 # ```{solution-end}
 # ```
 # 
-# ## Exercise 8
+# 
 # ```{solution-start} month-match
 # :label: month-match-solution
+# :class: dropdown
 # ```
 
 # In[7]:
@@ -274,9 +279,10 @@ match month:
 # ```{solution-end}
 # ```
 # 
-# ## Exercise 9
+# 
 # ```{solution-start} for-exercise
 # :label: for-exercise-solution
+# :class: dropdown
 # ```
 
 # In[8]:
@@ -291,9 +297,10 @@ for s in l:
 # ```{solution-end}
 # ```
 # 
-# ## Exercise 10
+# 
 # ```{solution-start} range-exercise
 # :label: range-exercise-solution
+# :class: dropdown
 # ```
 # 1. Solutions are in the Example column in {numref}`range`.
 # 2.
@@ -308,9 +315,9 @@ for i in range(3):
 # ```{solution-end}
 # ```
 # 
-# ## Exercise 11
 # ```{solution-start} break-continue
 # :label: break-continue-solution
+# :class: dropdown
 # ```
 # 1:
 
@@ -346,9 +353,10 @@ for i in range(10):                #1
 # ```
 # 
 # 
-# ## Exercise 12
+# 
 # ```{solution-start} num-prog
 # :label: num-prog-solution
+# :class: dropdown
 # ```
 # ```{code-block}
 # x = 0
@@ -362,9 +370,10 @@ for i in range(10):                #1
 # ```{solution-end}
 # ```
 # 
-# ## Exercise 13
+# 
 # ```{solution-start} fibonacci
 # :label: fibonacci-solution
+# :class: dropdown
 # ```
 
 # In[12]:

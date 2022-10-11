@@ -5,6 +5,7 @@ format: jb-book
 root: practical2
 parts:
   - caption: Notes on Practical 1
+    numbered: true
     chapters:
      - file: intro-to-python
        sections:
@@ -16,8 +17,18 @@ parts:
             - file: operators
             - file: flow-control-structures
             - file: debugging
+  - caption: Supervision worksheet 1
+    chapters:
+     - file: worksheet1
   - caption: Notes on Practical 2
+    numbered: true
     chapters:
      - file: further-programming
        sections:
             - file: creating-functions
+            - file: modules_packages
+            - file: plots_lists
+            - file: numpy
+  - caption: Supervision Worksheet 2
+    chapters:
+     - file: worksheet2

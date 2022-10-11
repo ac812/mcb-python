@@ -5,7 +5,6 @@ title: Python Programming
 author: Alexia Cardona
 logo: images/mcb-logo.jpg
 
-# Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
@@ -16,8 +15,8 @@ latex:
     targetname: book.tex
 
 # Add a bibtex file so that we can create citations
-bibtex_bibfiles:
-  - references.bib
+#bibtex_bibfiles:
+#  - references.bib
 
 # Information about where the book exists on the web
 repository:
@@ -30,6 +29,7 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  use_multitoc_numbering: true
 
 #used for exercise section
 sphinx:
@@ -38,3 +38,10 @@ sphinx:
   config:
     html_show_copyright: false
     language: en
+
+#Exclude practical 1 files from build
+#exclude_patterns: [practical1.md, intro-to-python.md, variables.md, data-types.md, calling-functions.md, data-structures.md, more-strings.md, operators.md, flow-control-structures.md, debugging.md, solutions-practical1.md, worksheet1.md, solutions-worksheet1.md]
+
+#Exclude practical 2 files from skip_initial_build
+#exclude_patterns: [practical2.md, further-programming.md, creating-functions.md, solutions-practical1.md, worksheet2.md]
+

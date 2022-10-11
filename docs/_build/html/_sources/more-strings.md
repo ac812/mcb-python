@@ -1,7 +1,7 @@
 # More on strings and functions
 ## String indexing and slicing
-We have already looked briefly at strings [previously](data-types).  Like tuples and lists, strings too are of Sequence type in Python, therefore they support slicing, membership operators, 
-concatenation, replication and the other utility functions we mentioned in the [Tuples](data-structures) section.  Instead of data 
+We have already looked briefly at strings [previously](data-types.md).  Like tuples and lists, strings too are of Sequence type in Python, therefore they support slicing, membership operators, 
+concatenation, replication and the other utility functions we mentioned in the [Tuples](data-structures.md) section.  Instead of data 
 items, however, strings are composed of a sequence of characters.  {numref}`string-index` below shows an example of the sequence 
 of characters in the string "Hello World!" together with its index positions.  
 
