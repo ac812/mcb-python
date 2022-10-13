@@ -111,8 +111,8 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="practical2.html">
-                    Practical 2
+                <a class="reference internal" href="practical1.html">
+                    Practical 1
                 </a>
             </li>
         </ul>
@@ -170,30 +170,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="debugging.html">
      Debugging code in PyCharm
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Notes on Practical 2
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="further-programming.html">
-   Further programming
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="creating-functions.html">
-     Creating functions
     </a>
    </li>
   </ul>
@@ -771,7 +747,7 @@ create a list <code class="docutils literal notranslate"><span class="pre">l</sp
 </div>
 </div>
 <p>Lists are also a Sequence type in Python and therefore support slicing, membership operators, concatenation, replication
-and the other utility functions we mentioned in the <a class="reference external" href="#tuples">Tuples</a> section.</p>
+and the other utility functions we mentioned in the <span class="xref myst">Tuples</span> section.</p>
 <div class="exercise admonition" id="exploring-lists">
 
 <p class="admonition-title"><span class="caption-number">Exercise 3 </span> (Exploring lists)</p>
@@ -805,10 +781,10 @@ and the other utility functions we mentioned in the <a class="reference external
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[55, 92, 110, 66, 75, 45, 40, 57, 55, 62]
-l is referencing object 140165073463936 in memory
+l is referencing object 140332554065792 in memory
 
 After l[2] = 80, l is: [55, 92, 80, 66, 75, 45, 40, 57, 55, 62]
-l is referencing object 140165073463936 in memory
+l is referencing object 140332554065792 in memory
 </pre></div>
 </div>
 </div>
@@ -871,7 +847,7 @@ a pop-up menu will be shown in PyCharm with the list of all methods associated w
 </div>
 <div class="exercise admonition" id="lists-utility">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 4 </span> (List utility methods)</p>
 <section id="exercise-content">
 <p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
 <p>Try the examples in <a class="reference internal" href="#id1"><span class="std std-numref">Table 6</span></a>. Check the output of list <code class="docutils literal notranslate"><span class="pre">l</span></code> after running every example.</p>
