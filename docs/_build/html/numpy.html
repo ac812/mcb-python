@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Numpy &#8212; Python Programming</title>
+    <title>2.4. NumPy &#8212; Python Programming</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,6 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="2.3. Drawing plots from lists - matplotlib" href="plots_lists.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -173,50 +174,51 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Supervision worksheet 1
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="worksheet1.html">
-   Worksheet 1
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Notes on Practical 2
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="further-programming.html">
    2. Further programming
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="creating-functions.html">
      2.1. Creating functions
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules_packages.html">
+     2.2. Modules and Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plots_lists.html">
+     2.3. Drawing plots from lists -
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       matplotlib
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.4.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       NumPy
+      </span>
+     </code>
+    </a>
+   </li>
   </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Supervision Worksheet 2
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="worksheet2.html">
-   Worksheet 2
-  </a>
  </li>
 </ul>
 
@@ -269,6 +271,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/numpy.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -336,6 +367,23 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
+        <a href="_sources/numpy.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
         <a href="_sources/numpy.md"
    class="headerbtn"
    data-toggle="tooltip"
@@ -373,23 +421,196 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   2.4.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NumPy
+    </span>
+   </code>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-numpy">
+     2.4.1. What is Numpy?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#differences-between-numpy-arrays-and-standard-python-sequences-e-g-lists">
+     2.4.2. Differences between NumPy arrays and standard Python sequences (e.g., lists)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#advantages-over-lists">
+       2.4.2.1. Advantages over lists
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-numpy-arrays">
+     2.4.3. Creating NumPy arrays
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numpy-data-types">
+     2.4.4. NumPy data types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-operations">
+   2.5. Other operations
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#slicing-numpy-arrays">
+     2.5.1. Slicing NumPy arrays
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#broadcasting">
+   2.6. Broadcasting
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-the-marks-that-are-60-and-90">
+   2.7. get the marks that are &gt; 60 and &lt; 90.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mathematical-functions">
+   2.8. Mathematical Functions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random-sampling">
+     2.8.1. Random sampling
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Numpy</h1>
+                <h1>NumPy</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   2.4.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NumPy
+    </span>
+   </code>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-numpy">
+     2.4.1. What is Numpy?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#differences-between-numpy-arrays-and-standard-python-sequences-e-g-lists">
+     2.4.2. Differences between NumPy arrays and standard Python sequences (e.g., lists)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#advantages-over-lists">
+       2.4.2.1. Advantages over lists
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-numpy-arrays">
+     2.4.3. Creating NumPy arrays
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numpy-data-types">
+     2.4.4. NumPy data types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-operations">
+   2.5. Other operations
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#slicing-numpy-arrays">
+     2.5.1. Slicing NumPy arrays
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#broadcasting">
+   2.6. Broadcasting
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-the-marks-that-are-60-and-90">
+   2.7. get the marks that are &gt; 60 and &lt; 90.
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mathematical-functions">
+   2.8. Mathematical Functions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random-sampling">
+     2.8.1. Random sampling
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -398,7 +619,219 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="numpy">
-<h1>Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2.4. </span><code class="docutils literal notranslate"><span class="pre">NumPy</span></code><a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h1>
+<section id="what-is-numpy">
+<h2><span class="section-number">2.4.1. </span>What is Numpy?<a class="headerlink" href="#what-is-numpy" title="Permalink to this headline">#</a></h2>
+<p>Package</p>
+</section>
+<section id="differences-between-numpy-arrays-and-standard-python-sequences-e-g-lists">
+<h2><span class="section-number">2.4.2. </span>Differences between NumPy arrays and standard Python sequences (e.g., lists)<a class="headerlink" href="#differences-between-numpy-arrays-and-standard-python-sequences-e-g-lists" title="Permalink to this headline">#</a></h2>
+<p>Table on column numpy the other lists
+<a class="reference external" href="https://numpy.org/devdocs/user/whatisnumpy.html">https://numpy.org/devdocs/user/whatisnumpy.html</a></p>
+<ul class="simple">
+<li><p>Numpy can only contain the same type of data items e.g. you cannot have one item int and another str</p></li>
+<li></li>
+</ul>
+<section id="advantages-over-lists">
+<h3><span class="section-number">2.4.2.1. </span>Advantages over lists<a class="headerlink" href="#advantages-over-lists" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Efficient - uses less memory to data items than Python lists</p></li>
+<li><p>NumPy uses a <strong>vectorised</strong> code system for arrays so no need to use loops to apply operations on each data item. It facilitates mathematical and other operations on data structures:</p>
+<ul>
+<li><p>Fewer lines of code</p></li>
+<li><p>Easier to read, resembles mathematical notation.</p></li>
+</ul>
+</li>
+</ul>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="4b92d7d7-ea5b-4c1b-ae4c-cf56dcdc175c" name="562c66da-3a9d-48f6-9855-9db78667bcd8" type="radio">
+</input><label class="sd-tab-label" for="4b92d7d7-ea5b-4c1b-ae4c-cf56dcdc175c">
+Standard Python</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<input id="afbcaafd-9977-40d1-aa26-8bd3dfd83c8c" name="562c66da-3a9d-48f6-9855-9db78667bcd8" type="radio">
+</input><label class="sd-tab-label" for="afbcaafd-9977-40d1-aa26-8bd3dfd83c8c">
+NumPy</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Fast
+benchmark example above&gt;</p></li>
+</ul>
+<p>Because we are using the Anaconda distribution, numpy should be already installed in our system.  You can check this in the Python Packages tab
+in PyCharm.<br />
+However to use numpy functions we need to import it in the code.  The widely adopted convention is as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="creating-numpy-arrays">
+<h2><span class="section-number">2.4.3. </span>Creating NumPy arrays<a class="headerlink" href="#creating-numpy-arrays" title="Permalink to this headline">#</a></h2>
+<p>A numpy array is the main datastructure of NumPy.</p>
+<p>We can create a numpy array from a Python list eg.</p>
+<p>l = [55, 92, 110, 66, 75, 45, 40, 57, 55, 62]</p>
+<p>a = np.array[l]</p>
+<p>This creates an array of type <strong><code class="docutils literal notranslate"><span class="pre">ndarray</span></code></strong> in memory as we can see from PyCharm’s variable pane.  <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> is short for N-dimensional array
+which means any number of dimensions.</p>
+<ul class="simple">
+<li><p>1-D (one-dimensional) array is also called a <strong>vector</strong> and is similar to a Python list.</p></li>
+<li><p>2-D (two-dimensional) array is also called a <strong>matrix</strong>.</p></li>
+<li><p>3-D or higher dimensional arrays are also known as <strong>tensor</strong>.
+In this practical we will focus at vectors (1-D arrays) only.</p></li>
+</ul>
+<p>Creating an array of vectors filled with zeros or ones
+<code class="docutils literal notranslate"><span class="pre">np.zeros()</span></code> method &gt;&gt; <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.zeros.html">Documentation to np.zeros() method</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">np.ones()</span></code> method &gt;&gt; <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ones.html">Documentation to np.ones() method</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">np.arange()</span></code> method &gt;&gt; <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html">Documentation to np.arange()</a>
+We can also call the <code class="docutils literal notranslate"><span class="pre">np.arange()</span></code> method to initialise the ndarray with a sequential range of data items.  The np.arange() method
+takes also as an argument a start, stop and step arguments that can be handy if you have a specific range in mind.</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code> method &gt;&gt; <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html">Documentation to np.linspace()</a>
+Generates num evenly spaced sequence of numbers from start to stop.  The default value of num is 50, if you
+want to change this you have to specify this new value in num.  for example,
+np.linspace(start, stop, number of samples to generate (default is 50))</p>
+<p>&lt;maybe draw rectangle visuals of contents of the below and transform all these into a table:
+method, description, example&gt;</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#create an array of 3 zeros</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="c1">#create an array of 3 ones</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">stop</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="ow">or</span> 
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
+    <span class="ow">or</span>
+    <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>a.ndim # get the number of dimensions of the array (returns 1) - we are only working with 1D arrays here but it could be more.
+a.size #returns 3 - returns the total number of data items in the ndarray.</p>
+</section>
+<section id="numpy-data-types">
+<h2><span class="section-number">2.4.4. </span>NumPy data types<a class="headerlink" href="#numpy-data-types" title="Permalink to this headline">#</a></h2>
+<p>NumPy is built from a low level language, C, because of this it inherits some features that are normally associated with low level languages.</p>
+<p>While the size of Python data types we have seen so far offer flexibility, that is, they can grow to accommodate numbers of different sizes
+(within the machine’s memory constraints), NumPy datatypes are have fixed sizes.
+Python data types are equivalent to the corresponding numpy equivalent</p>
+<p>int np.int_
+bool np.bool_
+float np.float_
+str np.str_</p>
+<p>Furthermore, in NumPy an int has several dtypes: int8, int16, int32, int64.  int8 means that a number created as int8 will be stored in 8 bits or 1 byte of memory.  And that is
+why the larger the number of bits allocated to a number, the larger the range of numbers can be held.</p>
+<p>Type      Number Capacity</p>
+<p>int8      (-128 to 127)</p>
+<p>Int16 – (-32,768 to +32,767)</p>
+<p>Int32 – (-2,147,483,648 to +2,147,483,647)</p>
+<p>Int64 – (-9,223,372,036,854,775,808 to +9,223,372,036,854,775,807)</p>
+<p>When creating a list, NumPy automatically detects the type of data the list is made up of and allocates a data type that
+fits your list based on several factors, including the computer’s architecture.  Because of this, we do not need to worry about
+which NumPy data type to allocate to our data types as NumPy does that automatically for us.  In the case when we need to
+specify the dtype argument in NumPy functions, in this course we will be using the standard Python data types rather than the NumPy data types.</p>
+<exersice>
+<p>create a NumPy array from l</p>
+<p>create a NumPy array from l of type float</p>
+<p>using this list l create a string version of numpy array
+np.array(l, dtype=str)<br />
+Note:  U is for unicode 6 is the number of characters</p>
+<p>=============</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="other-operations">
+<h1><span class="section-number">2.5. </span>Other operations<a class="headerlink" href="#other-operations" title="Permalink to this headline">#</a></h1>
+<p>adding items</p>
+<p>np.sort  example. sort in ascending order np.sort(a)
+sort in descending order: np.flip(np.sort(a))
+np.concatentate: joins two lists together</p>
+<p>c = [1,2,3]
+d = [4,5,6]
+np.concatenate((c,d))
+c and d can be of type ndarray as well</p>
+<section id="slicing-numpy-arrays">
+<h2><span class="section-number">2.5.1. </span>Slicing NumPy arrays<a class="headerlink" href="#slicing-numpy-arrays" title="Permalink to this headline">#</a></h2>
+<p>To get the value of the specific data items in the array we do that in the same way we do in Python listss: by using the square
+brackets e.g.
+a[2]
+a[2:5]
+a[1:8:2]</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="broadcasting">
+<h1><span class="section-number">2.6. </span>Broadcasting<a class="headerlink" href="#broadcasting" title="Permalink to this headline">#</a></h1>
+<p>One of the main differences between standard Python data sequences such as lists and NumPy arrays is that it uses a vectorised system
+which allows us to perform operations over all the ndarray object using one line of code as opposed to  using a loop as we do
+with lists.</p>
+<p>#Extract items in the list that are &gt;60
+a &gt; 60
+returns a list of True and False; True if the data item is &gt; 60, and False otherwise.</p>
+<p>To get the actual data items we have to use our comparison statement inside the [] as essentially we want to slice our
+ndarray based on a condition:
+a[a &gt; 60]</p>
+<p>This is similar to the way we extract items from vectors in R.</p>
+<p>You can combine multiple comparison statements using the &amp; (and) and | (or) logical operators</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="get-the-marks-that-are-60-and-90">
+<h1><span class="section-number">2.7. </span>get the marks that are &gt; 60 and &lt; 90.<a class="headerlink" href="#get-the-marks-that-are-60-and-90" title="Permalink to this headline">#</a></h1>
+<p>a[(a &gt; 60)  &amp; (a &lt; 90)]</p>
+<p>mathematical operations</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mathematical-functions">
+<h1><span class="section-number">2.8. </span>Mathematical Functions<a class="headerlink" href="#mathematical-functions" title="Permalink to this headline">#</a></h1>
+<p>There are several functions that oers</p>
+<p><a class="reference external" href="https://numpy.org/doc/stable/reference/routines.math.html">https://numpy.org/doc/stable/reference/routines.math.html</a></p>
+<section id="random-sampling">
+<h2><span class="section-number">2.8.1. </span>Random sampling<a class="headerlink" href="#random-sampling" title="Permalink to this headline">#</a></h2>
+<p>To generate a random number we first call default_rng() method to create an instance of Generator</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">12345</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
+<span class="c1">#generate 3 random integers between 1 and 10 (excluded)</span>
+<span class="n">rints</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rints</span><span class="p">)</span>
+
+<span class="c1"># generate 3 random decimal numbers in the range[0,1]</span>
+<span class="n">rfloat</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rfloat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also draw samples from a distribution.  For example
+For a whole list of distributions see <a class="reference external" href="https://numpy.org/devdocs/reference/random/generator.html#distributions">here</a></p>
+<p>#draw 5 samples from the normal distribution where mean=0 and standard deviation is 0.1
+mu, sigma = 0, 0.1 # mean and standard deviation
+sample_normal = rng.normal(mu, sigma, 5)
+print(sample_normal)</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -428,6 +861,13 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="plots_lists.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2.3. </span>Drawing plots from lists - <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></p>
+        </div>
+    </a>
 </div>
             </footer>
         </div>

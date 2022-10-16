@@ -5,6 +5,7 @@
 # 
 # ```{exercise} Installing Python and PyCharm
 # :label: install
+# :nonumber:
 # **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 # 
 # Install Python and PyCharm on your personal computer if you have one.  Instruction on which versions you need and how 
@@ -14,6 +15,7 @@
 # 
 # ```{exercise} Running Python programs from the terminal
 # :label: running-terminal
+# :nonumber:
 # **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 # 
 # Take the code to run exercise {numref}`num-prog`. Save it into a file called *numbers.py* and run it from the terminal. Explain 
@@ -22,6 +24,7 @@
 # 
 # ```{exercise} For loop
 # :label: for-words-exercise
+# :nonumber:
 # **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 # 
 # Take the code used to do {numref}`for-exercise` but this time, for each iteration, print the index of the word in list `l` next to the string.
@@ -29,6 +32,7 @@
 # 
 # ```{exercise} Odd and even numbers
 # :label: odd-even
+# :nonumber:
 # **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 # 
 # Modify the code that identifies an [odd or even number](code-continue) to create a list of even numbers, 
@@ -37,6 +41,7 @@
 # 
 # ````{exercise} Simple calculator
 # :label: calculator
+# :nonumber:
 # **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning`
 # 
 # Creat a program that works like a simple calculator:
@@ -55,6 +60,7 @@
 # 
 # ````{exercise} Asterisk half-pyramid
 # :label: half-pyramid
+# :nonumber:
 # **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 # 
 # Draw a half pyramid as shown below using asterisks.  
@@ -72,6 +78,7 @@
 # 
 # `````{exercise} Asterisk full-pyramid
 # :label: full-pyramid
+# :nonumber:
 # **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning`
 # 
 # Draw a full pyramid using asterisks.
