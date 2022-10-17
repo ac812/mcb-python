@@ -210,12 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.4.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       NumPy
-      </span>
-     </code>
+     2.4. NumPy
     </a>
    </li>
   </ul>
@@ -445,30 +440,29 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   2.4.
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     NumPy
-    </span>
-   </code>
+   2.4. NumPy
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#what-is-numpy">
-     2.4.1. What is Numpy?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#differences-between-numpy-arrays-and-standard-python-sequences-e-g-lists">
-     2.4.2. Differences between NumPy arrays and standard Python sequences (e.g., lists)
+     2.4.1. What is NumPy?
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#advantages-over-lists">
-       2.4.2.1. Advantages over lists
+      <a class="reference internal nav-link" href="#numpy-arrays-vs-standard-python-sequences-e-g-lists">
+       2.4.1.1. NumPy arrays vs standard Python sequences (
+       <em>
+        e.g.,
+       </em>
+       lists)
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-numpy">
+     2.4.2. Importing NumPy
+    </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#creating-numpy-arrays">
@@ -476,42 +470,52 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numpy-data-types">
-     2.4.4. NumPy data types
+    <a class="reference internal nav-link" href="#numpy-data-types-dtype">
+     2.4.4. NumPy data types -
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dtype
+      </span>
+     </code>
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#other-operations">
-   2.5. Other operations
-  </a>
-  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#array-manipulation-operations">
+     2.4.5. Array manipulation operations
+    </a>
+   </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#slicing-numpy-arrays">
-     2.5.1. Slicing NumPy arrays
+     2.4.6. Slicing NumPy arrays
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#views-and-copies">
+       2.4.6.1. Views and Copies
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#broadcasting">
-   2.6. Broadcasting
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#get-the-marks-that-are-60-and-90">
-   2.7. get the marks that are &gt; 60 and &lt; 90.
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mathematical-functions">
-   2.8. Mathematical Functions
+  <a class="reference internal nav-link" href="#vectorised-array-operations">
+   2.5. Vectorised array operations
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operations-on-arrays">
+     2.5.1. Operations on arrays
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#broadcasting">
+     2.5.2. Broadcasting
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#random-sampling">
-     2.8.1. Random sampling
+     2.5.3. Random sampling
     </a>
    </li>
   </ul>
@@ -537,30 +541,29 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   2.4.
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     NumPy
-    </span>
-   </code>
+   2.4. NumPy
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#what-is-numpy">
-     2.4.1. What is Numpy?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#differences-between-numpy-arrays-and-standard-python-sequences-e-g-lists">
-     2.4.2. Differences between NumPy arrays and standard Python sequences (e.g., lists)
+     2.4.1. What is NumPy?
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#advantages-over-lists">
-       2.4.2.1. Advantages over lists
+      <a class="reference internal nav-link" href="#numpy-arrays-vs-standard-python-sequences-e-g-lists">
+       2.4.1.1. NumPy arrays vs standard Python sequences (
+       <em>
+        e.g.,
+       </em>
+       lists)
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-numpy">
+     2.4.2. Importing NumPy
+    </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#creating-numpy-arrays">
@@ -568,42 +571,52 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numpy-data-types">
-     2.4.4. NumPy data types
+    <a class="reference internal nav-link" href="#numpy-data-types-dtype">
+     2.4.4. NumPy data types -
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dtype
+      </span>
+     </code>
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#other-operations">
-   2.5. Other operations
-  </a>
-  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#array-manipulation-operations">
+     2.4.5. Array manipulation operations
+    </a>
+   </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#slicing-numpy-arrays">
-     2.5.1. Slicing NumPy arrays
+     2.4.6. Slicing NumPy arrays
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#views-and-copies">
+       2.4.6.1. Views and Copies
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#broadcasting">
-   2.6. Broadcasting
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#get-the-marks-that-are-60-and-90">
-   2.7. get the marks that are &gt; 60 and &lt; 90.
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mathematical-functions">
-   2.8. Mathematical Functions
+  <a class="reference internal nav-link" href="#vectorised-array-operations">
+   2.5. Vectorised array operations
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operations-on-arrays">
+     2.5.1. Operations on arrays
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#broadcasting">
+     2.5.2. Broadcasting
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#random-sampling">
-     2.8.1. Random sampling
+     2.5.3. Random sampling
     </a>
    </li>
   </ul>
@@ -619,55 +632,52 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="numpy">
-<h1><span class="section-number">2.4. </span><code class="docutils literal notranslate"><span class="pre">NumPy</span></code><a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2.4. </span>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h1>
 <section id="what-is-numpy">
-<h2><span class="section-number">2.4.1. </span>What is Numpy?<a class="headerlink" href="#what-is-numpy" title="Permalink to this headline">#</a></h2>
-<p>Package</p>
-</section>
-<section id="differences-between-numpy-arrays-and-standard-python-sequences-e-g-lists">
-<h2><span class="section-number">2.4.2. </span>Differences between NumPy arrays and standard Python sequences (e.g., lists)<a class="headerlink" href="#differences-between-numpy-arrays-and-standard-python-sequences-e-g-lists" title="Permalink to this headline">#</a></h2>
-<p>Table on column numpy the other lists
-<a class="reference external" href="https://numpy.org/devdocs/user/whatisnumpy.html">https://numpy.org/devdocs/user/whatisnumpy.html</a></p>
+<h2><span class="section-number">2.4.1. </span>What is NumPy?<a class="headerlink" href="#what-is-numpy" title="Permalink to this headline">#</a></h2>
+<p>NumPy is a popular Python package for scientific computing.  It provides multidimensional arrays objects and functionality
+for fast operations on them and facilitates mathematical operations.  NumPy is used in other popular Python packages including
+Pandas, SciPy, Matplotlib and scikit-learn.</p>
+<section id="numpy-arrays-vs-standard-python-sequences-e-g-lists">
+<h3><span class="section-number">2.4.1.1. </span>NumPy arrays vs standard Python sequences (<em>e.g.,</em> lists)<a class="headerlink" href="#numpy-arrays-vs-standard-python-sequences-e-g-lists" title="Permalink to this headline">#</a></h3>
+<p>Below are the main differences between NumPy arrays and standard Python sequences such as lists:</p>
 <ul class="simple">
-<li><p>Numpy can only contain the same type of data items e.g. you cannot have one item int and another str</p></li>
-<li></li>
-</ul>
-<section id="advantages-over-lists">
-<h3><span class="section-number">2.4.2.1. </span>Advantages over lists<a class="headerlink" href="#advantages-over-lists" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Efficient - uses less memory to data items than Python lists</p></li>
-<li><p>NumPy uses a <strong>vectorised</strong> code system for arrays so no need to use loops to apply operations on each data item. It facilitates mathematical and other operations on data structures:</p>
+<li><p>NumPy arrays can only contain the same type of data items, for example, you cannot have one data item as <code class="docutils literal notranslate"><span class="pre">int</span></code> and another as <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p></li>
+<li><p>Numpy arrays have a fixed size when they are created, and changing size of NumPy arrays will create a new array.  This is different to standard Python list which can grow dynamically.</p></li>
+<li><p>NumPy uses a <strong>vectorised</strong> code system for arrays, which enables the application of operations on each data item without the use of loops. This facilitates mathematical and other operations and has the following advantages:</p>
 <ul>
 <li><p>Fewer lines of code</p></li>
-<li><p>Easier to read, resembles mathematical notation.</p></li>
+<li><p>Fast (this is more evident with large list sizes)</p></li>
+<li><p>Easier to read, resembles mathematical notation.  The code below shows the code in standard Python code and in NumPy code that multiplies two lists:</p></li>
 </ul>
 </li>
 </ul>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="4b92d7d7-ea5b-4c1b-ae4c-cf56dcdc175c" name="562c66da-3a9d-48f6-9855-9db78667bcd8" type="radio">
-</input><label class="sd-tab-label" for="4b92d7d7-ea5b-4c1b-ae4c-cf56dcdc175c">
+<input checked="checked" id="e988805a-433c-46e8-9002-221fe6d81a8b" name="2d6e23b5-3528-4530-a6fc-b30eee751f32" type="radio">
+</input><label class="sd-tab-label" for="e988805a-433c-46e8-9002-221fe6d81a8b">
 Standard Python</label><div class="sd-tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
     <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-<input id="afbcaafd-9977-40d1-aa26-8bd3dfd83c8c" name="562c66da-3a9d-48f6-9855-9db78667bcd8" type="radio">
-</input><label class="sd-tab-label" for="afbcaafd-9977-40d1-aa26-8bd3dfd83c8c">
+<input id="58e63bb6-0ce2-43dd-960c-576707590613" name="2d6e23b5-3528-4530-a6fc-b30eee751f32" type="radio">
+</input><label class="sd-tab-label" for="58e63bb6-0ce2-43dd-960c-576707590613">
 NumPy</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
 </pre></div>
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>Fast
-benchmark example above&gt;</p></li>
-</ul>
-<p>Because we are using the Anaconda distribution, numpy should be already installed in our system.  You can check this in the Python Packages tab
-in PyCharm.<br />
-However to use numpy functions we need to import it in the code.  The widely adopted convention is as follows:</p>
+</section>
+</section>
+<section id="importing-numpy">
+<h2><span class="section-number">2.4.2. </span>Importing NumPy<a class="headerlink" href="#importing-numpy" title="Permalink to this headline">#</a></h2>
+<p>Because we are using the Anaconda distribution for Python, NumPy comes pre-installed.  You can check whether NumPy is installed
+from the <em>Python Packages</em> tab in PyCharm.<br />
+<img alt="python-packages" src="_images/python-packages.png" /></p>
+<p>Once you have checked that it is installed on your machine, to be able to use NumPy we need to import it in the code.  The
+widely adopted convention is as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -676,137 +686,507 @@ However to use numpy functions we need to import it in the code.  The widely ado
 </div>
 </div>
 </section>
-</section>
 <section id="creating-numpy-arrays">
 <h2><span class="section-number">2.4.3. </span>Creating NumPy arrays<a class="headerlink" href="#creating-numpy-arrays" title="Permalink to this headline">#</a></h2>
-<p>A numpy array is the main datastructure of NumPy.</p>
-<p>We can create a numpy array from a Python list eg.</p>
-<p>l = [55, 92, 110, 66, 75, 45, 40, 57, 55, 62]</p>
-<p>a = np.array[l]</p>
-<p>This creates an array of type <strong><code class="docutils literal notranslate"><span class="pre">ndarray</span></code></strong> in memory as we can see from PyCharm’s variable pane.  <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> is short for N-dimensional array
-which means any number of dimensions.</p>
+<p>A NumPy array is the main data structure of NumPy. We can create a NumPy array from a Python list as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">55</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">62</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<figure class="align-default" id="ndarray-pycharm">
+<a class="reference internal image-reference" href="_images/ndarray-pycharm.png"><img alt="_images/ndarray-pycharm.png" src="_images/ndarray-pycharm.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object in PyCharm’s Variable pane.</span><a class="headerlink" href="#ndarray-pycharm" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This creates an array object of type <strong><code class="docutils literal notranslate"><span class="pre">ndarray</span></code></strong> in memory as we can see from PyCharm’s variable pane in <a class="reference internal" href="#ndarray-pycharm"><span class="std std-numref">Fig. 2.1</span></a>.
+<code class="docutils literal notranslate"><span class="pre">ndarray</span></code> is short for “N-dimensional array”, which means any number of dimensions. In NumPy:</p>
 <ul class="simple">
 <li><p>1-D (one-dimensional) array is also called a <strong>vector</strong> and is similar to a Python list.</p></li>
 <li><p>2-D (two-dimensional) array is also called a <strong>matrix</strong>.</p></li>
 <li><p>3-D or higher dimensional arrays are also known as <strong>tensor</strong>.
-In this practical we will focus at vectors (1-D arrays) only.</p></li>
+In this practical we will focus on vectors (1-D arrays) only.</p></li>
 </ul>
-<p>Creating an array of vectors filled with zeros or ones
-<code class="docutils literal notranslate"><span class="pre">np.zeros()</span></code> method &gt;&gt; <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.zeros.html">Documentation to np.zeros() method</a></p>
-<p><code class="docutils literal notranslate"><span class="pre">np.ones()</span></code> method &gt;&gt; <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ones.html">Documentation to np.ones() method</a></p>
-<p><code class="docutils literal notranslate"><span class="pre">np.arange()</span></code> method &gt;&gt; <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html">Documentation to np.arange()</a>
-We can also call the <code class="docutils literal notranslate"><span class="pre">np.arange()</span></code> method to initialise the ndarray with a sequential range of data items.  The np.arange() method
-takes also as an argument a start, stop and step arguments that can be handy if you have a specific range in mind.</p>
-<p><code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code> method &gt;&gt; <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html">Documentation to np.linspace()</a>
-Generates num evenly spaced sequence of numbers from start to stop.  The default value of num is 50, if you
-want to change this you have to specify this new value in num.  for example,
-np.linspace(start, stop, number of samples to generate (default is 50))</p>
-<p>&lt;maybe draw rectangle visuals of contents of the below and transform all these into a table:
-method, description, example&gt;</p>
+<figure class="align-default" id="ndarray">
+<img alt="_images/ndarray.png" src="_images/ndarray.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Representation of <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object in memory and its index positions of its data items.</span><a class="headerlink" href="#ndarray" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p><a class="reference internal" href="#ndarray"><span class="std std-numref">Fig. 2.2</span></a> above shows a representation of the <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object created in memory after running the code <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">np.array([55,</span> <span class="pre">92,</span> <span class="pre">110,</span> <span class="pre">66,</span> <span class="pre">75,</span> <span class="pre">45,</span> <span class="pre">40,</span> <span class="pre">57,</span> <span class="pre">55,</span> <span class="pre">62])</span></code>.
+In this example, variable <code class="docutils literal notranslate"><span class="pre">a</span></code> points to an <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object in memory.  As you can see, the <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object is composed of different attributes.
+The data of the <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object is not stored inside the <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object, the <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object points to it.  We will be
+looking at how we can use the <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object as we go along.</p>
+<p>NumPy arrays can be created using other functions.  The table below lists commonly used functions to create NumPy arrays.</p>
+<table class="table" id="ndarray-create-table">
+<caption><span class="caption-number">Table 2.1 </span><span class="caption-text">Functions to create NumPy arrays</span><a class="headerlink" href="#ndarray-create-table" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">np.array(l)</span></code></p></td>
+<td><p>returns a new <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object from list <code class="docutils literal notranslate"><span class="pre">l</span></code>.  </br> <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy-array">Documentation to <code class="docutils literal notranslate"><span class="pre">np.array()</span></code>.</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.array([10,</span> <span class="pre">20,</span> <span class="pre">30])</span></code> returns <code class="docutils literal notranslate"><span class="pre">array([10,</span> <span class="pre">20,</span> <span class="pre">30])</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">np.zeros(shape)</span></code></p></td>
+<td><p>returns a new <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object of length <code class="docutils literal notranslate"><span class="pre">shape</span></code> filled with zeros.</br> <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.zeros.html">Documentation to <code class="docutils literal notranslate"><span class="pre">np.zeros()</span></code>.</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.zeros(3)</span></code> returns <code class="docutils literal notranslate"><span class="pre">array([0.,</span> <span class="pre">0.,</span> <span class="pre">0.])</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">np.ones(shape)</span></code></p></td>
+<td><p>returns a new <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object  of length <code class="docutils literal notranslate"><span class="pre">shape</span></code> filled with ones.</br>  <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ones.html">Documentation to <code class="docutils literal notranslate"><span class="pre">np.ones()</span></code>.</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.ones(3)</span></code> returns <code class="docutils literal notranslate"><span class="pre">array([1.,</span> <span class="pre">1.,</span> <span class="pre">1.])</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">np.arange(stop)</span></code> </br></br> <code class="docutils literal notranslate"><span class="pre">np.arange(start,</span> <span class="pre">stop)</span></code> </br></br><code class="docutils literal notranslate"><span class="pre">np.arange(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.arange(stop)</span></code> returns a new <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object with a sequential range of data items from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">stop</span></code>. </br></br> <code class="docutils literal notranslate"><span class="pre">np.arange(start,</span> <span class="pre">stop)</span></code> returns a sequential range of data items from <code class="docutils literal notranslate"><span class="pre">start</span></code> to <code class="docutils literal notranslate"><span class="pre">stop</span></code>. </br></br> <code class="docutils literal notranslate"><span class="pre">np.arange(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code> returns a sequential range of <code class="docutils literal notranslate"><span class="pre">step</span></code>th data items from <code class="docutils literal notranslate"><span class="pre">start</span></code> to <code class="docutils literal notranslate"><span class="pre">stop</span></code>. </br></br><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html">Documentation to <code class="docutils literal notranslate"><span class="pre">np.arange()</span></code></a>.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.arange(3)</span></code> returns <code class="docutils literal notranslate"><span class="pre">array([0,</span> <span class="pre">1,</span> <span class="pre">2])</span></code>. </br></br> <code class="docutils literal notranslate"><span class="pre">np.arange(2,</span> <span class="pre">5)</span></code> returns <code class="docutils literal notranslate"><span class="pre">array([2,</span> <span class="pre">3,</span> <span class="pre">4])</span></code>. </br></br> <code class="docutils literal notranslate"><span class="pre">np.arange(1,8,2)</span></code> returns <code class="docutils literal notranslate"><span class="pre">array([1,</span> <span class="pre">3,</span> <span class="pre">5,</span> <span class="pre">7])</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">np.linspace(start,</span> <span class="pre">stop,</span> <span class="pre">num)</span></code></p></td>
+<td><p>returns a new <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> with a <code class="docutils literal notranslate"><span class="pre">num</span></code> evenly spaced sequence of numbers from <code class="docutils literal notranslate"><span class="pre">start</span></code> to <code class="docutils literal notranslate"><span class="pre">stop</span></code>. </br> <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html">Documentation to <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code>.</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.linspace(-5,</span> <span class="pre">5,</span> <span class="pre">3)</span></code> returns <code class="docutils literal notranslate"><span class="pre">array([-5.,</span>&#160; <span class="pre">0.,</span>&#160; <span class="pre">5.])</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+<p>To get the length of an <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object use the <code class="docutils literal notranslate"><span class="pre">size</span></code> attribute as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#create an array of 3 zeros</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-
-<span class="c1">#create an array of 3 ones</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-
-
-<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">stop</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="ow">or</span> 
-<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">size</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
-    <span class="ow">or</span>
-    <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
 </pre></div>
 </div>
 </div>
 </div>
-<p>a.ndim # get the number of dimensions of the array (returns 1) - we are only working with 1D arrays here but it could be more.
-a.size #returns 3 - returns the total number of data items in the ndarray.</p>
+<div class="exercise admonition" id="create-ndarrays">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.3 </span> (Creating NumPy arrays)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
+<ol class="simple">
+<li><p>Try the examples in <a class="reference internal" href="#ndarray-create-table"><span class="std std-numref">Table 2.1</span></a> in the PyCharm console. For each example, look at the Variables
+pane in the console to see the <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object created.</p></li>
+<li><p>Generate  a NumPy array that contains 20 evenly spaced numbers from 0 to 1.  What is the spacing between the numbers?  Hint: use <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html">parameter <code class="docutils literal notranslate"><span class="pre">retstep</span></code></a>.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">np.full()</span></code> function to create a NumPy array with ten 0.1 values.</p></li>
+</ol>
 </section>
-<section id="numpy-data-types">
-<h2><span class="section-number">2.4.4. </span>NumPy data types<a class="headerlink" href="#numpy-data-types" title="Permalink to this headline">#</a></h2>
-<p>NumPy is built from a low level language, C, because of this it inherits some features that are normally associated with low level languages.</p>
-<p>While the size of Python data types we have seen so far offer flexibility, that is, they can grow to accommodate numbers of different sizes
-(within the machine’s memory constraints), NumPy datatypes are have fixed sizes.
-Python data types are equivalent to the corresponding numpy equivalent</p>
-<p>int np.int_
-bool np.bool_
-float np.float_
-str np.str_</p>
-<p>Furthermore, in NumPy an int has several dtypes: int8, int16, int32, int64.  int8 means that a number created as int8 will be stored in 8 bits or 1 byte of memory.  And that is
-why the larger the number of bits allocated to a number, the larger the range of numbers can be held.</p>
-<p>Type      Number Capacity</p>
-<p>int8      (-128 to 127)</p>
-<p>Int16 – (-32,768 to +32,767)</p>
-<p>Int32 – (-2,147,483,648 to +2,147,483,647)</p>
-<p>Int64 – (-9,223,372,036,854,775,808 to +9,223,372,036,854,775,807)</p>
-<p>When creating a list, NumPy automatically detects the type of data the list is made up of and allocates a data type that
-fits your list based on several factors, including the computer’s architecture.  Because of this, we do not need to worry about
-which NumPy data type to allocate to our data types as NumPy does that automatically for us.  In the case when we need to
-specify the dtype argument in NumPy functions, in this course we will be using the standard Python data types rather than the NumPy data types.</p>
-<exersice>
-<p>create a NumPy array from l</p>
-<p>create a NumPy array from l of type float</p>
-<p>using this list l create a string version of numpy array
-np.array(l, dtype=str)<br />
-Note:  U is for unicode 6 is the number of characters</p>
-<p>=============</p>
+</div>
 </section>
+<section id="numpy-data-types-dtype">
+<h2><span class="section-number">2.4.4. </span>NumPy data types - <code class="docutils literal notranslate"><span class="pre">dtype</span></code><a class="headerlink" href="#numpy-data-types-dtype" title="Permalink to this headline">#</a></h2>
+<p>NumPy is written in C, a low-level language.  Because of this, it inherits some features that are normally associated
+with low level languages, NumPy data types are one of them.</p>
+<p>While the size of the standard Python data types (<em>e.g.,</em> <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>) offer flexibility, that is,
+they can grow to accommodate numbers of different sizes (within the machine’s memory constraints), NumPy data types
+have fixed sizes. For example, in NumPy an <code class="docutils literal notranslate"><span class="pre">int</span></code> has several <code class="docutils literal notranslate"><span class="pre">dtype</span></code>s: <code class="docutils literal notranslate"><span class="pre">int8</span></code>, <code class="docutils literal notranslate"><span class="pre">int16</span></code>, <code class="docutils literal notranslate"><span class="pre">int32</span></code>, <code class="docutils literal notranslate"><span class="pre">int64</span></code>.  <code class="docutils literal notranslate"><span class="pre">int8</span></code> means
+that a number created as <code class="docutils literal notranslate"><span class="pre">int8</span></code> will be stored in 8 bits or 1 byte of memory.  That is why the larger the number of bits
+allocated to a number, the larger the range of numbers can be held. <a class="reference internal" href="#integer-dtypes"><span class="std std-numref">Table 2.2</span></a> below gives us an indication of the range
+of numbers that can be held in the respective integer <code class="docutils literal notranslate"><span class="pre">dtype</span></code>.</p>
+<table class="table" id="integer-dtypes">
+<caption><span class="caption-number">Table 2.2 </span><span class="caption-text">Number capacity for integer dtypes.</span><a class="headerlink" href="#integer-dtypes" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>dtype</p></th>
+<th class="head"><p>Number capacity</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int8</span></code></p></td>
+<td><p>-128 to 127</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">int16</span></code></p></td>
+<td><p>-32,768 to +32,767</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int32</span></code></p></td>
+<td><p>-2,147,483,648 to +2,147,483,647</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">int64</span></code></p></td>
+<td><p>-9,223,372,036,854,775,808 to +9,223,372,036,854,775,807</p></td>
+</tr>
+</tbody>
+</table>
+<p>Numpy also has <code class="docutils literal notranslate"><span class="pre">dtype</span></code>s equivalent to the corresponding standard Python data types:</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Standard Python data type</p></th>
+<th class="head"><p>NumPy data type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.int_</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.float_</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.str_</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.bool_</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>When creating an array, NumPy automatically detects the type of data the array is made up of and allocates a data type that
+fits that array based on several factors (including the computer’s architecture).  Because of this, we do not need to worry about
+which NumPy data type to allocate to our arrays as NumPy does that automatically for us.  In the case when we need to
+specify the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> argument in NumPy functions, in this course we will be using the standard Python data types.</p>
+<div class="exercise admonition" id="dtype-ndarrays">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.4 </span> (dtype of NumPy arrays)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">55</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">62</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Using the code above:</p>
+<ul class="simple">
+<li><p>What is the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of <code class="docutils literal notranslate"><span class="pre">a</span></code>? (Look into PyCharm’s Variable pane to check the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of <code class="docutils literal notranslate"><span class="pre">a</span></code>).</p></li>
+</ul>
+</li>
+<li><p>What is the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of <code class="docutils literal notranslate"><span class="pre">np.zeros(3)</span></code>?  Why do you think this is the case?</p></li>
+<li><p>Using list <code class="docutils literal notranslate"><span class="pre">l</span></code>, create a NumPy array that contains the values of <code class="docutils literal notranslate"><span class="pre">l</span></code> in <code class="docutils literal notranslate"><span class="pre">str</span></code> format.  What is the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of this array?</p></li>
+</ol>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="other-operations">
-<h1><span class="section-number">2.5. </span>Other operations<a class="headerlink" href="#other-operations" title="Permalink to this headline">#</a></h1>
-<p>adding items</p>
-<p>np.sort  example. sort in ascending order np.sort(a)
-sort in descending order: np.flip(np.sort(a))
-np.concatentate: joins two lists together</p>
-<p>c = [1,2,3]
-d = [4,5,6]
-np.concatenate((c,d))
-c and d can be of type ndarray as well</p>
+</div>
+</section>
+<section id="array-manipulation-operations">
+<h2><span class="section-number">2.4.5. </span>Array manipulation operations<a class="headerlink" href="#array-manipulation-operations" title="Permalink to this headline">#</a></h2>
+<table class="table" id="ndarray-manip-table">
+<caption><span class="caption-number">Table 2.3 </span><span class="caption-text">Array manipulation functions</span><a class="headerlink" href="#ndarray-manip-table" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">np.append(arr,</span> <span class="pre">values)</span></code></p></td>
+<td><p>returns a new NumPy array with the <code class="docutils literal notranslate"><span class="pre">values</span></code> added to the end of array <code class="docutils literal notranslate"><span class="pre">arr</span></code>. Note: this does not change the size of <code class="docutils literal notranslate"><span class="pre">arr</span></code>, but a new <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object is returned with the appended values.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.append(a,</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3])</span></code> </br><code class="docutils literal notranslate"><span class="pre">np.append(a,</span> <span class="pre">1)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">np.insert(arr,</span> <span class="pre">index,</span> <span class="pre">values)</span></code></p></td>
+<td><p>returns a new NumPy array with the <code class="docutils literal notranslate"><span class="pre">values</span></code> added at the <code class="docutils literal notranslate"><span class="pre">index</span></code> position of array <code class="docutils literal notranslate"><span class="pre">arr</span></code>.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.insert(a,</span> <span class="pre">3,</span> <span class="pre">90)</span></code>  </br><code class="docutils literal notranslate"><span class="pre">np.insert(a,</span> <span class="pre">3,</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">np.delete(arr,</span> <span class="pre">index)</span></code></p></td>
+<td><p>returns a new NumPy array with the data items in <code class="docutils literal notranslate"><span class="pre">index</span></code> deleted from <code class="docutils literal notranslate"><span class="pre">arr</span></code>.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.delete(a,</span> <span class="pre">2)</span></code> </br><code class="docutils literal notranslate"><span class="pre">np.delete(a,</span> <span class="pre">[2,</span> <span class="pre">3])</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">np.sort(arr)</span></code></p></td>
+<td><p>returns a new NumPy array with the data items of <code class="docutils literal notranslate"><span class="pre">arr</span></code> sorted in ascending order.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.sort(a)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">np.concatenate((arr1,</span> <span class="pre">arr2,</span> <span class="pre">...))</span></code></p></td>
+<td><p>returns a new NumPy array with the joined sequence of arrays.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a1</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> </br> <code class="docutils literal notranslate"><span class="pre">a2</span> <span class="pre">=</span> <span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7]</span></code> </br> <code class="docutils literal notranslate"><span class="pre">np.concatenate((a1,</span> <span class="pre">a2))</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">np.unique(arr)</span></code></p></td>
+<td><p>returns the unique data items in <code class="docutils literal notranslate"><span class="pre">arr</span></code>.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">np.array([9,</span> <span class="pre">3,</span> <span class="pre">9,</span> <span class="pre">8,</span> <span class="pre">9,</span> <span class="pre">4,</span> <span class="pre">2,</span> <span class="pre">0,</span> <span class="pre">2,</span> <span class="pre">5,</span> <span class="pre">4,</span> <span class="pre">7,</span> <span class="pre">5,</span> <span class="pre">1])</span></code> </br><code class="docutils literal notranslate"><span class="pre">np.unique(b)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="exercise admonition" id="ndarrays-manip-exercise">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.5 </span> (manipulating NumPy arrays)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
+<ol class="simple">
+<li><p>Try the examples in <a class="reference internal" href="#ndarray-manip-table"><span class="std std-numref">Table 2.3</span></a>.  Check the output of each example.</p></li>
+<li><p>Sort NumPy array <code class="docutils literal notranslate"><span class="pre">a</span></code> in descending order</p></li>
+<li><p>Create a NumPy array with the following values: [9, 3, 9, 8, 9, 4, 2, 0, 2, 5, 4, 7, 5, 1]</p>
+<ol class="simple">
+<li><p>Get the frequency of each value in the array.</p></li>
+<li><p>Get the index positions of the first occurring unique values in the array.</p></li>
+</ol>
+</li>
+</ol>
+</section>
+</div>
+</section>
 <section id="slicing-numpy-arrays">
-<h2><span class="section-number">2.5.1. </span>Slicing NumPy arrays<a class="headerlink" href="#slicing-numpy-arrays" title="Permalink to this headline">#</a></h2>
-<p>To get the value of the specific data items in the array we do that in the same way we do in Python listss: by using the square
+<h2><span class="section-number">2.4.6. </span>Slicing NumPy arrays<a class="headerlink" href="#slicing-numpy-arrays" title="Permalink to this headline">#</a></h2>
+<p>To get the value of the specific data items in the array we do that in the same way we do in Python lists: by using the square
 brackets e.g.
 a[2]
 a[2:5]
 a[1:8:2]</p>
+<section id="views-and-copies">
+<h3><span class="section-number">2.4.6.1. </span>Views and Copies<a class="headerlink" href="#views-and-copies" title="Permalink to this headline">#</a></h3>
+<p>NumPy arrays also save their data
+separetly from the ndarray object.</p>
+<p>When we create a new variable and
+allocate it an existing nparray object, that variable will point to the same ndarray object.  Because of this, a change in b
+also effect a.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">55</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">62</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ID of a is:&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ID of b is:&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+
+<span class="n">b</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140251116349520
+ID of b is: 140251116349520
+[ 55  92 110  60  75  45  40  57  55  62]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the example above, b and a share the same ID.  Changing the data item in index 3 of b, caused the change in a as well, since
+both are the same object.<br />
+The view method creates a new ndarray object that point to the same data.  Because it is pointing to the same data, any changes
+made to the view ndarray object will be effected in the base object which is the ndarray where the array data is actually stored.<br />
+In the example below c is the view object and a is the base object.  As you can see the id of the base of c and a are the same.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ID of a is:&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ID of c is:&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ID of base array of c is:&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">base</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140251116349520
+ID of c is: 140251120696848
+ID of base array of c is: 140251116349520
+</pre></div>
+</div>
+</div>
+</div>
+<p>Slicing an ndarray also returns a view of it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">80</span>    <span class="c1">#this changes a[2] as well!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[80 60 75]
+[55 92 80 60 75 45 40 57 55 62]
+</pre></div>
+</div>
+</div>
+</div>
+<p>When creating a copy of an ndarray however, this would create a completely new copy, ie. the object and data are not pointing to
+the same object but rather they point to a different one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#create a copy of ndarray a</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ID of a is:&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ID of e is:&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+<span class="n">e</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">70</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a is: </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;e is: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140251116349520
+ID of e is: 140251116868528
+a is: [55 92 80 60 75 45 40 57 55 62]
+e is: [55 92 80 70 75 45 40 57 55 62]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="broadcasting">
-<h1><span class="section-number">2.6. </span>Broadcasting<a class="headerlink" href="#broadcasting" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="vectorised-array-operations">
+<h1><span class="section-number">2.5. </span>Vectorised array operations<a class="headerlink" href="#vectorised-array-operations" title="Permalink to this headline">#</a></h1>
 <p>One of the main differences between standard Python data sequences such as lists and NumPy arrays is that it uses a vectorised system
 which allows us to perform operations over all the ndarray object using one line of code as opposed to  using a loop as we do
 with lists.</p>
 <p>#Extract items in the list that are &gt;60
 a &gt; 60
 returns a list of True and False; True if the data item is &gt; 60, and False otherwise.</p>
+<compare with standard python>
 <p>To get the actual data items we have to use our comparison statement inside the [] as essentially we want to slice our
 ndarray based on a condition:
 a[a &gt; 60]</p>
 <p>This is similar to the way we extract items from vectors in R.</p>
-<p>You can combine multiple comparison statements using the &amp; (and) and | (or) logical operators</p>
+<p>You can combine multiple comparison statements using the &amp; (and) and | (or) logical operators
+get the marks that are &gt; 60 and &lt; 90:
+a[(a &gt; 60)  &amp; (a &lt; 90)]</p>
+<section id="operations-on-arrays">
+<h2><span class="section-number">2.5.1. </span>Operations on arrays<a class="headerlink" href="#operations-on-arrays" title="Permalink to this headline">#</a></h2>
+<p>Similarly, arithmetic operations can be performed on an array in one statement. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">])</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+
+<span class="c1"># add arrays together</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a1 + a2 is: </span><span class="si">{</span><span class="n">a1</span> <span class="o">+</span> <span class="n">a2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1">#subtract</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a1 - a2 is: </span><span class="si">{</span><span class="n">a1</span> <span class="o">-</span> <span class="n">a2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1">#multiply</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a1 * a2 is: </span><span class="si">{</span><span class="n">a1</span> <span class="o">*</span> <span class="n">a2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1">#divide</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a1 / a2 is: </span><span class="si">{</span><span class="n">a1</span> <span class="o">/</span> <span class="n">a2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a1 + a2 is: [12 30 33]
+a1 - a2 is: [ 8 10 27]
+a1 * a2 is: [ 20 200  90]
+a1 / a2 is: [ 5.  2. 10.]
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also use aggregate functions on NumPy arrays that perform an operation across all items in the array and return one
+result back.  For example, if you want to add all the numbers in a NumPy array together, use sum:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+
+<span class="c1">#aggregation function</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sum of all data items in a1 is: </span><span class="si">{</span><span class="n">a1</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">a1</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">a1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">a1</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">a1</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="c1">#get standard deviation</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sum of all data items in a1 is: 60
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.16496580927726
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#return element-wise square root</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a3</span><span class="p">)</span>
+
+<span class="c1"># square each element in ndarray</span>
+<span class="c1"># square(sqrt(x)) = x </span>
+<span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+
+<span class="c1"># calculate exponential of each data item</span>
+<span class="n">ans2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span>
+
+<span class="c1"># calculate the natural logarithm of each data item in ndarray</span>
+<span class="c1"># the natural logarithm is the inverse of the exponential function: log(exp(x)) = x</span>
+<span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">ans2</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 2., 10.,  3.])
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are several other mathematical functions that can be applied on ndarrays.  A full list can be found <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.math.html">here</a>.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="get-the-marks-that-are-60-and-90">
-<h1><span class="section-number">2.7. </span>get the marks that are &gt; 60 and &lt; 90.<a class="headerlink" href="#get-the-marks-that-are-60-and-90" title="Permalink to this headline">#</a></h1>
-<p>a[(a &gt; 60)  &amp; (a &lt; 90)]</p>
-<p>mathematical operations</p>
+<section id="broadcasting">
+<h2><span class="section-number">2.5.2. </span>Broadcasting<a class="headerlink" href="#broadcasting" title="Permalink to this headline">#</a></h2>
+<p>We have seen so far how we can perform arithmetic operations on NumPy arrays of the same size.  Broadcasting refers to when
+we want to perform an operation between a NumPy array of different sizes.  In this course we will be focusing on operations
+between NumPy arrays and single values, for example, an integer.  In this case the integer is “broadcast” across the NumPy array
+so that they have similar sizes for the operation to be possible.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([20, 40, 60])
+</pre></div>
+</div>
+</div>
+</div>
+<p>All these features make NumPy desirable to work with mathematical forumulas.<br />
+Eucleadean distance example:
+<a class="reference external" href="https://www.calculatorsoup.com/calculators/geometry-plane/distance-two-points.php">https://www.calculatorsoup.com/calculators/geometry-plane/distance-two-points.php</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+ 
+<span class="c1"># initializing points in</span>
+<span class="c1"># numpy arrays</span>
+<span class="n">point1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">point2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+ 
+<span class="c1"># finding sum of squares</span>
+<span class="n">sum_sq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">point1</span> <span class="o">-</span> <span class="n">point2</span><span class="p">))</span>
+ 
+<span class="c1"># Doing squareroot and</span>
+<span class="c1"># printing Euclidean distance</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sum_sq</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.23606797749979
+</pre></div>
+</div>
+</div>
+</div>
+<p>Exercise:
+<a class="reference external" href="https://numpy.org/devdocs/user/absolute_beginners.html#working-with-mathematical-formulas">https://numpy.org/devdocs/user/absolute_beginners.html#working-with-mathematical-formulas</a></p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="mathematical-functions">
-<h1><span class="section-number">2.8. </span>Mathematical Functions<a class="headerlink" href="#mathematical-functions" title="Permalink to this headline">#</a></h1>
-<p>There are several functions that oers</p>
-<p><a class="reference external" href="https://numpy.org/doc/stable/reference/routines.math.html">https://numpy.org/doc/stable/reference/routines.math.html</a></p>
 <section id="random-sampling">
-<h2><span class="section-number">2.8.1. </span>Random sampling<a class="headerlink" href="#random-sampling" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.5.3. </span>Random sampling<a class="headerlink" href="#random-sampling" title="Permalink to this headline">#</a></h2>
 <p>To generate a random number we first call default_rng() method to create an instance of Generator</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -821,6 +1201,12 @@ a[a &gt; 60]</p>
 <span class="c1"># generate 3 random decimal numbers in the range[0,1]</span>
 <span class="n">rfloat</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rfloat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7 3 8]
+[0.79736546 0.67625467 0.39110955]
 </pre></div>
 </div>
 </div>

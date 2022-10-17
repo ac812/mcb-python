@@ -51,3 +51,81 @@ the Fibonacci sequence.  Instead of printing it, on line 5 we are adding the nex
 ```{solution-end}
 ```
 
+```{solution-start} create-ndarrays
+:label: create-ndarrays-solution
+:class: dropdown
+```
+b. 
+```{code-cell} ipython3
+import numpy as np
+
+#retstep=True will also return the step size of the sequence generated
+np.linspace(0, 1, 20, retstep=True)
+
+a, step_size = np.linspace(0,1,20, retstep=True)
+print(f"Step size of sequence is: {step_size}")
+```
+c. 
+```{code-cell} ipython3
+np.full(10, 0.1)
+```
+```{solution-end}
+```
+
+```{solution-start} dtype-ndarrays
+:label: dtype-ndarrays-solution
+:class: dropdown
+```
+1. `a` is of `dtype` `int64`.  NumPy detected that the values of the list supplied as argument are integers and so it created the `ndarray` with integer data types.
+```{code-cell} ipython3
+l = [55, 92, 110, 66, 75, 45, 40, 57, 55, 62]
+a = np.array(l)
+a.dtype
+```
+2., `b` is of `dtype` `float64`.  If we look at the documentation of [`np.zeros()`](https://numpy.org/doc/stable/reference/generated/numpy.zeros.html), we notice that it has a keyword argument `dtype=float`.  This means that by default `np.zeros()` creates arrays of `dtype` `float64`.
+```{code-cell} ipython3
+b = np.zeros(3)
+b.dtype
+```
+3.,  `c` is of type `<U3`.  Note that when creating strings NumPy does not use the `str` notation but instead uses a Unicode string. In this case, `U` means unicode and `3` is the length of the largest string in the array.  
+```{code-cell} ipython3
+c = np.array(l, dtype=str)
+print(c)
+c.dtype
+```
+
+```{solution-end}
+```
+
+```{solution-start} ndarrays-manip-exercise
+:label: ndarrays-manip-exercise-solution
+:class: dropdown
+```
+1. Note: NumPy array `a` is not changed, the methods return a new NumPy array object with the change requested.  
+2.  The `np.flip()` function reverses the elements of a NumPy array.  
+```{code-cell} ipython3
+np.flip(np.sort(a))
+```
+3.1.
+```{code-cell} ipython3
+b = np.array([9, 3, 9, 8, 9, 4, 2, 0, 2, 5, 4, 7, 5, 1])
+
+#get the frequency of each value in the array
+unique, count = np.unique(b, return_counts=True) 
+# unique values 
+print(unique)
+# frequency of these unique values 
+print(count)
+```
+3.2.
+```{code-cell} ipython3
+#get the index position of the first occuring unique value
+unique, indices = np.unique(b, return_index=True)
+#unique values
+print(unique)
+# index positions of first occuring unique values 
+print(indices)
+```
+```{solution-end}
+```
+
