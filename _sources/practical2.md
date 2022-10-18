@@ -2,12 +2,13 @@
 # Further programming in Python
 
 ## Aim  
-The aim of this practical is to build upon the Python syntax and concepts we learn in [Practical 1](practical1). 
+The aim of this practical is to build upon the Python syntax and concepts we learn in [Practical 1](practical1) and explore
+further programming concepts and Python functionality.
 
 ## Objectives
 During this practical you will learn how to:
 * create your own functions
-* 
+* use NumPy arrays and perform different operations with them
 
 
 ## Instructions
@@ -54,6 +55,27 @@ This practical is composed of the following exercises:
 * - {numref}`fibonacci-function`
   - **Fibonacci sequence function**: In this exercise, we will rewrite the code we attempted in {numref}`fibonacci` into a function.
   - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning`
+* - {numref}`create-ndarrays`
+  - **Creating NumPy arrays**: In this exercise, we explore creating NumPy arrays.  
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`dtype-ndarrays`
+  - **dtype of NumPy arrays**: In this exercise, we look into the way NumPy allocated dtypes to arrays.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`ndarrays-manip-exercise`
+  - **NumPy array manipulations**: This exercises performs different NumPy array manipulations.  
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`ndarrays-view-copy-exercise`
+  - **Numpy views and copies**: This exercise explores NumPy array views and copies.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`odd-even-numpy-exercise`
+  - **Odd and even numbers with NumPy arrays**: In this exercise we identify odd and even numbers using NumPy arrays.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`math-formula-exercise`
+  - **Mathematical formulas**:  In this exercise, we will use NumPy to work with mathematical formulas.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`random-exercise`
+  - **Random numbers**: This exercise explores gerenating random numbers.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 ```
 
 :::{card} Managed to solve all the exercises?  Well done!

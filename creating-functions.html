@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Creating functions &#8212; Python Programming</title>
+    <title>2.1. Creating functions &#8212; Python Programming</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2.2. Modules and Packages" href="modules_packages.html" />
+    <link rel="prev" title="2. Further programming" href="further-programming.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -109,8 +111,8 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="practical1.html">
-                    Practical 1
+                <a class="reference internal" href="practical2.html">
+                    Practical 2
                 </a>
             </li>
         </ul>
@@ -122,7 +124,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="intro-to-python.html">
-   Introduction to Python Programming
+   1. Introduction to Python Programming
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -132,42 +134,76 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="variables.html">
-     Variables
+     1.4. Variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="data-types.html">
-     Data Types
+     1.5. Data Types
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="calling-functions.html">
-     Calling functions
+     1.6. Calling functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="data-structures.html">
-     Data Structures
+     1.8. Data Structures
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="more-strings.html">
-     More on strings and functions
+     1.9. More on strings and functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="operators.html">
-     Comparison and logical operators
+     1.10. Comparison and logical operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="flow-control-structures.html">
-     Control flow statements
+     1.11. Control flow statements
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="debugging.html">
-     Debugging code in PyCharm
+     1.12. Debugging code in PyCharm
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 2
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="further-programming.html">
+   2. Further programming
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.1. Creating functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules_packages.html">
+     2.2. Modules and Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="numpy.html">
+     2.3. NumPy
     </a>
    </li>
   </ul>
@@ -397,22 +433,17 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#default-argument-values">
-   Default argument values
+   2.1.1. Default argument values
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#positional-vs-keyword-arguments">
-   Positional vs keyword arguments
+   2.1.2. Positional vs keyword arguments
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#documentation-strings">
-   Documentation Strings
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variable-scope">
-   Variable scope
+   2.1.3. Documentation Strings
   </a>
  </li>
 </ul>
@@ -436,22 +467,17 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#default-argument-values">
-   Default argument values
+   2.1.1. Default argument values
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#positional-vs-keyword-arguments">
-   Positional vs keyword arguments
+   2.1.2. Positional vs keyword arguments
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#documentation-strings">
-   Documentation Strings
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variable-scope">
-   Variable scope
+   2.1.3. Documentation Strings
   </a>
  </li>
 </ul>
@@ -465,7 +491,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="creating-functions">
-<h1>Creating functions<a class="headerlink" href="#creating-functions" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2.1. </span>Creating functions<a class="headerlink" href="#creating-functions" title="Permalink to this headline">#</a></h1>
 <p>We have previously seen <a class="reference internal" href="calling-functions.html"><span class="doc std std-doc">what functions are and how to call them</span></a>.  Functions are a good way to structure
 your code into useful chunks, each chunk being responsible for a particular task.  This make functions are a good way
 to create <strong>reusable code</strong>. In this section we are going to learn how to create a function of our own from scratch.
@@ -549,7 +575,7 @@ in the <code class="docutils literal notranslate"><span class="pre">sum_two_numb
 </div>
 </div>
 <section id="default-argument-values">
-<h2>Default argument values<a class="headerlink" href="#default-argument-values" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1.1. </span>Default argument values<a class="headerlink" href="#default-argument-values" title="Permalink to this headline">#</a></h2>
 <p>You can assign default values to arguments in your functions, such that, if a user decides to call your function without
 specifying all the arguments, the arguments that were not passed would have already a predefined value.  For example, in the code
 below, <code class="docutils literal notranslate"><span class="pre">sum_two_numbers()</span></code> assigns default values of 0 to parameters <code class="docutils literal notranslate"><span class="pre">num1</span></code> and <code class="docutils literal notranslate"><span class="pre">num2</span></code>.</p>
@@ -585,7 +611,7 @@ calls <code class="docutils literal notranslate"><span class="pre">sum_two_numbe
 case this is <code class="docutils literal notranslate"><span class="pre">num1</span></code>.  <code class="docutils literal notranslate"><span class="pre">num2</span></code> will use its default value since no argument was passed for <code class="docutils literal notranslate"><span class="pre">num2</span></code>.</p>
 </section>
 <section id="positional-vs-keyword-arguments">
-<h2>Positional vs keyword arguments<a class="headerlink" href="#positional-vs-keyword-arguments" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1.2. </span>Positional vs keyword arguments<a class="headerlink" href="#positional-vs-keyword-arguments" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">sum_two_numbers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>             <span class="c1">#positional arguments</span>
@@ -632,7 +658,7 @@ As a good practice, you should call functions using either positional arguments,
 as both arguments are using the same argument; in the first argument, 1 is assigned to <code class="docutils literal notranslate"><span class="pre">num1</span></code> and the second argument is also assigning 1 to <code class="docutils literal notranslate"><span class="pre">num1</span></code>.</p>
 <div class="exercise admonition" id="exploring-creating-functions">
 
-<p class="admonition-title"> (Exploring creating functions)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.1 </span> (Exploring creating functions)</p>
 <section id="exercise-content">
 <p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">sum_two_numbers()</span></code> function:<br />
@@ -642,19 +668,16 @@ b. Explore default argument values, positional and keyword arguments by trying t
 </div>
 </section>
 <section id="documentation-strings">
-<h2>Documentation Strings<a class="headerlink" href="#documentation-strings" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1.3. </span>Documentation Strings<a class="headerlink" href="#documentation-strings" title="Permalink to this headline">#</a></h2>
 <div class="exercise admonition" id="fibonacci-function">
 
-<p class="admonition-title"> (The Fibonacci sequence function)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.2 </span> (The Fibonacci sequence function)</p>
 <section id="exercise-content">
 <p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg></p>
-<p>Rewrite the solution of <a class="reference internal" href="flow-control-structures.html#fibonacci"><span class="std std-numref">Exercise 13</span></a> such that, you create a function <code class="docutils literal notranslate"><span class="pre">fibonacci</span></code> that takes parameter <code class="docutils literal notranslate"><span class="pre">n</span></code> as an input,
+<p>Rewrite the solution of <a class="reference internal" href="flow-control-structures.html#fibonacci"><span class="std std-numref">Exercise 1.13</span></a> such that, you create a function <code class="docutils literal notranslate"><span class="pre">fibonacci</span></code> that takes parameter <code class="docutils literal notranslate"><span class="pre">n</span></code> as an input,
 and returns the list of Fibonacci sequence numbers from 0 to <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
 </section>
 </div>
-</section>
-<section id="variable-scope">
-<h2>Variable scope<a class="headerlink" href="#variable-scope" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 
@@ -685,6 +708,20 @@ and returns the list of Fibonacci sequence numbers from 0 to <code class="docuti
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="further-programming.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Further programming</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="modules_packages.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.2. </span>Modules and Packages</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

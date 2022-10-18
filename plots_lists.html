@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Drawing plots from lists - matplotlib &#8212; Python Programming</title>
+    <title>2.3. Drawing plots from lists - matplotlib &#8212; Python Programming</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2.4. NumPy" href="numpy.html" />
+    <link rel="prev" title="2.2. Modules and Packages" href="modules_packages.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -107,8 +109,8 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="practical1.html">
-                    Practical 1
+                <a class="reference internal" href="practical2.html">
+                    Practical 2
                 </a>
             </li>
         </ul>
@@ -120,7 +122,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="intro-to-python.html">
-   Introduction to Python Programming
+   1. Introduction to Python Programming
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -130,42 +132,91 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="variables.html">
-     Variables
+     1.4. Variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="data-types.html">
-     Data Types
+     1.5. Data Types
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="calling-functions.html">
-     Calling functions
+     1.6. Calling functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="data-structures.html">
-     Data Structures
+     1.8. Data Structures
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="more-strings.html">
-     More on strings and functions
+     1.9. More on strings and functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="operators.html">
-     Comparison and logical operators
+     1.10. Comparison and logical operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="flow-control-structures.html">
-     Control flow statements
+     1.11. Control flow statements
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="debugging.html">
-     Debugging code in PyCharm
+     1.12. Debugging code in PyCharm
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 2
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="further-programming.html">
+   2. Further programming
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="creating-functions.html">
+     2.1. Creating functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules_packages.html">
+     2.2. Modules and Packages
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.3. Drawing plots from lists -
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       matplotlib
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="numpy.html">
+     2.4.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       NumPy
+      </span>
+     </code>
     </a>
    </li>
   </ul>
@@ -350,7 +401,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="drawing-plots-from-lists-matplotlib">
-<h1>Drawing plots from lists - <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#drawing-plots-from-lists-matplotlib" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2.3. </span>Drawing plots from lists - <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#drawing-plots-from-lists-matplotlib" title="Permalink to this headline">#</a></h1>
 <p>In this section we are going to learn how to draw plots from lists using the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> package.
 <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> is the most widely used package for visualising data in Python <a class="footnote-reference brackets" href="#python-survey" id="id1">1</a>.</p>
 <p>If you have not installed <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> on your computer before, you would need to install it first.  You can install from
@@ -397,6 +448,20 @@ your terminal, either via pip:</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="modules_packages.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2.2. </span>Modules and Packages</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="numpy.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.4. </span><code class="docutils literal notranslate"><span class="pre">NumPy</span></code></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

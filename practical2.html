@@ -53,6 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Introduction to Python Programming" href="intro-to-python.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -106,9 +107,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="practical1.html">
-                    Practical 1
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Practical 2
                 </a>
             </li>
         </ul>
@@ -120,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="intro-to-python.html">
-   Introduction to Python Programming
+   1. Introduction to Python Programming
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -130,42 +131,76 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="variables.html">
-     Variables
+     1.4. Variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="data-types.html">
-     Data Types
+     1.5. Data Types
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="calling-functions.html">
-     Calling functions
+     1.6. Calling functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="data-structures.html">
-     Data Structures
+     1.8. Data Structures
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="more-strings.html">
-     More on strings and functions
+     1.9. More on strings and functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="operators.html">
-     Comparison and logical operators
+     1.10. Comparison and logical operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="flow-control-structures.html">
-     Control flow statements
+     1.11. Control flow statements
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="debugging.html">
-     Debugging code in PyCharm
+     1.12. Debugging code in PyCharm
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="further-programming.html">
+   2. Further programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="creating-functions.html">
+     2.1. Creating functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules_packages.html">
+     2.2. Modules and Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="numpy.html">
+     2.3. NumPy
     </a>
    </li>
   </ul>
@@ -461,14 +496,15 @@ title="Print to PDF"
 <h1>Further programming in Python<a class="headerlink" href="#further-programming-in-python" title="Permalink to this headline">#</a></h1>
 <section id="aim">
 <h2>Aim<a class="headerlink" href="#aim" title="Permalink to this headline">#</a></h2>
-<p>The aim of this practical is to build upon the Python syntax and concepts we learn in <a class="reference internal" href="practical1.html"><span class="doc std std-doc">Practical 1</span></a>.</p>
+<p>The aim of this practical is to build upon the Python syntax and concepts we learn in <a class="reference internal" href="practical1.html"><span class="doc std std-doc">Practical 1</span></a> and explore
+further programming concepts and Python functionality.</p>
 </section>
 <section id="objectives">
 <h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h2>
 <p>During this practical you will learn how to:</p>
 <ul class="simple">
 <li><p>create your own functions</p></li>
-<li></li>
+<li><p>use NumPy arrays and perform different operations with them</p></li>
 </ul>
 </section>
 <section id="instructions">
@@ -523,13 +559,41 @@ may want to skip sections of notes that you already know and attempt the exercis
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="xref std std-numref docutils literal notranslate"><span class="pre">exploring-creating-functions</span></code></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="creating-functions.html#exploring-creating-functions"><span class="std std-numref">Exercise 2.1</span></a></p></td>
 <td><p><strong>Creating functions</strong>:  In this exercise, we explore creating functions.</p></td>
 <td><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref std std-numref docutils literal notranslate"><span class="pre">fibonacci-function</span></code></p></td>
-<td><p><strong>Fibonacci sequence function</strong>: In this exercise, we will rewrite the code we attempted in <a class="reference internal" href="flow-control-structures.html#fibonacci"><span class="std std-numref">Exercise 13</span></a> into a function.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="creating-functions.html#fibonacci-function"><span class="std std-numref">Exercise 2.2</span></a></p></td>
+<td><p><strong>Fibonacci sequence function</strong>: In this exercise, we will rewrite the code we attempted in <a class="reference internal" href="flow-control-structures.html#fibonacci"><span class="std std-numref">Exercise 1.13</span></a> into a function.</p></td>
 <td><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="numpy.html#create-ndarrays"><span class="std std-numref">Exercise 2.3</span></a></p></td>
+<td><p><strong>Creating NumPy arrays</strong>: In this exercise, we explore creating NumPy arrays.</p></td>
+<td><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="numpy.html#dtype-ndarrays"><span class="std std-numref">Exercise 2.4</span></a></p></td>
+<td><p><strong>dtype of NumPy arrays</strong>: In this exercise, we look into the way NumPy allocated dtypes to arrays.</p></td>
+<td><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="numpy.html#ndarrays-manip-exercise"><span class="std std-numref">Exercise 2.5</span></a></p></td>
+<td><p><strong>NumPy array manipulations</strong>: This exercises performs different NumPy array manipulations.</p></td>
+<td><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="numpy.html#ndarrays-view-copy-exercise"><span class="std std-numref">Exercise 2.6</span></a></p></td>
+<td><p><strong>Numpy views and copies</strong>: This exercise explores NumPy array views and copies.</p></td>
+<td><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="numpy.html#odd-even-numpy-exercise"><span class="std std-numref">Exercise 2.7</span></a></p></td>
+<td><p><strong>Odd and even numbers with NumPy arrays</strong>: In this exercise we identify odd and even numbers using NumPy arrays.</p></td>
+<td><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="numpy.html#math-formula-exercise"><span class="std std-numref">Exercise 2.8</span></a></p></td>
+<td><p><strong>Mathematical formulas</strong>:  In this exercise, we will use NumPy to work with mathematical formulas.</p></td>
+<td><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="numpy.html#random-exercise"><span class="std std-numref">Exercise 2.9</span></a></p></td>
+<td><p><strong>Random numbers</strong>: This exercise explores gerenating random numbers.</p></td>
+<td><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p></td>
 </tr>
 </tbody>
 </table>
@@ -552,6 +616,10 @@ Managed to solve all the exercises?  Well done!</div>
 </div>
 </section>
 </section>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -581,6 +649,13 @@ Managed to solve all the exercises?  Well done!</div>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="intro-to-python.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Introduction to Python Programming</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

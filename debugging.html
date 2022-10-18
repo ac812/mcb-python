@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Debugging code in PyCharm &#8212; Python Programming</title>
+    <title>1.12. Debugging code in PyCharm &#8212; Python Programming</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,7 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Control flow statements" href="flow-control-structures.html" />
+    <link rel="next" title="2. Further programming" href="further-programming.html" />
+    <link rel="prev" title="1.11. Control flow statements" href="flow-control-structures.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -108,8 +109,8 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="practical1.html">
-                    Practical 1
+                <a class="reference internal" href="practical2.html">
+                    Practical 2
                 </a>
             </li>
         </ul>
@@ -121,7 +122,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="intro-to-python.html">
-   Introduction to Python Programming
+   1. Introduction to Python Programming
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -131,42 +132,91 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="variables.html">
-     Variables
+     1.4. Variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="data-types.html">
-     Data Types
+     1.5. Data Types
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="calling-functions.html">
-     Calling functions
+     1.6. Calling functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="data-structures.html">
-     Data Structures
+     1.8. Data Structures
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="more-strings.html">
-     More on strings and functions
+     1.9. More on strings and functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="operators.html">
-     Comparison and logical operators
+     1.10. Comparison and logical operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="flow-control-structures.html">
-     Control flow statements
+     1.11. Control flow statements
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Debugging code in PyCharm
+     1.12. Debugging code in PyCharm
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="further-programming.html">
+   2. Further programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="creating-functions.html">
+     2.1. Creating functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules_packages.html">
+     2.2. Modules and Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plots_lists.html">
+     2.3. Drawing plots from lists -
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       matplotlib
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="numpy.html">
+     2.4.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       NumPy
+      </span>
+     </code>
     </a>
    </li>
   </ul>
@@ -397,7 +447,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="debugging-code-in-pycharm">
-<h1>Debugging code in PyCharm<a class="headerlink" href="#debugging-code-in-pycharm" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">1.12. </span>Debugging code in PyCharm<a class="headerlink" href="#debugging-code-in-pycharm" title="Permalink to this headline">#</a></h1>
 <p>This process fixing errors in code is known as <strong>debugging</strong>.  A software <strong>bug</strong> in an error in your code that makes your program stop or not run as it should be.
 Debugging your code can also be useful when you want to understand properly what your code is doing.  PyCharm offers a really useful tool - the <strong>PyCharm debugger</strong>.
 The PyCharm debugger allows you to execute your code one line at a time, and also help you understand how the values of your variables are changing in memory.</p>
@@ -405,17 +455,17 @@ The PyCharm debugger allows you to execute your code one line at a time, and als
 <figure class="align-default" id="breakpoint">
 <img alt="_images/breakpoint.png" src="_images/breakpoint.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 16 </span><span class="caption-text">A breakpoint on line 7 in PyCharm.</span><a class="headerlink" href="#breakpoint" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 1.16 </span><span class="caption-text">A breakpoint on line 7 in PyCharm.</span><a class="headerlink" href="#breakpoint" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>As shown in <a class="reference internal" href="#breakpoint"><span class="std std-numref">Fig. 16</span></a>, the red dot, is the breakpoint.  Next, click on the Debug <img alt="" src="_images/debug.png" /> button.  The code will start executing util it reaches the first breakpoint which essentially
+<p>As shown in <a class="reference internal" href="#breakpoint"><span class="std std-numref">Fig. 1.16</span></a>, the red dot, is the breakpoint.  Next, click on the Debug <img alt="" src="_images/debug.png" /> button.  The code will start executing util it reaches the first breakpoint which essentially
 pauses the code from executing, allowing you to see the values of the variables at that point.  In
 the example below, we can see that when the code pauses execution on line 7, <code class="docutils literal notranslate"><span class="pre">i</span></code> has the value of 0, <code class="docutils literal notranslate"><span class="pre">rows</span></code> 5 and <code class="docutils literal notranslate"><span class="pre">spaces</span></code> 4 in the
 Debug tool window.  These values are also shown inline next to the code (inline debugger).</p>
 <figure class="align-default" id="debug-tool">
 <img alt="_images/debug-tool.png" src="_images/debug-tool.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Debug tool window in PyCharm</span><a class="headerlink" href="#debug-tool" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 1.17 </span><span class="caption-text">Debug tool window in PyCharm</span><a class="headerlink" href="#debug-tool" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>To run one line of code at a time, press the Step Over <img alt="" src="_images/step-over.png" /> button. This is
@@ -429,7 +479,7 @@ electricalmechanical computer leading eventually to the word “bug” to refer 
 <figure class="align-default" id="id1">
 <img alt="_images/grace-hopper.jpeg" src="_images/grace-hopper.jpeg" />
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Grace Hopper (<a class="reference external" href="https://commons.wikimedia.org/wiki/File:Grace_Hopper_and_UNIVAC.jpg">Wikipedia</a>)</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 1.18 </span><span class="caption-text">Grace Hopper (<a class="reference external" href="https://commons.wikimedia.org/wiki/File:Grace_Hopper_and_UNIVAC.jpg">Wikipedia</a>)</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -466,8 +516,15 @@ electricalmechanical computer leading eventually to the word “bug” to refer 
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Control flow statements</p>
+            <p class="prev-next-title"><span class="section-number">1.11. </span>Control flow statements</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="further-programming.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Further programming</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
