@@ -61,8 +61,14 @@ This practical is composed of the following exercises:
 * - {numref}`dtype-ndarrays`
   - **dtype of NumPy arrays**: In this exercise, we look into the way NumPy allocated dtypes to arrays.
   - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
-* - {numref} `ndarrays-manip-exercise`
-  - ** NumPy array manipulations**: This exercises performs different NumPy array manipulations.  
+* - {numref}`ndarrays-manip-exercise`
+  - **NumPy array manipulations**: This exercises performs different NumPy array manipulations.  
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`ndarrays-view-copy-exercise`
+  - **Numpy views and copies**: This exercise explores NumPy array views and copies.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`odd-even-numpy-exercise`
+  - **Odd and even numbers with NumPy arrays**: In this exercise we identify odd and even numbers using NumPy arrays.
   - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
   
 ```

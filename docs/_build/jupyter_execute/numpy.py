@@ -242,33 +242,49 @@ a = np.array(l)
 # ```{exercise-end}
 # ```
 # 
-# 
-# 
-# 
-# 
-# 
 # ## Slicing NumPy arrays
-# To get the value of the specific data items in the array we do that in the same way we do in Python lists: by using the square 
-# brackets e.g. 
-# a[2]
-# a[2:5]
-# a[1:8:2]
 # 
-# ### Views and Copies
-# 
-# NumPy arrays also save their data 
-# separetly from the ndarray object.
-# 
-# When we create a new variable and 
-# allocate it an existing nparray object, that variable will point to the same ndarray object.  Because of this, a change in b
-# also effect a.
+# We slice a NumPy array when we want to extract data items from it. Slicing in NumPy arrays works the same as slicing in 
+# standard Python lists; using square brackets to specify the star, end and step of items we would like to extract from the NumPy array.  
+# The code below provides a few examples:
 
 # In[5]:
 
 
+# extract data item at index position 2
+a[2]
+print(a[2])
+
+# extract data items from index position 2 to index position 5 (excluded)
+a[2:5]
+print(a[2:5])
+
+# extract every second data item from index position 1 to index position 2 
+a[1:8:2]
+print(a[1:8:2])
+
+
+# ## Views and Copies of NumPy arrays
+# 
+# When we create a new variable (`b`) and assign it to an existing `ndarray` object (`a`), that variable will also point to the same `ndarray` object.
+# {numref}`ndarray-assign` is a representation of this.
+# 
+# ```{figure} images/ndarray-assign.png
+# ---
+# name: ndarray-assign
+# ---
+# Representation of `ndarray` objects `a` and `b` in memory when `b = a`.
+# ```
+# 
+# 
+# Because of this, a change in `b` also effects `a`.
+
+# In[6]:
+
+
+# create a NumPy array a from list l
 l = [55, 92, 110, 66, 75, 45, 40, 57, 55, 62]
 a = np.array(l)
-
 
 print("ID of a is:", id(a))
 
@@ -277,39 +293,62 @@ print("ID of b is:", id(b))
 
 b[3] = 60
 print(a)
+print("ID of a is:", id(a))
+print("ID of b is:", id(b))
 
 
-# In the example above, b and a share the same ID.  Changing the data item in index 3 of b, caused the change in a as well, since 
-# both are the same object.  
-# The view method creates a new ndarray object that point to the same data.  Because it is pointing to the same data, any changes
-# made to the view ndarray object will be effected in the base object which is the ndarray where the array data is actually stored.  
-# In the example below c is the view object and a is the base object.  As you can see the id of the base of c and a are the same.
+# In the example above, `b` and `a` share the same object ID.  Changing the data item in index position 3 of `b`, caused 
+# the change in `a` as well, since both are the same object.  
+# 
+# As we have seen in {numref}`ndarray`, NumPy arrays save their data separately from the `ndarray` object. The `view()` method of an `ndarray` object creates a new `ndarray` object that points to the same data of the base array. 
+# Because it is pointing to the same data, any changes made to the view object will be effected in the base object which is 
+# the `ndarray` where the array data is actually stored. In the example below `c` is the view object and `a` is the base object.
+# As you can see the object ID of the base of `c` and `a` are the same.
 
-# In[6]:
+# In[7]:
 
 
 c = a.view()
 print("ID of a is:", id(a))
 print("ID of c is:", id(c))
 
+c[3] = 62  #this changes also a
+print(a)
+
 print("ID of base array of c is:", id(c.base))
 
 
-# Slicing an ndarray also returns a view of it.
+# ```{figure} images/ndarray-view.png
+# ---
+# name: ndarray-view
+# ---
+# Representation of NumPy view in memory.
+# ```
+# 
+# Slicing a NumPy array also returns a view of it:
 
-# In[7]:
+# In[8]:
 
 
 d = a[2:5]
 d[0] = 80    #this changes a[2] as well!
 print(d)
+print("ID of d is:", id(d))
 print(a)
+print("ID of a is:", id(a))
 
 
-# When creating a copy of an ndarray however, this would create a completely new copy, ie. the object and data are not pointing to 
-# the same object but rather they point to a different one.
+# When creating a **copy** of an `ndarray` however, this would create a completely new copy, that is, though the contents would
+# be the same, the objects are two different ones in memory.  
+# 
+# ```{figure} images/ndarray-copy.png
+# ---
+# name: ndarray-view
+# ---
+# Representation of NumPy copy in memory.
+# ```
 
-# In[8]:
+# In[9]:
 
 
 #create a copy of ndarray a
@@ -322,13 +361,33 @@ print(f"a is: {a}")
 print(f"e is: {e}")
 
 
-# # Vectorised array operations
+# ```{exercise-start}
+# :label: ndarrays-view-copy-exercise
+# ```
+# **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 # 
-# One of the main differences between standard Python data sequences such as lists and NumPy arrays is that it uses a vectorised system 
-# which allows us to perform operations over all the ndarray object using one line of code as opposed to  using a loop as we do 
-# with lists.
+# To understand the difference between views and copies of NumPy arrays, run the code in this section (Views and copies of NumPy arrays). 
+# In each example, get the object ID of the NumPy array created and try to change a data item in the NumPy arrays. This should help 
+# you understand whether the same object or same data is being processed in each case.
+# ```{exercise-end}
+# ```
 # 
 # 
+# ## Vectorised array operations
+# 
+# One of the main differences between standard Python data sequences such as lists and NumPy arrays is that NumPy arrays use a vectorised system 
+# which allows us to perform operations over all the `ndarray` object using one line of code as opposed to  using a loop as we do with lists.
+
+# In[10]:
+
+
+# Check whether each data item in a is > 60
+a > 60
+
+# If you try to the same with a standard Python list you would get an error
+l > 60
+
+
 # #Extract items in the list that are >60
 # a > 60
 # returns a list of True and False; True if the data item is > 60, and False otherwise.
@@ -346,11 +405,23 @@ print(f"e is: {e}")
 # a[(a > 60)  & (a < 90)]
 # 
 # 
-# ### Operations on arrays
+# ```{exercise-start} Odd and even numbers with NumPy arrays
+# :label: odd-even-numpy-exercise
+# ```
+# **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+# 
+# Using the list of integers: 55,  92, 110,  66,  75,  45,  40,  57,  55,  62  
+# write code using NumPy arrays to print two list:
+# 1. the even numbers from the list of numbers
+# 2. the odd numbers from the list of numbers.
+# ```{exercise-end}
+# ```
+# 
+# ### Mathematical operations using NumPy arrays
 # 
 # Similarly, arithmetic operations can be performed on an array in one statement. For example:
 
-# In[9]:
+# In[ ]:
 
 
 a1 = np.array([10,20,30])
@@ -372,7 +443,7 @@ print(f"a1 / a2 is: {a1 / a2}")
 # You can also use aggregate functions on NumPy arrays that perform an operation across all items in the array and return one 
 # result back.  For example, if you want to add all the numbers in a NumPy array together, use sum:
 
-# In[10]:
+# In[ ]:
 
 
 a3 = np.array([1, 4, 9])
@@ -385,7 +456,7 @@ a1.mean()
 a1.std() #get standard deviation
 
 
-# In[11]:
+# In[ ]:
 
 
 #return element-wise square root
@@ -415,7 +486,7 @@ np.log(ans2)
 # between NumPy arrays and single values, for example, an integer.  In this case the integer is "broadcast" across the NumPy array
 # so that they have similar sizes for the operation to be possible.
 
-# In[12]:
+# In[ ]:
 
 
 a1 * 2
@@ -425,7 +496,7 @@ a1 * 2
 # Eucleadean distance example:
 # https://www.calculatorsoup.com/calculators/geometry-plane/distance-two-points.php
 
-# In[13]:
+# In[ ]:
 
 
 import numpy as np
@@ -452,7 +523,7 @@ print(np.sqrt(sum_sq))
 # ### Random sampling
 # To generate a random number we first call default_rng() method to create an instance of Generator
 
-# In[14]:
+# In[ ]:
 
 
 import numpy as np

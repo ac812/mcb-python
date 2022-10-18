@@ -158,3 +158,20 @@ print(indices)
 
 # ```{solution-end}
 # ```
+# 
+# ```{solution-start} odd-even-numpy-exercise
+# :label: odd-even-numpy-exercise-solution
+# :class: dropdown
+# ```
+
+# In[11]:
+
+
+a = np.array([55,  92, 110,  66,  75,  45,  40,  57,  55,  62])
+
+print(f"Even numbers in list are: {a[a % 2 == 0]}")
+print(f"Odd numbers in list are: {a[a % 2 != 0]}")
+
+
+# ```{solution-end}
+# ```

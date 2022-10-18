@@ -649,6 +649,28 @@ the Fibonacci sequence.  Instead of printing it, on line 5 we are adding the nex
 </div>
 </section>
 </div>
+<div class="solution dropdown admonition" id="odd-even-numpy-exercise-solution">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="numpy.html#odd-even-numpy-exercise"> Exercise 2.6 (Odd and even numbers with NumPy arrays)</a></p>
+<section id="s">
+<span id="o"></span><span id="l"></span><span id="u"></span><span id="t"></span><span id="i"></span><span id="o"></span><span id="n"></span><span id="-"></span><span id="c"></span><span id="o"></span><span id="n"></span><span id="t"></span><span id="e"></span><span id="n"></span><span id="t"></span><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">55</span><span class="p">,</span>  <span class="mi">92</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span>  <span class="mi">66</span><span class="p">,</span>  <span class="mi">75</span><span class="p">,</span>  <span class="mi">45</span><span class="p">,</span>  <span class="mi">40</span><span class="p">,</span>  <span class="mi">57</span><span class="p">,</span>  <span class="mi">55</span><span class="p">,</span>  <span class="mi">62</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Even numbers in list are: </span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Odd numbers in list are: </span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Even numbers in list are: [ 92 110  66  40  62]
+Odd numbers in list are: [55 75 45 57 55]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
