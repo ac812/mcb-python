@@ -70,7 +70,12 @@ This practical is composed of the following exercises:
 * - {numref}`odd-even-numpy-exercise`
   - **Odd and even numbers with NumPy arrays**: In this exercise we identify odd and even numbers using NumPy arrays.
   - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
-  
+* - {numref}`math-formula-exercise`
+  - **Mathematical formulas**:  In this exercise, we will use NumPy to work with mathematical formulas.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`random-exercise`
+  - **Random numbers**: This exercise explores gerenating random numbers.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 ```
 
 :::{card} Managed to solve all the exercises?  Well done!

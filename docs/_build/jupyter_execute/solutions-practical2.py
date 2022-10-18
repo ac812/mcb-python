@@ -175,3 +175,59 @@ print(f"Odd numbers in list are: {a[a % 2 != 0]}")
 
 # ```{solution-end}
 # ```
+# 
+# ```{solution-start} math-formula-exercise
+# :label: math-formula-exercise-solution
+# :class: dropdown
+# ```
+
+# In[12]:
+
+
+y = np.array([2,1,2,3,2,4])
+y_hat = np.array([1,1,1,2,2,1])
+
+mse = (1/6) * np.sum(np.square(y-y_hat))
+print(mse)
+
+
+# ```{solution-end}
+# ```
+# 
+# ```{solution-start} random-exercise
+# :label: random-exercise-solution
+# :class: dropdown
+# ```
+# 2., The two random numbers generated are the same (see below).  The generator needs a starting number (seed) to be able to
+# generate a random variable.  Using a seed enables replication of results.
+
+# In[13]:
+
+
+seed = 12345
+
+# create a generator
+rng = np.random.default_rng(seed=seed)
+rnumber = rng.random()
+print(rnumber)
+
+# create a generator
+rng = np.random.default_rng(seed=seed)
+rnumber = rng.random()
+print(rnumber)
+
+
+# 3.,  If you do not use a seed to initialise the generator, then a random seed value is used and it will not be possible to relicate results.
+# 
+# 4.,
+
+# In[14]:
+
+
+rng = np.random.default_rng(seed=seed)
+ans = rng.binomial(10, 0.3, 100)
+print(ans)
+
+
+# ```{solution-end}
+# ```

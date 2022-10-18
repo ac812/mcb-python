@@ -144,7 +144,7 @@ and returns the list of Fibonacci sequence numbers from 0 to `n`.
 ```
 
 
-## Variable scope
+[//]: # (## Variable scope)
 
 
 

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.4. NumPy &#8212; Python Programming</title>
+    <title>2.3. NumPy &#8212; Python Programming</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,9 +51,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="2.3. Drawing plots from lists - matplotlib" href="plots_lists.html" />
+    <link rel="prev" title="2.2. Modules and Packages" href="modules_packages.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -198,19 +200,9 @@ const thebe_selector_output = ".output, .cell_output"
      2.2. Modules and Packages
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plots_lists.html">
-     2.3. Drawing plots from lists -
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       matplotlib
-      </span>
-     </code>
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.4. NumPy
+     2.3. NumPy
     </a>
    </li>
   </ul>
@@ -440,12 +432,12 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-numpy">
-   2.4.1. What is NumPy?
+   2.3.1. What is NumPy?
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#numpy-arrays-vs-standard-python-sequences-e-g-lists">
-     2.4.1.1. NumPy arrays vs standard Python sequences (
+     2.3.1.1. NumPy arrays vs standard Python sequences (
      <em>
       e.g.,
      </em>
@@ -456,17 +448,17 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#importing-numpy">
-   2.4.2. Importing NumPy
+   2.3.2. Importing NumPy
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-numpy-arrays">
-   2.4.3. Creating NumPy arrays
+   2.3.3. Creating NumPy arrays
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#numpy-data-types-dtype">
-   2.4.4. NumPy data types -
+   2.3.4. NumPy data types -
    <code class="docutils literal notranslate">
     <span class="pre">
      dtype
@@ -476,40 +468,40 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#array-manipulation-operations">
-   2.4.5. Array manipulation operations
+   2.3.5. Array manipulation operations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#slicing-numpy-arrays">
-   2.4.6. Slicing NumPy arrays
+   2.3.6. Slicing NumPy arrays
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#views-and-copies-of-numpy-arrays">
-   2.4.7. Views and Copies of NumPy arrays
+   2.3.7. Views and Copies of NumPy arrays
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vectorised-array-operations">
-   2.4.8. Vectorised array operations
+   2.3.8. Vectorised array operations
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mathematical-operations-using-numpy-arrays">
-     2.4.8.1. Mathematical operations using NumPy arrays
+     2.3.8.1. Mathematical operations using NumPy arrays
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#broadcasting">
-     2.4.8.2. Broadcasting
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#random-sampling">
-     2.4.8.3. Random sampling
+     2.3.8.2. Broadcasting
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-sampling">
+   2.3.9. Random sampling
+  </a>
  </li>
 </ul>
 
@@ -532,12 +524,12 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-numpy">
-   2.4.1. What is NumPy?
+   2.3.1. What is NumPy?
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#numpy-arrays-vs-standard-python-sequences-e-g-lists">
-     2.4.1.1. NumPy arrays vs standard Python sequences (
+     2.3.1.1. NumPy arrays vs standard Python sequences (
      <em>
       e.g.,
      </em>
@@ -548,17 +540,17 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#importing-numpy">
-   2.4.2. Importing NumPy
+   2.3.2. Importing NumPy
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-numpy-arrays">
-   2.4.3. Creating NumPy arrays
+   2.3.3. Creating NumPy arrays
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#numpy-data-types-dtype">
-   2.4.4. NumPy data types -
+   2.3.4. NumPy data types -
    <code class="docutils literal notranslate">
     <span class="pre">
      dtype
@@ -568,40 +560,40 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#array-manipulation-operations">
-   2.4.5. Array manipulation operations
+   2.3.5. Array manipulation operations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#slicing-numpy-arrays">
-   2.4.6. Slicing NumPy arrays
+   2.3.6. Slicing NumPy arrays
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#views-and-copies-of-numpy-arrays">
-   2.4.7. Views and Copies of NumPy arrays
+   2.3.7. Views and Copies of NumPy arrays
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vectorised-array-operations">
-   2.4.8. Vectorised array operations
+   2.3.8. Vectorised array operations
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mathematical-operations-using-numpy-arrays">
-     2.4.8.1. Mathematical operations using NumPy arrays
+     2.3.8.1. Mathematical operations using NumPy arrays
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#broadcasting">
-     2.4.8.2. Broadcasting
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#random-sampling">
-     2.4.8.3. Random sampling
+     2.3.8.2. Broadcasting
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-sampling">
+   2.3.9. Random sampling
+  </a>
  </li>
 </ul>
 
@@ -614,14 +606,14 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="numpy">
-<h1><span class="section-number">2.4. </span>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2.3. </span>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h1>
 <section id="what-is-numpy">
-<h2><span class="section-number">2.4.1. </span>What is NumPy?<a class="headerlink" href="#what-is-numpy" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.3.1. </span>What is NumPy?<a class="headerlink" href="#what-is-numpy" title="Permalink to this headline">#</a></h2>
 <p>NumPy is a popular Python package for scientific computing.  It provides multidimensional arrays objects and functionality
 for fast operations on them and facilitates mathematical operations.  NumPy is used in other popular Python packages including
 Pandas, SciPy, Matplotlib and scikit-learn.</p>
 <section id="numpy-arrays-vs-standard-python-sequences-e-g-lists">
-<h3><span class="section-number">2.4.1.1. </span>NumPy arrays vs standard Python sequences (<em>e.g.,</em> lists)<a class="headerlink" href="#numpy-arrays-vs-standard-python-sequences-e-g-lists" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.3.1.1. </span>NumPy arrays vs standard Python sequences (<em>e.g.,</em> lists)<a class="headerlink" href="#numpy-arrays-vs-standard-python-sequences-e-g-lists" title="Permalink to this headline">#</a></h3>
 <p>Below are the main differences between NumPy arrays and standard Python sequences such as lists:</p>
 <ul class="simple">
 <li><p>NumPy arrays can only contain the same type of data items, for example, you cannot have one data item as <code class="docutils literal notranslate"><span class="pre">int</span></code> and another as <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p></li>
@@ -635,16 +627,16 @@ Pandas, SciPy, Matplotlib and scikit-learn.</p>
 </li>
 </ul>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="365c74a7-cb32-41fa-90f6-4e3dc7cd39c7" name="bf4f671f-9ee1-4420-9453-c932be8f4399" type="radio">
-</input><label class="sd-tab-label" for="365c74a7-cb32-41fa-90f6-4e3dc7cd39c7">
+<input checked="checked" id="e5239886-3ea9-463e-b308-1c3d2ea3510d" name="0d925c04-adf2-4587-9918-a4eba2f25f5d" type="radio">
+</input><label class="sd-tab-label" for="e5239886-3ea9-463e-b308-1c3d2ea3510d">
 Standard Python</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
     <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-<input id="f5448bbd-b75f-4d69-bb79-d5b3ec0c1368" name="bf4f671f-9ee1-4420-9453-c932be8f4399" type="radio">
-</input><label class="sd-tab-label" for="f5448bbd-b75f-4d69-bb79-d5b3ec0c1368">
+<input id="b646a17a-752f-44ca-b3e5-77047954365a" name="0d925c04-adf2-4587-9918-a4eba2f25f5d" type="radio">
+</input><label class="sd-tab-label" for="b646a17a-752f-44ca-b3e5-77047954365a">
 NumPy</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
 </pre></div>
@@ -654,7 +646,7 @@ NumPy</label><div class="sd-tab-content docutils">
 </section>
 </section>
 <section id="importing-numpy">
-<h2><span class="section-number">2.4.2. </span>Importing NumPy<a class="headerlink" href="#importing-numpy" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.3.2. </span>Importing NumPy<a class="headerlink" href="#importing-numpy" title="Permalink to this headline">#</a></h2>
 <p>Because we are using the Anaconda distribution for Python, NumPy comes pre-installed.  You can check whether NumPy is installed
 from the <em>Python Packages</em> tab in PyCharm.<br />
 <img alt="python-packages" src="_images/python-packages.png" /></p>
@@ -669,7 +661,7 @@ widely adopted convention is as follows:</p>
 </div>
 </section>
 <section id="creating-numpy-arrays">
-<h2><span class="section-number">2.4.3. </span>Creating NumPy arrays<a class="headerlink" href="#creating-numpy-arrays" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.3.3. </span>Creating NumPy arrays<a class="headerlink" href="#creating-numpy-arrays" title="Permalink to this headline">#</a></h2>
 <p>A NumPy array is the main data structure of NumPy. We can create a NumPy array from a Python list as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -767,7 +759,7 @@ pane in the console to see the <code class="docutils literal notranslate"><span 
 </div>
 </section>
 <section id="numpy-data-types-dtype">
-<h2><span class="section-number">2.4.4. </span>NumPy data types - <code class="docutils literal notranslate"><span class="pre">dtype</span></code><a class="headerlink" href="#numpy-data-types-dtype" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.3.4. </span>NumPy data types - <code class="docutils literal notranslate"><span class="pre">dtype</span></code><a class="headerlink" href="#numpy-data-types-dtype" title="Permalink to this headline">#</a></h2>
 <p>NumPy is written in C, a low-level language.  Because of this, it inherits some features that are normally associated
 with low level languages, NumPy data types are one of them.</p>
 <p>While the size of the standard Python data types (<em>e.g.,</em> <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>) offer flexibility, that is,
@@ -858,7 +850,7 @@ specify the <code class="docutils literal notranslate"><span class="pre">dtype</
 </div>
 </section>
 <section id="array-manipulation-operations">
-<h2><span class="section-number">2.4.5. </span>Array manipulation operations<a class="headerlink" href="#array-manipulation-operations" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.3.5. </span>Array manipulation operations<a class="headerlink" href="#array-manipulation-operations" title="Permalink to this headline">#</a></h2>
 <table class="table" id="ndarray-manip-table">
 <caption><span class="caption-number">Table 2.3 </span><span class="caption-text">Array manipulation functions</span><a class="headerlink" href="#ndarray-manip-table" title="Permalink to this table">#</a></caption>
 <colgroup>
@@ -918,7 +910,7 @@ specify the <code class="docutils literal notranslate"><span class="pre">dtype</
 </div>
 </section>
 <section id="slicing-numpy-arrays">
-<h2><span class="section-number">2.4.6. </span>Slicing NumPy arrays<a class="headerlink" href="#slicing-numpy-arrays" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.3.6. </span>Slicing NumPy arrays<a class="headerlink" href="#slicing-numpy-arrays" title="Permalink to this headline">#</a></h2>
 <p>We slice a NumPy array when we want to extract data items from it. Slicing in NumPy arrays works the same as slicing in
 standard Python lists; using square brackets to specify the star, end and step of items we would like to extract from the NumPy array.<br />
 The code below provides a few examples:</p>
@@ -948,7 +940,7 @@ The code below provides a few examples:</p>
 </div>
 </section>
 <section id="views-and-copies-of-numpy-arrays">
-<h2><span class="section-number">2.4.7. </span>Views and Copies of NumPy arrays<a class="headerlink" href="#views-and-copies-of-numpy-arrays" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.3.7. </span>Views and Copies of NumPy arrays<a class="headerlink" href="#views-and-copies-of-numpy-arrays" title="Permalink to this headline">#</a></h2>
 <p>When we create a new variable (<code class="docutils literal notranslate"><span class="pre">b</span></code>) and assign it to an existing <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object (<code class="docutils literal notranslate"><span class="pre">a</span></code>), that variable will also point to the same <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object.
 <a class="reference internal" href="#ndarray-assign"><span class="std std-numref">Fig. 2.3</span></a> is a representation of this.</p>
 <figure class="align-default" id="ndarray-assign">
@@ -977,11 +969,11 @@ The code below provides a few examples:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140603676764240
-ID of b is: 140603676764240
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140520083078480
+ID of b is: 140520083078480
 [ 55  92 110  60  75  45  40  57  55  62]
-ID of a is: 140603676764240
-ID of b is: 140603676764240
+ID of a is: 140520083078480
+ID of b is: 140520083078480
 </pre></div>
 </div>
 </div>
@@ -1006,10 +998,10 @@ As you can see the object ID of the base of <code class="docutils literal notran
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140603676764240
-ID of c is: 140603677279504
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140520083078480
+ID of c is: 140520328560432
 [ 55  92 110  62  75  45  40  57  55  62]
-ID of base array of c is: 140603676764240
+ID of base array of c is: 140520083078480
 </pre></div>
 </div>
 </div>
@@ -1034,9 +1026,9 @@ ID of base array of c is: 140603676764240
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[80 62 75]
-ID of d is: 140603677279888
+ID of d is: 140520328560144
 [55 92 80 62 75 45 40 57 55 62]
-ID of a is: 140603676764240
+ID of a is: 140520083078480
 </pre></div>
 </div>
 </div>
@@ -1063,8 +1055,8 @@ be the same, the objects are two different ones in memory.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140603676764240
-ID of e is: 140603147714352
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140520083078480
+ID of e is: 140520083592016
 a is: [55 92 80 62 75 45 40 57 55 62]
 e is: [55 92 80 70 75 45 40 57 55 62]
 </pre></div>
@@ -1083,15 +1075,32 @@ you understand whether the same object or same data is being processed in each c
 </div>
 </section>
 <section id="vectorised-array-operations">
-<h2><span class="section-number">2.4.8. </span>Vectorised array operations<a class="headerlink" href="#vectorised-array-operations" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.3.8. </span>Vectorised array operations<a class="headerlink" href="#vectorised-array-operations" title="Permalink to this headline">#</a></h2>
 <p>One of the main differences between standard Python data sequences such as lists and NumPy arrays is that NumPy arrays use a vectorised system
 which allows us to perform operations over all the <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object using one line of code as opposed to  using a loop as we do with lists.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check whether each data item in a is &gt; 60</span>
-<span class="n">a</span> <span class="o">&gt;</span> <span class="mi">60</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 
-<span class="c1"># If you try to the same with a standard Python list you would get an error</span>
+<span class="c1"># Check whether each data item in a is &gt; 60</span>
+<span class="n">a</span> <span class="o">&gt;</span> <span class="mi">60</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[55 92 80 62 75 45 40 57 55 62]
+[False  True  True  True  True False False False False  True]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code above returns a list of <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> values; <code class="docutils literal notranslate"><span class="pre">True</span></code> if the data item is <code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">60</span></code>, and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise. If we
+try to do the same with the standard Python list, we get an error (see below).  This is because lists do not use a vectorised
+system, so to compare items in a list you would need to compare each item at a time via a loop.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you try to the same with a standard Python list you would get an error</span>
 <span class="n">l</span> <span class="o">&gt;</span> <span class="mi">60</span>
 </pre></div>
 </div>
@@ -1099,27 +1108,45 @@ which allows us to perform operations over all the <code class="docutils literal
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">60</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># If you try to the same with a standard Python list you would get an error</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">l</span> <span class="o">&gt;</span> <span class="mi">60</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># If you try to the same with a standard Python list you would get an error</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">l</span> <span class="o">&gt;</span> <span class="mi">60</span>
 
 <span class="ne">TypeError</span>: &#39;&gt;&#39; not supported between instances of &#39;list&#39; and &#39;int&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>#Extract items in the list that are &gt;60
-a &gt; 60
-returns a list of True and False; True if the data item is &gt; 60, and False otherwise.</p>
-<compare with standard python>
-<p>To get the actual data items we have to use our comparison statement inside the [] as essentially we want to slice our
-ndarray based on a condition:
-a[a &gt; 60]</p>
-<p>This is similar to the way we extract items from vectors in R.</p>
-<p>You can combine multiple comparison statements using the &amp; (and) and | (or) logical operators
-get the marks that are &gt; 60 and &lt; 90:
-a[(a &gt; 60)  &amp; (a &lt; 90)]</p>
+<p>To get the actual data values (not just <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>) we have to use our comparison statement inside the square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>
+as essentially we want to slice our <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object based on a condition:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([92, 80, 62, 75, 62])
+</pre></div>
+</div>
+</div>
+</div>
+<p>This approach is similar to the way we extract items from vectors in R.  You can combine multiple comparison statements using
+the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> (and) and <code class="docutils literal notranslate"><span class="pre">|</span></code> (or) logical operators (see example below).  Note these logical operators have a different notation to the ones we used
+previously from the standard Python library.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the values that are &gt; 60 and &lt; 90: </span>
+<span class="n">a</span><span class="p">[(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="p">)</span>  <span class="o">&amp;</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">90</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([80, 62, 75, 62])
+</pre></div>
+</div>
+</div>
+</div>
 <div class="exercise admonition" id="odd-even-numpy-exercise">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.7 </span> (Odd and even numbers with NumPy arrays)</p>
@@ -1134,7 +1161,7 @@ write code using NumPy arrays to print two list:</p>
 </section>
 </div>
 <section id="mathematical-operations-using-numpy-arrays">
-<h3><span class="section-number">2.4.8.1. </span>Mathematical operations using NumPy arrays<a class="headerlink" href="#mathematical-operations-using-numpy-arrays" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.3.8.1. </span>Mathematical operations using NumPy arrays<a class="headerlink" href="#mathematical-operations-using-numpy-arrays" title="Permalink to this headline">#</a></h3>
 <p>Similarly, arithmetic operations can be performed on an array in one statement. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1155,48 +1182,78 @@ write code using NumPy arrays to print two list:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a1 + a2 is: [12 30 33]
+a1 - a2 is: [ 8 10 27]
+a1 * a2 is: [ 20 200  90]
+a1 / a2 is: [ 5.  2. 10.]
+</pre></div>
+</div>
+</div>
 </div>
 <p>You can also use aggregate functions on NumPy arrays that perform an operation across all items in the array and return one
-result back.  For example, if you want to add all the numbers in a NumPy array together, use sum:</p>
+result back.  For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#aggregate functions</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sum of all data items in a1 is: </span><span class="si">{</span><span class="n">a1</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;min of a1 is: </span><span class="si">{</span><span class="n">a1</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;max of a1 is: </span><span class="si">{</span><span class="n">a1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mean of a1 is: </span><span class="si">{</span><span class="n">a1</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;standard deviation of a1 is: </span><span class="si">{</span><span class="n">a1</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sum of all data items in a1 is: 60
+min of a1 is: 10
+max of a1 is: 30
+mean of a1 is: 20.0
+standard deviation of a1 is: 8.16496580927726
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also perform element-wise mathematical operations, below are a few examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
 
-<span class="c1">#aggregation function</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sum of all data items in a1 is: </span><span class="si">{</span><span class="n">a1</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">a1</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-<span class="n">a1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-<span class="n">a1</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">a1</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="c1">#get standard deviation</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#return element-wise square root</span>
-<span class="n">ans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a3</span><span class="p">)</span>
+<span class="c1">#return element-wise square root</span>
+<span class="n">sqrt_ans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;square root: </span><span class="si">{</span><span class="n">sqrt_ans</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># square each element in ndarray</span>
 <span class="c1"># square(sqrt(x)) = x </span>
-<span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+<span class="n">square_ans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">sqrt_ans</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;square: </span><span class="si">{</span><span class="n">square_ans</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># calculate exponential of each data item</span>
-<span class="n">ans2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span>
+<span class="n">exp_ans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;exponential: </span><span class="si">{</span><span class="n">exp_ans</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># calculate the natural logarithm of each data item in ndarray</span>
 <span class="c1"># the natural logarithm is the inverse of the exponential function: log(exp(x)) = x</span>
-<span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">ans2</span><span class="p">)</span>  
+<span class="n">log_ans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">exp_ans</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;natural logarithm: </span><span class="si">{</span><span class="n">log_ans</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>square root: [1. 2. 3.]
+square: [1. 4. 9.]
+exponential: [7.38905610e+00 2.20264658e+04 2.00855369e+01]
+natural logarithm: [ 2. 10.  3.]
 </pre></div>
 </div>
 </div>
 </div>
-<p>There are several other mathematical functions that can be applied on ndarrays.  A full list can be found <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.math.html">here</a>.</p>
+<p>There are several other mathematical functions that can be applied on <code class="docutils literal notranslate"><span class="pre">ndarrays</span></code>.  A full list can be found <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.math.html">here</a>.</p>
 </section>
 <section id="broadcasting">
-<h3><span class="section-number">2.4.8.2. </span>Broadcasting<a class="headerlink" href="#broadcasting" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.3.8.2. </span>Broadcasting<a class="headerlink" href="#broadcasting" title="Permalink to this headline">#</a></h3>
 <p>We have seen so far how we can perform arithmetic operations on NumPy arrays of the same size.  Broadcasting refers to when
-we want to perform an operation between a NumPy array of different sizes.  In this course we will be focusing on operations
+we want to perform an operation between NumPy arrays of different sizes.  In this course we will be focusing on operations
 between NumPy arrays and single values, for example, an integer.  In this case the integer is “broadcast” across the NumPy array
 so that they have similar sizes for the operation to be possible.</p>
 <div class="cell docutils container">
@@ -1205,41 +1262,62 @@ so that they have similar sizes for the operation to be possible.</p>
 </pre></div>
 </div>
 </div>
-</div>
-<p>All these features make NumPy desirable to work with mathematical forumulas.<br />
-Eucleadean distance example:
-<a class="reference external" href="https://www.calculatorsoup.com/calculators/geometry-plane/distance-two-points.php">https://www.calculatorsoup.com/calculators/geometry-plane/distance-two-points.php</a></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
- 
-<span class="c1"># initializing points in</span>
-<span class="c1"># numpy arrays</span>
-<span class="n">point1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="n">point2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
- 
-<span class="c1"># finding sum of squares</span>
-<span class="n">sum_sq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">point1</span> <span class="o">-</span> <span class="n">point2</span><span class="p">))</span>
- 
-<span class="c1"># Doing squareroot and</span>
-<span class="c1"># printing Euclidean distance</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sum_sq</span><span class="p">))</span>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([20, 40, 60])
 </pre></div>
 </div>
 </div>
 </div>
-<p>Exercise:
-<a class="reference external" href="https://numpy.org/devdocs/user/absolute_beginners.html#working-with-mathematical-formulas">https://numpy.org/devdocs/user/absolute_beginners.html#working-with-mathematical-formulas</a></p>
-</section>
-<section id="random-sampling">
-<h3><span class="section-number">2.4.8.3. </span>Random sampling<a class="headerlink" href="#random-sampling" title="Permalink to this headline">#</a></h3>
-<p>To generate a random number we first call default_rng() method to create an instance of Generator</p>
+<p>All these features make NumPy desirable to work with mathematical formulas. The example below shows an example
+how the formula <span class="math notranslate nohighlight">\(\sum_{i=1}^{n} (x_{i} + 3)^2\)</span> is computed with NumPy arrays.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+ 
+<span class="n">ans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
+</pre></div>
+</div>
+</div>
+</div>
+<figure class="align-default" id="math-formula">
+<img alt="_images/math-formula.png" src="_images/math-formula.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.6 </span><span class="caption-text">Step-by-step execution of <span class="math notranslate nohighlight">\(\sum_{i=1}^{n} (x_{i} + 3)^2\)</span>.</span><a class="headerlink" href="#math-formula" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="exercise admonition" id="math-formula-exercise">
 
+<p class="admonition-title"><span class="caption-number">Exercise 2.8 </span> (Mathematical formulas)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
+<p>Given the following lists:<br />
+Y = [2, 1, 2, 3, 2, 4]<br />
+<span class="math notranslate nohighlight">\(\hat{Y}\)</span> = [1, 1, 1, 2, 2, 1]</p>
+<p>Use NumPy to find the result of the following equation:</p>
+<p><span class="math notranslate nohighlight">\(MSE = \frac{1}{n}\sum_{i=1}^{n} (Y_{i} - \hat{Y}_{i})^2\)</span></p>
+</section>
+</div>
+</section>
+</section>
+<section id="random-sampling">
+<h2><span class="section-number">2.3.9. </span>Random sampling<a class="headerlink" href="#random-sampling" title="Permalink to this headline">#</a></h2>
+<p>Another functionality that NumPy offers is the generation of random numbers.  To generate a random number we first call
+the <code class="docutils literal notranslate"><span class="pre">default_rng()</span></code> method to create an instance of Generator.  Initialising the generator with a seed allows replication
+of results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set a seed so that results can be replicated</span>
 <span class="n">seed</span> <span class="o">=</span> <span class="mi">12345</span>
+
+<span class="c1"># create a generator and initialise it with seed</span>
 <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
+
 <span class="c1">#generate 3 random integers between 1 and 10 (excluded)</span>
 <span class="n">rints</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rints</span><span class="p">)</span>
@@ -1250,14 +1328,43 @@ Eucleadean distance example:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7 3 8]
+[0.79736546 0.67625467 0.39110955]
+</pre></div>
 </div>
-<p>You can also draw samples from a distribution.  For example
-For a whole list of distributions see <a class="reference external" href="https://numpy.org/devdocs/reference/random/generator.html#distributions">here</a></p>
-<p>#draw 5 samples from the normal distribution where mean=0 and standard deviation is 0.1
-mu, sigma = 0, 0.1 # mean and standard deviation
-sample_normal = rng.normal(mu, sigma, 5)
-print(sample_normal)</p>
+</div>
+</div>
+<p>You can also draw samples from a distribution.  For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#draw 5 samples from the normal distribution where mean=0 and standard deviation is 0.1</span>
+<span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span> <span class="c1"># mean and standard deviation</span>
+<span class="n">sample_normal</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sample_normal</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.07408847 -0.13677927  0.06488928  0.03610581 -0.19528631]
+</pre></div>
+</div>
+</div>
+</div>
+<p>For a whole list of distributions to sample from see <a class="reference external" href="https://numpy.org/devdocs/reference/random/generator.html#distributions">here</a>.</p>
+<div class="exercise admonition" id="random-exercise">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.9 </span> (Random numbers)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
+<ol class="simple">
+<li><p>Run the code in the <a class="reference external" href="#random-sampling">Random sampling section</a> to explore generating numbers.</p></li>
+<li><p>Using a seed, initialise a generator and generate a random number.  Repeat this again so as to have 2 generators using the same seed.  What do you notice about the two random numbers generated?</p></li>
+<li><p>What happens if you remove the seed?</p></li>
+<li><p>Draw 100 samples from a binomial distribution with 10 trails and 0.3 probability of success.</p></li>
+</ol>
 </section>
+</div>
 </section>
 </section>
 
@@ -1288,11 +1395,11 @@ print(sample_normal)</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="plots_lists.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="modules_packages.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.3. </span>Drawing plots from lists - <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></p>
+            <p class="prev-next-title"><span class="section-number">2.2. </span>Modules and Packages</p>
         </div>
     </a>
 </div>

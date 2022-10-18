@@ -369,30 +369,38 @@ One of the main differences between standard Python data sequences such as lists
 which allows us to perform operations over all the `ndarray` object using one line of code as opposed to  using a loop as we do with lists.
 
 ```{code-cell} ipython3
+print(a)
+
 # Check whether each data item in a is > 60
 a > 60
+print(a > 60)
+```
 
+The code above returns a list of `True` and `False` values; `True` if the data item is `> 60`, and `False` otherwise. If we 
+try to do the same with the standard Python list, we get an error (see below).  This is because lists do not use a vectorised 
+system, so to compare items in a list you would need to compare each item at a time via a loop.  
+
+```{code-cell} ipython3
+:tags: ["raises-exception"]
 # If you try to the same with a standard Python list you would get an error
 l > 60
 ```
 
+To get the actual data values (not just `True` and `False`) we have to use our comparison statement inside the square brackets `[]`
+as essentially we want to slice our `ndarray` object based on a condition:
 
-#Extract items in the list that are >60
-a > 60
-returns a list of True and False; True if the data item is > 60, and False otherwise.
-
-<compare with standard python>
-
-To get the actual data items we have to use our comparison statement inside the [] as essentially we want to slice our 
-ndarray based on a condition:
+```{code-cell} ipython3
 a[a > 60]
+```
 
-This is similar to the way we extract items from vectors in R.  
+This approach is similar to the way we extract items from vectors in R.  You can combine multiple comparison statements using 
+the `&` (and) and `|` (or) logical operators (see example below).  Note these logical operators have a different notation to the ones we used 
+previously from the standard Python library.  
 
-You can combine multiple comparison statements using the & (and) and | (or) logical operators
-get the marks that are > 60 and < 90: 
+```{code-cell} ipython3
+# get the values that are > 60 and < 90: 
 a[(a > 60)  & (a < 90)]
-
+```
 
 ```{exercise-start} Odd and even numbers with NumPy arrays
 :label: odd-even-numpy-exercise
@@ -429,43 +437,47 @@ print(f"a1 / a2 is: {a1 / a2}")
 ```
 
 You can also use aggregate functions on NumPy arrays that perform an operation across all items in the array and return one 
-result back.  For example, if you want to add all the numbers in a NumPy array together, use sum:
+result back.  For example:
+
+```{code-cell} ipython3
+#aggregate functions
+print(f"sum of all data items in a1 is: {a1.sum()}")
+print(f"min of a1 is: {a1.min()}")
+print(f"max of a1 is: {a1.max()}")
+print(f"mean of a1 is: {a1.mean()}")
+print(f"standard deviation of a1 is: {a1.std()}")
+```
+
+You can also perform element-wise mathematical operations, below are a few examples:
 
 ```{code-cell} ipython3
 a3 = np.array([1, 4, 9])
 
-#aggregation function
-print(f"sum of all data items in a1 is: {a1.sum()}")
-a1.min()
-a1.max()
-a1.mean()
-a1.std() #get standard deviation
-```
-
-```{code-cell} ipython3
 #return element-wise square root
-ans = np.sqrt(a3)
+sqrt_ans = np.sqrt(a3)
+print(f"square root: {sqrt_ans}")
 
 # square each element in ndarray
 # square(sqrt(x)) = x 
-np.square(ans)
+square_ans = np.square(sqrt_ans)
+print(f"square: {square_ans}")
 
 # calculate exponential of each data item
-ans2 = np.exp(a2)
+exp_ans = np.exp(a2)
+print(f"exponential: {exp_ans}")
 
 # calculate the natural logarithm of each data item in ndarray
 # the natural logarithm is the inverse of the exponential function: log(exp(x)) = x
-np.log(ans2)  
+log_ans = np.log(exp_ans)
+print(f"natural logarithm: {log_ans}")  
 ```
-There are several other mathematical functions that can be applied on ndarrays.  A full list can be found [here](https://numpy.org/doc/stable/reference/routines.math.html).
-
-
+There are several other mathematical functions that can be applied on `ndarrays`.  A full list can be found [here](https://numpy.org/doc/stable/reference/routines.math.html).
 
 
 ### Broadcasting
 
 We have seen so far how we can perform arithmetic operations on NumPy arrays of the same size.  Broadcasting refers to when
-we want to perform an operation between a NumPy array of different sizes.  In this course we will be focusing on operations 
+we want to perform an operation between NumPy arrays of different sizes.  In this course we will be focusing on operations 
 between NumPy arrays and single values, for example, an integer.  In this case the integer is "broadcast" across the NumPy array
 so that they have similar sizes for the operation to be possible.  
 
@@ -473,41 +485,52 @@ so that they have similar sizes for the operation to be possible.
 a1 * 2
 ```
 
-All these features make NumPy desirable to work with mathematical forumulas.  
-Eucleadean distance example:
-https://www.calculatorsoup.com/calculators/geometry-plane/distance-two-points.php
+All these features make NumPy desirable to work with mathematical formulas. The example below shows an example 
+how the formula $\sum_{i=1}^{n} (x_{i} + 3)^2$ is computed with NumPy arrays.  
 
 ```{code-cell} ipython3
-import numpy as np
+x = np.array((5, 5, 6))
  
-# initializing points in
-# numpy arrays
-point1 = np.array((1, 2, 3))
-point2 = np.array((1, 1, 1))
- 
-# finding sum of squares
-sum_sq = np.sum(np.square(point1 - point2))
- 
-# Doing squareroot and
-# printing Euclidean distance
-print(np.sqrt(sum_sq))
+ans = np.sum(np.square(x - 3))
+print(ans) 
 ```
 
-Exercise:
-https://numpy.org/devdocs/user/absolute_beginners.html#working-with-mathematical-formulas
+```{figure} images/math-formula.png
+---
+name: math-formula
+---
+Step-by-step execution of $\sum_{i=1}^{n} (x_{i} + 3)^2$.
+```
+
+```{exercise} Mathematical formulas
+:label: math-formula-exercise
+
+**Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+
+Given the following lists:  
+ Y = [2, 1, 2, 3, 2, 4]  
+ $\hat{Y}$ = [1, 1, 1, 2, 2, 1]
+ 
+ Use NumPy to find the result of the following equation: 
+
+ $MSE = \frac{1}{n}\sum_{i=1}^{n} (Y_{i} - \hat{Y}_{i})^2$
+```
+
+## Random sampling
+Another functionality that NumPy offers is the generation of random numbers.  To generate a random number we first call 
+the `default_rng()` method to create an instance of Generator.  Initialising the generator with a seed allows replication 
+of results.
 
 
-
-
-### Random sampling
-To generate a random number we first call default_rng() method to create an instance of Generator
 
 
 ```{code-cell} ipython3
-import numpy as np
-
+# set a seed so that results can be replicated
 seed = 12345
+
+# create a generator and initialise it with seed
 rng = np.random.default_rng(seed=seed)
+
 #generate 3 random integers between 1 and 10 (excluded)
 rints = rng.integers(low=1, high=10, size=3)
 print(rints)
@@ -515,15 +538,29 @@ print(rints)
 # generate 3 random decimal numbers in the range[0,1]
 rfloat = rng.random(3)
 print(rfloat)
-
 ```
 
-You can also draw samples from a distribution.  For example
-For a whole list of distributions see [here](https://numpy.org/devdocs/reference/random/generator.html#distributions)
+You can also draw samples from a distribution.  For example:
 
+```{code-cell} ipython3
 #draw 5 samples from the normal distribution where mean=0 and standard deviation is 0.1
 mu, sigma = 0, 0.1 # mean and standard deviation
 sample_normal = rng.normal(mu, sigma, 5)
 print(sample_normal)
+```
+
+For a whole list of distributions to sample from see [here](https://numpy.org/devdocs/reference/random/generator.html#distributions).
+
+```{exercise} Random numbers
+:label: random-exercise
+
+**Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+
+1. Run the code in the [Random sampling section](#random-sampling) to explore generating numbers.
+2. Using a seed, initialise a generator and generate a random number.  Repeat this again so as to have 2 generators using the same seed.  What do you notice about the two random numbers generated?
+3. What happens if you remove the seed?
+4. Draw 100 samples from a binomial distribution with 10 trails and 0.3 probability of success.
+```
+
 
 

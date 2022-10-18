@@ -24,5 +24,4 @@ parts:
        sections:
             - file: creating-functions
             - file: modules_packages
-            - file: plots_lists
             - file: numpy

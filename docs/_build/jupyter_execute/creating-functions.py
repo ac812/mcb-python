@@ -154,4 +154,4 @@ print(sum_two_numbers(1, num1=1))  #this raises an error
 # ```
 # 
 # 
-# ## Variable scope
+# [//]: # (## Variable scope)
