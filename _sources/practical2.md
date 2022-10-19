@@ -9,6 +9,7 @@ further programming concepts and Python functionality.
 During this practical you will learn how to:
 * create your own functions
 * use NumPy arrays and perform different operations with them
+* start plotting with Matplotlib
 
 
 ## Instructions
@@ -75,6 +76,12 @@ This practical is composed of the following exercises:
   - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 * - {numref}`random-exercise`
   - **Random numbers**: This exercise explores gerenating random numbers.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`line-plot`
+  - **Line plot**: This exercise introduces you to plotting with matplotlib.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`scatter-plot`
+  - **Scatter plot**: This exercise draws a scatter plot from random numbers.
   - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 ```
 

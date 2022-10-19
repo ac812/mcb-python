@@ -17,20 +17,24 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-y = np.array(2,1,2,3,2,4)
-y_hat = np.array(1,1,1,2,2,1)
+x = [2, 3, 4, 5, 6]
+y = [1, 2, 3, 4, 5]
 
-mse = (1/6) * np.sum(np.square(y-y_hat))
-print(mse)
+plt.plot(x, y, "go:")
+plt.xlabel("x-axis")
+plt.ylabel("y-axis")
+plt.show()
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mTypeError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn [12], line 1[0m
-[0;32m----> 1[0m y [38;5;241m=[39m np[38;5;241m.[39marray([38;5;241m2[39m,[38;5;241m1[39m,[38;5;241m2[39m,[38;5;241m3[39m,[38;5;241m2[39m,[38;5;241m4[39m)
-[1;32m      2[0m y_hat [38;5;241m=[39m np[38;5;241m.[39marray([38;5;241m1[39m,[38;5;241m1[39m,[38;5;241m1[39m,[38;5;241m2[39m,[38;5;241m2[39m,[38;5;241m1[39m)
-[1;32m      4[0m mse [38;5;241m=[39m ([38;5;241m1[39m[38;5;241m/[39m[38;5;241m6[39m) [38;5;241m*[39m np[38;5;241m.[39msum(np[38;5;241m.[39msquare(y[38;5;241m-[39my_hat))
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn [15], line 4[0m
+[1;32m      1[0m x [38;5;241m=[39m [[38;5;241m2[39m, [38;5;241m3[39m, [38;5;241m4[39m, [38;5;241m5[39m, [38;5;241m6[39m]
+[1;32m      2[0m y [38;5;241m=[39m [[38;5;241m1[39m, [38;5;241m2[39m, [38;5;241m3[39m, [38;5;241m4[39m, [38;5;241m5[39m]
+[0;32m----> 4[0m plt[38;5;241m.[39mplot(x, y, [38;5;124m"[39m[38;5;124mgo:[39m[38;5;124m"[39m)
+[1;32m      5[0m plt[38;5;241m.[39mxlabel([38;5;124m"[39m[38;5;124mx-axis[39m[38;5;124m"[39m)
+[1;32m      6[0m plt[38;5;241m.[39mylabel([38;5;124m"[39m[38;5;124my-axis[39m[38;5;124m"[39m)
 
-[0;31mTypeError[0m: array() takes from 1 to 2 positional arguments but 6 were given
-TypeError: array() takes from 1 to 2 positional arguments but 6 were given
+[0;31mNameError[0m: name 'plt' is not defined
+NameError: name 'plt' is not defined
 

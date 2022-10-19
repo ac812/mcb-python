@@ -15,9 +15,9 @@ kernelspec:
 ````{solution} running-terminal
 :label: running-terminal-solution
 
-To run *numbers.py* in terminal do:
+To run *numbers1.py* in terminal do:
 ``` 
-python numbers.py
+python numbers1.py
 ```
 You will then be asked to input a number in the terminal.  Continue entering numbers until you enter -1
 ````
