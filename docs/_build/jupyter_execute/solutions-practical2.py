@@ -231,3 +231,56 @@ print(ans)
 
 # ```{solution-end}
 # ```
+# 
+# 
+# ```{solution-start} line-plot
+# :label: line-plot-solution
+# :class: dropdown
+# ```
+
+# In[15]:
+
+
+import matplotlib.pyplot as plt
+
+x = [2, 3, 4, 5, 6]
+y = [1, 2, 3, 4, 5]
+
+plt.plot(x, y, "go:")
+plt.xlabel("x-axis")
+plt.ylabel("y-axis")
+plt.show()
+
+
+# ```{solution-end}
+# ```
+# 
+# ```{solution-start} scatter-plot
+# :label: scatter-plot-solution
+# :class: dropdown
+# ```
+
+# In[16]:
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Fixing random state for reproducibility
+seed = 1234
+n = 20
+
+#set generator
+rng = np.random.default_rng(seed=seed)
+
+#generate x and y values
+x = rng.random(n)
+y = rng.random(n)
+
+#plot scatter plot
+plt.scatter(x, y)
+plt.show()
+
+
+# ```{solution-end}
+# ```

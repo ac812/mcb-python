@@ -26,7 +26,8 @@ Below are the main differences between NumPy arrays and standard Python sequence
 * NumPy uses a **vectorised** code system for arrays, which enables the application of operations on each data item without the use of loops. This facilitates mathematical and other operations and has the following advantages:
     * Fewer lines of code
     * Fast (this is more evident with large list sizes)
-    * Easier to read, resembles mathematical notation.  The code below shows the code in standard Python code and in NumPy code that multiplies two lists:
+    * Easier to read, resembles mathematical notation.  
+The code below shows the code in standard Python code and in NumPy code that multiplies two lists:
 
 `````{tab-set}
 ````{tab-item} Standard Python

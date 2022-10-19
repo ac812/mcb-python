@@ -13,7 +13,7 @@ kernelspec:
 # Creating functions
 
 We have previously seen [what functions are and how to call them](calling-functions).  Functions are a good way to structure 
-your code into useful chunks, each chunk being responsible for a particular task.  This make functions are a good way 
+your code into useful chunks, each chunk being responsible for a particular task.  This makes functions are a good way 
 to create **reusable code**. In this section we are going to learn how to create a function of our own from scratch. 
 Functions in Python are defined in the following way:
 
@@ -130,9 +130,6 @@ b. Explore default argument values, positional and keyword arguments by trying t
 
 ```
 
-## Documentation Strings
-
-
 ```{exercise} The Fibonacci sequence function
 :label: fibonacci-function
 
@@ -142,6 +139,31 @@ Rewrite the solution of {numref}`fibonacci` such that, you create a function `fi
 and returns the list of Fibonacci sequence numbers from 0 to `n`.
 
 ```
+
+## Documentation Strings
+Now that we know how to create functions, it is important that we start creating them using good programming practice. We 
+should follow the definition of a function with **docstrings**.  Docstrings is short for Python Documentation Strings.  docstrings
+associate documentation with Python modules, functions and classes. To generate docstrings you need to use triple quotes as shown in the example below.
+
+```{code-cell} ipython3
+def sum_two_numbers(num1=0, num2=0):
+    """
+    Returns the sum of two numbers.
+    :param num1: first number
+    :param num2: second number
+    :return: Returns the sum of num1 and num2.
+    """
+    return num1 + num2
+```
+PyCharm automatically generates the name of the parameters and the return statement.  Filling in the remaining details 
+will ensure that we have documentation specified for the usage of our the function.  When we run code, similarly 
+to comments, docstrings do not have an effect on our code.  But docstrings have the additional benefit of being associated with
+documentation, so always use docstrings to explain functions rather than comments. 
+
+To check out how the documentation created looks like, either include the `help()` function in your code using the name of the 
+function you have created and documented with docstrings as an argument.  For example, `help(sum_two_numbers)`.  The other way 
+is to call `pydoc` from the terminal together with the name of the file where the function is saved, for example, if `sum_two_numbers()`
+was saved in `numbers.py`, then run `pydoc numbers.py` in the terminal.
 
 
 [//]: # (## Variable scope)

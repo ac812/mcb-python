@@ -26,7 +26,7 @@ to install these can be found [here](installation).
 :nonumber:
 **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 
-Take the code to run exercise {numref}`num-prog`. Save it into a file called *numbers.py* and run it from the terminal. Explain 
+Take the code to run exercise {numref}`num-prog`. Save it into a file called *numbers1.py* and run it from the terminal. Explain 
 what you did to run the code in the terminal.
 ```
 

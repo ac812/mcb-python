@@ -25,3 +25,4 @@ parts:
             - file: creating-functions
             - file: modules_packages
             - file: numpy
+            - file: plots_lists

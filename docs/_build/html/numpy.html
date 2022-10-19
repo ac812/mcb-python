@@ -55,6 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2.4. Getting started with Matplotlib" href="plots_lists.html" />
     <link rel="prev" title="2.2. Modules and Packages" href="modules_packages.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -203,6 +204,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      2.3. NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plots_lists.html">
+     2.4. Getting started with Matplotlib
     </a>
    </li>
   </ul>
@@ -622,21 +628,22 @@ Pandas, SciPy, Matplotlib and scikit-learn.</p>
 <ul>
 <li><p>Fewer lines of code</p></li>
 <li><p>Fast (this is more evident with large list sizes)</p></li>
-<li><p>Easier to read, resembles mathematical notation.  The code below shows the code in standard Python code and in NumPy code that multiplies two lists:</p></li>
+<li><p>Easier to read, resembles mathematical notation.<br />
+The code below shows the code in standard Python code and in NumPy code that multiplies two lists:</p></li>
 </ul>
 </li>
 </ul>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="e5239886-3ea9-463e-b308-1c3d2ea3510d" name="0d925c04-adf2-4587-9918-a4eba2f25f5d" type="radio">
-</input><label class="sd-tab-label" for="e5239886-3ea9-463e-b308-1c3d2ea3510d">
+<input checked="checked" id="b7ac90bc-17ab-43ce-bd52-487a09706c7e" name="4f7989a4-f2eb-4462-8cd8-4e4e3386be01" type="radio">
+</input><label class="sd-tab-label" for="b7ac90bc-17ab-43ce-bd52-487a09706c7e">
 Standard Python</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
     <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-<input id="b646a17a-752f-44ca-b3e5-77047954365a" name="0d925c04-adf2-4587-9918-a4eba2f25f5d" type="radio">
-</input><label class="sd-tab-label" for="b646a17a-752f-44ca-b3e5-77047954365a">
+<input id="b25d0b5d-83c8-4208-95e9-7ba4afd2ce1b" name="4f7989a4-f2eb-4462-8cd8-4e4e3386be01" type="radio">
+</input><label class="sd-tab-label" for="b25d0b5d-83c8-4208-95e9-7ba4afd2ce1b">
 NumPy</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
 </pre></div>
@@ -969,11 +976,11 @@ The code below provides a few examples:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140520083078480
-ID of b is: 140520083078480
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140434430230032
+ID of b is: 140434430230032
 [ 55  92 110  60  75  45  40  57  55  62]
-ID of a is: 140520083078480
-ID of b is: 140520083078480
+ID of a is: 140434430230032
+ID of b is: 140434430230032
 </pre></div>
 </div>
 </div>
@@ -998,10 +1005,10 @@ As you can see the object ID of the base of <code class="docutils literal notran
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140520083078480
-ID of c is: 140520328560432
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140434430230032
+ID of c is: 140434430230224
 [ 55  92 110  62  75  45  40  57  55  62]
-ID of base array of c is: 140520083078480
+ID of base array of c is: 140434430230032
 </pre></div>
 </div>
 </div>
@@ -1026,9 +1033,9 @@ ID of base array of c is: 140520083078480
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[80 62 75]
-ID of d is: 140520328560144
+ID of d is: 140434188928464
 [55 92 80 62 75 45 40 57 55 62]
-ID of a is: 140520083078480
+ID of a is: 140434430230032
 </pre></div>
 </div>
 </div>
@@ -1055,8 +1062,8 @@ be the same, the objects are two different ones in memory.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140520083078480
-ID of e is: 140520083592016
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140434430230032
+ID of e is: 140434188418384
 a is: [55 92 80 62 75 45 40 57 55 62]
 e is: [55 92 80 70 75 45 40 57 55 62]
 </pre></div>
@@ -1401,6 +1408,13 @@ of results.</p>
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title"><span class="section-number">2.2. </span>Modules and Packages</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="plots_lists.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.4. </span>Getting started with Matplotlib</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
