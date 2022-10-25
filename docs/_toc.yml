@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: practical2
+root: practical3
 parts:
   - caption: Notes on Practical 1
     numbered: true
@@ -26,3 +26,9 @@ parts:
             - file: modules_packages
             - file: numpy
             - file: plots_lists
+  - caption: Notes on Practical 3
+    numbered: true
+    chapters:
+      - file: data_mani_vis
+        sections:
+          - file: pandas1

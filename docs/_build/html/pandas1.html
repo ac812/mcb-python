@@ -1,0 +1,1082 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3.1. Pandas &#8212; Python Programming</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="3. Data manipulation and visualisation in Python" href="data_mani_vis.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/mcb-logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Programming</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="practical3.html">
+                    Practical 3
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="intro-to-python.html">
+   1. Introduction to Python Programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="variables.html">
+     1.4. Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data-types.html">
+     1.5. Data Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="calling-functions.html">
+     1.6. Calling functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data-structures.html">
+     1.8. Data Structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="more-strings.html">
+     1.9. More on strings and functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="operators.html">
+     1.10. Comparison and logical operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="flow-control-structures.html">
+     1.11. Control flow statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="debugging.html">
+     1.12. Debugging code in PyCharm
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="further-programming.html">
+   2. Further programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="creating-functions.html">
+     2.1. Creating functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules_packages.html">
+     2.2. Modules and Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="numpy.html">
+     2.3. NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plots_lists.html">
+     2.4. Getting started with Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 3
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="data_mani_vis.html">
+   3. Data manipulation and visualisation in Python
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.1. Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/pandas1.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpandas1.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/pandas1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="_sources/pandas1.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   3.1. Pandas
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-pandas">
+     3.1.1. What is Pandas?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-pandas">
+     3.1.2. Importing Pandas
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-dataset">
+     3.1.3. The dataset
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reading-tabular-data-from-a-file">
+     3.1.4. Reading tabular data from a file
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-dataframe">
+     3.1.5. The DataFrame
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-series">
+     3.1.6. The Series
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#slicing-data-frames">
+     3.1.7. Slicing Data Frames
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extract-columns-label-based-indexing">
+   3.2. extract columns - label-based indexing
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extract-rows-boolean-indexing">
+   3.3. extract rows - boolean indexing
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extracting-rows-and-columns-loc-iloc-operators">
+   3.4. extracting rows and columns - loc/iloc operators
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integer-based-indexing">
+   3.5. integer-based indexing
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modifying-the-dataframe">
+   3.6. Modifying the DataFrame
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-new-column">
+     3.6.1. create a new column
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#changing-values-of-existing-data">
+     3.6.2. changing values of existing data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#handling-missing-data">
+     3.6.3. Handling missing data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#joining-data-frames">
+     3.6.4. joining data frames
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pivot">
+     3.6.5. pivot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sort-data-in-a-dataframe">
+   3.7. sort data in a dataframe
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#group-by-split-apply-combine">
+   3.8. group by - split apply combine
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-data-to-files">
+     3.8.1. writing data to files
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matplotlib">
+     3.8.2. matplotlib
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numpy">
+     3.8.3. numpy
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Pandas</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   3.1. Pandas
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-pandas">
+     3.1.1. What is Pandas?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-pandas">
+     3.1.2. Importing Pandas
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-dataset">
+     3.1.3. The dataset
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reading-tabular-data-from-a-file">
+     3.1.4. Reading tabular data from a file
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-dataframe">
+     3.1.5. The DataFrame
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-series">
+     3.1.6. The Series
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#slicing-data-frames">
+     3.1.7. Slicing Data Frames
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extract-columns-label-based-indexing">
+   3.2. extract columns - label-based indexing
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extract-rows-boolean-indexing">
+   3.3. extract rows - boolean indexing
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extracting-rows-and-columns-loc-iloc-operators">
+   3.4. extracting rows and columns - loc/iloc operators
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integer-based-indexing">
+   3.5. integer-based indexing
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modifying-the-dataframe">
+   3.6. Modifying the DataFrame
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-new-column">
+     3.6.1. create a new column
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#changing-values-of-existing-data">
+     3.6.2. changing values of existing data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#handling-missing-data">
+     3.6.3. Handling missing data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#joining-data-frames">
+     3.6.4. joining data frames
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pivot">
+     3.6.5. pivot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sort-data-in-a-dataframe">
+   3.7. sort data in a dataframe
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#group-by-split-apply-combine">
+   3.8. group by - split apply combine
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-data-to-files">
+     3.8.1. writing data to files
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matplotlib">
+     3.8.2. matplotlib
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numpy">
+     3.8.3. numpy
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="pandas">
+<h1><span class="section-number">3.1. </span>Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">#</a></h1>
+<section id="what-is-pandas">
+<h2><span class="section-number">3.1.1. </span>What is Pandas?<a class="headerlink" href="#what-is-pandas" title="Permalink to this headline">#</a></h2>
+<p>Pandas is a Python package designed for data manipulation and analysis. Its name is derived from “<strong>pan</strong>el <strong>da</strong>ta” (not the bear!) and is also
+from “Python data analysis” [^ McKinney]. It is especially popular for its data structures that help process tabular data
+in a fast and efficient way.</p>
+</section>
+<section id="importing-pandas">
+<h2><span class="section-number">3.1.2. </span>Importing Pandas<a class="headerlink" href="#importing-pandas" title="Permalink to this headline">#</a></h2>
+<p>You can check whether Pandas is installed from the <em>Python Packages</em> tab in PyCharm.  If it is not, you would see an <strong>install</strong>
+button on the right hand side of the Python Packages pane when you search for Pandas.  Click on the <em>install</em> button if
+Pandas is not installed on your machine.
+<img alt="python-packages" src="_images/pandas-install.png" /></p>
+<p>To be able to work with Pandas we need to import the Pandas package into our Python code.  Below is the community agreed convention:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-dataset">
+<h2><span class="section-number">3.1.3. </span>The dataset<a class="headerlink" href="#the-dataset" title="Permalink to this headline">#</a></h2>
+<p>For this session we will be using data from the World Bank Data Catalog <a class="footnote-reference brackets" href="#world-bank" id="id1">1</a> from the World Development Indicators (WDI) collection
+which was transformed by Alexia Cardona for the purpose of teaching data manipulation and visualisation programming. This data is
+compiled using official international resources.</p>
+<p>Download the dataset from <span class="xref myst">here</span> and save it into a <code class="docutils literal notranslate"><span class="pre">data</span></code> folder in your PyCharm project.</p>
+<p>This dataset contains official data for each country worldwide and contains indicators on life expectancy, population, and CO2 emissions.  Below is
+the metadata of the dataset:</p>
+<table class="table" id="ndarray-manip-table">
+<caption><span class="caption-number">Table 3.1 </span><span class="caption-text">Dataset Metadata</span><a class="headerlink" href="#ndarray-manip-table" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Column name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">country</span></code></p></td>
+<td><p>Name of country.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">year</span></code></p></td>
+<td><p>Year data is representative of.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">life_expectancy_f</span></code></p></td>
+<td><p>Life expectancy at birth, female (years). Life expectancy at birth indicates the number of years a newborn infant would live if prevailing patterns of mortality at the time of its birth were to stay the same throughout its life.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">life_expectancy_m</span></code></p></td>
+<td><p>Life expectancy at birth, male (years).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">life_expectancy_t</span></code></p></td>
+<td><p>Life expectancy at birth, total (years).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">land_area</span></code></p></td>
+<td><p>Land area (sq. km).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">population_m</span></code></p></td>
+<td><p>Male population count.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">population_f</span></code></p></td>
+<td><p>Female population count.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">population_t</span></code></p></td>
+<td><p>Total population count.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="reading-tabular-data-from-a-file">
+<h2><span class="section-number">3.1.4. </span>Reading tabular data from a file<a class="headerlink" href="#reading-tabular-data-from-a-file" title="Permalink to this headline">#</a></h2>
+<p>Now that we have everything in place, let us start by first reading our data into our Python code.  Pandas has conventient
+functions that load files containing tabular data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/world-bank-1_data.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code above reads the file <code class="docutils literal notranslate"><span class="pre">world-bank-1_data.csv</span></code> into a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> object and creates variable <code class="docutils literal notranslate"><span class="pre">df</span></code> that points to it.
+There are other functions in Pandas that read other file formats.  You can see a list of these <a class="reference external" href="https://pandas.pydata.org/docs/reference/io.html">here</a>.
+If we run the code above in the Python Console in PyCharm we can see all this information in the Variables pane (see <a class="reference internal" href="#dataframe-pycharm"><span class="std std-numref">Fig. 3.1</span></a>).</p>
+<figure class="align-default" id="dataframe-pycharm">
+<img alt="_images/dataframe-pycharm.png" src="_images/dataframe-pycharm.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.1 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">df</span></code> in the Variables pane in PyCharm.</span><a class="headerlink" href="#dataframe-pycharm" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we click on the <em>View as DataFrame</em> link, we can actually see the value of the data that is inside <code class="docutils literal notranslate"><span class="pre">df</span></code>.</p>
+<figure class="align-default" id="df-view">
+<img alt="_images/df-view.png" src="_images/df-view.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Data view of <code class="docutils literal notranslate"><span class="pre">df</span></code> in PyCharm.</span><a class="headerlink" href="#df-view" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This is the easiest way to check the data.  Checking the data through the <code class="docutils literal notranslate"><span class="pre">df</span></code> attributes in the Variables pane is not user-friendly
+for DataFrame objects due to the complexity of it.</p>
+</section>
+<section id="the-dataframe">
+<h2><span class="section-number">3.1.5. </span>The DataFrame<a class="headerlink" href="#the-dataframe" title="Permalink to this headline">#</a></h2>
+<p>The popularity of Pandas mainly lies with its data structure; the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.  The DataFrame data structure is suitable for
+data that is in tabular form (2-dimensional); data with columns and rows.  Since most of the data comes into this form, it makes the DataFrame data structure
+and Pandas widely used.</p>
+<p>Now that we have loaded the DataFrame in Python, we need to check if the data has loaded properly.  We already saw how we
+can check this visually via PyCharm.  Let us try to check this in the Console, by printing the first 5 rows of the DataFrame:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell tag_output_scroll tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       country  year  population_m  population_f  population_t  \
+0  Afghanistan  2000    10689508.0    10090449.0    20779957.0   
+1  Afghanistan  2001    11117754.0    10489238.0    21606992.0   
+2  Afghanistan  2002    11642106.0    10958668.0    22600774.0   
+3  Afghanistan  2003    12214634.0    11466237.0    23680871.0   
+4  Afghanistan  2004    12763726.0    11962963.0    24726689.0   
+
+   population_density  land_area  life_expectancy_f  life_expectancy_m  \
+0           31.859861   652230.0             57.120             54.663   
+1           33.127872   652230.0             57.596             55.119   
+2           34.651540   652230.0             58.080             55.583   
+3           36.307546   652230.0             58.578             56.056   
+4           37.910996   652230.0             59.093             56.542   
+
+   life_expectancy_t  co2_emissions_pc  
+0             55.841          0.036574  
+1             56.308          0.033785  
+2             56.784          0.045574  
+3             57.271          0.051518  
+4             57.772          0.041655  
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also get summary statistics for each column of the <code class="docutils literal notranslate"><span class="pre">df</span></code> DataFrame:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="cell tag_output_scroll tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              year  population_m  population_f  population_t  \
+count  3038.000000  2.708000e+03  2.708000e+03  3.030000e+03   
+mean   2010.500000  1.810384e+07  1.781787e+07  3.211690e+07   
+std       7.229606  6.969846e+07  6.568821e+07  1.284477e+08   
+min    2000.000000  3.571000e+04  4.029700e+04  9.392000e+03   
+25%    2003.000000  9.764312e+05  9.934100e+05  6.599435e+05   
+50%    2013.500000  3.641720e+06  3.747408e+06  5.644552e+06   
+75%    2017.000000  1.234708e+07  1.228930e+07  1.980094e+07   
+max    2020.000000  7.237710e+08  6.873290e+08  1.411100e+09   
+
+       population_density     land_area  life_expectancy_f  life_expectancy_m  \
+count         2968.000000  2.998000e+03        2800.000000        2800.000000   
+mean           410.489783  6.063802e+05          72.870253          67.979873   
+std           1894.724659  1.755858e+06           9.485278           8.831021   
+min              0.136492  2.027000e+00          40.005000          38.861000   
+25%             32.530300  1.014750e+04          67.318000          62.900000   
+50%             83.018459  9.428000e+04          75.450000          69.591000   
+75%            207.487240  4.512200e+05          79.900000          74.555250   
+max          21388.600000  1.638139e+07          88.100000          82.900000   
+
+       life_expectancy_t  co2_emissions_pc  
+count        2800.000000       2481.000000  
+mean           70.379877          4.294507  
+std             9.085448          5.431735  
+min            39.441000          0.020367  
+25%            65.076000          0.651679  
+50%            72.409000          2.463436  
+75%            77.124707          6.080600  
+max            85.387805         50.954034  
+</pre></div>
+</div>
+</div>
+</div>
+<p>And also the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of each column together with the number of non-null values for each column.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="cell tag_output_scroll tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 3038 entries, 0 to 3037
+Data columns (total 11 columns):
+ #   Column              Non-Null Count  Dtype  
+---  ------              --------------  -----  
+ 0   country             3038 non-null   object 
+ 1   year                3038 non-null   int64  
+ 2   population_m        2708 non-null   float64
+ 3   population_f        2708 non-null   float64
+ 4   population_t        3030 non-null   float64
+ 5   population_density  2968 non-null   float64
+ 6   land_area           2998 non-null   float64
+ 7   life_expectancy_f   2800 non-null   float64
+ 8   life_expectancy_m   2800 non-null   float64
+ 9   life_expectancy_t   2800 non-null   float64
+ 10  co2_emissions_pc    2481 non-null   float64
+dtypes: float64(9), int64(1), object(1)
+memory usage: 261.2+ KB
+None
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-series">
+<h2><span class="section-number">3.1.6. </span>The Series<a class="headerlink" href="#the-series" title="Permalink to this headline">#</a></h2>
+<p>Each column in a DataFrame is a Series.</p>
+</section>
+<section id="slicing-data-frames">
+<h2><span class="section-number">3.1.7. </span>Slicing Data Frames<a class="headerlink" href="#slicing-data-frames" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="extract-columns-label-based-indexing">
+<h1><span class="section-number">3.2. </span>extract columns - label-based indexing<a class="headerlink" href="#extract-columns-label-based-indexing" title="Permalink to this headline">#</a></h1>
+<p>Selecting a column from the DataFrame object:
+df[“column_name”] &gt; Series
+type(df[“life_expactancy_T”])
+#get length of Series
+life_expectancy.size
+size is an attribute not a function - no parentheses</p>
+<p>get mutiple columns - takes as an input a standard Python list
+df[[“column1”, “column2”,]]  returns a dataframe</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="extract-rows-boolean-indexing">
+<h1><span class="section-number">3.3. </span>extract rows - boolean indexing<a class="headerlink" href="#extract-rows-boolean-indexing" title="Permalink to this headline">#</a></h1>
+<p>df[conditional expression]
+le_top = df[df[“life_expectancy_T”] &gt; 80]</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="extracting-rows-and-columns-loc-iloc-operators">
+<h1><span class="section-number">3.4. </span>extracting rows and columns - loc/iloc operators<a class="headerlink" href="#extracting-rows-and-columns-loc-iloc-operators" title="Permalink to this headline">#</a></h1>
+<p>df[R, C]</p>
+<p>loc is mainly used with label-based indexing and boolean indexing</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="integer-based-indexing">
+<h1><span class="section-number">3.5. </span>integer-based indexing<a class="headerlink" href="#integer-based-indexing" title="Permalink to this headline">#</a></h1>
+<p>iloc is mainly used with  index positions
+If you want to use index positions of data, then  use iloc
+get the first 10 rows and the first 5 columns
+le_top.iloc[0:10, 0:5]</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="modifying-the-dataframe">
+<h1><span class="section-number">3.6. </span>Modifying the DataFrame<a class="headerlink" href="#modifying-the-dataframe" title="Permalink to this headline">#</a></h1>
+<section id="create-a-new-column">
+<h2><span class="section-number">3.6.1. </span>create a new column<a class="headerlink" href="#create-a-new-column" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="changing-values-of-existing-data">
+<h2><span class="section-number">3.6.2. </span>changing values of existing data<a class="headerlink" href="#changing-values-of-existing-data" title="Permalink to this headline">#</a></h2>
+<p>using the loc/iloc operators
+le_top.iloc[0:10, 0] = “ABC”
+df.loc[df[“life_expectancy_t”] &gt; 84, “country”] =”XYZ”</p>
+<p>exercise:</p>
+<ol class="simple">
+<li><p>modify a value</p></li>
+<li><p>check if the original dataset was modified as well. - it should not</p></li>
+</ol>
+</section>
+<section id="handling-missing-data">
+<h2><span class="section-number">3.6.3. </span>Handling missing data<a class="headerlink" href="#handling-missing-data" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="joining-data-frames">
+<h2><span class="section-number">3.6.4. </span>joining data frames<a class="headerlink" href="#joining-data-frames" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="pivot">
+<h2><span class="section-number">3.6.5. </span>pivot<a class="headerlink" href="#pivot" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sort-data-in-a-dataframe">
+<h1><span class="section-number">3.7. </span>sort data in a dataframe<a class="headerlink" href="#sort-data-in-a-dataframe" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="group-by-split-apply-combine">
+<h1><span class="section-number">3.8. </span>group by - split apply combine<a class="headerlink" href="#group-by-split-apply-combine" title="Permalink to this headline">#</a></h1>
+<section id="writing-data-to-files">
+<h2><span class="section-number">3.8.1. </span>writing data to files<a class="headerlink" href="#writing-data-to-files" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="matplotlib">
+<h2><span class="section-number">3.8.2. </span>matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="numpy">
+<h2><span class="section-number">3.8.3. </span>numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h2>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="world-bank"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>The World Bank: World Development Indicators Collection.  Terms of Use <a class="reference external" href="https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets">here</a>.  This dataset can also be viewed interactively on the World Data Bank website <a class="reference external" href="https://databank.worldbank.org/Teaching-Python-dataset/id/48401a76">here</a>.
+[^ McKinney]: McKinney, Wes (2017). <em>Python for Data Analysis, Second Edition</em>.  O’Reilly Media. ISBN 9781491957660.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="data_mani_vis.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Data manipulation and visualisation in Python</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Alexia Cardona<br/>
+  
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

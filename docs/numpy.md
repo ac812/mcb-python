@@ -44,9 +44,9 @@ c = a * b
 ````
 `````
 
-## Importing NumPy
-Because we are using the Anaconda distribution for Python, NumPy comes pre-installed.  You can check whether NumPy is installed 
-from the *Python Packages* tab in PyCharm.  
+## Importing NumPy 
+You can check whether NumPy is installed from the *Python Packages* tab in PyCharm.  If it is not, you would see an **install** 
+button whe you search for it in the Python Packages tab.
 ![python-packages](images/python-packages.png)
 
 Once you have checked that it is installed on your machine, to be able to use NumPy we need to import it in the code.  The 

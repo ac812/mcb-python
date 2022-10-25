@@ -17,9 +17,6 @@ parts:
             - file: operators
             - file: flow-control-structures
             - file: debugging
-  - caption: Supervision worksheet 1
-    chapters:
-     - file: worksheet1
   - caption: Notes on Practical 2
     numbered: true
     chapters:
@@ -27,8 +24,5 @@ parts:
        sections:
             - file: creating-functions
             - file: modules_packages
-            - file: plots_lists
             - file: numpy
-  - caption: Supervision Worksheet 2
-    chapters:
-     - file: worksheet2
+            - file: plots_lists
