@@ -227,7 +227,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="pandas.html">
+    <a class="reference internal" href="pandas1.html">
      3.1. Pandas
     </a>
    </li>
@@ -434,36 +434,12 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hanoi">
-   Hanoi?
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
@@ -475,19 +451,6 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hanoi">
-   Hanoi?
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -497,9 +460,435 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="practical-3-solutions">
 <h1>Practical 3 Solutions<a class="headerlink" href="#practical-3-solutions" title="Permalink to this headline">#</a></h1>
-<section id="hanoi">
-<h2>Hanoi?<a class="headerlink" href="#hanoi" title="Permalink to this headline">#</a></h2>
+<div class="solution dropdown admonition" id="exploring-df-solution">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="pandas1.html#exploring-df"> Exercise 3.1 (Exploring DataFrames)</a></p>
+<section id="s">
+<span id="o"></span><span id="l"></span><span id="u"></span><span id="t"></span><span id="i"></span><span id="o"></span><span id="n"></span><span id="-"></span><span id="c"></span><span id="o"></span><span id="n"></span><span id="t"></span><span id="e"></span><span id="n"></span><span id="t"></span><ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df</span></code> is a DataFrame object.  One of the ways you could get this is via the <code class="docutils literal notranslate"><span class="pre">type</span></code> function:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/world-bank-1_data.csv&quot;</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
+</pre></div>
+</div>
+</div>
+</div>
+<p>2.,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this returns a tuple in the format of (number of rows, number of columns)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3038, 11)
+</pre></div>
+</div>
+</div>
+</div>
+<p>3.,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country                object
+year                    int64
+population_m          float64
+population_f          float64
+population_t          float64
+population_density    float64
+land_area             float64
+life_expectancy_f     float64
+life_expectancy_m     float64
+life_expectancy_t     float64
+co2_emissions_pc      float64
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
 </section>
+</div>
+<div class="solution admonition" id="solutions-practical3-solution-1">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="pandas1.html#slicing-df"> Exercise 3.2 (Slicing DataFrames)</a></p>
+<section id="s">
+<span id="o"></span><span id="l"></span><span id="u"></span><span id="t"></span><span id="i"></span><span id="o"></span><span id="n"></span><span id="-"></span><span id="c"></span><span id="o"></span><span id="n"></span><span id="t"></span><span id="e"></span><span id="n"></span><span id="t"></span><ol class="simple">
+<li></li>
+</ol>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span> <span class="p">:</span> <span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>year</th>
+      <th>population_m</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>2000</td>
+      <td>10689508.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Afghanistan</td>
+      <td>2001</td>
+      <td>11117754.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Afghanistan</td>
+      <td>2002</td>
+      <td>11642106.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Afghanistan</td>
+      <td>2003</td>
+      <td>12214634.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Afghanistan</td>
+      <td>2004</td>
+      <td>12763726.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>3033</th>
+      <td>Zimbabwe</td>
+      <td>2016</td>
+      <td>6674206.0</td>
+    </tr>
+    <tr>
+      <th>3034</th>
+      <td>Zimbabwe</td>
+      <td>2017</td>
+      <td>6777054.0</td>
+    </tr>
+    <tr>
+      <th>3035</th>
+      <td>Zimbabwe</td>
+      <td>2018</td>
+      <td>6879119.0</td>
+    </tr>
+    <tr>
+      <th>3036</th>
+      <td>Zimbabwe</td>
+      <td>2019</td>
+      <td>6983353.0</td>
+    </tr>
+    <tr>
+      <th>3037</th>
+      <td>Zimbabwe</td>
+      <td>2020</td>
+      <td>7092010.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>3038 rows × 3 columns</p>
+</div></div></div>
+</div>
+<p>2.,</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>year</th>
+      <th>population_m</th>
+      <th>population_f</th>
+      <th>population_t</th>
+      <th>population_density</th>
+      <th>land_area</th>
+      <th>life_expectancy_f</th>
+      <th>life_expectancy_m</th>
+      <th>life_expectancy_t</th>
+      <th>co2_emissions_pc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>2000</td>
+      <td>10689508.0</td>
+      <td>10090449.0</td>
+      <td>20779957.0</td>
+      <td>31.859861</td>
+      <td>652230.0</td>
+      <td>57.120</td>
+      <td>54.663</td>
+      <td>55.841</td>
+      <td>0.036574</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Afghanistan</td>
+      <td>2001</td>
+      <td>11117754.0</td>
+      <td>10489238.0</td>
+      <td>21606992.0</td>
+      <td>33.127872</td>
+      <td>652230.0</td>
+      <td>57.596</td>
+      <td>55.119</td>
+      <td>56.308</td>
+      <td>0.033785</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Afghanistan</td>
+      <td>2002</td>
+      <td>11642106.0</td>
+      <td>10958668.0</td>
+      <td>22600774.0</td>
+      <td>34.651540</td>
+      <td>652230.0</td>
+      <td>58.080</td>
+      <td>55.583</td>
+      <td>56.784</td>
+      <td>0.045574</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>3.,</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country               Afghanistan
+year                         2000
+population_m           10689508.0
+population_f           10090449.0
+population_t           20779957.0
+population_density      31.859861
+land_area                652230.0
+life_expectancy_f           57.12
+life_expectancy_m          54.663
+life_expectancy_t          55.841
+co2_emissions_pc         0.036574
+Name: 0, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>4.,</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#get min and max values of life_expectancy_max</span>
+<span class="n">le_min</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;life_expectancy_t&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">le_max</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;life_expectancy_t&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="c1"># get country with lowest life expectancy</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;life_expectancy_t&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">le_min</span><span class="p">,</span> <span class="s2">&quot;country&quot;</span><span class="p">]</span>
+
+<span class="c1"># get country with highest life expectancy</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;life_expectancy_t&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">le_max</span><span class="p">,</span> <span class="s2">&quot;country&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1217    Hong Kong SAR, China
+Name: country, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>5.,</p>
+<div class="cell tag_output_scroll tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uk_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;United Kingdom&quot;</span><span class="p">]</span>
+
+<span class="c1"># get number of rows and columns from DataFrame - 14 records were returned</span>
+<span class="n">uk_data</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(14, 11)
+</pre></div>
+</div>
+</div>
+</div>
+<p>6.,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uk_2020</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;United Kingdom&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2020</span><span class="p">)]</span>
+
+<span class="c1"># get number of rows and columns from DataFrame - 1 record was returned</span>
+<span class="n">uk_2020</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 11)
+</pre></div>
+</div>
+</div>
+</div>
+<p>7.,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;United Kingdom&quot;</span> <span class="o">&amp;</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2020</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File ~/.conda/envs/MCBPractical2/lib/python3.10/site-packages/pandas/core/ops/array_ops.py:301,</span> in <span class="ni">na_logical_op</span><span class="nt">(x, y, op)</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span>     <span class="c1"># For exposition, write:</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span>     <span class="c1">#  yarr = isinstance(y, np.ndarray)</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span>     <span class="c1"># Then Cases where this goes through without raising include:</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span>     <span class="c1">#  (xint or xbool) and (yint or bool)</span>
+<span class="ne">--&gt; </span><span class="mi">301</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span> <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+
+<span class="nn">File ~/.conda/envs/MCBPractical2/lib/python3.10/site-packages/pandas/core/roperator.py:52,</span> in <span class="ni">rand_</span><span class="nt">(left, right)</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span> <span class="k">def</span> <span class="nf">rand_</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">52</span>     <span class="k">return</span> <span class="n">operator</span><span class="o">.</span><span class="n">and_</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">left</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: ufunc &#39;bitwise_and&#39; not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule &#39;&#39;safe&#39;&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">File ~/.conda/envs/MCBPractical2/lib/python3.10/site-packages/pandas/core/ops/array_ops.py:315,</span> in <span class="ni">na_logical_op</span><span class="nt">(x, y, op)</span>
+<span class="g g-Whitespace">    </span><span class="mi">314</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">315</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">libops</span><span class="o">.</span><span class="n">scalar_binop</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">op</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">316</span> <span class="k">except</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">317</span>     <span class="ne">TypeError</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">318</span>     <span class="ne">ValueError</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">321</span>     <span class="ne">NotImplementedError</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">322</span> <span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+
+<span class="nn">File ~/.conda/envs/MCBPractical2/lib/python3.10/site-packages/pandas/_libs/ops.pyx:180,</span> in <span class="ni">pandas._libs.ops.scalar_binop</span><span class="nt">()</span>
+
+<span class="ne">ValueError</span>: Buffer dtype mismatch, expected &#39;Python object&#39; but got &#39;long&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;United Kingdom&quot;</span> <span class="o">&amp;</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2020</span><span class="p">]</span>
+
+<span class="nn">File ~/.conda/envs/MCBPractical2/lib/python3.10/site-packages/pandas/core/ops/common.py:70,</span> in <span class="ni">_unpack_zerodim_and_defer.&lt;locals&gt;.new_method</span><span class="nt">(self, other)</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span>             <span class="k">return</span> <span class="bp">NotImplemented</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span> <span class="n">other</span> <span class="o">=</span> <span class="n">item_from_zerodim</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">70</span> <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+
+<span class="nn">File ~/.conda/envs/MCBPractical2/lib/python3.10/site-packages/pandas/core/arraylike.py:74,</span> in <span class="ni">OpsMixin.__rand__</span><span class="nt">(self, other)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="nd">@unpack_zerodim_and_defer</span><span class="p">(</span><span class="s2">&quot;__rand__&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="k">def</span> <span class="fm">__rand__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">74</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logical_method</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">roperator</span><span class="o">.</span><span class="n">rand_</span><span class="p">)</span>
+
+<span class="nn">File ~/.conda/envs/MCBPractical2/lib/python3.10/site-packages/pandas/core/series.py:5634,</span> in <span class="ni">Series._logical_method</span><span class="nt">(self, other, op)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5631</span> <span class="n">lvalues</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_values</span>
+<span class="g g-Whitespace">   </span><span class="mi">5632</span> <span class="n">rvalues</span> <span class="o">=</span> <span class="n">extract_array</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">extract_numpy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">extract_range</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">5634</span> <span class="n">res_values</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">logical_op</span><span class="p">(</span><span class="n">lvalues</span><span class="p">,</span> <span class="n">rvalues</span><span class="p">,</span> <span class="n">op</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5635</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_construct_result</span><span class="p">(</span><span class="n">res_values</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">res_name</span><span class="p">)</span>
+
+<span class="nn">File ~/.conda/envs/MCBPractical2/lib/python3.10/site-packages/pandas/core/ops/array_ops.py:391,</span> in <span class="ni">logical_op</span><span class="nt">(left, right, op)</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span> <span class="c1"># For int vs int `^`, `|`, `&amp;` are bitwise operators and return</span>
+<span class="g g-Whitespace">    </span><span class="mi">388</span> <span class="c1">#   integer dtypes.  Otherwise these are boolean ops</span>
+<span class="g g-Whitespace">    </span><span class="mi">389</span> <span class="n">filler</span> <span class="o">=</span> <span class="n">fill_int</span> <span class="k">if</span> <span class="n">is_self_int_dtype</span> <span class="ow">and</span> <span class="n">is_other_int_dtype</span> <span class="k">else</span> <span class="n">fill_bool</span>
+<span class="ne">--&gt; </span><span class="mi">391</span> <span class="n">res_values</span> <span class="o">=</span> <span class="n">na_logical_op</span><span class="p">(</span><span class="n">lvalues</span><span class="p">,</span> <span class="n">rvalues</span><span class="p">,</span> <span class="n">op</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">392</span> <span class="c1"># error: Cannot call function of unknown type</span>
+<span class="g g-Whitespace">    </span><span class="mi">393</span> <span class="n">res_values</span> <span class="o">=</span> <span class="n">filler</span><span class="p">(</span><span class="n">res_values</span><span class="p">)</span>  <span class="c1"># type: ignore[operator]</span>
+
+<span class="nn">File ~/.conda/envs/MCBPractical2/lib/python3.10/site-packages/pandas/core/ops/array_ops.py:324,</span> in <span class="ni">na_logical_op</span><span class="nt">(x, y, op)</span>
+<span class="g g-Whitespace">    </span><span class="mi">316</span>         <span class="k">except</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">317</span>             <span class="ne">TypeError</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">318</span>             <span class="ne">ValueError</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">321</span>             <span class="ne">NotImplementedError</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">322</span>         <span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">323</span>             <span class="n">typ</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
+<span class="ne">--&gt; </span><span class="mi">324</span>             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">325</span>                 <span class="sa">f</span><span class="s2">&quot;Cannot perform &#39;</span><span class="si">{</span><span class="n">op</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; with a dtyped [</span><span class="si">{</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="si">}</span><span class="s2">] array &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">326</span>                 <span class="sa">f</span><span class="s2">&quot;and scalar of type [</span><span class="si">{</span><span class="n">typ</span><span class="si">}</span><span class="s2">]&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">327</span>             <span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
+<span class="g g-Whitespace">    </span><span class="mi">329</span> <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: Cannot perform &#39;rand_&#39; with a dtyped [int64] array and scalar of type [bool]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</div>
 </section>
 
     <script type="text/x-thebe-config">

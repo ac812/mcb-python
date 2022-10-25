@@ -50,16 +50,17 @@ This practical is composed of the following exercises:
 * - Exercise
   - Description
   - Level
-* - {numref}`exploring-creating-functions`
-  - **Creating functions**:  In this exercise, we explore creating functions.
+* - {numref}`exploring-df`
+  - **Exploring the DataFrame**:  In this exercise, we first load data from a .csv file and then explore the DataFrame data structure.
   - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
-ing` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
-
+* - {numref}`slicing-df`
+  - **Slicing DataFrames**: This exercise goes over different techniques on how to extract data from DataFrames.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 ```
 
 :::{card} Managed to solve all the exercises?  Well done!
 :class-card: sd-bg-light
-In the programming world, many organisations award badges to learners on the acquisition of a new skill or completion of a milestone.  If you attempted and solved all the exercises of this practical, you definitely deserve your first badge of this course.
+In the programming world, many organisations award badges to learners on the acquisition of a new skill or completion of a milestone.  If you attempted and solved all the exercises of this practical, you definitely deserve your third badge of this course. One more to go!
 ```{image} images/level-3-badge.png
 :name: level3-badge
 :width: 20%
