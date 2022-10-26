@@ -1,0 +1,1812 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3.1. Data manipulation with Pandas &#8212; Python Programming</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3.2. Visualising data with Matplotlib" href="matplotlib-pandas.html" />
+    <link rel="prev" title="3. Data manipulation and visualisation in Python" href="data_mani_vis.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/mcb-logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Programming</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="practical3.html">
+                    Practical 3
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="intro-to-python.html">
+   1. Introduction to Python Programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="variables.html">
+     1.4. Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data-types.html">
+     1.5. Data Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="calling-functions.html">
+     1.6. Calling functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data-structures.html">
+     1.8. Data Structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="more-strings.html">
+     1.9. More on strings and functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="operators.html">
+     1.10. Comparison and logical operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="flow-control-structures.html">
+     1.11. Control flow statements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="debugging.html">
+     1.12. Debugging code in PyCharm
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="further-programming.html">
+   2. Further programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="creating-functions.html">
+     2.1. Creating functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules_packages.html">
+     2.2. Modules and Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="numpy.html">
+     2.3. NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plots_lists.html">
+     2.4. Getting started with Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 3
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="data_mani_vis.html">
+   3. Data manipulation and visualisation in Python
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.1. Data manipulation with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matplotlib-pandas.html">
+     3.2. Visualising data with Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="more-pandas.html">
+     3.3. More Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/pandas1.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpandas1.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/pandas1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="_sources/pandas1.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-pandas">
+   3.1.1. What is Pandas?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-pandas">
+   3.1.2. Importing Pandas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-dataset">
+   3.1.3. The dataset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-tabular-data-from-a-file">
+   3.1.4. Reading tabular data from a file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-dataframe">
+   3.1.5. The DataFrame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-series">
+   3.1.6. The Series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#slicing-dataframes">
+   3.1.7. Slicing DataFrames
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-column-data-label-based-indexing">
+     3.1.7.1. Extracting column data (label-based indexing)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-row-data-boolean-indexing">
+     3.1.7.2. Extracting row data (boolean indexing)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-rows-and-columns">
+     3.1.7.3. Extracting rows and columns
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#loc">
+       3.1.7.3.1.
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         loc
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#iloc-integer-based-indexing">
+       3.1.7.3.2.
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         iloc
+        </span>
+       </code>
+       (integer-based indexing)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Data manipulation with Pandas</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-pandas">
+   3.1.1. What is Pandas?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-pandas">
+   3.1.2. Importing Pandas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-dataset">
+   3.1.3. The dataset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-tabular-data-from-a-file">
+   3.1.4. Reading tabular data from a file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-dataframe">
+   3.1.5. The DataFrame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-series">
+   3.1.6. The Series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#slicing-dataframes">
+   3.1.7. Slicing DataFrames
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-column-data-label-based-indexing">
+     3.1.7.1. Extracting column data (label-based indexing)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-row-data-boolean-indexing">
+     3.1.7.2. Extracting row data (boolean indexing)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-rows-and-columns">
+     3.1.7.3. Extracting rows and columns
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#loc">
+       3.1.7.3.1.
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         loc
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#iloc-integer-based-indexing">
+       3.1.7.3.2.
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         iloc
+        </span>
+       </code>
+       (integer-based indexing)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="data-manipulation-with-pandas">
+<h1><span class="section-number">3.1. </span>Data manipulation with Pandas<a class="headerlink" href="#data-manipulation-with-pandas" title="Permalink to this headline">#</a></h1>
+<section id="what-is-pandas">
+<h2><span class="section-number">3.1.1. </span>What is Pandas?<a class="headerlink" href="#what-is-pandas" title="Permalink to this headline">#</a></h2>
+<p>No, it is not the plural of panda the bear!  Pandas is a Python package designed for data manipulation and analysis. Its name is derived from “<strong>pan</strong>el <strong>da</strong>ta” (not the bear!) and is also
+from “Python data analysis” <a class="footnote-reference brackets" href="#mckinney" id="id1">1</a>. It is especially popular for its data structures that help process tabular data
+in a fast and efficient way.</p>
+</section>
+<section id="importing-pandas">
+<h2><span class="section-number">3.1.2. </span>Importing Pandas<a class="headerlink" href="#importing-pandas" title="Permalink to this headline">#</a></h2>
+<p>You can check whether Pandas is installed from the <em>Python Packages</em> tab in PyCharm.  If it is not, you would see an <strong>install</strong>
+button on the right hand side of the Python Packages pane when you search for Pandas.  Click on the <em>install</em> button if
+Pandas is not installed on your machine.
+<img alt="python-packages" src="_images/pandas-install.png" /></p>
+<p>To be able to work with Pandas we need to import the Pandas package into our Python code.  Below is the community agreed convention:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-dataset">
+<h2><span class="section-number">3.1.3. </span>The dataset<a class="headerlink" href="#the-dataset" title="Permalink to this headline">#</a></h2>
+<p>For this session we will be using data from the World Bank Data Catalog <a class="footnote-reference brackets" href="#world-bank" id="id2">2</a> from the World Development Indicators (WDI) collection
+which was transformed by Alexia Cardona for the purpose of teaching data manipulation and visualisation programming. This data is
+compiled using official international resources.</p>
+<p>Download the dataset from <span class="xref myst">here</span> and save it into a <code class="docutils literal notranslate"><span class="pre">data</span></code> folder in your PyCharm project.</p>
+<p>This dataset contains official data for each country worldwide and contains indicators on life expectancy, population, and CO2 emissions.  Below is
+the metadata of the dataset:</p>
+<table class="table" id="ndarray-manip-table">
+<caption><span class="caption-number">Table 3.1 </span><span class="caption-text">Dataset Metadata</span><a class="headerlink" href="#ndarray-manip-table" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Column name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">country</span></code></p></td>
+<td><p>Name of country.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">year</span></code></p></td>
+<td><p>Year data is representative of.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">life_expectancy_f</span></code></p></td>
+<td><p>Life expectancy at birth, female (years). Life expectancy at birth indicates the number of years a newborn infant would live if prevailing patterns of mortality at the time of its birth were to stay the same throughout its life.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">life_expectancy_m</span></code></p></td>
+<td><p>Life expectancy at birth, male (years).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">life_expectancy_t</span></code></p></td>
+<td><p>Life expectancy at birth, total (years).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">land_area</span></code></p></td>
+<td><p>Land area (sq. km).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">population_m</span></code></p></td>
+<td><p>Male population count.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">population_f</span></code></p></td>
+<td><p>Female population count.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">population_t</span></code></p></td>
+<td><p>Total population count.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="reading-tabular-data-from-a-file">
+<h2><span class="section-number">3.1.4. </span>Reading tabular data from a file<a class="headerlink" href="#reading-tabular-data-from-a-file" title="Permalink to this headline">#</a></h2>
+<p>Now that we have everything in place, let us start by first reading our data into our Python code.  Pandas has conventient
+functions that load files containing tabular data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/world-bank-1_data.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code above reads the file <code class="docutils literal notranslate"><span class="pre">world-bank-1_data.csv</span></code> into a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> object and creates variable <code class="docutils literal notranslate"><span class="pre">df</span></code> that points to it.
+There are other functions in Pandas that read other file formats.  You can see a list of these <a class="reference external" href="https://pandas.pydata.org/docs/reference/io.html">here</a>.
+If we run the code above in the Python Console in PyCharm we can see all this information in the Variables pane (see <a class="reference internal" href="#dataframe-pycharm"><span class="std std-numref">Fig. 3.1</span></a>).</p>
+<figure class="align-default" id="dataframe-pycharm">
+<img alt="_images/dataframe-pycharm.png" src="_images/dataframe-pycharm.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.1 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">df</span></code> in the Variables pane in PyCharm.</span><a class="headerlink" href="#dataframe-pycharm" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we click on the <em>View as DataFrame</em> link, we can actually see the value of the data that is inside <code class="docutils literal notranslate"><span class="pre">df</span></code>.</p>
+<figure class="align-default" id="df-view">
+<img alt="_images/df-view.png" src="_images/df-view.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Data view of <code class="docutils literal notranslate"><span class="pre">df</span></code> in PyCharm.</span><a class="headerlink" href="#df-view" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This is the easiest way to check the data.  Checking the data through the <code class="docutils literal notranslate"><span class="pre">df</span></code> attributes in the Variables pane is not user-friendly
+for DataFrame objects due to the complexity of it.</p>
+</section>
+<section id="the-dataframe">
+<h2><span class="section-number">3.1.5. </span>The DataFrame<a class="headerlink" href="#the-dataframe" title="Permalink to this headline">#</a></h2>
+<p>The popularity of Pandas mainly lies with its data structure; the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.  The DataFrame data structure is suitable for
+data that is in tabular form (2-dimensional); data with columns and rows.  Since most of the data comes into this form, it makes the DataFrame data structure
+and Pandas widely used.</p>
+<p>Now that we have loaded the DataFrame in Python, we need to check if the data has loaded properly.  We already saw how we
+can check this visually via PyCharm.  Let us try to check this in the Console, by printing the first 5 rows of the DataFrame:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell tag_output_scroll tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       country  year  population_m  population_f  population_t  \
+0  Afghanistan  2000    10689508.0    10090449.0    20779957.0   
+1  Afghanistan  2001    11117754.0    10489238.0    21606992.0   
+2  Afghanistan  2002    11642106.0    10958668.0    22600774.0   
+3  Afghanistan  2003    12214634.0    11466237.0    23680871.0   
+4  Afghanistan  2004    12763726.0    11962963.0    24726689.0   
+
+   population_density  land_area  life_expectancy_f  life_expectancy_m  \
+0           31.859861   652230.0             57.120             54.663   
+1           33.127872   652230.0             57.596             55.119   
+2           34.651540   652230.0             58.080             55.583   
+3           36.307546   652230.0             58.578             56.056   
+4           37.910996   652230.0             59.093             56.542   
+
+   life_expectancy_t  co2_emissions_pc  
+0             55.841          0.036574  
+1             56.308          0.033785  
+2             56.784          0.045574  
+3             57.271          0.051518  
+4             57.772          0.041655  
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also get summary statistics for each column of the <code class="docutils literal notranslate"><span class="pre">df</span></code> DataFrame:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="cell tag_output_scroll tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              year  population_m  population_f  population_t  \
+count  3038.000000  2.708000e+03  2.708000e+03  3.030000e+03   
+mean   2010.500000  1.810384e+07  1.781787e+07  3.211690e+07   
+std       7.229606  6.969846e+07  6.568821e+07  1.284477e+08   
+min    2000.000000  3.571000e+04  4.029700e+04  9.392000e+03   
+25%    2003.000000  9.764312e+05  9.934100e+05  6.599435e+05   
+50%    2013.500000  3.641720e+06  3.747408e+06  5.644552e+06   
+75%    2017.000000  1.234708e+07  1.228930e+07  1.980094e+07   
+max    2020.000000  7.237710e+08  6.873290e+08  1.411100e+09   
+
+       population_density     land_area  life_expectancy_f  life_expectancy_m  \
+count         2968.000000  2.998000e+03        2800.000000        2800.000000   
+mean           410.489783  6.063802e+05          72.870253          67.979873   
+std           1894.724659  1.755858e+06           9.485278           8.831021   
+min              0.136492  2.027000e+00          40.005000          38.861000   
+25%             32.530300  1.014750e+04          67.318000          62.900000   
+50%             83.018459  9.428000e+04          75.450000          69.591000   
+75%            207.487240  4.512200e+05          79.900000          74.555250   
+max          21388.600000  1.638139e+07          88.100000          82.900000   
+
+       life_expectancy_t  co2_emissions_pc  
+count        2800.000000       2481.000000  
+mean           70.379877          4.294507  
+std             9.085448          5.431735  
+min            39.441000          0.020367  
+25%            65.076000          0.651679  
+50%            72.409000          2.463436  
+75%            77.124707          6.080600  
+max            85.387805         50.954034  
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also get a summary of the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of each column together with the number of non-null values for each column.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="cell tag_output_scroll tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 3038 entries, 0 to 3037
+Data columns (total 11 columns):
+ #   Column              Non-Null Count  Dtype  
+---  ------              --------------  -----  
+ 0   country             3038 non-null   object 
+ 1   year                3038 non-null   int64  
+ 2   population_m        2708 non-null   float64
+ 3   population_f        2708 non-null   float64
+ 4   population_t        3030 non-null   float64
+ 5   population_density  2968 non-null   float64
+ 6   land_area           2998 non-null   float64
+ 7   life_expectancy_f   2800 non-null   float64
+ 8   life_expectancy_m   2800 non-null   float64
+ 9   life_expectancy_t   2800 non-null   float64
+ 10  co2_emissions_pc    2481 non-null   float64
+dtypes: float64(9), int64(1), object(1)
+memory usage: 261.2+ KB
+None
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alternatively you can get the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of each column by using the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> attribute of the DataFrame; <code class="docutils literal notranslate"><span class="pre">df.dtype</span></code>.  Note that
+columns which hold string data values are imported into Pandas as <code class="docutils literal notranslate"><span class="pre">object</span></code> <code class="docutils literal notranslate"><span class="pre">dtype</span></code>.</p>
+<p>To get the number of rows and columns that the DataFrame is made up of use the <code class="docutils literal notranslate"><span class="pre">shape</span></code> attribute:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3038, 11)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">shape</span></code> is an attribute not a method, so not parentheses are used after <code class="docutils literal notranslate"><span class="pre">shape</span></code>.</p>
+</section>
+<section id="the-series">
+<h2><span class="section-number">3.1.6. </span>The Series<a class="headerlink" href="#the-series" title="Permalink to this headline">#</a></h2>
+<p>Each column in a DataFrame is a Series. A Series is a data structure in Pandas and is essentially a 1-dimensional array.
+<a class="reference internal" href="#series"><span class="std std-numref">Fig. 3.3</span></a> shows the main components of the Series.</p>
+<figure class="align-default" id="series">
+<img alt="_images/series.png" src="_images/series.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.3 </span><span class="caption-text">Components of the Series data structure.</span><a class="headerlink" href="#series" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="exercise admonition" id="exploring-df">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.1 </span> (Exploring DataFrames)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
+<p>In this exercise we will be using the dataset from the World Bank Data Catalog that is used in this course.  Follow the
+instructions above to load the dataset into Python and make use of DataFrame methods or PyCharm to answer the following
+questions:</p>
+<ol class="simple">
+<li><p>What type is <code class="docutils literal notranslate"><span class="pre">df</span></code>?</p></li>
+<li><p>How many columns and how many rows does the <code class="docutils literal notranslate"><span class="pre">df</span></code> have?</p></li>
+<li><p>What are the data types of each column?</p></li>
+</ol>
+</section>
+</div>
+</section>
+<section id="slicing-dataframes">
+<h2><span class="section-number">3.1.7. </span>Slicing DataFrames<a class="headerlink" href="#slicing-dataframes" title="Permalink to this headline">#</a></h2>
+<p><a class="reference internal" href="#dataframe"><span class="std std-numref">Fig. 3.4</span></a> shows the core components of the DataFrame data structure.  The first column we see when we look at the
+contents of <code class="docutils literal notranslate"><span class="pre">df</span></code> is the index.  The index is a column of data items in the DataFrame but rather it contains the index
+positions of each record in the DataFrame. Like all the other data structures in Python we have looked at so far, it
+starts with 0.</p>
+<figure class="align-default" id="dataframe">
+<img alt="_images/dataframe.png" src="_images/dataframe.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.4 </span><span class="caption-text">Components of the DataFrame data structure.</span><a class="headerlink" href="#dataframe" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We can extract columns, rows or data items from DataFrames in different ways. The sections below go over the different ways
+we can slice DataFrames.</p>
+<section id="extracting-column-data-label-based-indexing">
+<h3><span class="section-number">3.1.7.1. </span>Extracting column data (label-based indexing)<a class="headerlink" href="#extracting-column-data-label-based-indexing" title="Permalink to this headline">#</a></h3>
+<p>To extract data from a column in the DataFrame we use the following notation:<br />
+<strong>df[“column_name”]</strong><br />
+where <code class="docutils literal notranslate"><span class="pre">df</span></code> is the DataFrame object. If we want to extract multiple columns, we can provide a Python list of column names
+inside the square brackets as follows:<br />
+<strong>df[[“column_name1”, “column_name2”]]</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#extract the column &quot;life_expectancy_t&quot; and save it in variable le_t</span>
+<span class="n">le_t</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;life_expectancy_t&quot;</span><span class="p">]</span>
+
+<span class="c1">#check what type is le_t</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Type of le_t is: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">le_t</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># get the length of the Series</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Size of le_t is: </span><span class="si">{</span><span class="n">le_t</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1">#print the first 5 items</span>
+<span class="n">le_t</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type of le_t is: &lt;class &#39;pandas.core.series.Series&#39;&gt;
+Size of le_t is: 3038
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    55.841
+1    56.308
+2    56.784
+3    57.271
+4    57.772
+Name: life_expectancy_t, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that in the example above, since we are extracting only one column from <code class="docutils literal notranslate"><span class="pre">df</span></code> the result of the first slicing is a Series object.
+In the code below, on the other hand, extracts 3 columns from <code class="docutils literal notranslate"><span class="pre">df</span></code>, and therefore the result of this is another DataFrame object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#extract the columns &quot;life_expectancy_t&quot;, &quot;life_expectancy_m&quot;, &quot;life_expectancy_f&quot; and save it in variable le</span>
+<span class="n">le</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;life_expectancy_t&quot;</span><span class="p">,</span> <span class="s2">&quot;life_expectancy_m&quot;</span><span class="p">,</span> <span class="s2">&quot;life_expectancy_f&quot;</span><span class="p">]]</span>
+
+<span class="c1"># get type of object returned from slicing</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Type of le is: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">le</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1">#get size of DataFrame</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Size of le is: </span><span class="si">{</span><span class="n">le</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># print the first 5 items</span>
+<span class="n">le</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type of le is: &lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Size of le is: (3038, 3)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>life_expectancy_t</th>
+      <th>life_expectancy_m</th>
+      <th>life_expectancy_f</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>55.841</td>
+      <td>54.663</td>
+      <td>57.120</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>56.308</td>
+      <td>55.119</td>
+      <td>57.596</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>56.784</td>
+      <td>55.583</td>
+      <td>58.080</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>57.271</td>
+      <td>56.056</td>
+      <td>58.578</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>57.772</td>
+      <td>56.542</td>
+      <td>59.093</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="extracting-row-data-boolean-indexing">
+<h3><span class="section-number">3.1.7.2. </span>Extracting row data (boolean indexing)<a class="headerlink" href="#extracting-row-data-boolean-indexing" title="Permalink to this headline">#</a></h3>
+<p>We can extract rows from our DataFrame that meet a specified condition by using the conditional expressions in our slice operators as follows:<br />
+<strong>df[conditional expression]</strong></p>
+<p>Let us try an example on our <code class="docutils literal notranslate"><span class="pre">df</span></code> DataFrame.  We would like to get the records where life expectancy is more than 80:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">le_top</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;life_expectancy_t&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">]</span>
+<span class="n">le_top</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>year</th>
+      <th>population_m</th>
+      <th>population_f</th>
+      <th>population_t</th>
+      <th>population_density</th>
+      <th>land_area</th>
+      <th>life_expectancy_f</th>
+      <th>life_expectancy_m</th>
+      <th>life_expectancy_t</th>
+      <th>co2_emissions_pc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>143</th>
+      <td>Australia</td>
+      <td>2003</td>
+      <td>9926226.0</td>
+      <td>9969174.0</td>
+      <td>19895400.0</td>
+      <td>2.589771</td>
+      <td>7682300.0</td>
+      <td>82.8</td>
+      <td>77.8</td>
+      <td>80.239024</td>
+      <td>17.721684</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>Australia</td>
+      <td>2004</td>
+      <td>10042276.0</td>
+      <td>10085124.0</td>
+      <td>20127400.0</td>
+      <td>2.619971</td>
+      <td>7682300.0</td>
+      <td>83.0</td>
+      <td>78.1</td>
+      <td>80.490244</td>
+      <td>18.174727</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>Australia</td>
+      <td>2005</td>
+      <td>10177992.0</td>
+      <td>10216808.0</td>
+      <td>20394800.0</td>
+      <td>2.654778</td>
+      <td>7682300.0</td>
+      <td>83.3</td>
+      <td>78.5</td>
+      <td>80.841463</td>
+      <td>18.146292</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>Australia</td>
+      <td>2013</td>
+      <td>11541758.0</td>
+      <td>11586371.0</td>
+      <td>23128129.0</td>
+      <td>3.010574</td>
+      <td>7682300.0</td>
+      <td>84.3</td>
+      <td>80.1</td>
+      <td>82.148780</td>
+      <td>16.442316</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>Australia</td>
+      <td>2014</td>
+      <td>11705167.0</td>
+      <td>11770519.0</td>
+      <td>23475686.0</td>
+      <td>3.055815</td>
+      <td>7682300.0</td>
+      <td>84.4</td>
+      <td>80.3</td>
+      <td>82.300000</td>
+      <td>15.830422</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Similarly to Numpy, you can combine different comparison expressions using the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> (and) or <code class="docutils literal notranslate"><span class="pre">|</span></code> (or) operators.  You would
+need to wrap each conditional expression in parentheses.  See example below:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get all records that have life expectancy &gt; 80, where year is either 2020 or 2019</span>
+<span class="n">le_top</span><span class="p">[(</span><span class="n">le_top</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2020</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">le_top</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2019</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>year</th>
+      <th>population_m</th>
+      <th>population_f</th>
+      <th>population_t</th>
+      <th>population_density</th>
+      <th>land_area</th>
+      <th>life_expectancy_f</th>
+      <th>life_expectancy_m</th>
+      <th>life_expectancy_t</th>
+      <th>co2_emissions_pc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>152</th>
+      <td>Australia</td>
+      <td>2019</td>
+      <td>12632259.0</td>
+      <td>12733486.0</td>
+      <td>25365745.0</td>
+      <td>3.297670</td>
+      <td>7692020.000</td>
+      <td>85.0</td>
+      <td>80.9</td>
+      <td>82.900000</td>
+      <td>15.238267</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>Australia</td>
+      <td>2020</td>
+      <td>12794929.0</td>
+      <td>12898338.0</td>
+      <td>25693267.0</td>
+      <td>3.340250</td>
+      <td>7692020.000</td>
+      <td>85.3</td>
+      <td>81.2</td>
+      <td>83.200000</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>166</th>
+      <td>Austria</td>
+      <td>2019</td>
+      <td>4372358.0</td>
+      <td>4507562.0</td>
+      <td>8879920.0</td>
+      <td>107.609307</td>
+      <td>82520.000</td>
+      <td>84.2</td>
+      <td>79.7</td>
+      <td>81.895122</td>
+      <td>7.293984</td>
+    </tr>
+    <tr>
+      <th>167</th>
+      <td>Austria</td>
+      <td>2020</td>
+      <td>4395554.0</td>
+      <td>4521310.0</td>
+      <td>8916864.0</td>
+      <td>108.057004</td>
+      <td>82520.000</td>
+      <td>83.6</td>
+      <td>78.9</td>
+      <td>81.192683</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>264</th>
+      <td>Belgium</td>
+      <td>2019</td>
+      <td>5686560.0</td>
+      <td>5802420.0</td>
+      <td>11488980.0</td>
+      <td>379.424703</td>
+      <td>30280.000</td>
+      <td>84.3</td>
+      <td>79.8</td>
+      <td>81.995122</td>
+      <td>8.095584</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2631</th>
+      <td>Sweden</td>
+      <td>2020</td>
+      <td>5186267.0</td>
+      <td>5167175.0</td>
+      <td>10353442.0</td>
+      <td>25.420723</td>
+      <td>407283.532</td>
+      <td>84.2</td>
+      <td>80.7</td>
+      <td>82.407317</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2644</th>
+      <td>Switzerland</td>
+      <td>2019</td>
+      <td>4252686.0</td>
+      <td>4322594.0</td>
+      <td>8575280.0</td>
+      <td>217.007630</td>
+      <td>39516.030</td>
+      <td>85.8</td>
+      <td>82.1</td>
+      <td>83.904878</td>
+      <td>4.359041</td>
+    </tr>
+    <tr>
+      <th>2645</th>
+      <td>Switzerland</td>
+      <td>2020</td>
+      <td>4284690.0</td>
+      <td>4351871.0</td>
+      <td>8636561.0</td>
+      <td>218.558418</td>
+      <td>39516.030</td>
+      <td>85.2</td>
+      <td>81.1</td>
+      <td>83.100000</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2882</th>
+      <td>United Kingdom</td>
+      <td>2019</td>
+      <td>33008768.0</td>
+      <td>33827559.0</td>
+      <td>66836327.0</td>
+      <td>276.263080</td>
+      <td>241930.000</td>
+      <td>83.1</td>
+      <td>79.4</td>
+      <td>81.204878</td>
+      <td>5.220514</td>
+    </tr>
+    <tr>
+      <th>2883</th>
+      <td>United Kingdom</td>
+      <td>2020</td>
+      <td>33144663.0</td>
+      <td>33936337.0</td>
+      <td>67081000.0</td>
+      <td>277.274418</td>
+      <td>241930.000</td>
+      <td>82.9</td>
+      <td>79.0</td>
+      <td>80.902439</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>78 rows × 11 columns</p>
+</div></div></div>
+</div>
+<p>You can write the same code using the <code class="docutils literal notranslate"><span class="pre">isin()</span></code> function which providing it with a list of values, it returns <code class="docutils literal notranslate"><span class="pre">True</span></code> for
+each row where the values are present.  The example below returns the same result as the code above, but it uses the <code class="docutils literal notranslate"><span class="pre">isin()</span></code>
+function to check whether each row in <code class="docutils literal notranslate"><span class="pre">le_top</span></code> has either <code class="docutils literal notranslate"><span class="pre">2000</span></code> or <code class="docutils literal notranslate"><span class="pre">2019</span></code> in the <code class="docutils literal notranslate"><span class="pre">year</span></code> column.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">le_top</span><span class="p">[</span><span class="n">le_top</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">2019</span><span class="p">])]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>year</th>
+      <th>population_m</th>
+      <th>population_f</th>
+      <th>population_t</th>
+      <th>population_density</th>
+      <th>land_area</th>
+      <th>life_expectancy_f</th>
+      <th>life_expectancy_m</th>
+      <th>life_expectancy_t</th>
+      <th>co2_emissions_pc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>152</th>
+      <td>Australia</td>
+      <td>2019</td>
+      <td>12632259.0</td>
+      <td>12733486.0</td>
+      <td>25365745.0</td>
+      <td>3.297670</td>
+      <td>7692020.000</td>
+      <td>85.0</td>
+      <td>80.9</td>
+      <td>82.900000</td>
+      <td>15.238267</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>Australia</td>
+      <td>2020</td>
+      <td>12794929.0</td>
+      <td>12898338.0</td>
+      <td>25693267.0</td>
+      <td>3.340250</td>
+      <td>7692020.000</td>
+      <td>85.3</td>
+      <td>81.2</td>
+      <td>83.200000</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>166</th>
+      <td>Austria</td>
+      <td>2019</td>
+      <td>4372358.0</td>
+      <td>4507562.0</td>
+      <td>8879920.0</td>
+      <td>107.609307</td>
+      <td>82520.000</td>
+      <td>84.2</td>
+      <td>79.7</td>
+      <td>81.895122</td>
+      <td>7.293984</td>
+    </tr>
+    <tr>
+      <th>167</th>
+      <td>Austria</td>
+      <td>2020</td>
+      <td>4395554.0</td>
+      <td>4521310.0</td>
+      <td>8916864.0</td>
+      <td>108.057004</td>
+      <td>82520.000</td>
+      <td>83.6</td>
+      <td>78.9</td>
+      <td>81.192683</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>264</th>
+      <td>Belgium</td>
+      <td>2019</td>
+      <td>5686560.0</td>
+      <td>5802420.0</td>
+      <td>11488980.0</td>
+      <td>379.424703</td>
+      <td>30280.000</td>
+      <td>84.3</td>
+      <td>79.8</td>
+      <td>81.995122</td>
+      <td>8.095584</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2631</th>
+      <td>Sweden</td>
+      <td>2020</td>
+      <td>5186267.0</td>
+      <td>5167175.0</td>
+      <td>10353442.0</td>
+      <td>25.420723</td>
+      <td>407283.532</td>
+      <td>84.2</td>
+      <td>80.7</td>
+      <td>82.407317</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2644</th>
+      <td>Switzerland</td>
+      <td>2019</td>
+      <td>4252686.0</td>
+      <td>4322594.0</td>
+      <td>8575280.0</td>
+      <td>217.007630</td>
+      <td>39516.030</td>
+      <td>85.8</td>
+      <td>82.1</td>
+      <td>83.904878</td>
+      <td>4.359041</td>
+    </tr>
+    <tr>
+      <th>2645</th>
+      <td>Switzerland</td>
+      <td>2020</td>
+      <td>4284690.0</td>
+      <td>4351871.0</td>
+      <td>8636561.0</td>
+      <td>218.558418</td>
+      <td>39516.030</td>
+      <td>85.2</td>
+      <td>81.1</td>
+      <td>83.100000</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2882</th>
+      <td>United Kingdom</td>
+      <td>2019</td>
+      <td>33008768.0</td>
+      <td>33827559.0</td>
+      <td>66836327.0</td>
+      <td>276.263080</td>
+      <td>241930.000</td>
+      <td>83.1</td>
+      <td>79.4</td>
+      <td>81.204878</td>
+      <td>5.220514</td>
+    </tr>
+    <tr>
+      <th>2883</th>
+      <td>United Kingdom</td>
+      <td>2020</td>
+      <td>33144663.0</td>
+      <td>33936337.0</td>
+      <td>67081000.0</td>
+      <td>277.274418</td>
+      <td>241930.000</td>
+      <td>82.9</td>
+      <td>79.0</td>
+      <td>80.902439</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>78 rows × 11 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="extracting-rows-and-columns">
+<h3><span class="section-number">3.1.7.3. </span>Extracting rows and columns<a class="headerlink" href="#extracting-rows-and-columns" title="Permalink to this headline">#</a></h3>
+<p>To extract rows and columns from a DataFrame we need to use the <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code> operators in front of the square brackets.</p>
+<section id="loc">
+<h4><span class="section-number">3.1.7.3.1. </span><code class="docutils literal notranslate"><span class="pre">loc</span></code><a class="headerlink" href="#loc" title="Permalink to this headline">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">loc</span></code> is mainly used with label-based indexing and boolean indexing. The general usage format is the following:<br />
+<strong>df.loc[row condition expression, column_name]</strong><br />
+In the example below we extract the list of countries from our <code class="docutils literal notranslate"><span class="pre">df</span></code> DataFrame where life expectancy is greater than 80.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;life_expectancy_t&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;country&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Type of countries is: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Length of Series is: </span><span class="si">{</span><span class="n">countries</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># use unique method of Series to remove duplicates</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type of countries is: &lt;class &#39;pandas.core.series.Series&#39;&gt;
+Length of Series is: 333
+[&#39;Australia&#39; &#39;Austria&#39; &#39;Belgium&#39; &#39;Bermuda&#39; &#39;Canada&#39; &#39;Channel Islands&#39;
+ &#39;Chile&#39; &#39;Costa Rica&#39; &#39;Cyprus&#39; &#39;Denmark&#39; &#39;Faroe Islands&#39; &#39;Finland&#39;
+ &#39;France&#39; &#39;Germany&#39; &#39;Greece&#39; &#39;Guam&#39; &#39;Hong Kong SAR, China&#39; &#39;Iceland&#39;
+ &#39;Ireland&#39; &#39;Israel&#39; &#39;Italy&#39; &#39;Japan&#39; &#39;Korea, Rep.&#39; &#39;Liechtenstein&#39;
+ &#39;Luxembourg&#39; &#39;Macao SAR, China&#39; &#39;Malta&#39; &#39;Netherlands&#39; &#39;New Zealand&#39;
+ &#39;Norway&#39; &#39;Portugal&#39; &#39;Puerto Rico&#39; &#39;Qatar&#39; &#39;Singapore&#39; &#39;Slovenia&#39; &#39;Spain&#39;
+ &#39;St. Martin (French part)&#39; &#39;Sweden&#39; &#39;Switzerland&#39; &#39;United Kingdom&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="iloc-integer-based-indexing">
+<h4><span class="section-number">3.1.7.3.2. </span><code class="docutils literal notranslate"><span class="pre">iloc</span></code> (integer-based indexing)<a class="headerlink" href="#iloc-integer-based-indexing" title="Permalink to this headline">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">iloc</span></code> is mainly used with integer-based indexing, which means that index positions are supplied to <code class="docutils literal notranslate"><span class="pre">iloc</span></code> in the following
+format:<br />
+<strong>df[R, C]</strong><br />
+where <em>R</em> is the row index position and <em>C</em> is the column index position. In short, if you want to extract data items from a
+DataFrame based on index positions, than <code class="docutils literal notranslate"><span class="pre">iloc</span></code> is the way to do that.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#get the first 10 rows and the first 5 columns of the df Dataframe</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>year</th>
+      <th>population_m</th>
+      <th>population_f</th>
+      <th>population_t</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>2000</td>
+      <td>10689508.0</td>
+      <td>10090449.0</td>
+      <td>20779957.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Afghanistan</td>
+      <td>2001</td>
+      <td>11117754.0</td>
+      <td>10489238.0</td>
+      <td>21606992.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Afghanistan</td>
+      <td>2002</td>
+      <td>11642106.0</td>
+      <td>10958668.0</td>
+      <td>22600774.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Afghanistan</td>
+      <td>2003</td>
+      <td>12214634.0</td>
+      <td>11466237.0</td>
+      <td>23680871.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Afghanistan</td>
+      <td>2004</td>
+      <td>12763726.0</td>
+      <td>11962963.0</td>
+      <td>24726689.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Afghanistan</td>
+      <td>2005</td>
+      <td>13239684.0</td>
+      <td>12414590.0</td>
+      <td>25654274.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Afghanistan</td>
+      <td>2013</td>
+      <td>16554278.0</td>
+      <td>15715314.0</td>
+      <td>32269592.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Afghanistan</td>
+      <td>2014</td>
+      <td>17138803.0</td>
+      <td>16232001.0</td>
+      <td>33370804.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Afghanistan</td>
+      <td>2015</td>
+      <td>17686166.0</td>
+      <td>16727437.0</td>
+      <td>34413603.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Afghanistan</td>
+      <td>2016</td>
+      <td>18186994.0</td>
+      <td>17196034.0</td>
+      <td>35383028.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="exercise admonition" id="slicing-df">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.2 </span> (Slicing DataFrames)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">df</span></code> DataFrame created above, write code to perform the following tasks:</p>
+<ol class="simple">
+<li><p>Get the first 3 columns of <code class="docutils literal notranslate"><span class="pre">df</span></code>.</p></li>
+<li><p>Get the first 3 rows of <code class="docutils literal notranslate"><span class="pre">df</span></code>.</p></li>
+<li><p>Get the first row of <code class="docutils literal notranslate"><span class="pre">df</span></code>.</p></li>
+<li><p>What are the maximum and minimum values of life expectancy (use <em>life_expectancy_t</em> column)?  Which countries have these?</p></li>
+<li><p>Extract all the data from the United Kingdom and save it into another DataFrame.  How many records were returned?</p></li>
+<li><p>Extract all the records from the United Kingdom from the year 2020.  How many records were returned?</p></li>
+<li><p>When extracting rows from a DataFrame, try not using parentheses between two conditional expressions when using <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">|</span></code> and see what happens.</p></li>
+</ol>
+</section>
+</div>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="mckinney"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>McKinney, Wes (2017). <em>Python for Data Analysis, Second Edition</em>.  O’Reilly Media. ISBN 9781491957660.</p>
+</dd>
+<dt class="label" id="world-bank"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>The World Bank: World Development Indicators Collection.  Terms of Use <a class="reference external" href="https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets">here</a>.  This dataset can also be viewed interactively on the World Data Bank website <a class="reference external" href="https://databank.worldbank.org/Teaching-Python-dataset/id/48401a76">here</a>.</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="data_mani_vis.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Data manipulation and visualisation in Python</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="matplotlib-pandas.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>Visualising data with Matplotlib</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Alexia Cardona<br/>
+  
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
