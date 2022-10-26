@@ -134,11 +134,25 @@ df2.head()
 ```
 
 ```{code-cell}
+import matplotlib.pyplot as plt
+
 fig, ax = plt.subplots()
 
+# extract records where co2_emissions_pc are > 40
 highlight = df[df["co2_emissions_pc"] > 40]
-ax.scatter(df["life_expectancy_t"].to_numpy(), df["co2_emissions_pc"].to_numpy(),  facecolor="black")
-ax.scatter(highlight["life_expectancy_t"].to_numpy(), highlight["co2_emissions_pc"].to_numpy(), facecolor="red")
+
+# extract columns to represent x and y axis for plot
+x = df["life_expectancy_t"].to_numpy()
+y = df["co2_emissions_pc"].to_numpy()
+x_highlight = highlight["life_expectancy_t"].to_numpy()
+y_highlight = highlight["co2_emissions_pc"].to_numpy()
+
+# first plot all the points as black points
+ax.scatter(x, y, c="black")
+
+#the plot the points present in highlight in red
+ax.scatter(x_highlight, y_highlight, c="red")
+
 fig.show()
 ```
 
