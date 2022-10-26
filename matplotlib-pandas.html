@@ -473,6 +473,11 @@ title="Print to PDF"
    3.2.1. Visualising Pandas data structures in Matplotlib
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#saving-image-to-file">
+   3.2.2. Saving image to file
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -495,6 +500,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#visualising-pandas-data-structures-in-matplotlib">
    3.2.1. Visualising Pandas data structures in Matplotlib
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#saving-image-to-file">
+   3.2.2. Saving image to file
   </a>
  </li>
 </ul>
@@ -534,6 +544,84 @@ NumPy arrays before plotting <a class="footnote-reference brackets" href="#refma
 <div class="cell_output docutils container">
 <img alt="_images/matplotlib-pandas_1_0.png" src="_images/matplotlib-pandas_1_0.png" />
 </div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">plot()</span></code> method from Pandas provides us with an efficient way of plotting Pandas data using Matplotlib functionality.
+The same process can be used to plot different kinds of plot in Pandas.  Below are a few examples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># scatter plot</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;life_expectancy_f&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span><span class="s2">&quot;life_expectancy_m&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/matplotlib-pandas_3_0.png" src="_images/matplotlib-pandas_3_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># box plot</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s2">&quot;life_expectancy_t&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/matplotlib-pandas_4_0.png" src="_images/matplotlib-pandas_4_0.png" />
+</div>
+</div>
+<p>If you have categorical data in your dataset, and you want to create individual boxplots for each category you can do this via
+the <code class="docutils literal notranslate"><span class="pre">by</span></code> argument of the <code class="docutils literal notranslate"><span class="pre">plot.box()</span></code> method.  Below is an example.  To find out more wha</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s2">&quot;life_expectancy_t&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;years&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;life expectancy&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/matplotlib-pandas_6_0.png" src="_images/matplotlib-pandas_6_0.png" />
+</div>
+</div>
+</section>
+<section id="saving-image-to-file">
+<h2><span class="section-number">3.2.2. </span>Saving image to file<a class="headerlink" href="#saving-image-to-file" title="Permalink to this headline">#</a></h2>
+<p>To save a plot to an image file use the <code class="docutils literal notranslate"><span class="pre">savefig()</span></code> function from <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>.  Create a folder <code class="docutils literal notranslate"><span class="pre">output</span></code> in your PyCharm project.  We want to save the
+plot in this <code class="docutils literal notranslate"><span class="pre">output</span></code> folder.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s2">&quot;life_expectancy_t&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;years&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;life expectancy&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;output/boxplot.jpg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/matplotlib-pandas_8_0.png" src="_images/matplotlib-pandas_8_0.png" />
+</div>
+</div>
+<p>Now go into the output folder and see if the image is there!</p>
+<div class="exercise admonition" id="plotting-pandas">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.3 </span> (Drawing plots with Pandas data)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
+<p>In the code used in this section we have mainly looked at plotting life expectancy.</p>
+<ol class="simple">
+<li><p>Practice by running the code above.</p></li>
+<li><p>Plot the same plots but this time use the column <code class="docutils literal notranslate"><span class="pre">co2_emissions_pc</span></code> as the main variable in the plots</p></li>
+</ol>
+</section>
+</div>
+<div class="exercise admonition" id="highlight_scatter">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.4 </span> (Highlighting selected points)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
+<p>Create a scatter plot with life expactancy on the x-axis and co2 emissions on the y-axis.  Highlight the points where
+co2_emissions are greater than 40 in red.</p>
+<p><strong>Hint</strong>:  Use the <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code> to create a figure and only one subplot.</p>
+</section>
 </div>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">

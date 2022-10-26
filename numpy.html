@@ -231,8 +231,18 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="pandas.html">
-     3.1. Pandas
+    <a class="reference internal" href="pandas1.html">
+     3.1. Data manipulation with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matplotlib-pandas.html">
+     3.2. Visualising data with Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="more-pandas.html">
+     3.3. More Pandas
     </a>
    </li>
   </ul>
@@ -658,16 +668,16 @@ The code below shows the code in standard Python code and in NumPy code that mul
 </li>
 </ul>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="fc5fc183-f04e-4217-a89f-91ca7fec8976" name="e4040b07-c45f-4180-8c11-6dde383cd872" type="radio">
-</input><label class="sd-tab-label" for="fc5fc183-f04e-4217-a89f-91ca7fec8976">
+<input checked="checked" id="5e92ddf7-911d-4a34-ba98-44972c92a145" name="e98e98fc-33de-47ef-9a14-7d19bc959afe" type="radio">
+</input><label class="sd-tab-label" for="5e92ddf7-911d-4a34-ba98-44972c92a145">
 Standard Python</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
     <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-<input id="9be290b6-dfa9-4550-9497-acd59d581b9a" name="e4040b07-c45f-4180-8c11-6dde383cd872" type="radio">
-</input><label class="sd-tab-label" for="9be290b6-dfa9-4550-9497-acd59d581b9a">
+<input id="0f2d4319-0a7b-4ddb-baec-6a409abb7d14" name="e98e98fc-33de-47ef-9a14-7d19bc959afe" type="radio">
+</input><label class="sd-tab-label" for="0f2d4319-0a7b-4ddb-baec-6a409abb7d14">
 NumPy</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
 </pre></div>
@@ -928,7 +938,7 @@ specify the <code class="docutils literal notranslate"><span class="pre">dtype</
 <section id="exercise-content">
 <p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
 <ol class="simple">
-<li><p>Try the examples in <a class="reference internal" href="#ndarray-manip-table"><span class="std std-numref">Table 2.3</span></a>.  Check the output of each example.</p></li>
+<li><p>Try the examples in <a class="reference internal" href="pandas1.html#ndarray-manip-table"><span class="std std-numref">Table 3.1</span></a>.  Check the output of each example.</p></li>
 <li><p>Sort NumPy array <code class="docutils literal notranslate"><span class="pre">a</span></code> in descending order</p></li>
 <li><p>Create a NumPy array with the following values: [9, 3, 9, 8, 9, 4, 2, 0, 2, 5, 4, 7, 5, 1]</p>
 <ol class="simple">
@@ -1000,11 +1010,11 @@ The code below provides a few examples:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140244135383600
-ID of b is: 140244135383600
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140502908776496
+ID of b is: 140502908776496
 [ 55  92 110  60  75  45  40  57  55  62]
-ID of a is: 140244135383600
-ID of b is: 140244135383600
+ID of a is: 140502908776496
+ID of b is: 140502908776496
 </pre></div>
 </div>
 </div>
@@ -1029,10 +1039,10 @@ As you can see the object ID of the base of <code class="docutils literal notran
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140244135383600
-ID of c is: 140244135392336
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140502908776496
+ID of c is: 140502913154768
 [ 55  92 110  62  75  45  40  57  55  62]
-ID of base array of c is: 140244135383600
+ID of base array of c is: 140502908776496
 </pre></div>
 </div>
 </div>
@@ -1057,9 +1067,9 @@ ID of base array of c is: 140244135383600
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[80 62 75]
-ID of d is: 140244135380336
+ID of d is: 140502909181392
 [55 92 80 62 75 45 40 57 55 62]
-ID of a is: 140244135383600
+ID of a is: 140502908776496
 </pre></div>
 </div>
 </div>
@@ -1086,8 +1096,8 @@ be the same, the objects are two different ones in memory.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140244135383600
-ID of e is: 140244135380624
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140502908776496
+ID of e is: 140502913154384
 a is: [55 92 80 62 75 45 40 57 55 62]
 e is: [55 92 80 70 75 45 40 57 55 62]
 </pre></div>

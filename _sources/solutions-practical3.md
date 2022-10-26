@@ -127,3 +127,21 @@ df2.head()
 ```{solution-end}
 ```
 
+
+```{solution-start} highlight_scatter
+:label: highlight_scatter-solution
+:class: dropdown
+```
+
+```{code-cell}
+fig, ax = plt.subplots()
+
+highlight = df[df["co2_emissions_pc"] > 40]
+ax.scatter(df["life_expectancy_t"].to_numpy(), df["co2_emissions_pc"].to_numpy(),  facecolor="black")
+ax.scatter(highlight["life_expectancy_t"].to_numpy(), highlight["co2_emissions_pc"].to_numpy(), facecolor="red")
+fig.show()
+```
+
+```{solution-end}
+```
+

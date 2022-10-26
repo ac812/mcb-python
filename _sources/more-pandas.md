@@ -115,6 +115,68 @@ co2_emissions_notna = pd.notna(aruba_data["co2_emissions_pc"])
 print(co2_emissions_notna)
 ```
 
+## Select-Apply-Combine
+
+So far we have applied operations over all the DataFrame object.  However, in data analysis, especially when dealing with
+big data, a common approach to data exploration is the split-apply-combine strategy. The idea behind this strategy is 
+to split the data into more managable pieces, apply any operations required on the data independently on each piece and 
+then combine the results together. The {numref}`split-apply-combine` below illustrates the approach that is done in the split-apply-combine approach.
+
+```{figure} images/split-apply-combine.png
+---
+name: split-apply-combine
+---
+An illustration on how the Split-Apply-Combine strategy works.
+```
+
+The code below is the Python version of the Split-Apply-Combine appraoch.  In this code, we are splitting the `df` DataFrame 
+by `year`.  For each `year` records, we are applying the `mean()` function on it.  We are the combining the results from each `year` grouping 
+and merging it into one DataFrame which is then stored in the `res` variable.
+
+```{code-cell} ipython3
+# for each year, get the average co2 emissions
+res = df.groupby("year")["co2_emissions_pc"].mean()
+print(res)
+```
+
+```{exercise-start} Select-Apply-Combine
+:label: split-apply-combine-ex
+```
+**Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+
+Find the maximum value of CO2 emmissions for each country in the `df` DataFrame.
+
+```{exercise-end}
+```
+
+```{exercise-start} Becoming an independent programmer
+:label: independent-programmer
+```
+**Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning`
+
+The purpose of this course is to teach you the core concepts well.  It is up to you then to apply this concepts to solve your 
+computational/mathematical problems. 
+s
+One thing you should be aware of is that popular packages normally have a cheat sheet.  A cheat sheet is a summarised but user-friendly 
+version of all the functionality of a package.  You can find the cheat sheet for [pandas here](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf) and 
+[Matplotlib here](https://matplotlib.org/cheatsheets/_images/cheatsheets-1.png).
+
+Have a look at the cheat sheet and try using this attempt a new function.
+
+```{note}
+The cheat sheet alone is not enough.  To maximise your potential as a programmer you would also need to use the reference documentation 
+of each respective package. If you go in the documentation of a function and scroll down to the bottom of the page, you will also see 
+exercises that will help you understand better (the sometimes complex) documentation.  
+[Link to Matplotlib documentation](https://matplotlib.org/stable/api/index).    
+[Link to Pandas documentation](https://pandas.pydata.org/docs/)  
+
+Use the links above to explore the documentation of Matplotlib and Pandas.
+```
+
+```{exercise-end}
+```
+
+
 [//]: # (## joining data frames)
 
 [//]: # ()
@@ -124,9 +186,6 @@ print(co2_emissions_notna)
 [//]: # (## sort data in a dataframe)
 
 [//]: # (which of the countries has the highest life expectancy)
-
-[//]: # ()
-[//]: # (## group by - split apply combine)
 
 
 

@@ -56,12 +56,24 @@ This practical is composed of the following exercises:
 * - {numref}`slicing-df`
   - **Slicing DataFrames**: This exercise goes over different techniques on how to extract data from DataFrames.
   - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`plotting-pandas`
+  - **Plotting Pandas data with Matplotlib**: This exercise shows how to draw plots using the DataFrame data.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`highlight_scatter`
+  - **Highlighting points in a scatter plot**: In this exercise we highlight a subset of points in a different colour.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 * - {numref}`create-columns`
   - **Creating new columns**: In this exercise, we use existing column data to derive new ones.
   - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 * - {numref}`save-df-file`
   - **Saving data into files**: In this exercise, we will save DataFrame data into a tab-delimited file.
   - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`split-apply-combine-ex`
+  - **Split-apply-combine**: In this exercise, we will be using the split-apply-combine appraoch to apply functions of grouped data.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`independent-programmer`
+  - **Moving on beyond the course**: In the exercise, we will explore resources on how we can explore further functionality in packages to help us solve our computational problems.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning`
 ```
 
 :::{card} Managed to solve all the exercises?  Well done!
