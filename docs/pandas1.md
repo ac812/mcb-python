@@ -10,11 +10,11 @@ kernelspec:
   name: python3
 ---
 
-# Pandas 
+# Data manipulation with Pandas 
 
 ## What is Pandas?
 No, it is not the plural of panda the bear!  Pandas is a Python package designed for data manipulation and analysis. Its name is derived from "**pan**el **da**ta" (not the bear!) and is also 
-from "Python data analysis" [^ McKinney]. It is especially popular for its data structures that help process tabular data 
+from "Python data analysis" [^McKinney]. It is especially popular for its data structures that help process tabular data 
 in a fast and efficient way. 
 
 ## Importing Pandas
@@ -309,45 +309,13 @@ Using the `df` DataFrame created above, write code to perform the following task
 4. What are the maximum and minimum values of life expectancy (use *life_expectancy_t* column)?  Which countries have these?
 5. Extract all the data from the United Kingdom and save it into another DataFrame.  How many records were returned?
 6. Extract all the records from the United Kingdom from the year 2020.  How many records were returned? 
-7. Try not using parentheses between two conditional expressions when using `&` or `|` and see what happens.
+7. When extracting rows from a DataFrame, try not using parentheses between two conditional expressions when using `&` or `|` and see what happens.
 ```{exercise-end}
 ```
 
 
-# Modifying the DataFrame
-## create a new column
-
-## changing values of existing data
-using the loc/iloc operators
-le_top.iloc[0:10, 0] = "ABC"
-df.loc[df["life_expectancy_t"] > 84, "country"] ="XYZ"
-
-exercise:
-1. modify a value
-2. check if the original dataset was modified as well. - it should not
-
-
-## Handling missing data
 
 
 
-## joining data frames
-
-## pivot
-
-# sort data in a dataframe
-which of the countries has the highest life expectancy
-
-# group by - split apply combine
-
-## writing data to files
-
-## matplotlib
-
-## numpy
-
-
-
-
-[^world-bank]: The World Bank: World Development Indicators Collection.  Terms of Use [here](https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets).  This dataset can also be viewed interactively on the World Data Bank website [here](https://databank.worldbank.org/Teaching-Python-dataset/id/48401a76).
-[^ McKinney]: McKinney, Wes (2017). *Python for Data Analysis, Second Edition*.  O'Reilly Media. ISBN 9781491957660.
+[^world-bank]: The World Bank: World Development Indicators Collection.  Terms of Use [here](https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets).  This dataset can also be viewed interactively on the World Data Bank website [here](https://databank.worldbank.org/Teaching-Python-dataset/id/48401a76).  
+[^McKinney]: McKinney, Wes (2017). *Python for Data Analysis, Second Edition*.  O'Reilly Media. ISBN 9781491957660.

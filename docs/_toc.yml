@@ -32,3 +32,5 @@ parts:
       - file: data_mani_vis
         sections:
           - file: pandas1
+          - file: matplotlib-pandas
+          - file: more-pandas

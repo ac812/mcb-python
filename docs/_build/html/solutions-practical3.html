@@ -228,7 +228,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="pandas1.html">
-     3.1. Pandas
+     3.1. Data manipulation with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matplotlib-pandas.html">
+     3.2. Visualising data with Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="more-pandas.html">
+     3.3. More Pandas
     </a>
    </li>
   </ul>
@@ -522,7 +532,7 @@ dtype: object
 </div>
 </section>
 </div>
-<div class="solution admonition" id="solutions-practical3-solution-1">
+<div class="solution dropdown admonition" id="slicing-df-solution">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="pandas1.html#slicing-df"> Exercise 3.2 (Slicing DataFrames)</a></p>
 <section id="s">
@@ -796,7 +806,7 @@ Name: country, dtype: object
 </div>
 </div>
 <p>7.,</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;United Kingdom&quot;</span> <span class="o">&amp;</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2020</span><span class="p">]</span>
 </pre></div>
@@ -886,6 +896,170 @@ Name: country, dtype: object
 </pre></div>
 </div>
 </div>
+</div>
+</section>
+</div>
+<div class="solution dropdown admonition" id="create-columns-solution">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="more-pandas.html#create-columns"> Exercise 3.3 (Create columns)</a></p>
+<section id="s">
+<span id="o"></span><span id="l"></span><span id="u"></span><span id="t"></span><span id="i"></span><span id="o"></span><span id="n"></span><span id="-"></span><span id="c"></span><span id="o"></span><span id="n"></span><span id="t"></span><span id="e"></span><span id="n"></span><span id="t"></span><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;population_m_f&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;population_m&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;population_t&quot;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;population_f_f&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;population_f&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;population_t&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="solution dropdown admonition" id="save-df-file-solution">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="more-pandas.html#save-df-file"> Exercise 3.4 (Saving data into files)</a></p>
+<section id="s">
+<span id="o"></span><span id="l"></span><span id="u"></span><span id="t"></span><span id="i"></span><span id="o"></span><span id="n"></span><span id="-"></span><span id="c"></span><span id="o"></span><span id="n"></span><span id="t"></span><span id="e"></span><span id="n"></span><span id="t"></span><ol class="simple">
+<li></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pandas does not have a to_txt() function so we need to adapt the to_csv() method.</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;data/world-bank-1_data.txt&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>3.,</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/world-bank-1_data.txt&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>country</th>
+      <th>year</th>
+      <th>population_m</th>
+      <th>population_f</th>
+      <th>population_t</th>
+      <th>population_density</th>
+      <th>land_area</th>
+      <th>life_expectancy_f</th>
+      <th>life_expectancy_m</th>
+      <th>life_expectancy_t</th>
+      <th>co2_emissions_pc</th>
+      <th>population_m_f</th>
+      <th>population_f_f</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>Afghanistan</td>
+      <td>2000</td>
+      <td>10689508.0</td>
+      <td>10090449.0</td>
+      <td>20779957.0</td>
+      <td>31.859861</td>
+      <td>652230.0</td>
+      <td>57.120</td>
+      <td>54.663</td>
+      <td>55.841</td>
+      <td>0.036574</td>
+      <td>0.514414</td>
+      <td>0.485586</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>Afghanistan</td>
+      <td>2001</td>
+      <td>11117754.0</td>
+      <td>10489238.0</td>
+      <td>21606992.0</td>
+      <td>33.127872</td>
+      <td>652230.0</td>
+      <td>57.596</td>
+      <td>55.119</td>
+      <td>56.308</td>
+      <td>0.033785</td>
+      <td>0.514544</td>
+      <td>0.485456</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>Afghanistan</td>
+      <td>2002</td>
+      <td>11642106.0</td>
+      <td>10958668.0</td>
+      <td>22600774.0</td>
+      <td>34.651540</td>
+      <td>652230.0</td>
+      <td>58.080</td>
+      <td>55.583</td>
+      <td>56.784</td>
+      <td>0.045574</td>
+      <td>0.515120</td>
+      <td>0.484880</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>Afghanistan</td>
+      <td>2003</td>
+      <td>12214634.0</td>
+      <td>11466237.0</td>
+      <td>23680871.0</td>
+      <td>36.307546</td>
+      <td>652230.0</td>
+      <td>58.578</td>
+      <td>56.056</td>
+      <td>57.271</td>
+      <td>0.051518</td>
+      <td>0.515802</td>
+      <td>0.484198</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Afghanistan</td>
+      <td>2004</td>
+      <td>12763726.0</td>
+      <td>11962963.0</td>
+      <td>24726689.0</td>
+      <td>37.910996</td>
+      <td>652230.0</td>
+      <td>59.093</td>
+      <td>56.542</td>
+      <td>57.772</td>
+      <td>0.041655</td>
+      <td>0.516192</td>
+      <td>0.483808</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </div>

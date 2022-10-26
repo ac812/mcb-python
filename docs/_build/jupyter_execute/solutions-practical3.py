@@ -39,6 +39,8 @@ df.dtypes
 # ```
 # 
 # ```{solution-start} slicing-df
+# :label: slicing-df-solution
+# :class: dropdown
 # ```
 # 1.
 
@@ -108,6 +110,47 @@ uk_2020.shape
 
 
 df[df["country"] == "United Kingdom" & df["year"] == 2020]
+
+
+# ```{solution-end}
+# ```
+# 
+# 
+# ```{solution-start} create-columns
+# :label: create-columns-solution
+# :class: dropdown
+# ```
+
+# In[11]:
+
+
+df["population_m_f"] = df["population_m"] / df["population_t"]
+df["population_f_f"] = df["population_f"] / df["population_t"]
+
+
+# ```{solution-end}
+# ```
+# 
+# ```{solution-start} save-df-file
+# :label: save-df-file-solution
+# :class: dropdown
+# ```
+# 1.
+
+# In[12]:
+
+
+# Pandas does not have a to_txt() function so we need to adapt the to_csv() method.
+df.to_csv("data/world-bank-1_data.txt", sep="\t")
+
+
+# 3.,
+
+# In[13]:
+
+
+df2 = pd.read_csv("data/world-bank-1_data.txt", sep="\t")
+df2.head()
 
 
 # ```{solution-end}

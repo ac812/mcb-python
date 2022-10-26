@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.1. Pandas &#8212; Python Programming</title>
+    <title>3.1. Data manipulation with Pandas &#8212; Python Programming</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,6 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3.2. Visualising data with Matplotlib" href="matplotlib-pandas.html" />
     <link rel="prev" title="3. Data manipulation and visualisation in Python" href="data_mani_vis.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -229,7 +230,17 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.1. Pandas
+     3.1. Data manipulation with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matplotlib-pandas.html">
+     3.2. Visualising data with Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="more-pandas.html">
+     3.3. More Pandas
     </a>
    </li>
   </ul>
@@ -457,144 +468,78 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   3.1. Pandas
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-pandas">
+   3.1.1. What is Pandas?
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-pandas">
-     3.1.1. What is Pandas?
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-pandas">
+   3.1.2. Importing Pandas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-dataset">
+   3.1.3. The dataset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-tabular-data-from-a-file">
+   3.1.4. Reading tabular data from a file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-dataframe">
+   3.1.5. The DataFrame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-series">
+   3.1.6. The Series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#slicing-dataframes">
+   3.1.7. Slicing DataFrames
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-column-data-label-based-indexing">
+     3.1.7.1. Extracting column data (label-based indexing)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#importing-pandas">
-     3.1.2. Importing Pandas
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-row-data-boolean-indexing">
+     3.1.7.2. Extracting row data (boolean indexing)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-dataset">
-     3.1.3. The dataset
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reading-tabular-data-from-a-file">
-     3.1.4. Reading tabular data from a file
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-dataframe">
-     3.1.5. The DataFrame
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-series">
-     3.1.6. The Series
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#slicing-dataframes">
-     3.1.7. Slicing DataFrames
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-rows-and-columns">
+     3.1.7.3. Extracting rows and columns
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#extracting-column-data-label-based-indexing">
-       3.1.7.1. Extracting column data (label-based indexing)
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#loc">
+       3.1.7.3.1.
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         loc
+        </span>
+       </code>
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#extracting-row-data-boolean-indexing">
-       3.1.7.2. Extracting row data (boolean indexing)
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#iloc-integer-based-indexing">
+       3.1.7.3.2.
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         iloc
+        </span>
+       </code>
+       (integer-based indexing)
       </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#extracting-rows-and-columns">
-       3.1.7.3. Extracting rows and columns
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#loc">
-         3.1.7.3.1.
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           loc
-          </span>
-         </code>
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#iloc-integer-based-indexing">
-         3.1.7.3.2.
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           iloc
-          </span>
-         </code>
-         (integer-based indexing)
-        </a>
-       </li>
-      </ul>
      </li>
     </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modifying-the-dataframe">
-   3.2. Modifying the DataFrame
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-new-column">
-     3.2.1. create a new column
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#changing-values-of-existing-data">
-     3.2.2. changing values of existing data
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#handling-missing-data">
-     3.2.3. Handling missing data
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#joining-data-frames">
-     3.2.4. joining data frames
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pivot">
-     3.2.5. pivot
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sort-data-in-a-dataframe">
-   3.3. sort data in a dataframe
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#group-by-split-apply-combine">
-   3.4. group by - split apply combine
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#writing-data-to-files">
-     3.4.1. writing data to files
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#matplotlib">
-     3.4.2. matplotlib
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numpy">
-     3.4.3. numpy
-    </a>
    </li>
   </ul>
  </li>
@@ -607,7 +552,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Pandas</h1>
+                <h1>Data manipulation with Pandas</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -617,144 +562,78 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   3.1. Pandas
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-pandas">
+   3.1.1. What is Pandas?
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-pandas">
-     3.1.1. What is Pandas?
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-pandas">
+   3.1.2. Importing Pandas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-dataset">
+   3.1.3. The dataset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-tabular-data-from-a-file">
+   3.1.4. Reading tabular data from a file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-dataframe">
+   3.1.5. The DataFrame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-series">
+   3.1.6. The Series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#slicing-dataframes">
+   3.1.7. Slicing DataFrames
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-column-data-label-based-indexing">
+     3.1.7.1. Extracting column data (label-based indexing)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#importing-pandas">
-     3.1.2. Importing Pandas
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-row-data-boolean-indexing">
+     3.1.7.2. Extracting row data (boolean indexing)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-dataset">
-     3.1.3. The dataset
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reading-tabular-data-from-a-file">
-     3.1.4. Reading tabular data from a file
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-dataframe">
-     3.1.5. The DataFrame
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-series">
-     3.1.6. The Series
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#slicing-dataframes">
-     3.1.7. Slicing DataFrames
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-rows-and-columns">
+     3.1.7.3. Extracting rows and columns
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#extracting-column-data-label-based-indexing">
-       3.1.7.1. Extracting column data (label-based indexing)
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#loc">
+       3.1.7.3.1.
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         loc
+        </span>
+       </code>
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#extracting-row-data-boolean-indexing">
-       3.1.7.2. Extracting row data (boolean indexing)
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#iloc-integer-based-indexing">
+       3.1.7.3.2.
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         iloc
+        </span>
+       </code>
+       (integer-based indexing)
       </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#extracting-rows-and-columns">
-       3.1.7.3. Extracting rows and columns
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#loc">
-         3.1.7.3.1.
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           loc
-          </span>
-         </code>
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#iloc-integer-based-indexing">
-         3.1.7.3.2.
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           iloc
-          </span>
-         </code>
-         (integer-based indexing)
-        </a>
-       </li>
-      </ul>
      </li>
     </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modifying-the-dataframe">
-   3.2. Modifying the DataFrame
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-new-column">
-     3.2.1. create a new column
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#changing-values-of-existing-data">
-     3.2.2. changing values of existing data
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#handling-missing-data">
-     3.2.3. Handling missing data
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#joining-data-frames">
-     3.2.4. joining data frames
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pivot">
-     3.2.5. pivot
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sort-data-in-a-dataframe">
-   3.3. sort data in a dataframe
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#group-by-split-apply-combine">
-   3.4. group by - split apply combine
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#writing-data-to-files">
-     3.4.1. writing data to files
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#matplotlib">
-     3.4.2. matplotlib
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numpy">
-     3.4.3. numpy
-    </a>
    </li>
   </ul>
  </li>
@@ -768,12 +647,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="pandas">
-<h1><span class="section-number">3.1. </span>Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-manipulation-with-pandas">
+<h1><span class="section-number">3.1. </span>Data manipulation with Pandas<a class="headerlink" href="#data-manipulation-with-pandas" title="Permalink to this headline">#</a></h1>
 <section id="what-is-pandas">
 <h2><span class="section-number">3.1.1. </span>What is Pandas?<a class="headerlink" href="#what-is-pandas" title="Permalink to this headline">#</a></h2>
 <p>No, it is not the plural of panda the bear!  Pandas is a Python package designed for data manipulation and analysis. Its name is derived from “<strong>pan</strong>el <strong>da</strong>ta” (not the bear!) and is also
-from “Python data analysis” [^ McKinney]. It is especially popular for its data structures that help process tabular data
+from “Python data analysis” <a class="footnote-reference brackets" href="#mckinney" id="id1">1</a>. It is especially popular for its data structures that help process tabular data
 in a fast and efficient way.</p>
 </section>
 <section id="importing-pandas">
@@ -793,7 +672,7 @@ Pandas is not installed on your machine.
 </section>
 <section id="the-dataset">
 <h2><span class="section-number">3.1.3. </span>The dataset<a class="headerlink" href="#the-dataset" title="Permalink to this headline">#</a></h2>
-<p>For this session we will be using data from the World Bank Data Catalog <a class="footnote-reference brackets" href="#world-bank" id="id1">1</a> from the World Development Indicators (WDI) collection
+<p>For this session we will be using data from the World Bank Data Catalog <a class="footnote-reference brackets" href="#world-bank" id="id2">2</a> from the World Development Indicators (WDI) collection
 which was transformed by Alexia Cardona for the purpose of teaching data manipulation and visualisation programming. This data is
 compiled using official international resources.</p>
 <p>Download the dataset from <span class="xref myst">here</span> and save it into a <code class="docutils literal notranslate"><span class="pre">data</span></code> folder in your PyCharm project.</p>
@@ -1847,61 +1726,21 @@ DataFrame based on index positions, than <code class="docutils literal notransla
 <li><p>What are the maximum and minimum values of life expectancy (use <em>life_expectancy_t</em> column)?  Which countries have these?</p></li>
 <li><p>Extract all the data from the United Kingdom and save it into another DataFrame.  How many records were returned?</p></li>
 <li><p>Extract all the records from the United Kingdom from the year 2020.  How many records were returned?</p></li>
-<li><p>Try not using parentheses between two conditional expressions when using <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">|</span></code> and see what happens.</p></li>
+<li><p>When extracting rows from a DataFrame, try not using parentheses between two conditional expressions when using <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">|</span></code> and see what happens.</p></li>
 </ol>
 </section>
 </div>
-</section>
-</section>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="modifying-the-dataframe">
-<h1><span class="section-number">3.2. </span>Modifying the DataFrame<a class="headerlink" href="#modifying-the-dataframe" title="Permalink to this headline">#</a></h1>
-<section id="create-a-new-column">
-<h2><span class="section-number">3.2.1. </span>create a new column<a class="headerlink" href="#create-a-new-column" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="changing-values-of-existing-data">
-<h2><span class="section-number">3.2.2. </span>changing values of existing data<a class="headerlink" href="#changing-values-of-existing-data" title="Permalink to this headline">#</a></h2>
-<p>using the loc/iloc operators
-le_top.iloc[0:10, 0] = “ABC”
-df.loc[df[“life_expectancy_t”] &gt; 84, “country”] =”XYZ”</p>
-<p>exercise:</p>
-<ol class="simple">
-<li><p>modify a value</p></li>
-<li><p>check if the original dataset was modified as well. - it should not</p></li>
-</ol>
-</section>
-<section id="handling-missing-data">
-<h2><span class="section-number">3.2.3. </span>Handling missing data<a class="headerlink" href="#handling-missing-data" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="joining-data-frames">
-<h2><span class="section-number">3.2.4. </span>joining data frames<a class="headerlink" href="#joining-data-frames" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="pivot">
-<h2><span class="section-number">3.2.5. </span>pivot<a class="headerlink" href="#pivot" title="Permalink to this headline">#</a></h2>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="sort-data-in-a-dataframe">
-<h1><span class="section-number">3.3. </span>sort data in a dataframe<a class="headerlink" href="#sort-data-in-a-dataframe" title="Permalink to this headline">#</a></h1>
-<p>which of the countries has the highest life expectancy</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="group-by-split-apply-combine">
-<h1><span class="section-number">3.4. </span>group by - split apply combine<a class="headerlink" href="#group-by-split-apply-combine" title="Permalink to this headline">#</a></h1>
-<section id="writing-data-to-files">
-<h2><span class="section-number">3.4.1. </span>writing data to files<a class="headerlink" href="#writing-data-to-files" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="matplotlib">
-<h2><span class="section-number">3.4.2. </span>matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="numpy">
-<h2><span class="section-number">3.4.3. </span>numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h2>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="world-bank"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>The World Bank: World Development Indicators Collection.  Terms of Use <a class="reference external" href="https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets">here</a>.  This dataset can also be viewed interactively on the World Data Bank website <a class="reference external" href="https://databank.worldbank.org/Teaching-Python-dataset/id/48401a76">here</a>.
-[^ McKinney]: McKinney, Wes (2017). <em>Python for Data Analysis, Second Edition</em>.  O’Reilly Media. ISBN 9781491957660.</p>
+<dt class="label" id="mckinney"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>McKinney, Wes (2017). <em>Python for Data Analysis, Second Edition</em>.  O’Reilly Media. ISBN 9781491957660.</p>
+</dd>
+<dt class="label" id="world-bank"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>The World Bank: World Development Indicators Collection.  Terms of Use <a class="reference external" href="https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets">here</a>.  This dataset can also be viewed interactively on the World Data Bank website <a class="reference external" href="https://databank.worldbank.org/Teaching-Python-dataset/id/48401a76">here</a>.</p>
 </dd>
 </dl>
+</section>
+</section>
 </section>
 </section>
 
@@ -1938,6 +1777,13 @@ df.loc[df[“life_expectancy_t”] &gt; 84, “country”] =”XYZ”</p>
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title"><span class="section-number">3. </span>Data manipulation and visualisation in Python</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="matplotlib-pandas.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>Visualising data with Matplotlib</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

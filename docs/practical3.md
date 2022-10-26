@@ -56,6 +56,12 @@ This practical is composed of the following exercises:
 * - {numref}`slicing-df`
   - **Slicing DataFrames**: This exercise goes over different techniques on how to extract data from DataFrames.
   - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`create-columns`
+  - **Creating new columns**: In this exercise, we use existing column data to derive new ones.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`save-df-file`
+  - **Saving data into files**: In this exercise, we will save DataFrame data into a tab-delimited file.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 ```
 
 :::{card} Managed to solve all the exercises?  Well done!

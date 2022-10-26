@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Python Programming</title>
+    <title>3.2. Visualising data with Matplotlib &#8212; Python Programming</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3.3. More Pandas" href="more-pandas.html" />
+    <link rel="prev" title="3.1. Data manipulation with Pandas" href="pandas1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -215,20 +217,30 @@ const thebe_selector_output = ".output, .cell_output"
   Notes on Practical 3
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="data_mani_vis.html">
    3. Data manipulation and visualisation in Python
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="pandas.html">
-     3.1. Pandas
+    <a class="reference internal" href="pandas1.html">
+     3.1. Data manipulation with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.2. Visualising data with Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="more-pandas.html">
+     3.3. More Pandas
     </a>
    </li>
   </ul>
@@ -284,6 +296,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/matplotlib-pandas.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -351,6 +392,23 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
+        <a href="_sources/matplotlib-pandas.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
         <a href="_sources/matplotlib-pandas.md"
    class="headerbtn"
    data-toggle="tooltip"
@@ -409,7 +467,12 @@ title="Print to PDF"
         <i class="fas fa-list"></i> Contents
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="simple visible nav section-nav flex-column">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualising-pandas-data-structures-in-matplotlib">
+   3.2.1. Visualising Pandas data structures in Matplotlib
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -419,7 +482,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1>Visualising data with Matplotlib</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -428,7 +491,12 @@ title="Print to PDF"
                             <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualising-pandas-data-structures-in-matplotlib">
+   3.2.1. Visualising Pandas data structures in Matplotlib
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -439,7 +507,43 @@ title="Print to PDF"
                 
               <div>
                 
-  
+  <section class="tex2jax_ignore mathjax_ignore" id="visualising-data-with-matplotlib">
+<h1><span class="section-number">3.2. </span>Visualising data with Matplotlib<a class="headerlink" href="#visualising-data-with-matplotlib" title="Permalink to this headline">#</a></h1>
+<p>Now that we have learned how to slice our data let us start visualising it.  We have already seen <a class="reference internal" href="plots_lists.html"><span class="doc std std-doc">previously</span></a>
+how to plot simple plots.  Here we will be looking at more examples of how to visualise data with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
+<section id="visualising-pandas-data-structures-in-matplotlib">
+<h2><span class="section-number">3.2.1. </span>Visualising Pandas data structures in Matplotlib<a class="headerlink" href="#visualising-pandas-data-structures-in-matplotlib" title="Permalink to this headline">#</a></h2>
+<p>The authors of Matplotlib recommend that NumPy arrays are used as an input to Matplotlib functions. They also mention
+that if Pandas data structures are used, it might not work as intended and therefore recommend to convert these to
+NumPy arrays before plotting <a class="footnote-reference brackets" href="#refmatplotlib" id="id1">1</a>.</p>
+<p>Let us start by plotting one of the columns from our DataFrame as a line plot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># read data from file to DataFrame </span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/world-bank-1_data.csv&quot;</span><span class="p">)</span>
+
+<span class="c1">#plot life expectancy</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;life_expectancy_t&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/matplotlib-pandas_1_0.png" src="_images/matplotlib-pandas_1_0.png" />
+</div>
+</div>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="refmatplotlib"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="https://matplotlib.org/stable/tutorials/introductory/quick_start.html#types-of-inputs-to-plotting-functions">Matplotlib guide</a></p>
+</dd>
+</dl>
+</section>
+</section>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -467,6 +571,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="pandas1.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3.1. </span>Data manipulation with Pandas</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="more-pandas.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.3. </span>More Pandas</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
