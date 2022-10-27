@@ -137,7 +137,7 @@ df.info()
     
 print(df.info())
 ```
-Alternatively you can get the `dtype` of each column by using the `dtype` attribute of the DataFrame; `df.dtype`.  Note that
+Alternatively you can get the `dtype` of each column by using the `dtypes` attribute of the DataFrame; `df.dtypes`.  Note that
 columns which hold string data values are imported into Pandas as `object` `dtype`.
 
 To get the number of rows and columns that the DataFrame is made up of use the `shape` attribute:
