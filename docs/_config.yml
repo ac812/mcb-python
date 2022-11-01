@@ -35,6 +35,7 @@ html:
 sphinx:
   extra_extensions:
     - sphinx_exercise
+    - sphinx_proof
   config:
     html_show_copyright: false
     language: en

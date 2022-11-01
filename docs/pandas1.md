@@ -36,7 +36,7 @@ For this session we will be using data from the World Bank Data Catalog [^world-
 which was transformed by Alexia Cardona for the purpose of teaching data manipulation and visualisation programming. This data is 
 compiled using official international resources.
 
-Download the dataset from [here](data/world-bank-1_data.csv) and save it into a `data` folder in your PyCharm project. 
+Download the dataset from [here](https://drive.google.com/file/d/1CY6se8854BrQRx001779VwKlDcyu4vMM/view?usp=sharing) and save it into a `data` folder in your PyCharm project. 
 
 This dataset contains official data for each country worldwide and contains indicators on life expectancy, population, and CO2 emissions.  Below is 
 the metadata of the dataset:
@@ -137,7 +137,7 @@ df.info()
     
 print(df.info())
 ```
-Alternatively you can get the `dtype` of each column by using the `dtype` attribute of the DataFrame; `df.dtype`.  Note that
+Alternatively you can get the `dtype` of each column by using the `dtypes` attribute of the DataFrame; `df.dtypes`.  Note that
 columns which hold string data values are imported into Pandas as `object` `dtype`.
 
 To get the number of rows and columns that the DataFrame is made up of use the `shape` attribute:

@@ -155,3 +155,37 @@ df2.head()
 
 # ```{solution-end}
 # ```
+# 
+# 
+# ```{solution-start} highlight_scatter
+# :label: highlight_scatter-solution
+# :class: dropdown
+# ```
+
+# In[14]:
+
+
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots()
+
+# extract records where co2_emissions_pc are > 40
+highlight = df[df["co2_emissions_pc"] > 40]
+
+# extract columns to represent x and y axis for plot
+x = df["life_expectancy_t"].to_numpy()
+y = df["co2_emissions_pc"].to_numpy()
+x_highlight = highlight["life_expectancy_t"].to_numpy()
+y_highlight = highlight["co2_emissions_pc"].to_numpy()
+
+# first plot all the points as black points
+ax.scatter(x, y, c="black")
+
+#the plot the points present in highlight in red
+ax.scatter(x_highlight, y_highlight, c="red")
+
+fig.show()
+
+
+# ```{solution-end}
+# ```

@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -53,6 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4. Jupyter Notebooks" href="jupyter.html" />
     <link rel="prev" title="3.2. Visualising data with Matplotlib" href="matplotlib-pandas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -108,8 +110,8 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="practical3.html">
-                    Practical 3
+                <a class="reference internal" href="practical4.html">
+                    Practical 4
                 </a>
             </li>
         </ul>
@@ -240,6 +242,30 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      3.3. More Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="jupyter.html">
+   4. Jupyter Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="recursion.html">
+     4.5. Recursive functions
     </a>
    </li>
   </ul>
@@ -482,6 +508,11 @@ title="Print to PDF"
    3.3.3. Handling missing data
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#select-apply-combine">
+   3.3.4. Select-Apply-Combine
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -514,6 +545,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#handling-missing-data">
    3.3.3. Handling missing data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#select-apply-combine">
+   3.3.4. Select-Apply-Combine
   </a>
  </li>
 </ul>
@@ -674,7 +710,7 @@ of column <code class="docutils literal notranslate"><span class="pre">populatio
 <p>Similarly, other mathematical operators can be used to perform other arithmethic operations on columns.</p>
 <div class="exercise admonition" id="create-columns">
 
-<p class="admonition-title"><span class="caption-number">Exercise 3.3 </span> (Create columns)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.5 </span> (Create columns)</p>
 <section id="exercise-content">
 <p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
 <p>Using the <code class="docutils literal notranslate"><span class="pre">df</span></code> DataFrame object created above, create the following new columns:</p>
@@ -701,7 +737,7 @@ in the <code class="docutils literal notranslate"><span class="pre">data</span><
 into <a class="reference external" href="https://pandas.pydata.org/docs/reference/frame.html#serialization-io-conversion">Pandas documentation</a> for a whole list.</p>
 <div class="exercise admonition" id="save-df-file">
 
-<p class="admonition-title"><span class="caption-number">Exercise 3.4 </span> (Saving data into files)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.6 </span> (Saving data into files)</p>
 <section id="exercise-content">
 <p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
 <p>Perform the following:</p>
@@ -789,6 +825,82 @@ Name: co2_emissions_pc, dtype: bool
 </div>
 </div>
 </section>
+<section id="select-apply-combine">
+<h2><span class="section-number">3.3.4. </span>Select-Apply-Combine<a class="headerlink" href="#select-apply-combine" title="Permalink to this headline">#</a></h2>
+<p>So far we have applied operations over all the DataFrame object.  However, in data analysis, especially when dealing with
+big data, a common approach to data exploration is the split-apply-combine strategy. The idea behind this strategy is
+to split the data into more managable pieces, apply any operations required on the data independently on each piece and
+then combine the results together. The <a class="reference internal" href="#split-apply-combine"><span class="std std-numref">Fig. 3.5</span></a> below illustrates the approach that is done in the split-apply-combine approach.</p>
+<figure class="align-default" id="split-apply-combine">
+<img alt="_images/split-apply-combine.png" src="_images/split-apply-combine.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.5 </span><span class="caption-text">An illustration on how the Split-Apply-Combine strategy works.</span><a class="headerlink" href="#split-apply-combine" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The code below is the Python version of the Split-Apply-Combine appraoch.  In this code, we are splitting the <code class="docutils literal notranslate"><span class="pre">df</span></code> DataFrame
+by <code class="docutils literal notranslate"><span class="pre">year</span></code>.  For each <code class="docutils literal notranslate"><span class="pre">year</span></code> records, we are applying the <code class="docutils literal notranslate"><span class="pre">mean()</span></code> function on it.  We are the combining the results from each <code class="docutils literal notranslate"><span class="pre">year</span></code> grouping
+and merging it into one DataFrame which is then stored in the <code class="docutils literal notranslate"><span class="pre">res</span></code> variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for each year, get the average co2 emissions</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">)[</span><span class="s2">&quot;co2_emissions_pc&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year
+2000    4.244367
+2001    4.323111
+2002    4.349692
+2003    4.466854
+2004    4.505477
+2005    4.525854
+2013    4.326678
+2014    4.226973
+2015    4.184129
+2016    4.195432
+2017    4.199802
+2018    4.164970
+2019    4.115138
+2020         NaN
+Name: co2_emissions_pc, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition" id="split-apply-combine-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.7 </span> (Select-Apply-Combine)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
+<p>Find the maximum value of CO2 emmissions for each country in the <code class="docutils literal notranslate"><span class="pre">df</span></code> DataFrame.</p>
+</section>
+</div>
+<div class="exercise admonition" id="independent-programmer">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.8 </span> (Becoming an independent programmer)</p>
+<section id="exercise-content">
+<p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg></p>
+<p>The purpose of this course is to teach you the core concepts well.  It is up to you then to apply this concepts to solve your
+computational/mathematical problems.
+s
+One thing you should be aware of is that popular packages normally have a cheat sheet.  A cheat sheet is a summarised but user-friendly
+version of all the functionality of a package.  You can find the cheat sheet for <a class="reference external" href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf">pandas here</a> and
+<a class="reference external" href="https://matplotlib.org/cheatsheets/_images/cheatsheets-1.png">Matplotlib here</a>.</p>
+<p>Have a look at the cheat sheet and try using this attempt a new function.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The cheat sheet alone is not enough.  To maximise your potential as a programmer you would also need to use the reference documentation
+of each respective package. If you go in the documentation of a function and scroll down to the bottom of the page, you will also see
+exercises that will help you understand better (the sometimes complex) documentation.<br />
+<a class="reference external" href="https://matplotlib.org/stable/api/index">Link to Matplotlib documentation</a>.<br />
+<a class="reference external" href="https://pandas.pydata.org/docs/">Link to Pandas documentation</a></p>
+<p>Use the links above to explore the documentation of Matplotlib and Pandas.</p>
+</div>
+</section>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -824,6 +936,13 @@ Name: co2_emissions_pc, dtype: bool
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title"><span class="section-number">3.2. </span>Visualising data with Matplotlib</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="jupyter.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Jupyter Notebooks</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

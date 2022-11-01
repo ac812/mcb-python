@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: practical3
+root: practical4
 parts:
   - caption: Notes on Practical 1
     numbered: true
@@ -34,3 +34,9 @@ parts:
           - file: pandas1
           - file: matplotlib-pandas
           - file: more-pandas
+  - caption: Notes on Practical 4
+    numbered: true
+    chapters:
+      - file: jupyter
+        sections:
+          - file: recursion

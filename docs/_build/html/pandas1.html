@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -109,8 +110,8 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="practical3.html">
-                    Practical 3
+                <a class="reference internal" href="practical4.html">
+                    Practical 4
                 </a>
             </li>
         </ul>
@@ -241,6 +242,30 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="more-pandas.html">
      3.3. More Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="jupyter.html">
+   4. Jupyter Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="recursion.html">
+     4.5. Recursive functions
     </a>
    </li>
   </ul>
@@ -675,7 +700,7 @@ Pandas is not installed on your machine.
 <p>For this session we will be using data from the World Bank Data Catalog <a class="footnote-reference brackets" href="#world-bank" id="id2">2</a> from the World Development Indicators (WDI) collection
 which was transformed by Alexia Cardona for the purpose of teaching data manipulation and visualisation programming. This data is
 compiled using official international resources.</p>
-<p>Download the dataset from <span class="xref myst">here</span> and save it into a <code class="docutils literal notranslate"><span class="pre">data</span></code> folder in your PyCharm project.</p>
+<p>Download the dataset from <a class="reference external" href="https://drive.google.com/file/d/1CY6se8854BrQRx001779VwKlDcyu4vMM/view?usp=sharing">here</a> and save it into a <code class="docutils literal notranslate"><span class="pre">data</span></code> folder in your PyCharm project.</p>
 <p>This dataset contains official data for each country worldwide and contains indicators on life expectancy, population, and CO2 emissions.  Below is
 the metadata of the dataset:</p>
 <table class="table" id="ndarray-manip-table">
@@ -854,7 +879,7 @@ None
 </div>
 </div>
 </div>
-<p>Alternatively you can get the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of each column by using the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> attribute of the DataFrame; <code class="docutils literal notranslate"><span class="pre">df.dtype</span></code>.  Note that
+<p>Alternatively you can get the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of each column by using the <code class="docutils literal notranslate"><span class="pre">dtypes</span></code> attribute of the DataFrame; <code class="docutils literal notranslate"><span class="pre">df.dtypes</span></code>.  Note that
 columns which hold string data values are imported into Pandas as <code class="docutils literal notranslate"><span class="pre">object</span></code> <code class="docutils literal notranslate"><span class="pre">dtype</span></code>.</p>
 <p>To get the number of rows and columns that the DataFrame is made up of use the <code class="docutils literal notranslate"><span class="pre">shape</span></code> attribute:</p>
 <div class="cell docutils container">
