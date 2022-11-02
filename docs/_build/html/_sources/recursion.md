@@ -55,7 +55,23 @@ function to terminate, which then pops the stack frame and moves the pointer to 
 empty which would mean that all the recursive calls have been evaluated and the code in `sum_to_n()` has been executed. An in fact, in step 8, we now have the sum of all numbers up to n which 
 is 10 in this case.  
  
+```{exercise-start} Factorial
+:label: factorial
+```
+**Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 
+Write a recursive function to calculate the factorial of a number.  The factorial of *n* is the product of integers from 1 to *n*  and is defined as
+$n! = n \times (n-1) \times ... \times 1$
+
+So the factorial of 4 would be: $1 \times 2 \times 3\times 4 = 24$  
+
+Call your function with *n* = 4.
+
+Note there is already a function in Python that does this ([math.factorial()](https://docs.python.org/3/library/math.html#math.factorial))
+
+
+```{exercise-end}
+```
 
 ```{exercise-start} Fibonacci revisited
 :label: fibonacci-revisited
@@ -67,19 +83,6 @@ Notice the pattern of the points on the plot.
 
 ```{exercise-end}
 ```
-
-
-[//]: # (```{exercise-start} Factorial)
-
-[//]: # ()
-[//]: # (```)
-
-[//]: # (**Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning`)
-
-[//]: # ()
-[//]: # (```{exercise-end})
-
-[//]: # (```)
 
 ```{exercise-start} The Tower of Hanoi
 :label: tower-hanoi
