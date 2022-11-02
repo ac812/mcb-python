@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -111,8 +112,8 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="practical3.html">
-                    Practical 3
+                <a class="reference internal" href="practical4.html">
+                    Practical 4
                 </a>
             </li>
         </ul>
@@ -243,6 +244,30 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="more-pandas.html">
      3.3. More Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="jupyter.html">
+   4. Jupyter Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="recursion.html">
+     4.5. Recursive functions
     </a>
    </li>
   </ul>
@@ -668,16 +693,16 @@ The code below shows the code in standard Python code and in NumPy code that mul
 </li>
 </ul>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="5e92ddf7-911d-4a34-ba98-44972c92a145" name="e98e98fc-33de-47ef-9a14-7d19bc959afe" type="radio">
-</input><label class="sd-tab-label" for="5e92ddf7-911d-4a34-ba98-44972c92a145">
+<input checked="checked" id="548310cb-2f73-4e07-8173-5446a50854f9" name="a4597ac9-1ea4-4fc0-a057-eb0662bc272f" type="radio">
+</input><label class="sd-tab-label" for="548310cb-2f73-4e07-8173-5446a50854f9">
 Standard Python</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
     <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-<input id="0f2d4319-0a7b-4ddb-baec-6a409abb7d14" name="e98e98fc-33de-47ef-9a14-7d19bc959afe" type="radio">
-</input><label class="sd-tab-label" for="0f2d4319-0a7b-4ddb-baec-6a409abb7d14">
+<input id="af4e29e3-ad40-409c-bd02-385f8c6e5dbc" name="a4597ac9-1ea4-4fc0-a057-eb0662bc272f" type="radio">
+</input><label class="sd-tab-label" for="af4e29e3-ad40-409c-bd02-385f8c6e5dbc">
 NumPy</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
 </pre></div>
@@ -1010,11 +1035,11 @@ The code below provides a few examples:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140502908776496
-ID of b is: 140502908776496
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140227362486096
+ID of b is: 140227362486096
 [ 55  92 110  60  75  45  40  57  55  62]
-ID of a is: 140502908776496
-ID of b is: 140502908776496
+ID of a is: 140227362486096
+ID of b is: 140227362486096
 </pre></div>
 </div>
 </div>
@@ -1039,10 +1064,10 @@ As you can see the object ID of the base of <code class="docutils literal notran
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140502908776496
-ID of c is: 140502913154768
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140227362486096
+ID of c is: 140227362835408
 [ 55  92 110  62  75  45  40  57  55  62]
-ID of base array of c is: 140502908776496
+ID of base array of c is: 140227362486096
 </pre></div>
 </div>
 </div>
@@ -1067,9 +1092,9 @@ ID of base array of c is: 140502908776496
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[80 62 75]
-ID of d is: 140502909181392
+ID of d is: 140227362835120
 [55 92 80 62 75 45 40 57 55 62]
-ID of a is: 140502908776496
+ID of a is: 140227362486096
 </pre></div>
 </div>
 </div>
@@ -1096,8 +1121,8 @@ be the same, the objects are two different ones in memory.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140502908776496
-ID of e is: 140502913154384
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140227362486096
+ID of e is: 140227362480048
 a is: [55 92 80 62 75 45 40 57 55 62]
 e is: [55 92 80 70 75 45 40 57 55 62]
 </pre></div>
@@ -1149,7 +1174,7 @@ system, so to compare items in a list you would need to compare each item at a t
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="nn">Input In [11],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># If you try to the same with a standard Python list you would get an error</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">l</span> <span class="o">&gt;</span> <span class="mi">60</span>
 
