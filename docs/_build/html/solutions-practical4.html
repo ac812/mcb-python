@@ -485,8 +485,13 @@ title="Print to PDF"
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recursive-factorial">
+     Recursive Factorial
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fibonacci-revisited">
-     Fibonacci revisited
+     Fibonacci Revisited
     </a>
    </li>
   </ul>
@@ -521,8 +526,13 @@ title="Print to PDF"
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recursive-factorial">
+     Recursive Factorial
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fibonacci-revisited">
-     Fibonacci revisited
+     Fibonacci Revisited
     </a>
    </li>
   </ul>
@@ -545,8 +555,36 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="practical-4-solutions">
 <h1>Practical 4 Solutions<a class="headerlink" href="#practical-4-solutions" title="Permalink to this headline">#</a></h1>
 <p>The solutions for this practical are all written in jupyter notebook.</p>
+<section id="recursive-factorial">
+<h2>Recursive Factorial<a class="headerlink" href="#recursive-factorial" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the Factorial of n</span>
+<span class="sd">    :param n: an integer to calculate the factorial of</span>
+<span class="sd">    :return: the factorial of n</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># call function</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="fibonacci-revisited">
-<h2>Fibonacci revisited<a class="headerlink" href="#fibonacci-revisited" title="Permalink to this headline">#</a></h2>
+<h2>Fibonacci Revisited<a class="headerlink" href="#fibonacci-revisited" title="Permalink to this headline">#</a></h2>
+<p>The code below provides a solution for getting the <em>n</em>th element of the Fibonacci sequence.  To get the full sequence, the code below is not an efficient solution, and in this case the solution we did via iteration in Practical 2 is a better solution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -586,7 +624,7 @@ title="Print to PDF"
  Text(0.5, 1.0, &#39;The Fibonacci sequence&#39;)]
 </pre></div>
 </div>
-<img alt="_images/solutions-practical4_2_1.png" src="_images/solutions-practical4_2_1.png" />
+<img alt="_images/solutions-practical4_5_1.png" src="_images/solutions-practical4_5_1.png" />
 </div>
 </div>
 <p>We can see from the plot above that the fibonacci sequence increases very fast.</p>

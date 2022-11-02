@@ -5,9 +5,31 @@
 # The solutions for this practical are all written in jupyter notebook.
 # 
 # 
-# ## Fibonacci revisited
+
+# ## Recursive Factorial
 
 # In[1]:
+
+
+def factorial(n):
+    """
+    Returns the Factorial of n
+    :param n: an integer to calculate the factorial of
+    :return: the factorial of n
+    """
+    if n == 1:
+        return n
+    else:
+        return n*factorial(n-1)
+
+# call function
+print(factorial(4))
+
+
+# ## Fibonacci Revisited
+# The code below provides a solution for getting the *n*th element of the Fibonacci sequence.  To get the full sequence, the code below is not an efficient solution, and in this case the solution we did via iteration in Practical 2 is a better solution.
+
+# In[2]:
 
 
 import matplotlib.pyplot as plt
@@ -25,7 +47,7 @@ def fibonacci(n):
         return fibonacci(n-1) + fibonacci(n-2)
 
 
-# In[2]:
+# In[3]:
 
 
 # x and y coordinates
@@ -45,7 +67,7 @@ ax.set(xlabel="n", ylabel="fibonacci(n)", title="The Fibonacci sequence")
 # # Tower of Hanoi
 # 
 
-# In[3]:
+# In[4]:
 
 
 def tower_hanoi(n, source, target, spare):
@@ -64,7 +86,7 @@ def tower_hanoi(n, source, target, spare):
         tower_hanoi(n-1, spare, target, source)
 
 
-# In[4]:
+# In[5]:
 
 
 # call the function for 3 disks with A as the source rod, B as the target rod and C as the spare rod.
