@@ -46,16 +46,16 @@ There are many good reasons why it is a good idea to choose to learn Python:
   to code Python in.  
 
 
-## Introduction to PyCharm
+## Creating a Python program (.py)
 
-You can decide to write your code using a simple text editor and then use the Python interpreter directly through your 
-command line to run your code.  If you have used an IDE to develop code however, you will certainly not do that.  An 
-IDE(Integrated Development Environment) is a tool that enables programmers to write code productively by combining different
-tools and resources that are commonly used when writing code, into one application.  In this course, we are going to use 
-PyCharm as a tool to help us code in Python.  There are several other popular tools used to code Python.  We will be using
-PyCharm as it is one of the most popular tools used to develop Python code (the top one according to the 
-[Python Software Foundation survey](https://www.jetbrains.com/research/python-developers-survey-2018/)). It is a tool used not just in 
-academia but also in industry by small to big companies.
+We will start learning Python by creating a simple Python program.   To create a Python program, you can write your code 
+using a simple text editor and then use the Python interpreter directly through your command line to run your code.  If 
+you have used an IDE before to develop code however, you will certainly not do that.  An IDE (Integrated Development Environment) 
+is a tool that enables programmers to write code productively by combining different tools and resources that are commonly 
+used when writing code, into one application.  There are several popular IDEs used to code Python.  In this example, we will 
+be using PyCharm as it is one of the most popular tools used to develop Python code (the top one according to the 
+[Python Software Foundation survey](https://www.jetbrains.com/research/python-developers-survey-2018/)). It is a tool used 
+not just in academia but also in industry by small to big companies.
 
 
 ### Creating a Project in PyCharm
@@ -119,65 +119,8 @@ $python$ $<name$ $of$ $Python$ $file>$
 python first_program.py
 ```
 
-### Python Console
 
-You can interact with the Python interpreter via the Python Console pane at the bottom of PyCharm's screen (as shown below). 
-![console](images/console.png)
-  
-The console displays `>>>` to indicate that it is expecting a command as an input. After writing the command, pressing 
-the `<Enter>` key will execute the command.  The output of the command is then displayed in the console.
 
-A good way to use the Python Console is to use it as a calculator. Below are some of the most used mathematical operations.  
-
-```{list-table} Numeric Operators and Functions
-:header-rows: 1
-:name: numeric-operators-table
-
-* - Operator/Function
-  - Description
-  - Example
-* - \+
-  - Addition
-  - 1 + 2 returns 3
-* - \-
-  - Subtraction
-  - 3 - 1 returns 2
-* - \*
-  - Multiplication
-  - 3 * 4 returns 12
-* - /
-  - Division
-  - 4/2 returns 2.0
-* - //
-  - Floor division: returns the integer part of a division result (without the fraction part)
-  - 5//3 returns 1
-* - \%
-  - Remainder
-  - 5 % 2 returns 2
-* - **
-  - to the power of
-  - 3 ** 2 returns 9
-* - `pow(x, y)`
-  - x to the power of y (same as **)
-  - `pow(3, 2)` returns 9
-* - `abs(x)`
-  - absolute value of x
-  - `abs(-5)` returns 5
-* - `round(x, n)`
-  - rounds x to n decimal places
-  - `round(3.142, 2)` returns 3.14
-```
-Python follows the traditional mathematical rules of precedence (BODMAS).  You can find more about these rules 
-[here](https://www.mathsisfun.com/operation-order-bodmas.html).
-
-```{exercise} Arithmetic Operators
-:label: arithmetic-operators
-
-**Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
-  
-a. Try the examples in {numref}`numeric-operators-table` in the Python Console.  
-b. Calculate: $8 + (10 + 4^3 + 2)$
-```
 
 
   
