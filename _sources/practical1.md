@@ -7,7 +7,8 @@ how to use them.  It is the first step in learning Python programming.
 
 ## Objectives
 During this practical you will learn how to:
-* create a project and a Python program in PyCharm
+* create a Python program (.py)
+* create Jupyter notebooks
 * define variables
 * use different data types in Python
 * use different data structures in Python and perform different operations with them

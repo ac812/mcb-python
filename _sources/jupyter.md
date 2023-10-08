@@ -2,10 +2,13 @@
 
 ## What are Jupyter Notebooks?
 
+Python programs (`.py` files) are widely used in data analysis pipelines and software development projects that require
+a more structured approach.  In this course, however, we will be using mainly Jupyter Notebooks to write our code.  
+
 Jupyter Notebooks are a Python way of doing **literate programming**, that is, incorporating natural language, *e.g.,* English with 
 your source code.  So rather than having a word processing document containing all your text, and a .py file containing 
 your source code, Jupyter Notebooks combines functionality of both into one document. Jupyter Notebook is a web application to make 
-our analysis/code reproducibile, one of the qualities that are being promoted in research to be compliant with FAIR 
+our analysis/code reproducible, one of the qualities that are being promoted in research to be compliant with FAIR 
 standards (**F**inadble **A**ccessible **I**nteroperable and **R**eproducible).
 
 The name Jupyter is a play on Jupyter's core programming languages: **Ju**lia, **Pyt**hon, **R**.  The circles in the Jupyter 
@@ -31,29 +34,31 @@ The different components of the Jupyter ecosystem that enable execution of a Jup
 displayed in a web browser. The Jupyter Notebook file, kernel and browser communicate together via the Jupyter Notebook Server.
 
 
-## Creating Jupyter Notebooks in PyCharm
-Now let us get started and see how we can create Jupyter Notebooks in PyCharm.  As always, you need to be either already in a 
-PyCharm project.  If not create a new Pure Python PyCharm project (instructions [here](https://ac812.github.io/mcb-python/intro-to-python.html#creating-a-project-in-pycharm)).
+## Creating Jupyter Notebooks in Jupyter Lab
+In this course, we will be using Jupyter Lab to create our Jupyter Notebooks.
+
+First, create a folder where you want to save your Jupyter Notebooks (e.g., JupyterLabProjects).  Open
+the terminal, go to that folder and type the following command to open Jupyter Lab:
+
+```
+jupyter lab
+```
+
+This will open the Jupyter Lab interface in your browser.  
+![jupyterlab-interface](images/jupyterlab-interface.png)
 
 To create a new Jupyter Notebook:  
-1. Select **File|New|Jupter Notebook** from PyCharm's main menu.  
-![notebook_file](images/notebook-menu.png)
-2. Enter `notebook1` as the name your new Jupyter Notebook.
-![notebook_name](images/notebook-name.png)
-3. The Jupyter Notebook is now displayed in PyCharm. If this is your first time creating a Jupyter Notebook in PyCharm, 
-most likely you will get a message at the top of Jupyter Notebook file saying that "Jupyter is not installed". If so,
-click on the **Install Jupyter** link on the right hand side. This will install the package `Jupyter`.
-![jupyter-install](images/jupyter-install.png)
-When this is installed, you would be able to add content to your Jupyter Notebook file.
+1. Click on Notebook in the Launcher tab.  This will create a new tab with the new notebook.
+2. Right-click on the notebook name on the file browser section on the left-hand-side and name the file `first_notebook.ipynb`.
+![notebook-rename](images/notebook-rename.png)
+You have just created a jupyter notebook!
 
 ## Running Jupyter Notebooks 
-1. In the code cell displayed enter the following code `print("Hello Jupyter!")` as follows:
-![hello-jupyter1](images/hello-jupyter1.png)
-2. After clicking the **Run All** ![](images/run-all.png) button you would get the output displayed underneath the code cell as follows:
+At the moment, the notebook is empty.  Let us start filling it up.
+1. In the code cell displayed enter the following code `print("Hello Jupyter")` as follows:
 ![hello-jupyter](images/hello-jupyter.png)
-3. To display your Notebook in a browser, click on the **Open Notebook in Browser** ![](images/view-browser.png) button in the notebook toolbar.
-This will open the Notebook in your browser and it will be displayed with the classic Jupyter Notebook interface:
-![hello-jupyter-browser](images/hello-jupyter-browser.png)
+2. To run the cell, click on the **Run this cell** button ![](images/run-cell.png).  The output of the cell will then be displayed underneath the cell:
+![notebook-output](images/notebook-output.png)
 
 
 ## Jupyter Notebook Cells
@@ -258,34 +263,18 @@ name: jupyter-code-cell
 An example of a code cell in Jupyter Notebook and its output.
 ```
 
-```{exercise-start} Exploring code cells
-:label: code-cell1
-```
-**Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 
-Explore writing Python code in code cells.  Write the code shown in {numref}`jupyter-code-cell`, and execute it in a Jupyter Notebook.
-```{exercise-end}
-```
 
 
 ### Submitting/Sharing a Jupyter Notebook
 Once you have finished writing your Notebook, go to the location where you have your PyCharm Project and you should be able to see your Notebook file/s (`.ipynb`) in that folder. You can send the .ipynb file to some one or upload it to a drive for example. If you have created folders with data in your project 
-that are used in the .ipynb file, than make sure to also load the whole project folder that contains the folder with the data and the .ipynb file it, so that the functions that 
+that are used in the .ipynb file, then make sure to also load the whole project folder that contains the folder with the data and the .ipynb file it, so that the functions that 
 use that data are not disrupted in your code.  
 **Make sure that you have saved your code and have run the Notebook successfully before sending or submitting it!**
 
 
 
-```{exercise-start} Explore how others do Notebooks
-:label: explore-notebooks
-```
-**Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 
-This [link](https://github.com/jupyter/jupyter/wiki) contains different examples of Jupyter Notebooks for you to explore. Look into a few Notebooks and check 
-the .ipynb files to see how others are displaying content in Notebooks..
-
-```{exercise-end}
-```
 
 [^1]: Image from https://docs.jupyter.org/en/latest/projects/architecture/content-architecture.html
 
