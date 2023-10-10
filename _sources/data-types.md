@@ -102,19 +102,6 @@ The first line is an example of **multiple assignment** where instead of assigni
 you can assign values to multiple variables on the same line.  In the example above, `a` is assigned to `22`, `b` to `"22"` and `c` to `22.0`.  
 ```
 
-## Watching variables
-In PyCharm, checking the type of variables is much easier as PyCharm has a **Variables pane** where you can see all the variables of your existing program 
-that are in memory, their type and also their values!  This is very convenient when you are writing code as you are always 
-aware of what you have in memory.  The Variables pane can be found at the bottom of the screen on the right hand side in PyCharm in the Python 
-Console tab as shown in the screenshot below.  This process is called **watching variables**.  
-```{figure} images/variables-pane.png
----
-name: variables-pane
----
-Variables pane in PyCharm.    
-It shows three variabels in memory (a,b,c), their types and their values.  
-```
-
 ## Strings
 Textual data is stored in `str` objects as shown in {numref}`data-types-table`.  We can distinguish a string object as it 
 is enclosed in quotes `""`.
@@ -127,7 +114,7 @@ Escape sequences.
 
 ```{list-table} String Escape sequences.
 :header-rows: 1
-:name: data-types-table
+:name: string-escape-seq
 
 * - Escape Sequence
   - Translation
@@ -166,6 +153,7 @@ location = "Cambridge"
 print(f"My name is {name} and I live in {location}")
 ```
 Now try one with your own name and location!  
+
 f-strings are very useful when we need to format numbers.  To format decimal numbers up to a specified number of decimal 
 places we use f-strings as following:
 
@@ -242,8 +230,7 @@ collection is not done immediately after an object has a reference count of 0.
 
 **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 
-In this exercise we are going to explore the values and types of variables after performing oerations on them.  Watch the 
-values of these variables in PyCharm as you proceed through the exercise.
+In this exercise we are going to explore the values and types of variables after performing operations on them. 
 
 Perform the following tasks:
 1. Create two variables `a` and `b` and assign them the value of `10`.
