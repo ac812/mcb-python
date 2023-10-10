@@ -47,9 +47,8 @@ else:
 ```
 
 ```{admonition} Note: Code Indentation
-Python uses indentation to specify blocks of code.  To indent code use **4 spaces** per indentation level (not a tab). PyCharm 
-will indent your code automatically when you press a new line after an `if` statement. Writing the code above without 
-indentation will throw an error.
+Python uses indentation to specify blocks of code.  To indent code use **4 spaces** per indentation level (not a tab). 
+Writing the code above without indentation will throw an error.
 ```
 
 
@@ -64,7 +63,7 @@ will print October.
 
 ## `match` Statements
 When you need to compare the value of a variable to several patterns, using `match` statements is more useful. It is 
-more used with string comparisons rather ones since it has to match the values.  The code below is a good example of when 
+more used with string comparisons rather than numeric ones since it has to match the values.  The code below is a good example of when 
 it is better to use `match` rather than `if` statements.  The code below prints "Hello" in the language you specify.
 ```{code-cell} ipython3
 language = "English"
@@ -112,7 +111,7 @@ l > 20
 ```
 As you can see this will throw an error as this code is trying to compare a `list` object to an `int` object.  What we 
 really want to do is check if the value of each `int` object in list `l` is greater than 20.  In this way, both the left and right-hand 
-side of the comparison operator will be of the same value (`int` in this example).  To do this we have to use loops.
+side of the comparison operator will be of the same type (`int` in this example).  To do this we have to use loops.
 
 ## Loops
 Loops form also part of control flow statements.  They are the tool needed to **repeat** operations until a defined condition 

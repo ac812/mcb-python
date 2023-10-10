@@ -12,6 +12,21 @@ kernelspec:
 
 # Practical 1 Solutions
 
+```{solution} markdown1
+:label: markdown1-solution
+:class: dropdown
+
+Link to [notebook1.ipynb](https://github.com/ac812/mcb-python/blob/master/docs/notebook-solutions/notebook1.ipynb)
+```
+
+```{solution} markdown2
+:label: markdown2-solution
+:class: dropdown
+
+Link to [notebook2.ipynb](https://github.com/ac812/mcb-python/blob/master/docs/notebook-solutions/notebook2.ipynb)
+```
+
+
 ```{solution} arithmetic-operators
 :label: arithmetic-operators-solution
 :class: dropdown
@@ -172,7 +187,7 @@ print(quote)
 ```{solution-start} split-strings
 :class: dropdown
 ```
-To divide strings by a separator, the `split()` string method provides an eay way to do this.  Have a look at the 
+To divide strings by a separator, the `split()` string method provides an easy way to do this.  Have a look at the 
 [documentation](https://docs.python.org/3.3/library/stdtypes.html?highlight=split#str.split).  If no arguments are passed 
 to the `split()` method, all whitespace is removed from the string that called `split()` and a list is returned with the 
 separated strings.

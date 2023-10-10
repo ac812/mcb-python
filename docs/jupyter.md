@@ -7,7 +7,7 @@ a more structured approach.  In this course, however, we will be using mainly Ju
 
 Jupyter Notebooks are a Python way of doing **literate programming**, that is, incorporating natural language, *e.g.,* English with 
 your source code.  So rather than having a word processing document containing all your text, and a .py file containing 
-your source code, Jupyter Notebooks combines functionality of both into one document. Jupyter Notebook is a web application to make 
+your source code, Jupyter Notebooks combines functionality of both into one document. A Jupyter Notebook is a web application to make 
 our analysis/code reproducible, one of the qualities that are being promoted in research to be compliant with FAIR 
 standards (**F**inadble **A**ccessible **I**nteroperable and **R**eproducible).
 
@@ -37,7 +37,7 @@ displayed in a web browser. The Jupyter Notebook file, kernel and browser commun
 ## Creating Jupyter Notebooks in Jupyter Lab
 In this course, we will be using Jupyter Lab to create our Jupyter Notebooks.
 
-First, create a folder where you want to save your Jupyter Notebooks (e.g., JupyterLabProjects).  Open
+Let's create our first Jupyter Notebook together.  First, create a folder where you want to save your Jupyter Notebooks (*e.g.,* JupyterLabProjects).  Open
 the terminal, go to that folder and type the following command to open Jupyter Lab:
 
 ```
@@ -55,9 +55,9 @@ You have just created a jupyter notebook!
 
 ## Running Jupyter Notebooks 
 At the moment, the notebook is empty.  Let us start filling it up.
-1. In the code cell displayed enter the following code `print("Hello Jupyter")` as follows:
+1. In the code cell displayed on the left hand side, enter the following code `print("Hello Jupyter")` as follows:
 ![hello-jupyter](images/hello-jupyter.png)
-2. To run the cell, click on the **Run this cell** button ![](images/run-cell.png).  The output of the cell will then be displayed underneath the cell:
+2. To run the cell, click on the **Run this cell** button ![](images/run-cell.png) in the menu bar.  The output of the cell will then be displayed underneath the cell:
 ![notebook-output](images/notebook-output.png)
 
 
@@ -67,22 +67,24 @@ To add content on the Jupyter Notebook, we need to add cells to it. You can add 
 Cells can be of three types:
 1. Code
 2. Markdown
-3. Raw NBConvert
+3. Raw
 
-In this course we are going to look at the two popular ones, which is Code and Markdown.
+### Adding Cells
+To add cells in your notebook, click on the insert cell above icon ![](images/insert-cell-above.png) or insert cell below icon ![](images/insert-cell-below.png) present on the right hand side of the cell you have clicked on.
+Once a cell is added, you can change the cell type from the cell-type dropdown box in the menu bar:
 
+![cell-type](images/cell-type.png)
+![cell-type-list](images/cell-type-list.png)
+
+### Code Cells
+You can write your Python code in **code cells** in your Notebook. The `print("Hello Jupyter")` example above was written in a code cell.
 
 ### Markdown Cells
 
-Markdown Cells are cells that contain Markdown.  Markdown is a markup language that is used to format text. In this section
-we are going to look at different formatting options to make our text more structured and user friendly.  
-To add a Markdown cell:  
-1. Choose `Markdown` from the dropdown list in the notebook toolbar.
-![type-code-cell](images/type-code-cell.png)
-2. Then click on the **Add Cell Below** button ![](images/add-cell.png). 
-3. This will add Markdown cell in your Jupyter Notebook. Click on the cell and start typing your Markdown.
-4. Click on the **Run Cell and Select below** ![](images/run-cell.png) button in the notebook toolbar to run the code in that cell only, or **Run All** ![](images/run-all.png) button to run all the cells of the Notebook.
+Markdown Cells are cells that contain Markdown.  Markdown is a markup language that is used to format text. To change a 
+notebook cell to Markdown, choose `Markdown` from the cell-type dropdown list.
 
+In this section we are going to look at different formatting options in Markdown to make our text more structured and user-friendly.  
 
 #### Headings
 
@@ -138,21 +140,7 @@ and spaces are converted to a hyphen, for example, `[link to header](#markdown-c
 
 ##### Linking text to a webpage
 
-To create a link to a webpage use `[text of link](https://jupyter.org/)`.  This is rendered as [text of link](https://jupyter.org/). 
-
-#### Footnotes
-
-To indicate a footnote use`[^2]` and, for example, indicate another one as`[^3]`, then specify the wordings of the footnotes as:
-
-`[^2]: This is the first footnote.`  
-`[^3]: This is the second footnote.`
-
-You do not need to put footnotes at the end of the document for them to be rendered there.  This example is rendered as follows:  
-
-To indicate a footnote use[^2] and, for example, indicate another one as[^3] and then specify the wordings of the footnotes as:
-
-[^2]: This is the first footnote.  
-[^3]: This is the second footnote.
+To create a link to a webpage use `[text of link](https://jupyter.org/)`.  This is rendered as [text of link](https://jupyter.org/).
 
 #### Lists
 
@@ -197,7 +185,7 @@ Use 4 spaces to indent an item if you would like to have sub-lists:
 
 ##### Unordered lists
 
-In an unordered bulletted list, each item begins with `*`, `+` or `-`.  Example:
+In an unordered bulleted list, each item begins with `*`, `+` or `-`.  Example:
 
 ```
 * Item 1
@@ -245,30 +233,10 @@ https://www.nature.com/news/polopoly_fs/7.36716.1469695923!/image/reproducibilit
 ```{exercise-end}
 ```
 
-### Code Cells
-You can write your Python code in **code cells** in your Notebook.   
-To create a code cell:  
-1. Choose **Code** from the dropdown menu that contains the type of cells for the Notebook in the notebook toolbar.  
-![](images/code-cell-dd.png)
-2. Click on the **Add Code Cell Below** button![](images/add-cell.png) button on the notebook toolbar in 
-PyCharm. 
-3. A cell will be created. You can now start writing your Python code inside the code cell.
-4. As before, to run the code cell, click on the **Run Cell and Select below** ![](images/run-cell.png) button in the notebook toolbar to run the code in that cell only, or **Run All** ![](images/run-all.png) button to run all the cells of the Notebook.
-
-Below is an example of how a code cell and its output after running the code cell will look in your Notebook.  
-```{figure} images/jupyter-code-cell.png
----
-name: jupyter-code-cell
----
-An example of a code cell in Jupyter Notebook and its output.
-```
-
-
-
-
 ### Submitting/Sharing a Jupyter Notebook
-Once you have finished writing your Notebook, go to the location where you have your PyCharm Project and you should be able to see your Notebook file/s (`.ipynb`) in that folder. You can send the .ipynb file to some one or upload it to a drive for example. If you have created folders with data in your project 
-that are used in the .ipynb file, then make sure to also load the whole project folder that contains the folder with the data and the .ipynb file it, so that the functions that 
+Once you have finished writing your Notebook, go to the location where you created your *JupyterLabProjects* folder, and you should be able to see your Notebook file/s (`.ipynb`) in that folder. 
+You can send the .ipynb file to someone or upload it to a drive for example. If you have created folders with data in your project 
+that are used in the .ipynb file, then make sure to also load the whole project folder that contains the folder with the data and the .ipynb file, so that the functions that 
 use that data are not disrupted in your code.  
 **Make sure that you have saved your code and have run the Notebook successfully before sending or submitting it!**
 

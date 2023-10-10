@@ -7,8 +7,8 @@ how to use them.  It is the first step in learning Python programming.
 
 ## Objectives
 During this practical you will learn how to:
-* create a Python program (.py)
-* create Jupyter notebooks
+* create a Python program (.py file)
+* create a Jupyter notebook (.ipynb file)
 * define variables
 * use different data types in Python
 * use different data structures in Python and perform different operations with them
@@ -55,6 +55,12 @@ This practical is composed of the following exercises.
 * - Exercise
   - Description
   - Level
+* - {numref}`markdown1`
+  - **Markdown in Jupyter Notebook**: This exercise exposes us to Markdown in Jupyter Notebooks.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`markdown2`
+  - **More text formatting in Markdown**: This exercise uses more formatting options in our Markdown Cells.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 * - {numref}`arithmetic-operators`
   - **Arithmetic operators**:  In this exercise we try the different arithmetic operators.  
   - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
@@ -99,7 +105,7 @@ This practical is composed of the following exercises.
 :::{card} Managed to solve all the exercises?  Well done!
 :class-card: sd-bg-light
 In the programming world, many organisations award badges to learners on the acquisition of a new skill or completion of a milestone.  If you attempted and solved all the exercises of this practical, you definitely deserve your first badge of this course.
-```{image} images/level1-badge.png
+```{image} images/level-1-badge.png
 :name: level1-badge
 :width: 20%
 :align: center
@@ -110,7 +116,6 @@ In the programming world, many organisations award badges to learners on the acq
 ```{admonition} Next week
 In the next practical we will learn how to:
 * write our own functions
-* draw plots
 * use numpy arrays
 * read and write to files
 

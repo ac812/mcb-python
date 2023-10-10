@@ -50,9 +50,9 @@
 # `abs(x)`.  `x` here is a **parameter**, which essentially means that it is a variable in the function definition.  This should be 
 # distinguished from an argument which is the actual value passed to a function (in `abs(-20)` -20 is the argument).
 # 
-# Another way to get help on functions is via the `help()` function.  To access this form of help, type `help(abs)` in the 
-# console.  This returns a shorter definition of `abs()` but most of the time this is enough.  Essentially you can pass 
-# the function you want to know about as an argument to `help()`.
+# Another way to get help on functions is via the `help()` function.  The following code: `help(abs)` returns a shorter 
+# definition of `abs()` but most of the time this is enough.  Essentially you can pass the function you want to know about 
+# as an argument to `help()`.
 # 
 # If none of these options was not enough to help you understand what you are looking for, there are several Python resources 
 # on the internet that might have more information and provide examples.  A simple search sometimes would do the trick!

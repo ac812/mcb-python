@@ -24,11 +24,11 @@ Data structures are structures in memory that store and organise data. Essential
  
 The benefits of having multiple data items in a collection makes it easier to perform operations that need to be applied 
 on each item in the collection.  Data Structures are also very useful when reading data from files.  This section introduces
-different data structures commonly used in Python.  
+tuples and lists in Python.  
 
 ##  Tuples
 Tuples are one of the built-in data structures in Python.  Tuples can contain data items of different data types, but as 
-a good practice we normally create lists of the same data tyoe.  Tuples are created as a comma-separated list of data items enclosed 
+a good practice we normally create lists of the same data type.  Tuples are created as a comma-separated list of data items enclosed 
 in parentheses.  Let us create our first tuple:
 
 ```{code-cell} python3
@@ -260,8 +260,7 @@ We have already seen how to call functions.  Functions are called only by their 
 to functions but they are  defined inside classes or objects, and so they are dependent on them. We will not be going 
 into the details of object-oriented programming in this course, but we have already encountered some methods in tuples and 
 lists that use methods *e.g.,* `l.append(`x`)`.  Here `l` is an object reference of the `list` class and `append()` is a method 
-inside the `list` class.  The dot `.` after `l` is used to access the method associated with the `list` object. In this example, 
-a pop-up menu will be shown in PyCharm with the list of all methods associated with `list`. 
+inside the `list` class.  The dot `.` after `l` is used to access the method associated with the `list` object. 
 
 ```
 

@@ -42,12 +42,12 @@ s[1] = 'a'
 
 ## String utility functions and methods
 
-More useful functions and methods for strings are listed in {numref}`data-types-table`.  A list of all the String methods 
+More useful functions and methods for strings are listed in {numref}`string-utility-table`.  A list of all the String methods 
 in Python can be found [here](https://docs.python.org/3/library/stdtypes.html#string-methods).
 
 ```{list-table} String utility functions
 :header-rows: 1
-:name: data-types-table
+:name: string-utility-table
 
 * - Function
   - Description

@@ -17,4 +17,3 @@ parts:
             - file: more-strings
             - file: operators
             - file: flow-control-structures
-            - file: debugging

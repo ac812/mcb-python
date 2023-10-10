@@ -46,7 +46,7 @@ There are many good reasons why it is a good idea to choose to learn Python:
   to code Python in.  
 
 
-## Creating a Python program (.py)
+## Creating a Python program (.py file)
 
 We will start learning Python by creating a simple Python program.   To create a Python program, you can write your code 
 using a simple text editor and then use the Python interpreter directly through your command line to run your code.  If 

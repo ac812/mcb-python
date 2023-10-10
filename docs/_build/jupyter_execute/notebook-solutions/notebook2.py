@@ -14,7 +14,7 @@
 # 
 # ### The Survey
 # 
-# In the survey [^1] respondents were asked to rate 11 different approaches to improving reproducibilty in science.  Below is the list order by the most highly rated:
+# In the survey respondents were asked to rate 11 different approaches to improving reproducibilty in science.  Below is the list order by the most highly rated:
 # 
 # * Better understanding of statistics
 # * Better mentoring/supervision
@@ -27,6 +27,4 @@
 # * More time for mentoring
 # * Journals enforcing standards
 # * More time checking notebooks
-# 
-# [^1]: The survey can be downloaded [here](https://www.nature.com/news/polopoly_fs/7.36741!/file/Reproduciblility%20Questionnaire.doc).
 # 
