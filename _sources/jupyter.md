@@ -109,11 +109,8 @@ Below is the Markdown code you need to use to specify headings at different leve
 #### Inline text formatting
 
 To make text **bold** use `**double asterisks**` or `__double underscores__`.  
-To make text *italic* use `*asterisks*` or `_underscores_`.  
-To make text ^superscript^ use `^caret^`.  
-To make text ~subscript~ use `~tilde~`.  
-To mark text as `inline code` use `` `backticks` ``.   
-To  ~~strikethrough~~ text use `~~double tilde~~`.
+To make text *italic* use `*asterisks*` or `_underscores_`.
+To mark text as `inline code` use `` `backticks` ``.
 
 #### Line breaks
 To create a line break, put more than 2 spaces at the end of a sentence.
