@@ -3,27 +3,9 @@
 
 # # Worksheet 1
 # 
-# ```{exercise} Installing Python and PyCharm
-# :label: install
-# :nonumber:
-# **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
-# 
-# Install Python and PyCharm on your personal computer if you have one.  Instruction on which versions you need and how 
-# to install these can be found [here](installation).
-# ```
-# 
-# 
-# ```{exercise} Running Python programs from the terminal
-# :label: running-terminal
-# :nonumber:
-# **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
-# 
-# Take the code to run exercise {numref}`num-prog`. Save it into a file called *numbers1.py* and run it from the terminal. Explain 
-# what you did to run the code in the terminal.
-# ```
-# 
 # ```{exercise} For loop
 # :label: for-words-exercise
+# :class: dropdown
 # :nonumber:
 # **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 # 
@@ -32,6 +14,7 @@
 # 
 # ```{exercise} Odd and even numbers
 # :label: odd-even
+# :class: dropdown
 # :nonumber:
 # **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 # 
@@ -41,6 +24,7 @@
 # 
 # ````{exercise} Simple calculator
 # :label: calculator
+# :class: dropdown
 # :nonumber:
 # **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning`
 # 
@@ -60,6 +44,7 @@
 # 
 # ````{exercise} Asterisk half-pyramid
 # :label: half-pyramid
+# :class: dropdown
 # :nonumber:
 # **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 # 
@@ -77,6 +62,7 @@
 # 
 # 
 # `````{exercise} Asterisk full-pyramid
+# :class: dropdown
 # :label: full-pyramid
 # :nonumber:
 # **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning`
@@ -90,8 +76,3 @@
 # ```
 # ````
 # `````
-# 
-# ```{exercise} Debugging code
-# Debug the code above.  Put a breakpoint in the for loop and watch the values of the variables `spaces`, `i` and `j` change 
-# as you step over the code in each iteration.
-# ```

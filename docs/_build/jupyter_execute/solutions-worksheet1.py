@@ -3,18 +3,10 @@
 
 # # Worksheet 1 Solutions
 # 
-# ````{solution} running-terminal
-# :label: running-terminal-solution
-# 
-# To run *numbers1.py* in terminal do:
-# ``` 
-# python numbers1.py
-# ```
-# You will then be asked to input a number in the terminal.  Continue entering numbers until you enter -1
-# ````
 # 
 # ```{solution-start} for-words-exercise
 # :label: for-words-exercise-solution
+# :class: dropdown
 # ```
 
 # In[1]:
@@ -31,6 +23,7 @@ for i in range(len(l)):
 # 
 # ```{solution-start} odd-even
 # :label: odd-even-solution
+# :class: dropdown
 # ```
 
 # In[2]:
@@ -54,6 +47,7 @@ print(f"The program has identified {len(odd)} odd numbers {odd}")
 # 
 # ```{solution-start} calculator
 # :label: calculator-solution
+# :class: dropdown
 # ```
 # 
 # ```{code-block}
@@ -89,6 +83,7 @@ print(f"The program has identified {len(odd)} odd numbers {odd}")
 # 
 # ```{solution-start} half-pyramid
 # :label: half-pyramid-solution
+# :class: dropdown
 # ```
 # This is one way of printing a half-pyramid.
 
@@ -110,6 +105,7 @@ for i in range(5):
 # 
 # ```{solution-start} full-pyramid
 # :label: full-pyramid-solution
+# :class: dropdown
 # ```
 # Below is one way of printing a full pyramid:
 
