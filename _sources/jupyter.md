@@ -132,8 +132,9 @@ that was published in 2016 in the Nature journal that triggered the discussion a
 
 ##### Linking text to Headers
 
-To link text to a header use `[link to header](#section-title)`. Inside the parenthesis, titles are written in lower case letters
-and spaces are converted to a hyphen, for example, `[link to header](#markdown-cells)` will be rendered as [link to header](#markdown-cells).
+To link text to a header use `[text](#section-title)`, where `text` is text you want to show that will be linked to the header 
+in question.  Inside the parenthesis, titles are written in lower case letters and spaces are converted to a hyphen, for 
+example, `[link to header](#markdown-cells)` will be rendered as [link to header](#markdown-cells).
 
 ##### Linking text to a webpage
 
@@ -163,8 +164,6 @@ Use 4 spaces to indent an item if you would like to have sub-lists:
 2. Item 2
 3. Item 3  
     a. Item 3a  
-        i.  Item 3ai  
-        ii. Item 3aii  
     b. Item 3b  
     c. Item 3c  
 4. Item 4
@@ -174,8 +173,6 @@ Use 4 spaces to indent an item if you would like to have sub-lists:
 2. Item 2
 3. Item 3  
     a. Item 3a  
-        i.  Item 3ai  
-        ii. Item 3aii  
     b. Item 3b  
     c. Item 3c  
 4. Item 4
@@ -189,7 +186,7 @@ In an unordered bulleted list, each item begins with `*`, `+` or `-`.  Example:
 * Item 2
 * Item 3
     * Item 3a
-        *  Item 3ai
+        * Item 3ai
         * Item 3aii
     * Item 3b
     * Item 3c
@@ -201,14 +198,14 @@ Will be rendered as:
 * Item 2
 * Item 3
     * Item 3a
-        *  Item 3ai
+        * Item 3ai
         * Item 3aii
     * Item 3b
     * Item 3c
 * Item 4
 
 #### Inserting images
-To insert an image use the following syntax: `![alternative text](path_to_image "Title")`.  Example:
+To insert an image use the following syntax: `![alternative text](path_to_image)`.  Example:
 
 `![Jupyter Logo](images/jupyter.png)`
 
