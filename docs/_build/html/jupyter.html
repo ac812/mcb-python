@@ -696,8 +696,9 @@ that was published in 2016 in the Nature journal that triggered the discussion a
 <h4><span class="section-number">1.4.4.3.4. </span>Links<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h4>
 <section id="linking-text-to-headers">
 <h5><span class="section-number">1.4.4.3.4.1. </span>Linking text to Headers<a class="headerlink" href="#linking-text-to-headers" title="Permalink to this headline">#</a></h5>
-<p>To link text to a header use <code class="docutils literal notranslate"><span class="pre">[link</span> <span class="pre">to</span> <span class="pre">header](#section-title)</span></code>. Inside the parenthesis, titles are written in lower case letters
-and spaces are converted to a hyphen, for example, <code class="docutils literal notranslate"><span class="pre">[link</span> <span class="pre">to</span> <span class="pre">header](#markdown-cells)</span></code> will be rendered as <a class="reference external" href="#markdown-cells">link to header</a>.</p>
+<p>To link text to a header use <code class="docutils literal notranslate"><span class="pre">[text](#section-title)</span></code>, where <code class="docutils literal notranslate"><span class="pre">text</span></code> is text you want to show that will be linked to the header
+in question.  Inside the parenthesis, titles are written in lower case letters and spaces are converted to a hyphen, for
+example, <code class="docutils literal notranslate"><span class="pre">[link</span> <span class="pre">to</span> <span class="pre">header](#markdown-cells)</span></code> will be rendered as <a class="reference external" href="#markdown-cells">link to header</a>.</p>
 </section>
 <section id="linking-text-to-a-webpage">
 <h5><span class="section-number">1.4.4.3.4.2. </span>Linking text to a webpage<a class="headerlink" href="#linking-text-to-a-webpage" title="Permalink to this headline">#</a></h5>
@@ -725,8 +726,6 @@ and spaces are converted to a hyphen, for example, <code class="docutils literal
 <span class="mf">2.</span> <span class="n">Item</span> <span class="mi">2</span>
 <span class="mf">3.</span> <span class="n">Item</span> <span class="mi">3</span>  
     <span class="n">a</span><span class="o">.</span> <span class="n">Item</span> <span class="mi">3</span><span class="n">a</span>  
-        <span class="n">i</span><span class="o">.</span>  <span class="n">Item</span> <span class="mi">3</span><span class="n">ai</span>  
-        <span class="n">ii</span><span class="o">.</span> <span class="n">Item</span> <span class="mi">3</span><span class="n">aii</span>  
     <span class="n">b</span><span class="o">.</span> <span class="n">Item</span> <span class="mi">3</span><span class="n">b</span>  
     <span class="n">c</span><span class="o">.</span> <span class="n">Item</span> <span class="mi">3</span><span class="n">c</span>  
 <span class="mf">4.</span> <span class="n">Item</span> <span class="mi">4</span>
@@ -737,8 +736,6 @@ and spaces are converted to a hyphen, for example, <code class="docutils literal
 <li><p>Item 2</p></li>
 <li><p>Item 3<br />
 a. Item 3a<br />
-i.  Item 3ai<br />
-ii. Item 3aii<br />
 b. Item 3b<br />
 c. Item 3c</p></li>
 <li><p>Item 4</p></li>
@@ -751,7 +748,7 @@ c. Item 3c</p></li>
 <span class="o">*</span> <span class="n">Item</span> <span class="mi">2</span>
 <span class="o">*</span> <span class="n">Item</span> <span class="mi">3</span>
     <span class="o">*</span> <span class="n">Item</span> <span class="mi">3</span><span class="n">a</span>
-        <span class="o">*</span>  <span class="n">Item</span> <span class="mi">3</span><span class="n">ai</span>
+        <span class="o">*</span> <span class="n">Item</span> <span class="mi">3</span><span class="n">ai</span>
         <span class="o">*</span> <span class="n">Item</span> <span class="mi">3</span><span class="n">aii</span>
     <span class="o">*</span> <span class="n">Item</span> <span class="mi">3</span><span class="n">b</span>
     <span class="o">*</span> <span class="n">Item</span> <span class="mi">3</span><span class="n">c</span>
@@ -780,7 +777,7 @@ c. Item 3c</p></li>
 </section>
 <section id="inserting-images">
 <h4><span class="section-number">1.4.4.3.6. </span>Inserting images<a class="headerlink" href="#inserting-images" title="Permalink to this headline">#</a></h4>
-<p>To insert an image use the following syntax: <code class="docutils literal notranslate"><span class="pre">![alternative</span> <span class="pre">text](path_to_image</span> <span class="pre">&quot;Title&quot;)</span></code>.  Example:</p>
+<p>To insert an image use the following syntax: <code class="docutils literal notranslate"><span class="pre">![alternative</span> <span class="pre">text](path_to_image)</span></code>.  Example:</p>
 <p><code class="docutils literal notranslate"><span class="pre">![Jupyter</span> <span class="pre">Logo](images/jupyter.png)</span></code></p>
 <p>Will be rendered as:</p>
 <p><img alt="Jupyter Logo" src="_images/jupyter.png" /></p>
