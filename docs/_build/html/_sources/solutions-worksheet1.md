@@ -12,7 +12,6 @@ kernelspec:
 
 # Worksheet 1 Solutions
 
-
 ```{solution-start} for-words-exercise
 :label: for-words-exercise-solution
 :class: dropdown
