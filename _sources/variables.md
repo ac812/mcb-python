@@ -26,7 +26,7 @@ Below are some of the most used mathematical operations.
   - 5//3 returns 1
 * - \%
   - Remainder
-  - 5 % 2 returns 2
+  - 5 % 2 returns 1
 * - **
   - to the power of
   - 3 ** 2 returns 9
