@@ -19,7 +19,7 @@ print(sum_two_numbers(1, 1))
 
 
 # In general, we should always aim to create functions that return a value, as a good programming practice.  However, in Python, a function that does not 
-# specify a `return` statement, returns `None`by default.
+# specify a `return` statement, returns `None` by default.
 # 
 # ```{solution-end}
 # ```
@@ -43,9 +43,9 @@ def fibonacci(n):           #1
 print(fibonacci(100))       #9
 
 
-# Lines 1-7 define the `fibinacci()` function.  In line 2, `fib-seq` is an empty list that be populated in the `while` loop with 
-# the Fibonacci sequence.  Instead of printing it, on line 5 we are adding the next item of the Fibonacci sequence to the 
-# `fib_seq` list.  Line 7 returns the list.  Line 9 provides 100 as an argument to the `fibonacci()` function and then prints it.
+# Lines 1-7 define the `fibinacci()` function.  In line 2, `fib_seq` is an empty list that will be populated from the `while` loop with 
+# the Fibonacci sequence.  Instead of printing it, on line 5, we are adding the next item of the Fibonacci sequence to the 
+# `fib_seq` list.  Line 7 returns the list.  Line 9 call the function `fibonacci` with 100 as an argument and then prints it.
 # 
 # ```{solution-end}
 # ```

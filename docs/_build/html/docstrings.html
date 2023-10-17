@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Debugging code in PyCharm &#8212; Python Programming</title>
+    <title>Documentation Strings &#8212; Python Programming</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -261,35 +261,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/debugging.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -329,7 +300,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdebugging.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocstrings.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -357,24 +328,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/debugging.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download notebook file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="_sources/debugging.md"
+        <a href="_sources/docstrings.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -423,7 +377,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Debugging code in PyCharm</h1>
+                <h1>Documentation Strings</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -435,43 +389,19 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="debugging-code-in-pycharm">
-<h1>Debugging code in PyCharm<a class="headerlink" href="#debugging-code-in-pycharm" title="Permalink to this headline">#</a></h1>
-<p>This process fixing errors in code is known as <strong>debugging</strong>.  A software <strong>bug</strong> in an error in your code that makes your program stop or not run as it should be.
-Debugging your code can also be useful when you want to understand properly what your code is doing.  PyCharm offers a really useful tool - the <strong>PyCharm debugger</strong>.
-The PyCharm debugger allows you to execute your code one line at a time, and also help you understand how the values of your variables are changing in memory.</p>
-<p>To debug your code you must first create a <strong>breakpoint</strong>, by clicking in the gutter in PyCharm:</p>
-<figure class="align-default" id="breakpoint">
-<img alt="_images/breakpoint.png" src="_images/breakpoint.png" />
-<figcaption>
-<p><span class="caption-text">A breakpoint on line 7 in PyCharm.</span><a class="headerlink" href="#breakpoint" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<p>As shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">breakpoint</span></code>, the red dot, is the breakpoint.  Next, click on the Debug <img alt="" src="_images/debug.png" /> button.  The code will start executing util it reaches the first breakpoint which essentially
-pauses the code from executing, allowing you to see the values of the variables at that point.  In
-the example below, we can see that when the code pauses execution on line 7, <code class="docutils literal notranslate"><span class="pre">i</span></code> has the value of 0, <code class="docutils literal notranslate"><span class="pre">rows</span></code> 5 and <code class="docutils literal notranslate"><span class="pre">spaces</span></code> 4 in the
-Debug tool window.  These values are also shown inline next to the code (inline debugger).</p>
-<figure class="align-default" id="debug-tool">
-<img alt="_images/debug-tool.png" src="_images/debug-tool.png" />
-<figcaption>
-<p><span class="caption-text">Debug tool window in PyCharm</span><a class="headerlink" href="#debug-tool" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<p>To run one line of code at a time, press the Step Over <img alt="" src="_images/step-over.png" /> button. This is
-very useful as it allows you to check what is happening in your code, especially if you are trying to fix an
-error in your code.  You can put as many breakpoints as you want in your code.  Pressing the Resume Program <img alt="" src="_images/resume-program.png" /> button
-will resume execution of program until the next breakpoint is reached.  Pressing the Stop <img alt="" src="_images/stop.png" /> button will stop execution of your program.</p>
-<div class="tip admonition">
-<p class="admonition-title">Do you know?</p>
-<p>The term <strong>bug</strong> was first used in 1946 by <strong>Grace Hopper</strong>, a computer science pioneer.  A moth was trapped in a relay, which caused a malfunction in the
-electricalmechanical computer leading eventually to the word “bug” to refer to errors in code.</p>
-<figure class="align-default" id="id1">
-<img alt="_images/grace-hopper.jpeg" src="_images/grace-hopper.jpeg" />
-<figcaption>
-<p><span class="caption-text">Grace Hopper (<a class="reference external" href="https://commons.wikimedia.org/wiki/File:Grace_Hopper_and_UNIVAC.jpg">Wikipedia</a>)</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-</div>
+  <section id="documentation-strings">
+<h1>Documentation Strings<a class="headerlink" href="#documentation-strings" title="Permalink to this headline">#</a></h1>
+<p>Now that we know how to create functions, it is important that we start creating them using good programming practice. We
+should follow the definition of a function with <strong>docstrings</strong>.  Docstrings is short for Python Documentation Strings.  docstrings
+associate documentation with Python modules, functions and classes. To generate docstrings you need to use triple quotes as shown in the example below.</p>
+<p>PyCharm automatically generates the name of the parameters and the return statement.  Filling in the remaining details
+will ensure that we have documentation specified for the usage of our the function.  When we run code, similarly
+to comments, docstrings do not have an effect on our code.  But docstrings have the additional benefit of being associated with
+documentation, so always use docstrings to explain functions rather than comments.</p>
+<p>To check out how the documentation created looks like, either include the <code class="docutils literal notranslate"><span class="pre">help()</span></code> function in your code using the name of the
+function you have created and documented with docstrings as an argument.  For example, <code class="docutils literal notranslate"><span class="pre">help(sum_two_numbers)</span></code>.  The other way
+is to call <code class="docutils literal notranslate"><span class="pre">pydoc</span></code> from the terminal together with the name of the file where the function is saved, for example, if <code class="docutils literal notranslate"><span class="pre">sum_two_numbers()</span></code>
+was saved in <code class="docutils literal notranslate"><span class="pre">numbers.py</span></code>, then run <code class="docutils literal notranslate"><span class="pre">pydoc</span> <span class="pre">numbers.py</span></code> in the terminal.</p>
 </section>
 
     <script type="text/x-thebe-config">

@@ -134,43 +134,43 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="jupyter.html">
+     1.4. Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="variables.html">
-     1.4. Variables
+     1.5. Arithmetic Operations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="data-types.html">
-     1.5. Data Types
+     1.7. Data Types
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="calling-functions.html">
-     1.6. Calling functions
+     1.8. Calling functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="data-structures.html">
-     1.8. Data Structures
+     1.10. Data Structures
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="more-strings.html">
-     1.9. More on strings and functions
+     1.11. More on strings and functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="operators.html">
-     1.10. Comparison and logical operators
+     1.12. Comparison and logical operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="flow-control-structures.html">
-     1.11. Control flow statements
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="debugging.html">
-     1.12. Debugging code in PyCharm
+     1.13. Control flow statements
     </a>
    </li>
   </ul>
@@ -210,69 +210,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="plots_lists.html">
      2.4. Getting started with Matplotlib
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Notes on Practical 3
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="data_mani_vis.html">
-   3. Data manipulation and visualisation in Python
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pandas1.html">
-     3.1. Data manipulation with Pandas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="matplotlib-pandas.html">
-     3.2. Visualising data with Matplotlib
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="more-pandas.html">
-     3.3. More Pandas
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Notes on Practical 4
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="jupyter-more.html">
-   4. Jupyter and more
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="jupyter.html">
-     4.1. Jupyter Notebooks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="recursion.html">
-     4.2. Recursive functions
     </a>
    </li>
   </ul>
@@ -510,11 +447,6 @@ title="Print to PDF"
    2.1.2. Positional vs keyword arguments
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#documentation-strings">
-   2.1.3. Documentation Strings
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -544,11 +476,6 @@ title="Print to PDF"
    2.1.2. Positional vs keyword arguments
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#documentation-strings">
-   2.1.3. Documentation Strings
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -562,7 +489,7 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="creating-functions">
 <h1><span class="section-number">2.1. </span>Creating functions<a class="headerlink" href="#creating-functions" title="Permalink to this headline">#</a></h1>
 <p>We have previously seen <a class="reference internal" href="calling-functions.html"><span class="doc std std-doc">what functions are and how to call them</span></a>.  Functions are a good way to structure
-your code into useful chunks, each chunk being responsible for a particular task.  This makes functions are a good way
+your code into useful chunks, each chunk being responsible for a particular task.  This makes functions a good way
 to create <strong>reusable code</strong>. In this section we are going to learn how to create a function of our own from scratch.
 Functions in Python are defined in the following way:</p>
 <img alt="_images/def-function.png" class="align-center" src="_images/def-function.png" />
@@ -740,38 +667,10 @@ b. Explore default argument values, positional and keyword arguments by trying t
 <p class="admonition-title"><span class="caption-number">Exercise 2.2 </span> (The Fibonacci sequence function)</p>
 <section id="exercise-content">
 <p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg></p>
-<p>Rewrite the solution of <a class="reference internal" href="flow-control-structures.html#fibonacci"><span class="std std-numref">Exercise 1.13</span></a> such that, you create a function <code class="docutils literal notranslate"><span class="pre">fibonacci</span></code> that takes parameter <code class="docutils literal notranslate"><span class="pre">n</span></code> as an input,
+<p>Rewrite the solution of <a class="reference internal" href="flow-control-structures.html#fibonacci"><span class="std std-numref">Exercise 1.15</span></a> such that, you create a function <code class="docutils literal notranslate"><span class="pre">fibonacci</span></code> that takes parameter <code class="docutils literal notranslate"><span class="pre">n</span></code> as an input,
 and returns the list of Fibonacci sequence numbers from 0 to <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
 </section>
 </div>
-</section>
-<section id="documentation-strings">
-<h2><span class="section-number">2.1.3. </span>Documentation Strings<a class="headerlink" href="#documentation-strings" title="Permalink to this headline">#</a></h2>
-<p>Now that we know how to create functions, it is important that we start creating them using good programming practice. We
-should follow the definition of a function with <strong>docstrings</strong>.  Docstrings is short for Python Documentation Strings.  docstrings
-associate documentation with Python modules, functions and classes. To generate docstrings you need to use triple quotes as shown in the example below.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_two_numbers</span><span class="p">(</span><span class="n">num1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">num2</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Returns the sum of two numbers.</span>
-<span class="sd">    :param num1: first number</span>
-<span class="sd">    :param num2: second number</span>
-<span class="sd">    :return: Returns the sum of num1 and num2.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>PyCharm automatically generates the name of the parameters and the return statement.  Filling in the remaining details
-will ensure that we have documentation specified for the usage of our the function.  When we run code, similarly
-to comments, docstrings do not have an effect on our code.  But docstrings have the additional benefit of being associated with
-documentation, so always use docstrings to explain functions rather than comments.</p>
-<p>To check out how the documentation created looks like, either include the <code class="docutils literal notranslate"><span class="pre">help()</span></code> function in your code using the name of the
-function you have created and documented with docstrings as an argument.  For example, <code class="docutils literal notranslate"><span class="pre">help(sum_two_numbers)</span></code>.  The other way
-is to call <code class="docutils literal notranslate"><span class="pre">pydoc</span></code> from the terminal together with the name of the file where the function is saved, for example, if <code class="docutils literal notranslate"><span class="pre">sum_two_numbers()</span></code>
-was saved in <code class="docutils literal notranslate"><span class="pre">numbers.py</span></code>, then run <code class="docutils literal notranslate"><span class="pre">pydoc</span> <span class="pre">numbers.py</span></code> in the terminal.</p>
 </section>
 </section>
 

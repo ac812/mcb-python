@@ -17,3 +17,12 @@ parts:
             - file: more-strings
             - file: operators
             - file: flow-control-structures
+  - caption: Notes on Practical 2
+    numbered: true
+    chapters:
+     - file: further-programming
+       sections:
+            - file: creating-functions
+            - file: modules_packages
+            - file: numpy
+            - file: plots_lists

@@ -136,42 +136,76 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="variables.html">
-     1.5. Variables
+     1.5. Arithmetic Operations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="data-types.html">
-     1.6. Data Types
+     1.7. Data Types
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="calling-functions.html">
-     1.7. Calling functions
+     1.8. Calling functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="data-structures.html">
-     1.9. Data Structures
+     1.10. Data Structures
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="more-strings.html">
-     1.10. More on strings and functions
+     1.11. More on strings and functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="operators.html">
-     1.11. Comparison and logical operators
+     1.12. Comparison and logical operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="flow-control-structures.html">
-     1.12. Control flow statements
+     1.13. Control flow statements
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="further-programming.html">
+   2. Further programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="creating-functions.html">
+     2.1. Creating functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="debugging.html">
-     1.13. Debugging code in PyCharm
+    <a class="reference internal" href="modules_packages.html">
+     2.2. Modules and Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="numpy.html">
+     2.3. NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plots_lists.html">
+     2.4. Getting started with Matplotlib
     </a>
    </li>
   </ul>
@@ -405,7 +439,7 @@ title="Print to PDF"
 <h1>Practical 2 Solutions<a class="headerlink" href="#practical-2-solutions" title="Permalink to this headline">#</a></h1>
 <div class="solution dropdown admonition" id="exploring-creating-functions-solution">
 
-<p class="admonition-title">Solution to</p>
+<p class="admonition-title">Solution to<a class="reference internal" href="creating-functions.html#exploring-creating-functions"> Exercise 2.1 (Exploring creating functions)</a></p>
 <section id="s">
 <span id="o"></span><span id="l"></span><span id="u"></span><span id="t"></span><span id="i"></span><span id="o"></span><span id="n"></span><span id="-"></span><span id="c"></span><span id="o"></span><span id="n"></span><span id="t"></span><span id="e"></span><span id="n"></span><span id="t"></span><p>a.</p>
 <div class="cell docutils container">
@@ -424,12 +458,12 @@ title="Print to PDF"
 </div>
 </div>
 <p>In general, we should always aim to create functions that return a value, as a good programming practice.  However, in Python, a function that does not
-specify a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, returns <code class="docutils literal notranslate"><span class="pre">None</span></code>by default.</p>
+specify a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, returns <code class="docutils literal notranslate"><span class="pre">None</span></code> by default.</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="fibonacci-function-solution">
 
-<p class="admonition-title">Solution to</p>
+<p class="admonition-title">Solution to<a class="reference internal" href="creating-functions.html#fibonacci-function"> Exercise 2.2 (The Fibonacci sequence function)</a></p>
 <section id="s">
 <span id="o"></span><span id="l"></span><span id="u"></span><span id="t"></span><span id="i"></span><span id="o"></span><span id="n"></span><span id="-"></span><span id="c"></span><span id="o"></span><span id="n"></span><span id="t"></span><span id="e"></span><span id="n"></span><span id="t"></span><div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -451,14 +485,14 @@ specify a <code class="docutils literal notranslate"><span class="pre">return</s
 </div>
 </div>
 </div>
-<p>Lines 1-7 define the <code class="docutils literal notranslate"><span class="pre">fibinacci()</span></code> function.  In line 2, <code class="docutils literal notranslate"><span class="pre">fib-seq</span></code> is an empty list that be populated in the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop with
-the Fibonacci sequence.  Instead of printing it, on line 5 we are adding the next item of the Fibonacci sequence to the
-<code class="docutils literal notranslate"><span class="pre">fib_seq</span></code> list.  Line 7 returns the list.  Line 9 provides 100 as an argument to the <code class="docutils literal notranslate"><span class="pre">fibonacci()</span></code> function and then prints it.</p>
+<p>Lines 1-7 define the <code class="docutils literal notranslate"><span class="pre">fibinacci()</span></code> function.  In line 2, <code class="docutils literal notranslate"><span class="pre">fib_seq</span></code> is an empty list that will be populated from the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop with
+the Fibonacci sequence.  Instead of printing it, on line 5, we are adding the next item of the Fibonacci sequence to the
+<code class="docutils literal notranslate"><span class="pre">fib_seq</span></code> list.  Line 7 returns the list.  Line 9 call the function <code class="docutils literal notranslate"><span class="pre">fibonacci</span></code> with 100 as an argument and then prints it.</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="create-ndarrays-solution">
 
-<p class="admonition-title">Solution to</p>
+<p class="admonition-title">Solution to<a class="reference internal" href="numpy.html#create-ndarrays"> Exercise 2.3 (Creating NumPy arrays)</a></p>
 <section id="s">
 <span id="o"></span><span id="l"></span><span id="u"></span><span id="t"></span><span id="i"></span><span id="o"></span><span id="n"></span><span id="-"></span><span id="c"></span><span id="o"></span><span id="n"></span><span id="t"></span><span id="e"></span><span id="n"></span><span id="t"></span><p>b.</p>
 <div class="cell docutils container">
@@ -496,7 +530,7 @@ the Fibonacci sequence.  Instead of printing it, on line 5 we are adding the nex
 </div>
 <div class="solution dropdown admonition" id="dtype-ndarrays-solution">
 
-<p class="admonition-title">Solution to</p>
+<p class="admonition-title">Solution to<a class="reference internal" href="numpy.html#dtype-ndarrays"> Exercise 2.4 (dtype of NumPy arrays)</a></p>
 <section id="s">
 <span id="o"></span><span id="l"></span><span id="u"></span><span id="t"></span><span id="i"></span><span id="o"></span><span id="n"></span><span id="-"></span><span id="c"></span><span id="o"></span><span id="n"></span><span id="t"></span><span id="e"></span><span id="n"></span><span id="t"></span><ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> is of <code class="docutils literal notranslate"><span class="pre">dtype</span></code> <code class="docutils literal notranslate"><span class="pre">int64</span></code>.  NumPy detected that the values of the list supplied as argument are integers and so it created the <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> with integer data types.</p></li>
@@ -551,7 +585,7 @@ the Fibonacci sequence.  Instead of printing it, on line 5 we are adding the nex
 </div>
 <div class="solution dropdown admonition" id="ndarrays-manip-exercise-solution">
 
-<p class="admonition-title">Solution to</p>
+<p class="admonition-title">Solution to<a class="reference internal" href="numpy.html#ndarrays-manip-exercise"> Exercise 2.5 (manipulating NumPy arrays)</a></p>
 <section id="s">
 <span id="o"></span><span id="l"></span><span id="u"></span><span id="t"></span><span id="i"></span><span id="o"></span><span id="n"></span><span id="-"></span><span id="c"></span><span id="o"></span><span id="n"></span><span id="t"></span><span id="e"></span><span id="n"></span><span id="t"></span><ol class="simple">
 <li><p>Note: NumPy array <code class="docutils literal notranslate"><span class="pre">a</span></code> is not changed, the methods return a new NumPy array object with the change requested.</p></li>
@@ -613,7 +647,7 @@ the Fibonacci sequence.  Instead of printing it, on line 5 we are adding the nex
 </div>
 <div class="solution dropdown admonition" id="odd-even-numpy-exercise-solution">
 
-<p class="admonition-title">Solution to</p>
+<p class="admonition-title">Solution to<a class="reference internal" href="numpy.html#odd-even-numpy-exercise"> Exercise 2.7 (Odd and even numbers with NumPy arrays)</a></p>
 <section id="s">
 <span id="o"></span><span id="l"></span><span id="u"></span><span id="t"></span><span id="i"></span><span id="o"></span><span id="n"></span><span id="-"></span><span id="c"></span><span id="o"></span><span id="n"></span><span id="t"></span><span id="e"></span><span id="n"></span><span id="t"></span><div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -635,7 +669,7 @@ Odd numbers in list are: [55 75 45 57 55]
 </div>
 <div class="solution dropdown admonition" id="math-formula-exercise-solution">
 
-<p class="admonition-title">Solution to</p>
+<p class="admonition-title">Solution to<a class="reference internal" href="numpy.html#math-formula-exercise"> Exercise 2.8 (Mathematical formulas)</a></p>
 <section id="s">
 <span id="o"></span><span id="l"></span><span id="u"></span><span id="t"></span><span id="i"></span><span id="o"></span><span id="n"></span><span id="-"></span><span id="c"></span><span id="o"></span><span id="n"></span><span id="t"></span><span id="e"></span><span id="n"></span><span id="t"></span><div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -657,7 +691,7 @@ Odd numbers in list are: [55 75 45 57 55]
 </div>
 <div class="solution dropdown admonition" id="random-exercise-solution">
 
-<p class="admonition-title">Solution to</p>
+<p class="admonition-title">Solution to<a class="reference internal" href="numpy.html#random-exercise"> Exercise 2.9 (Random numbers)</a></p>
 <section id="s">
 <span id="o"></span><span id="l"></span><span id="u"></span><span id="t"></span><span id="i"></span><span id="o"></span><span id="n"></span><span id="-"></span><span id="c"></span><span id="o"></span><span id="n"></span><span id="t"></span><span id="e"></span><span id="n"></span><span id="t"></span><p>2., The two random numbers generated are the same (see below).  The generator needs a starting number (seed) to be able to
 generate a random variable.  Using a seed enables replication of results.</p>
@@ -706,7 +740,7 @@ generate a random variable.  Using a seed enables replication of results.</p>
 </div>
 <div class="solution dropdown admonition" id="line-plot-solution">
 
-<p class="admonition-title">Solution to</p>
+<p class="admonition-title">Solution to<a class="reference internal" href="plots_lists.html#line-plot"> Exercise 2.10 (Draw dotted line plot with markers)</a></p>
 <section id="s">
 <span id="o"></span><span id="l"></span><span id="u"></span><span id="t"></span><span id="i"></span><span id="o"></span><span id="n"></span><span id="-"></span><span id="c"></span><span id="o"></span><span id="n"></span><span id="t"></span><span id="e"></span><span id="n"></span><span id="t"></span><div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -730,7 +764,7 @@ generate a random variable.  Using a seed enables replication of results.</p>
 </div>
 <div class="solution dropdown admonition" id="scatter-plot-solution">
 
-<p class="admonition-title">Solution to</p>
+<p class="admonition-title">Solution to<a class="reference internal" href="plots_lists.html#scatter-plot"> Exercise 2.11 (Plotting a scatter plot)</a></p>
 <section id="s">
 <span id="o"></span><span id="l"></span><span id="u"></span><span id="t"></span><span id="i"></span><span id="o"></span><span id="n"></span><span id="-"></span><span id="c"></span><span id="o"></span><span id="n"></span><span id="t"></span><span id="e"></span><span id="n"></span><span id="t"></span><div class="cell docutils container">
 <div class="cell_input docutils container">

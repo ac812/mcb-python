@@ -30,6 +30,6 @@ following:
 
 ***module_name*.`fun1()`** or ***preferred_name*`.fun1()`** if a *preferred_name* was specified when importing the module.  
 
-In this course we will be looking into importing modules from two popular packages; `matplotlib` and `numpy`.
+In this practical we will be looking into importing modules from two popular packages; `matplotlib` and `numpy`.
 
 

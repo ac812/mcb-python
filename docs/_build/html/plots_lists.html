@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Getting started with Matplotlib &#8212; Python Programming</title>
+    <title>2.4. Getting started with Matplotlib &#8212; Python Programming</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,6 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="2.3. NumPy" href="numpy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -136,42 +137,76 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="variables.html">
-     1.5. Variables
+     1.5. Arithmetic Operations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="data-types.html">
-     1.6. Data Types
+     1.7. Data Types
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="calling-functions.html">
-     1.7. Calling functions
+     1.8. Calling functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="data-structures.html">
-     1.9. Data Structures
+     1.10. Data Structures
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="more-strings.html">
-     1.10. More on strings and functions
+     1.11. More on strings and functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="operators.html">
-     1.11. Comparison and logical operators
+     1.12. Comparison and logical operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="flow-control-structures.html">
-     1.12. Control flow statements
+     1.13. Control flow statements
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 2
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="further-programming.html">
+   2. Further programming
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="creating-functions.html">
+     2.1. Creating functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="debugging.html">
-     1.13. Debugging code in PyCharm
+    <a class="reference internal" href="modules_packages.html">
+     2.2. Modules and Packages
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="numpy.html">
+     2.3. NumPy
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.4. Getting started with Matplotlib
     </a>
    </li>
   </ul>
@@ -401,12 +436,12 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#importing-matplotlib">
-   Importing Matplotlib
+   2.4.1. Importing Matplotlib
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#drawing-our-first-plot">
-   Drawing our first plot
+   2.4.2. Drawing our first plot
   </a>
  </li>
 </ul>
@@ -430,12 +465,12 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#importing-matplotlib">
-   Importing Matplotlib
+   2.4.1. Importing Matplotlib
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#drawing-our-first-plot">
-   Drawing our first plot
+   2.4.2. Drawing our first plot
   </a>
  </li>
 </ul>
@@ -449,11 +484,11 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="getting-started-with-matplotlib">
-<h1>Getting started with Matplotlib<a class="headerlink" href="#getting-started-with-matplotlib" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2.4. </span>Getting started with Matplotlib<a class="headerlink" href="#getting-started-with-matplotlib" title="Permalink to this headline">#</a></h1>
 <p>In this section we are going to get started with drawing plots from lists using the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> package.
 <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> is the most widely used package for visualising data in Python <a class="footnote-reference brackets" href="#python-survey" id="id1">1</a>.</p>
 <section id="importing-matplotlib">
-<h2>Importing Matplotlib<a class="headerlink" href="#importing-matplotlib" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.4.1. </span>Importing Matplotlib<a class="headerlink" href="#importing-matplotlib" title="Permalink to this headline">#</a></h2>
 <p>Like NumPy Matplotlib should also be present in the Anaconda distribution (check the Python Packages tab in PyCharm).</p>
 <p>To import matplotlib in your code use the following code:</p>
 <div class="cell docutils container">
@@ -465,7 +500,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="drawing-our-first-plot">
-<h2>Drawing our first plot<a class="headerlink" href="#drawing-our-first-plot" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.4.2. </span>Drawing our first plot<a class="headerlink" href="#drawing-our-first-plot" title="Permalink to this headline">#</a></h2>
 <p>Let us start by drawing a simple line plot:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -496,7 +531,7 @@ Plots view.</p>
 <figure class="align-default" id="plots-view-pycharm">
 <a class="reference internal image-reference" href="_images/plots-view-pycharm.png"><img alt="_images/plots-view-pycharm.png" src="_images/plots-view-pycharm.png" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-text">Plot displayed in PyCharm in the SciView tool window | Plots view.</span><a class="headerlink" href="#plots-view-pycharm" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.7 </span><span class="caption-text">Plot displayed in PyCharm in the SciView tool window | Plots view.</span><a class="headerlink" href="#plots-view-pycharm" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>If this is not visible click <em>View &gt; Scientific mode</em> from PyCharm’s menu to enable it.</p>
@@ -526,7 +561,7 @@ the same (x,y) coordinates in the previous plot but this time using red circle m
 of the page in the <strong>Notes</strong> section.</p>
 <div class="exercise admonition" id="line-plot">
 
-<p class="admonition-title"> (Draw dotted line plot with markers)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.10 </span> (Draw dotted line plot with markers)</p>
 <section id="exercise-content">
 <p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
@@ -542,7 +577,7 @@ look like this:</p>
 a different plot.  You can see a list of the different plots supported in Matplotlib <a class="reference external" href="https://matplotlib.org/stable/plot_types/index.html">here</a>.</p>
 <div class="exercise admonition" id="scatter-plot">
 
-<p class="admonition-title"> (Plotting a scatter plot)</p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.11 </span> (Plotting a scatter plot)</p>
 <section id="exercise-content">
 <p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
 <p>Generate 20 random numbers from 0 to 1, and set these as your x and y values.  Plot these on a scatter plot.</p>
@@ -585,6 +620,13 @@ a different plot.  You can see a list of the different plots supported in Matplo
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="numpy.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2.3. </span>NumPy</p>
+        </div>
+    </a>
 </div>
             </footer>
         </div>
