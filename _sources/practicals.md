@@ -13,6 +13,7 @@ three you will have earned the 3-star badge {octicon}`star-fill;1em;sd-text-warn
 Below are the links of each practical sheet that we will be working on each week. 
 
 ::::{grid} 3
+
 :::{grid-item-card}
 :class-header: text-center
 :text-align: center
@@ -27,18 +28,21 @@ Learn the Python programming language syntax, its core programming concepts and 
 +++
 Go to practical {fas}`arrow-right`
 :::
+
 :::{grid-item-card} 
 :class-header: text-center
 :text-align: center
+:link: https://ac812.github.io/mcb-python/practical2.html
 
 **Practical 2**
 ^^^
-```{image} images/level-2-badge-gray.png
+```{image} images/level-2-badge.png
 ```
 We will learn further programming and Numpy.
 +++
-
+Go to practical {fas}`arrow-right`
 :::
+
 :::{grid-item-card}
 :class-header: text-center
 :text-align: center
