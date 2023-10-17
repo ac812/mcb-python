@@ -26,8 +26,8 @@ Below are the main differences between NumPy arrays and standard Python sequence
 * NumPy uses a **vectorised** code system for arrays, which enables the application of operations on each data item without the use of loops. This facilitates mathematical and other operations and has the following advantages:
     * Fewer lines of code
     * Fast (this is more evident with large list sizes)
-    * Easier to read, resembles mathematical notation.  
-The code below shows the code in standard Python code and in NumPy code that multiplies two lists:
+    * Easier to read; resembles mathematical notation.  
+As an example, the code below shows the code in standard Python code and in NumPy code that multiplies two lists:
 
 `````{tab-set}
 ````{tab-item} Standard Python
@@ -45,7 +45,10 @@ c = a * b
 `````
 
 ## Importing NumPy 
-You can check whether NumPy is installed from the *Python Packages* tab in PyCharm.  If it is not, you would see an **install** 
+If you are using Jupyter Lab to run your Python code, since we have set up a Conda environment for these practicals with 
+all the packages required to run the practicals, NumPy should already be installed on your machine.  
+
+If you are using PyCharm to code, you can check whether NumPy is installed on your Python environment from the *Python Packages* tab in PyCharm.  If it is not, you would see an **install** 
 button whe you search for it in the Python Packages tab.
 ![python-packages](images/python-packages.png)
 

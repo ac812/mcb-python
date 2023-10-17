@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Practicals &#8212; Python Programming</title>
+    <title>Debugging code in PyCharm &#8212; Python Programming</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,7 +54,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Introduction to Python Programming" href="intro-to-python.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -108,8 +107,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="practicals.html">
                     Practicals
                 </a>
             </li>
@@ -267,6 +266,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/debugging-pycharm.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -306,7 +334,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpracticals.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdebugging-pycharm.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -334,7 +362,24 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/practicals.md"
+        <a href="_sources/debugging-pycharm.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="_sources/debugging-pycharm.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -371,88 +416,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Practicals
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#earn-your-badge-each-week">
-     Earn your badge each week
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#supervision-worksheets">
-   Supervision Worksheets
-  </a>
-  <ul class="visible nav section-nav flex-column">
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Practicals</h1>
+                <h1>Debugging code in PyCharm</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Practicals
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#earn-your-badge-each-week">
-     Earn your badge each week
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#supervision-worksheets">
-   Supervision Worksheets
-  </a>
-  <ul class="visible nav section-nav flex-column">
-  </ul>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -460,87 +440,42 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="practicals">
-<h1>Practicals<a class="headerlink" href="#practicals" title="Permalink to this headline">#</a></h1>
-<p>During the first three weeks of the NST Part 1B Mathematical and Computational Biology subject we will be learning
-Python programming and foundational data techniques that are useful not just for this course but also beyond. These core
-concepts are used and applied throughout the whole Mathematical and Computational Biology course.  Understanding these
-are key to be able to follow the rest of the course.</p>
-<section id="earn-your-badge-each-week">
-<h2>Earn your badge each week<a class="headerlink" href="#earn-your-badge-each-week" title="Permalink to this headline">#</a></h2>
-<p>In the programming world, many organisations award badges to learners on the acquisition of a new skill or completion of
-a milestone. If you attempted and solved all the exercises of each practical, you will earn a badge. By the end of week
-three you will have earned the 3-star badge <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg>
-<svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> that marks the end of the MCB Python practicals.<br />
-Below are the links of each practical sheet that we will be working on each week.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
-<div class="sd-card-header text-center docutils">
-<p class="sd-card-text"><strong>Practical 1</strong></p>
-</div>
-<div class="sd-card-body docutils">
-<img alt="_images/level-1-badge.png" src="_images/level-1-badge.png" />
-<p class="sd-card-text">Learn the Python programming language syntax, its core programming concepts and Jupyter Notebooks.</p>
-</div>
-<div class="sd-card-footer docutils">
-<p class="sd-card-text">Go to practical <span class="fas fa-arrow-right"></span></p>
-</div>
-<a class="sd-stretched-link reference external" href="https://ac812.github.io/mcb-python/practical1.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
-<div class="sd-card-header text-center docutils">
-<p class="sd-card-text"><strong>Practical 2</strong></p>
-</div>
-<div class="sd-card-body docutils">
-<img alt="_images/level-2-badge.png" src="_images/level-2-badge.png" />
-<p class="sd-card-text">We will learn further programming and Numpy.</p>
-</div>
-<div class="sd-card-footer docutils">
-<p class="sd-card-text">Go to practical <span class="fas fa-arrow-right"></span></p>
-</div>
-<a class="sd-stretched-link reference external" href="https://ac812.github.io/mcb-python/practical2.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
-<div class="sd-card-header text-center docutils">
-<p class="sd-card-text"><strong>Practical 3</strong></p>
-</div>
-<div class="sd-card-body docutils">
-<img alt="_images/level-3-badge-gray.png" src="_images/level-3-badge-gray.png" />
-<p class="sd-card-text">Learn how to visualise and manipulate data.  We will learn about Pandas and Matplotlib.</p>
-</div>
-<div class="sd-card-footer docutils">
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="supervision-worksheets">
-<h1>Supervision Worksheets<a class="headerlink" href="#supervision-worksheets" title="Permalink to this headline">#</a></h1>
-<p>Below are the links to the supervision worksheets that will provide you with the opportunity to practice more the concepts
-that we have introduced throughout the Python practicals.</p>
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Supervision Worksheet 1</div>
-<p class="sd-card-text">Complete this worksheet after Practical 1.</p>
-</div>
-<a class="sd-stretched-link reference external" href="https://ac812.github.io/mcb-python/worksheet1.html"></a></div>
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Supervision Worksheet 2</div>
-<p class="sd-card-text">Complete this worksheet after Practical 2.</p>
-</div>
-<a class="sd-stretched-link reference external" href="https://ac812.github.io/mcb-python/worksheet2.html"></a></div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="debugging-code-in-pycharm">
+<h1>Debugging code in PyCharm<a class="headerlink" href="#debugging-code-in-pycharm" title="Permalink to this headline">#</a></h1>
+<p>This process fixing errors in code is known as <strong>debugging</strong>.  A software <strong>bug</strong> in an error in your code that makes your program stop or not run as it should be.
+Debugging your code can also be useful when you want to understand properly what your code is doing.  PyCharm offers a really useful tool - the <strong>PyCharm debugger</strong>.
+The PyCharm debugger allows you to execute your code one line at a time, and also help you understand how the values of your variables are changing in memory.</p>
+<p>To debug your code you must first create a <strong>breakpoint</strong>, by clicking in the gutter in PyCharm:</p>
+<figure class="align-default" id="breakpoint">
+<img alt="_images/breakpoint.png" src="_images/breakpoint.png" />
+<figcaption>
+<p><span class="caption-text">A breakpoint on line 7 in PyCharm.</span><a class="headerlink" href="#breakpoint" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">breakpoint</span></code>, the red dot, is the breakpoint.  Next, click on the Debug <img alt="" src="_images/debug.png" /> button.  The code will start executing util it reaches the first breakpoint which essentially
+pauses the code from executing, allowing you to see the values of the variables at that point.  In
+the example below, we can see that when the code pauses execution on line 7, <code class="docutils literal notranslate"><span class="pre">i</span></code> has the value of 0, <code class="docutils literal notranslate"><span class="pre">rows</span></code> 5 and <code class="docutils literal notranslate"><span class="pre">spaces</span></code> 4 in the
+Debug tool window.  These values are also shown inline next to the code (inline debugger).</p>
+<figure class="align-default" id="debug-tool">
+<img alt="_images/debug-tool.png" src="_images/debug-tool.png" />
+<figcaption>
+<p><span class="caption-text">Debug tool window in PyCharm</span><a class="headerlink" href="#debug-tool" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To run one line of code at a time, press the Step Over <img alt="" src="_images/step-over.png" /> button. This is
+very useful as it allows you to check what is happening in your code, especially if you are trying to fix an
+error in your code.  You can put as many breakpoints as you want in your code.  Pressing the Resume Program <img alt="" src="_images/resume-program.png" /> button
+will resume execution of program until the next breakpoint is reached.  Pressing the Stop <img alt="" src="_images/stop.png" /> button will stop execution of your program.</p>
+<div class="tip admonition">
+<p class="admonition-title">Do you know?</p>
+<p>The term <strong>bug</strong> was first used in 1946 by <strong>Grace Hopper</strong>, a computer science pioneer.  A moth was trapped in a relay, which caused a malfunction in the
+electricalmechanical computer leading eventually to the word “bug” to refer to errors in code.</p>
+<figure class="align-default" id="id1">
+<img alt="_images/grace-hopper.jpeg" src="_images/grace-hopper.jpeg" />
+<figcaption>
+<p><span class="caption-text">Grace Hopper (<a class="reference external" href="https://commons.wikimedia.org/wiki/File:Grace_Hopper_and_UNIVAC.jpg">Wikipedia</a>)</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </div>
 </section>
 
@@ -571,13 +506,6 @@ Supervision Worksheet 2</div>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="intro-to-python.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Introduction to Python Programming</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
