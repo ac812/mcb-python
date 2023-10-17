@@ -22,6 +22,7 @@ parts:
     chapters:
      - file: further-programming
        sections:
+            - file: debugging-jupyterlab
             - file: creating-functions
             - file: modules_packages
             - file: numpy

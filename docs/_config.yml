@@ -41,8 +41,8 @@ sphinx:
     language: en
 
 #Exclude practical 1 files from build
-#exclude_patterns: [practical1.md, intro-to-python.md, variables.md, data-types.md, calling-functions.md, data-structures.md, more-strings.md, operators.md, flow-control-structures.md, debugging.md, solutions-practical1.md, worksheet1.md, solutions-worksheet1.md]
+#exclude_patterns: [practical1.md, intro-to-python.md, variables.md, data-types.md, calling-functions.md, data-structures.md, more-strings.md, operators.md, flow-control-structures.md, debugging-pycharm.md, solutions-practical1.md, worksheet1.md, solutions-worksheet1.md]
 
 #Exclude practical 2 files from skip_initial_build
-exclude_patterns: [worksheet2.md, practical3.md, data_mani_vis.md, pandas1.md, matplotlib-pandas.md, more-pandas.md, practical4.md, recursion.md]
+exclude_patterns: [debugging-pycharm.md extra.md docstrings.md worksheet2.md, practical3.md, data_mani_vis.md, pandas1.md, matplotlib-pandas.md, more-pandas.md, practical4.md, recursion.md]
 
