@@ -60,20 +60,13 @@ import numpy as np
 a = np.array([55, 92, 110, 66, 75, 45, 40, 57, 55, 62])
 
 
-# ```{figure} images/ndarray-pycharm.png
-# ---
-# name: ndarray-pycharm
-# width: 60%
-# ---
-# `ndarray` object in PyCharm's Variable pane.
-# ```
-# 
-# This creates an array object of type **`ndarray`** in memory as we can see from PyCharm's variable pane in {numref}`ndarray-pycharm`. 
+# This creates an array object of type **`ndarray`** in memory. 
 # `ndarray` is short for "N-dimensional array", which means any number of dimensions. In NumPy: 
 # * 1-D (one-dimensional) array is also called a **vector** and is similar to a Python list.
 # * 2-D (two-dimensional) array is also called a **matrix**.
 # * 3-D or higher dimensional arrays are also known as **tensor**.
-# In this practical we will focus on vectors (1-D arrays) only.  
+# 
+# * In this practical we will focus on vectors (1-D arrays) only.  
 # 
 # ```{figure} images/ndarray.png
 # ---
@@ -125,8 +118,7 @@ a.size
 # 
 # **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 # 
-# 1. Try the examples in {numref}`ndarray-create-table` in the PyCharm console. For each example, look at the Variables 
-# pane in the console to see the `ndarray` object created.  
+# 1. Try the examples in {numref}`ndarray-create-table`.  
 # 2. Generate  a NumPy array that contains 20 evenly spaced numbers from 0 to 1.  What is the spacing between the numbers?  Hint: use [parameter `retstep`](https://numpy.org/doc/stable/reference/generated/numpy.linspace.html).  
 # 3. Use the `np.full()` function to create a NumPy array with ten 0.1 values.
 # 
@@ -136,7 +128,7 @@ a.size
 # ## NumPy data types - `dtype`
 # 
 # NumPy is written in C, a low-level language.  Because of this, it inherits some features that are normally associated 
-# with low level languages, NumPy data types are one of them.  
+# with low level languages; NumPy data types are one of them.  
 # 
 # While the size of the standard Python data types (*e.g.,* `int`, `float`) offer flexibility, that is, 
 # they can grow to accommodate numbers of different sizes (within the machine's memory constraints), NumPy data types 
@@ -197,14 +189,16 @@ a = np.array(l)
 
 
 # 1. Using the code above: 
-#    * What is the `dtype` of `a`? (Look into PyCharm's Variable pane to check the `dtype` of `a`).
+#    * What is the `dtype` of `a`?  *(Hint: use the `dtype` attribute.)*
 # 2. What is the `dtype` of `np.zeros(3)`?  Why do you think this is the case?
 # 3. Using list `l`, create a NumPy array that contains the values of `l` in `str` format.  What is the `dtype` of this array?
 # 
 # ```{exercise-end}
 # ```
 # 
-# ## Array manipulation operations
+# ## Numpy Array manipulation operations
+# 
+# Below is a list of useful NumPy array operations:
 # 
 # ```{list-table} Array manipulation functions
 # :header-rows: 1
@@ -249,25 +243,17 @@ a = np.array(l)
 # ## Slicing NumPy arrays
 # 
 # We slice a NumPy array when we want to extract data items from it. Slicing in NumPy arrays works the same as slicing in 
-# standard Python lists; using square brackets to specify the star, end and step of items we would like to extract from the NumPy array.  
-# The code below provides a few examples:
-
-# In[5]:
-
-
-# extract data item at index position 2
-a[2]
-print(a[2])
-
-# extract data items from index position 2 to index position 5 (excluded)
-a[2:5]
-print(a[2:5])
-
-# extract every second data item from index position 1 to index position 2 
-a[1:8:2]
-print(a[1:8:2])
-
-
+# standard Python lists; using square brackets to specify the start, end and step of items we would like to extract from the NumPy array.  
+# The image below shows a few examples of NumPy array slicing:
+# 
+# ```{figure} images/array-slicing.png
+# ---
+# name: array-slicing
+# ---
+# NumPy array slicing.
+# ```
+# 
+# 
 # ## Views and Copies of NumPy arrays
 # 
 # When we create a new variable (`b`) and assign it to an existing `ndarray` object (`a`), that variable will also point to the same `ndarray` object.
@@ -283,7 +269,7 @@ print(a[1:8:2])
 # 
 # Because of this, a change in `b` also effects `a`.
 
-# In[6]:
+# In[5]:
 
 
 # create a NumPy array a from list l
@@ -304,17 +290,19 @@ print("ID of b is:", id(b))
 # In the example above, `b` and `a` share the same object ID.  Changing the data item in index position 3 of `b`, caused 
 # the change in `a` as well, since both are the same object.  
 # 
-# As we have seen in {numref}`ndarray`, NumPy arrays save their data separately from the `ndarray` object. The `view()` method of an `ndarray` object creates a new `ndarray` object that points to the same data of the base array. 
-# Because it is pointing to the same data, any changes made to the view object will be effected in the base object which is 
-# the `ndarray` where the array data is actually stored. In the example below `c` is the view object and `a` is the base object.
-# As you can see the object ID of the base of `c` and `a` are the same.
+# As we have seen in {numref}`ndarray`, NumPy arrays save their data separately from the `ndarray` object. The `view()` method of an `ndarray` object creates a new `ndarray` object that points to the same data of the base array, but not the object. 
+# Because it is pointing to the same data, any changes made to the data in the **view object** will affect the data in the base object.  The **base object** is 
+# the `ndarray` object where the array data is actually stored. In the example below `c` is the view object and `a` is the base object.
+# As you can see the object ID of `c` and `a` are not the same, but the data is.  The base object ID of `c` is the same as the object ID of `a`.
 
-# In[7]:
+# In[6]:
 
 
 c = a.view()
 print("ID of a is:", id(a))
 print("ID of c is:", id(c))
+#check if memory is shared between a and c
+print(np.shares_memory(a,c))
 
 c[3] = 62  #this changes also a
 print(a)
@@ -329,9 +317,9 @@ print("ID of base array of c is:", id(c.base))
 # Representation of NumPy view in memory.
 # ```
 # 
-# Slicing a NumPy array also returns a view of it:
+# Slicing a NumPy array creates a view of it:
 
-# In[8]:
+# In[7]:
 
 
 d = a[2:5]
@@ -342,8 +330,17 @@ print(a)
 print("ID of a is:", id(a))
 
 
+# The image below illustrates the view of the code above.
+# 
+# ```{figure} images/ndarray-view-slice.png
+# ---
+# name: ndarray-view-slice
+# ---
+# Representation of the creation of a view NumPy arry `d` in memory after slicing the base NumPy array `a`.
+# ```
+# 
 # When creating a **copy** of an `ndarray` however, this would create a completely new copy, that is, though the contents would
-# be the same, the objects are two different ones in memory.  
+# be the same, both the objects and the data buffer are two separate ones in memory. In short, no memory is shared when creating a copy.  
 # 
 # ```{figure} images/ndarray-copy.png
 # ---
@@ -352,13 +349,14 @@ print("ID of a is:", id(a))
 # Representation of NumPy copy in memory.
 # ```
 
-# In[9]:
+# In[8]:
 
 
 #create a copy of ndarray a
 e = a.copy()
 print("ID of a is:", id(a))
 print("ID of e is:", id(e))
+print(np.shares_memory(a,e))
 
 e[3] = 70
 print(f"a is: {a}")
@@ -382,7 +380,7 @@ print(f"e is: {e}")
 # One of the main differences between standard Python data sequences such as lists and NumPy arrays is that NumPy arrays use a vectorised system 
 # which allows us to perform operations over all the `ndarray` object using one line of code as opposed to  using a loop as we do with lists.
 
-# In[10]:
+# In[9]:
 
 
 print(a)
@@ -396,7 +394,7 @@ print(a > 60)
 # try to do the same with the standard Python list, we get an error (see below).  This is because lists do not use a vectorised 
 # system, so to compare items in a list you would need to compare each item at a time via a loop.
 
-# In[11]:
+# In[10]:
 
 
 # If you try to the same with a standard Python list you would get an error
@@ -406,7 +404,7 @@ l > 60
 # To get the actual data values (not just `True` and `False`) we have to use our comparison statement inside the square brackets `[]`
 # as essentially we want to slice our `ndarray` object based on a condition:
 
-# In[12]:
+# In[11]:
 
 
 a[a > 60]
@@ -416,7 +414,7 @@ a[a > 60]
 # the `&` (and) and `|` (or) logical operators (see example below).  Note these logical operators have a different notation to the ones we used 
 # previously from the standard Python library.
 
-# In[13]:
+# In[12]:
 
 
 # get the values that are > 60 and < 90: 
@@ -439,7 +437,7 @@ a[(a > 60)  & (a < 90)]
 # 
 # Similarly, arithmetic operations can be performed on an array in one statement. For example:
 
-# In[14]:
+# In[13]:
 
 
 a1 = np.array([10,20,30])
@@ -461,7 +459,7 @@ print(f"a1 / a2 is: {a1 / a2}")
 # You can also use aggregate functions on NumPy arrays that perform an operation across all items in the array and return one 
 # result back.  For example:
 
-# In[15]:
+# In[14]:
 
 
 #aggregate functions
@@ -474,7 +472,7 @@ print(f"standard deviation of a1 is: {a1.std()}")
 
 # You can also perform element-wise mathematical operations, below are a few examples:
 
-# In[16]:
+# In[15]:
 
 
 a3 = np.array([1, 4, 9])
@@ -489,7 +487,7 @@ square_ans = np.square(sqrt_ans)
 print(f"square: {square_ans}")
 
 # calculate exponential of each data item
-exp_ans = np.exp(a2)
+exp_ans = np.exp(a3)
 print(f"exponential: {exp_ans}")
 
 # calculate the natural logarithm of each data item in ndarray
@@ -503,21 +501,21 @@ print(f"natural logarithm: {log_ans}")
 # 
 # ### Broadcasting
 # 
-# We have seen so far how we can perform arithmetic operations on NumPy arrays of the same size.  Broadcasting refers to when
+# We have seen so far seen how we can perform arithmetic operations on NumPy arrays of the same size.  Broadcasting refers to when
 # we want to perform an operation between NumPy arrays of different sizes.  In this course we will be focusing on operations 
 # between NumPy arrays and single values, for example, an integer.  In this case the integer is "broadcast" across the NumPy array
 # so that they have similar sizes for the operation to be possible.
 
-# In[17]:
+# In[16]:
 
 
 a1 * 2
 
 
 # All these features make NumPy desirable to work with mathematical formulas. The example below shows an example 
-# how the formula $\sum_{i=1}^{n} (x_{i} + 3)^2$ is computed with NumPy arrays.
+# how the formula $\sum_{i=1}^{n} (x_{i} - 3)^2$ is computed with NumPy arrays.
 
-# In[18]:
+# In[17]:
 
 
 x = np.array((5, 5, 6))
@@ -530,7 +528,7 @@ print(ans)
 # ---
 # name: math-formula
 # ---
-# Step-by-step execution of $\sum_{i=1}^{n} (x_{i} + 3)^2$.
+# Step-by-step execution of $\sum_{i=1}^{n} (x_{i} - 3)^2$.
 # ```
 # 
 # ```{exercise} Mathematical formulas
@@ -552,7 +550,7 @@ print(ans)
 # the `default_rng()` method to create an instance of Generator.  Initialising the generator with a seed allows replication 
 # of results.
 
-# In[19]:
+# In[18]:
 
 
 # set a seed so that results can be replicated
@@ -572,7 +570,7 @@ print(rfloat)
 
 # You can also draw samples from a distribution.  For example:
 
-# In[20]:
+# In[19]:
 
 
 #draw 5 samples from the normal distribution where mean=0 and standard deviation is 0.1
