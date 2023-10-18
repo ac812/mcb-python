@@ -527,8 +527,6 @@ the `default_rng()` method to create an instance of Generator.  Initialising the
 of results.
 
 
-
-
 ```{code-cell} ipython3
 # set a seed so that results can be replicated
 seed = 12345

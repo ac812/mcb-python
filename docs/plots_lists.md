@@ -17,9 +17,10 @@ In this section we are going to get started with drawing plots from lists using 
 
 
 ## Importing Matplotlib
-Like NumPy Matplotlib should also be present in the Anaconda distribution (check the Python Packages tab in PyCharm).
+As with NumPy, `matplotlib` should also be present in the conda environment setup for these practicals.
 
-To import matplotlib in your code use the following code:
+To import `matplotlib` in your code use the following code:
+
 ```{code-cell} ipython3
 import matplotlib.pyplot as plt
 ```
@@ -32,7 +33,6 @@ Let us start by drawing a simple line plot:
 import matplotlib.pyplot as plt
 
 # values of x and y points
-
 x = [1, 2, 3, 4, 5]
 y = [2, 3, 4, 5, 6]
 
@@ -46,18 +46,6 @@ In the code above, `x` and `y` represent the coordinates to plot on our plot.  T
 the x and y coordinates to plot (see [documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html)).
 `plt.xlabel()` sets the title of the x-axis label, and similarly `plt.ylabel()` sets the title of the y-axis label. 
 Calling `plt.plot(x,y)` on its own will not plot the plot for us. To visualise the plot we need to call the `plt.show()` function.
-
-When you run the code above in PyCharm you can see the output of this plot in the SciView tool window on the right hand side in the 
-Plots view.
-
-```{figure} images/plots-view-pycharm.png
----
-name: plots-view-pycharm
-width: 50%
----
-Plot displayed in PyCharm in the SciView tool window | Plots view.
-```
-If this is not visible click *View > Scientific mode* from PyCharm's menu to enable it.
 
 You can also use `plt.plot()` to plot markers on the plot.  To do this you need to use the `fmt` parameter 
 that takes as an input a format string that specifies the type of marker you want to plot.  The syntax of the format string
