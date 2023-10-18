@@ -494,8 +494,8 @@ title="Print to PDF"
 <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> is the most widely used package for visualising data in Python <a class="footnote-reference brackets" href="#python-survey" id="id1">1</a>.</p>
 <section id="importing-matplotlib">
 <h2><span class="section-number">2.5.1. </span>Importing Matplotlib<a class="headerlink" href="#importing-matplotlib" title="Permalink to this headline">#</a></h2>
-<p>Like NumPy Matplotlib should also be present in the Anaconda distribution (check the Python Packages tab in PyCharm).</p>
-<p>To import matplotlib in your code use the following code:</p>
+<p>As with NumPy, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> should also be present in the conda environment setup for these practicals.</p>
+<p>To import <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> in your code use the following code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -512,7 +512,6 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="c1"># values of x and y points</span>
-
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 
@@ -531,15 +530,6 @@ title="Print to PDF"
 the x and y coordinates to plot (see <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">documentation</a>).
 <code class="docutils literal notranslate"><span class="pre">plt.xlabel()</span></code> sets the title of the x-axis label, and similarly <code class="docutils literal notranslate"><span class="pre">plt.ylabel()</span></code> sets the title of the y-axis label.
 Calling <code class="docutils literal notranslate"><span class="pre">plt.plot(x,y)</span></code> on its own will not plot the plot for us. To visualise the plot we need to call the <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> function.</p>
-<p>When you run the code above in PyCharm you can see the output of this plot in the SciView tool window on the right hand side in the
-Plots view.</p>
-<figure class="align-default" id="plots-view-pycharm">
-<a class="reference internal image-reference" href="_images/plots-view-pycharm.png"><img alt="_images/plots-view-pycharm.png" src="_images/plots-view-pycharm.png" style="width: 50%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.11 </span><span class="caption-text">Plot displayed in PyCharm in the SciView tool window | Plots view.</span><a class="headerlink" href="#plots-view-pycharm" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<p>If this is not visible click <em>View &gt; Scientific mode</em> from PyCharm’s menu to enable it.</p>
 <p>You can also use <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> to plot markers on the plot.  To do this you need to use the <code class="docutils literal notranslate"><span class="pre">fmt</span></code> parameter
 that takes as an input a format string that specifies the type of marker you want to plot.  The syntax of the format string
 originates from MATLAB which concatenates a colour string with a line style string.  The code below shows an example of plotting
