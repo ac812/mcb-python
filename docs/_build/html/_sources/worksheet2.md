@@ -43,7 +43,7 @@ Write a program that returns the student class grade.  You may adapt [this code]
 
 **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 
-Write a fucntion that given a list of numbers returns even numbers **only** back.
+Write a function that given a list of numbers returns even numbers **only** back.
 ```
 
 ```{exercise-start} Bubble sort
