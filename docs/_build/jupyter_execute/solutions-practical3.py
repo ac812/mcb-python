@@ -196,6 +196,9 @@ df[df["country"] == "United Kingdom" & df["year"] == 2020]
 # :label: highlight_scatter-solution
 # :class: dropdown
 # ```
+# 
+# Solution 1:  using plt.subplots().
+# Here you would have to convert the columns to numpy arrays as you will be using matplotlib functions directly.
 
 # In[16]:
 
@@ -222,6 +225,19 @@ ax.scatter(x_highlight, y_highlight, c="red")
 fig.show()
 
 
+# Solution 2: using the DataFrame plot functions
+
+# In[17]:
+
+
+# extract records where co2_emissions_pc are > 40
+highlight = df[df["co2_emissions_pc"] > 40]
+
+ax1 = df.plot.scatter("life_expectancy_t", "co2_emissions_pc")
+highlight.plot.scatter("life_expectancy_t", "co2_emissions_pc", color="red", ax=ax1)
+plt.show()
+
+
 # ```{solution-end}
 # ```
 # 
@@ -231,7 +247,7 @@ fig.show()
 # :class: dropdown
 # ```
 
-# In[17]:
+# In[18]:
 
 
 df["population_m_f"] = df["population_m"] / df["population_t"]
@@ -247,7 +263,7 @@ df["population_f_f"] = df["population_f"] / df["population_t"]
 # ```
 # 1.
 
-# In[18]:
+# In[19]:
 
 
 # Pandas does not have a to_txt() function so we need to adapt the to_csv() method.
@@ -256,7 +272,7 @@ df.to_csv("data/world-bank-1_data.txt", sep="\t", index=False)
 
 # 3.,
 
-# In[19]:
+# In[20]:
 
 
 df2 = pd.read_csv("data/world-bank-1_data.txt", sep="\t")

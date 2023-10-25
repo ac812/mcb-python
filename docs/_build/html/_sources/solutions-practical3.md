@@ -164,6 +164,8 @@ df[df["country"] == "United Kingdom" & df["year"] == 2020]
 :class: dropdown
 ```
 
+Solution 1:  using plt.subplots().
+Here you would have to convert the columns to numpy arrays as you will be using matplotlib functions directly.
 ```{code-cell}
 import matplotlib.pyplot as plt
 
@@ -185,6 +187,16 @@ ax.scatter(x, y, c="black")
 ax.scatter(x_highlight, y_highlight, c="red")
 
 fig.show()
+```
+
+Solution 2: using the DataFrame plot functions
+```{code-cell}
+# extract records where co2_emissions_pc are > 40
+highlight = df[df["co2_emissions_pc"] > 40]
+
+ax1 = df.plot.scatter("life_expectancy_t", "co2_emissions_pc")
+highlight.plot.scatter("life_expectancy_t", "co2_emissions_pc", color="red", ax=ax1)
+plt.show()
 ```
 
 ```{solution-end}
