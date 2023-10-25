@@ -12,8 +12,8 @@ kernelspec:
 
 # Coupon Collector's Problem
 
-*This section was kindly provided by Professor Nik Cunniffe.  If you woould like to refer to the material in this section,
-please cite has follows:*
+*This section was adapted from Professor Nik Cunniffe's MCB Notes.  If you would like to refer to the material in this section,
+please cite as follows:*
 
 *Cunniffe,Nik (2022), Mathematical and Computational Biology Course Notes and Lectures*
 
