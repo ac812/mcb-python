@@ -7,9 +7,12 @@ we will learn how to work with tabular (two-dimensional) datasets using the Pand
 
 ## Objectives
 During this practical you will learn how to:
+* create a 2D NumPy array (matrix)
+* handle matrices
 * load tabular data in Python using the Pandas package
 * manipulate tabular data
 * visualise tabular data
+* code the Collector's coupon problem
 
 
 ## Instructions
@@ -50,6 +53,15 @@ This practical is composed of the following exercises:
 * - Exercise
   - Description
   - Level
+* - {numref}`matrix-manip-exercise`
+  - **Manipulating NumPy Matrices**:  This exercises performs different NumPy matrix manipulations.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`shaping-matrix`
+  - **Shaping a matrix**:  In this exercise we will learn how to shape a matrix to the desired shape.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
+* - {numref}`sum-columns-matrix`
+  - **Calculate sum of columns of a matrix**:  In this exercise we will learn how to calculate the sum of the columns of a matrix.
+  - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 * - {numref}`exploring-df`
   - **Exploring the DataFrame**:  In this exercise, we first load data from a .csv file and then explore the DataFrame data structure.
   - {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
@@ -78,7 +90,7 @@ This practical is composed of the following exercises:
 
 :::{card} Managed to solve all the exercises?  Well done!
 :class-card: sd-bg-light
-In the programming world, many organisations award badges to learners on the acquisition of a new skill or completion of a milestone.  If you attempted and solved all the exercises of this practical, you definitely deserve your third badge of this course. One more to go!
+In the programming world, many organisations award badges to learners on the acquisition of a new skill or completion of a milestone.  If you attempted and solved all the exercises of this practical, you definitely deserve your final badge of the Python practicals!
 ```{image} images/level-3-badge.png
 :name: level3-badge
 :width: 20%
@@ -87,10 +99,15 @@ In the programming world, many organisations award badges to learners on the acq
 :::
 
 
-```{admonition} Next week
-In the next practical we will learn how to:
-* use Jupyter Notebooks
+```{admonition} Next steps
+To be profecient in a programming language you need to practice a lot!
 
+After the course:
+ * go over the notes again and make sure you know the core concepts introduced in this course.  
+ * follow this by looking into other online resources to practice more python, for example, you should have free access to [Linked-in learning](http://www.cam.ac.uk/linkedinlearning) as a member of the Univeristy of Cambridge, 
+ a resource with many tutorials and courses.
+ * the upcoming lectures and practicals will continue to introduce you to ways on how you can explore biological data with Python.
+ 
 Happy Python practicing!
 ```
 

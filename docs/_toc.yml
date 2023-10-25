@@ -27,3 +27,13 @@ parts:
             - file: modules_packages
             - file: numpy
             - file: plots_lists
+  - caption: Notes on Practical 3
+    numbered: true
+    chapters:
+      - file: data_mani_vis
+        sections:
+          - file: matrices-numpy
+          - file: pandas1
+          - file: matplotlib-pandas
+          - file: more-pandas
+          - file: coupon-collector

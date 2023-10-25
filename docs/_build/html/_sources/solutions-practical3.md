@@ -12,6 +12,69 @@ kernelspec:
 
 # Practical 3 Solutions
 
+```{solution-start} matrix-manip-exercise
+:label: matrix-manip-exercise-solution
+:class: dropdown
+```
+2., 
+```{code-cell} ipython3
+import numpy as np
+
+m = np.array([[8, 2, 3], [2, 3, 4], [4, 8, 9]])
+
+print(-np.sort(-m, 1))
+```
+
+3.a.,
+```{code-cell} ipython3
+#get the frequency of each value in the array
+unique, count = np.unique(m, return_counts=True)
+# unique values
+print(unique)
+# frequency of these unique values
+print(count)
+```
+
+3.b.,
+```{code-cell} ipython3
+#get the index position of the first occuring unique value
+unique, indices = np.unique(m, return_index=True)
+#unique values
+print(unique)
+# index positions of first occuring unique values
+print(indices)
+```
+
+```{solution-end}
+```
+
+
+```{solution-start} shaping-matrix
+:label: shaping-matrix-solution
+:class: dropdown
+```
+
+```{code-cell} ipython3
+a = np.arange(8)
+m = a.reshape(4, 2)
+print(m)
+
+```
+
+```{solution-end}
+```
+
+```{solution-start} sum-columns-matrix
+:label: sum-columns-matrix-solution
+:class: dropdown
+```
+```{code-cell} ipython3
+print(np.sum(m, axis = 0))
+```
+
+```{solution-end}
+```
+
 ```{solution-start} exploring-df
 :label: exploring-df-solution
 :class: dropdown
@@ -96,38 +159,6 @@ df[df["country"] == "United Kingdom" & df["year"] == 2020]
 ```
 
 
-```{solution-start} create-columns
-:label: create-columns-solution
-:class: dropdown
-```
-```{code-cell} ipython3
-df["population_m_f"] = df["population_m"] / df["population_t"]
-df["population_f_f"] = df["population_f"] / df["population_t"]
-```
-```{solution-end}
-```
-
-```{solution-start} save-df-file
-:label: save-df-file-solution
-:class: dropdown
-```
-1. 
-```{code-cell} ipython3
-# Pandas does not have a to_txt() function so we need to adapt the to_csv() method.
-df.to_csv("data/world-bank-1_data.txt", sep="\t")
-```
-
-3.,
-```{code-cell} ipython3
-:tags: [output_scroll]
-df2 = pd.read_csv("data/world-bank-1_data.txt", sep="\t")
-df2.head()
-```
-
-```{solution-end}
-```
-
-
 ```{solution-start} highlight_scatter
 :label: highlight_scatter-solution
 :class: dropdown
@@ -158,4 +189,37 @@ fig.show()
 
 ```{solution-end}
 ```
+
+
+```{solution-start} create-columns
+:label: create-columns-solution
+:class: dropdown
+```
+```{code-cell} ipython3
+df["population_m_f"] = df["population_m"] / df["population_t"]
+df["population_f_f"] = df["population_f"] / df["population_t"]
+```
+```{solution-end}
+```
+
+```{solution-start} save-df-file
+:label: save-df-file-solution
+:class: dropdown
+```
+1. 
+```{code-cell} ipython3
+# Pandas does not have a to_txt() function so we need to adapt the to_csv() method.
+df.to_csv("data/world-bank-1_data.txt", sep="\t", index=False)
+```
+
+3.,
+```{code-cell} ipython3
+:tags: [output_scroll]
+df2 = pd.read_csv("data/world-bank-1_data.txt", sep="\t")
+df2.head()
+```
+
+```{solution-end}
+```
+
 

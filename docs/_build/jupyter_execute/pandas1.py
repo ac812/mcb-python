@@ -10,11 +10,6 @@
 # 
 # ## Importing Pandas
 # 
-# You can check whether Pandas is installed from the *Python Packages* tab in PyCharm.  If it is not, you would see an **install** 
-# button on the right hand side of the Python Packages pane when you search for Pandas.  Click on the *install* button if 
-# Pandas is not installed on your machine.
-# ![python-packages](images/pandas-install.png)
-# 
 # To be able to work with Pandas we need to import the Pandas package into our Python code.  Below is the community agreed convention:
 
 # In[1]:
@@ -29,7 +24,7 @@ import pandas as pd
 # which was transformed by Alexia Cardona for the purpose of teaching data manipulation and visualisation programming. This data is 
 # compiled using official international resources.
 # 
-# Download the dataset from [here](https://drive.google.com/file/d/1CY6se8854BrQRx001779VwKlDcyu4vMM/view?usp=sharing) and save it into a `data` folder in your PyCharm project. 
+# Download the dataset from [here](https://drive.google.com/file/d/1CY6se8854BrQRx001779VwKlDcyu4vMM/view?usp=sharing) and save it into a `data` folder in your project. 
 # 
 # This dataset contains official data for each country worldwide and contains indicators on life expectancy, population, and CO2 emissions.  Below is 
 # the metadata of the dataset:
@@ -73,33 +68,14 @@ df = pd.read_csv("data/world-bank-1_data.csv")
 
 # The code above reads the file `world-bank-1_data.csv` into a `DataFrame` object and creates variable `df` that points to it.
 # There are other functions in Pandas that read other file formats.  You can see a list of these [here](https://pandas.pydata.org/docs/reference/io.html).
-# If we run the code above in the Python Console in PyCharm we can see all this information in the Variables pane (see {numref}`dataframe-pycharm`).
-# 
-# ```{figure} images/dataframe-pycharm.png
-# ---
-# name: dataframe-pycharm
-# ---
-# `df` in the Variables pane in PyCharm.
-# ```
-# 
-# If we click on the *View as DataFrame* link, we can actually see the value of the data that is inside `df`. 
-# ```{figure} images/df-view.png
-# ---
-# name: df-view
-# ---
-# Data view of `df` in PyCharm.
-# ```
-# 
-# This is the easiest way to check the data.  Checking the data through the `df` attributes in the Variables pane is not user-friendly 
-# for DataFrame objects due to the complexity of it. 
 # 
 # ## The DataFrame 
 # The popularity of Pandas mainly lies with its data structure; the `DataFrame`.  The DataFrame data structure is suitable for 
 # data that is in tabular form (2-dimensional); data with columns and rows.  Since most of the data comes into this form, it makes the DataFrame data structure 
 # and Pandas widely used.
 # 
-# Now that we have loaded the DataFrame in Python, we need to check if the data has loaded properly.  We already saw how we 
-# can check this visually via PyCharm.  Let us try to check this in the Console, by printing the first 5 rows of the DataFrame:
+# Now that we have loaded the DataFrame in Python, we need to check if the data has loaded properly.  Let us try to check 
+# this in the Console, by printing the first 5 rows of the DataFrame:
 # 
 # ```{code-block}
 # df.head(5)
@@ -148,7 +124,7 @@ print(df.info())
 df.shape
 
 
-# Note that `shape` is an attribute not a method, so not parentheses are used after `shape`.
+# Note that `shape` is an attribute not a method, so when called, no parentheses are used after `shape`.
 # 
 # 
 # ## The Series
@@ -169,7 +145,7 @@ df.shape
 # **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning` {octicon}`star;1em;sd-text-warning`
 # 
 # In this exercise we will be using the dataset from the World Bank Data Catalog that is used in this course.  Follow the 
-# instructions above to load the dataset into Python and make use of DataFrame methods or PyCharm to answer the following 
+# instructions above to load the dataset into Python and make use of DataFrame methods to answer the following 
 # questions:
 # 
 # 1. What type is `df`?
@@ -222,7 +198,7 @@ le_t.head()
 
 
 # Note that in the example above, since we are extracting only one column from `df` the result of the first slicing is a Series object. 
-# In the code below, on the other hand, extracts 3 columns from `df`, and therefore the result of this is another DataFrame object.
+# The code below, on the other hand, extracts 3 columns from `df`, and therefore the result of this is another DataFrame object.
 
 # In[8]:
 
@@ -275,7 +251,7 @@ le_top[le_top["year"].isin([2020, 2019])]
 
 # ### Extracting rows and columns
 # 
-# To extract rows and columns from a DataFrame we need to use the `loc` and `iloc` operators in front of the square brackets.
+# To extract rows and columns from a DataFrame we need to use the `loc` and `iloc` operators.
 # 
 # #### `loc`
 # 

@@ -129,7 +129,7 @@ name: split-apply-combine
 An illustration on how the Split-Apply-Combine strategy works.
 ```
 
-The code below is the Python version of the Split-Apply-Combine appraoch.  In this code, we are splitting the `df` DataFrame 
+The code below is the Python version of the Split-Apply-Combine approach.  In this code, we are splitting the `df` DataFrame 
 by `year`.  For each `year` records, we are applying the `mean()` function on it.  We are the combining the results from each `year` grouping 
 and merging it into one DataFrame which is then stored in the `res` variable.
 
@@ -154,14 +154,14 @@ Find the maximum value of CO2 emmissions for each country in the `df` DataFrame.
 ```
 **Level:** {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning` {octicon}`star-fill;1em;sd-text-warning`
 
-The purpose of this course is to teach you the core concepts well.  It is up to you then to apply this concepts to solve your 
+The purpose of this course is to teach you the core concepts well.  It is up to you to then apply these concepts to solve your 
 computational/mathematical problems. 
-s
+
 One thing you should be aware of is that popular packages normally have a cheat sheet.  A cheat sheet is a summarised but user-friendly 
 version of all the functionality of a package.  You can find the cheat sheet for [pandas here](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf) and 
 [Matplotlib here](https://matplotlib.org/cheatsheets/_images/cheatsheets-1.png).
 
-Have a look at the cheat sheet and try using this attempt a new function.
+Have a look at the cheat sheet and attempt using a new functionality.
 
 ```{note}
 The cheat sheet alone is not enough.  To maximise your potential as a programmer you would also need to use the reference documentation 

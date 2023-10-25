@@ -46,14 +46,15 @@ Go to practical {fas}`arrow-right`
 :::{grid-item-card}
 :class-header: text-center
 :text-align: center
+:link: https://ac812.github.io/mcb-python/practical3.html
 
 **Practical 3**
 ^^^
-```{image} images/level-3-badge-gray.png
+```{image} images/level-3-badge.png
 ```
 Learn how to visualise and manipulate data.  We will learn about Pandas and Matplotlib.
 +++
-
+Go to practical {fas}`arrow-right`
 :::
 ::::
 

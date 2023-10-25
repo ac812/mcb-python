@@ -220,6 +220,50 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notes on Practical 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="data_mani_vis.html">
+   3. Data manipulation and visualisation in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matrices-numpy.html">
+     3.1. Matrices in NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pandas1.html">
+     3.2. Data manipulation with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matplotlib-pandas.html">
+     3.3. Visualising data with Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="more-pandas.html">
+     3.4. More Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="coupon-collector.html">
+     3.5. Coupon Collector’s Problem
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
     </div>
 </nav></div>
@@ -640,16 +684,16 @@ As an example, the code below shows the code in standard Python code and in NumP
 </li>
 </ul>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="ed8fd0b0-2bea-433a-92d4-d90929c78995" name="489e69cb-4007-466a-a477-df3abd9ceb5c" type="radio">
-</input><label class="sd-tab-label" for="ed8fd0b0-2bea-433a-92d4-d90929c78995">
+<input checked="checked" id="1bce8c35-a862-4a72-a0f9-a3db237cfdd2" name="5c78ac30-d8c6-4e22-8261-ef3ff72f6aef" type="radio">
+</input><label class="sd-tab-label" for="1bce8c35-a862-4a72-a0f9-a3db237cfdd2">
 Standard Python</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
     <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-<input id="cc38e035-13dc-4461-9b8f-6649edba0411" name="489e69cb-4007-466a-a477-df3abd9ceb5c" type="radio">
-</input><label class="sd-tab-label" for="cc38e035-13dc-4461-9b8f-6649edba0411">
+<input id="9acf02cd-79d7-4375-8c5e-0ff99571e835" name="5c78ac30-d8c6-4e22-8261-ef3ff72f6aef" type="radio">
+</input><label class="sd-tab-label" for="9acf02cd-79d7-4375-8c5e-0ff99571e835">
 NumPy</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
 </pre></div>
@@ -906,7 +950,7 @@ specify the <code class="docutils literal notranslate"><span class="pre">dtype</
 <section id="exercise-content">
 <p><strong>Level:</strong> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star-fill sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg> <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-star sd-text-warning" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg></p>
 <ol class="simple">
-<li><p>Try the examples in <a class="reference internal" href="#ndarray-manip-table"><span class="std std-numref">Table 2.3</span></a>.  Check the output of each example.</p></li>
+<li><p>Try the examples in <a class="reference internal" href="pandas1.html#ndarray-manip-table"><span class="std std-numref">Table 3.2</span></a>.  Check the output of each example.</p></li>
 <li><p>Sort NumPy array <code class="docutils literal notranslate"><span class="pre">a</span></code> in descending order</p></li>
 <li><p>Create a NumPy array with the following values: [9, 3, 9, 8, 9, 4, 2, 0, 2, 5, 4, 7, 5, 1]</p>
 <ol class="simple">
@@ -960,11 +1004,11 @@ The image below shows a few examples of NumPy array slicing:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140344641532432
-ID of b is: 140344641532432
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140659916550768
+ID of b is: 140659916550768
 [ 55  92 110  60  75  45  40  57  55  62]
-ID of a is: 140344641532432
-ID of b is: 140344641532432
+ID of a is: 140659916550768
+ID of b is: 140659916550768
 </pre></div>
 </div>
 </div>
@@ -991,11 +1035,11 @@ As you can see the object ID of <code class="docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140344641532432
-ID of c is: 140344122624016
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140659916550768
+ID of c is: 140660472820528
 True
 [ 55  92 110  62  75  45  40  57  55  62]
-ID of base array of c is: 140344641532432
+ID of base array of c is: 140659916550768
 </pre></div>
 </div>
 </div>
@@ -1020,9 +1064,9 @@ ID of base array of c is: 140344641532432
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[80 62 75]
-ID of d is: 140344641875248
+ID of d is: 140660467258000
 [55 92 80 62 75 45 40 57 55 62]
-ID of a is: 140344641532432
+ID of a is: 140659916550768
 </pre></div>
 </div>
 </div>
@@ -1057,8 +1101,8 @@ be the same, both the objects and the data buffer are two separate ones in memor
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140344641532432
-ID of e is: 140344646449072
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID of a is: 140659916550768
+ID of e is: 140660472819856
 False
 a is: [55 92 80 62 75 45 40 57 55 62]
 e is: [55 92 80 70 75 45 40 57 55 62]
